@@ -1,0 +1,6 @@
+﻿---
+Role: |
+  sitecore\RbA Author
+MemberOf:
+  Role: |
+    SXA\Author

@@ -1,0 +1,26 @@
+﻿---
+ID: "c98d9ce2-0db5-46be-970e-9729c97baf40"
+Parent: "a53a2661-b9db-4285-933d-98cb1d8488ff"
+Template: "c4442680-1100-4626-a469-acc318e25cbf"
+Path: /sitecore/templates/Branches/Feature/EnterpriseWeb/Form/$name/Thank You Page
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T185639Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0c32c9a0-527a-404a-abac-a9ddbac0324c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d75d14d3-1a4e-47f1-a2d4-496cc1d09c0c"
+      Hint: label
+      Value: Thank You Page
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T185639Z

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<control xmlns:def="Definition" xmlns="http://schemas.sitecore.net/Visual-Studio-Intellisense" xmlns:ew="http://www.sitecore.net/content">
+  <MultiRootTreeListExEditor>
+    <FormDialog ID="Dialog" Icon="Control/32x32/treeview.png" Header="Select Items" Text="Please select the items that you wish to use.">
+      <Stylesheet Key="TreeListExEditor">
+        .scContentControl {
+        height:100%;
+        }
+      </Stylesheet>
+      <Script Src="/sitecore/shell/Applications/Content Manager/dialogs/EW.MutliRootTreeListExEditor/MultiRootTreeList.js" RunAt="server"/>
+      <Script Src="/sitecore/shell/Applications/Content Manager/dialogs/EW.MutliRootTreeListExEditor/MultiRootTreeListExEditor.js" RunAt="server"/>
+      <CodeBeside Type="Platform.Foundation.Core.Dialogs.MultiRootTreeListExEditor.MultiRootTreeListExEditorForm, Platform"/>
+
+      <VerticalTabstrip GridPanel.Height="100%" Height="99%">
+        <TabSection Header="Options" />
+        <Tab ID="Templates" Header="Sitecore">
+          <ew:MultiRootTreeList ID="MultiRootTreeList" Activation="false" Style="" />
+        </Tab>
+      </VerticalTabstrip>
+
+    </FormDialog>
+  </MultiRootTreeListExEditor>
+</control>

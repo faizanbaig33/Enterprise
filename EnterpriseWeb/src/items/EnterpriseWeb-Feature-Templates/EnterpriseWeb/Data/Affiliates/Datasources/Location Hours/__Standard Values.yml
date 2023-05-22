@@ -1,0 +1,31 @@
+﻿---
+ID: "e3c161f5-7905-48ed-be0f-12eaf9cbe9c8"
+Parent: "3a4deca2-6f8a-4fa4-ad60-d8f0fd3a5cba"
+Template: "3a4deca2-6f8a-4fa4-ad60-d8f0fd3a5cba"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/Datasources/Location Hours/__Standard Values
+SharedFields:
+- ID: "fd4e2050-186c-4375-8b99-e8a85dd7436e"
+  Hint: __Enable item fallback
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170701T035429Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "476dbfd0-3603-4454-86d9-8564aafdcc6c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20191115T132831Z

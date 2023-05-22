@@ -1,0 +1,664 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`black outline renders correctly 1`] = `
+<section
+  data-component="promo/promobannerauthored"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+    >
+      <div
+        class="col-span-12 grid grid-cols-2 md:grid-cols-12 border-2 border-secondary"
+      >
+        <div
+          class="col-span-12 px-[15px] py-m flex flex-col lg:px-[4.25rem] lg:pt-l lg:pb-l items-center md:col-span-12 text-center bg-theme-bg text-theme-text"
+        >
+          <div
+            class="items-top font-sans  text-s md:text-m font-heavy text-theme-text text-center"
+          >
+            <h2>
+              Promo Banner Authored Default
+            </h2>
+          </div>
+          <div
+            class="font-sans text-sm-m lg:text-s font-medium mt-2 text-theme-text text-center"
+          >
+            <h3>
+              Promo banner authored default subhead
+            </h3>
+          </div>
+          <div
+            class="text-body text-theme-text font-medium mt-m text-center"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                <p>
+                  Some body copy
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 flex flex-col md:flex-row md:content-center md:justify-center mb-0 items-center mt-m mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+          >
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0 mr-m"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Second Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-legal mt-xxs col-span-12 text-left"
+      >
+        <div>
+          Some legal copy
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`black solid renders correctly 1`] = `
+<section
+  data-component="promo/promobannerauthored"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-secondary"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+    >
+      <div
+        class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-secondary text-white"
+      >
+        <div
+          class="col-span-12 px-[15px] py-m flex flex-col lg:px-[4.25rem] lg:pt-l lg:pb-l items-center md:col-span-12 text-center bg-theme-bg text-theme-text"
+        >
+          <div
+            class="items-top font-sans  text-s md:text-m font-heavy text-theme-text text-center"
+          >
+            <h2>
+              Promo Banner Authored Default
+            </h2>
+          </div>
+          <div
+            class="font-sans text-sm-m lg:text-s font-medium mt-2 text-theme-text text-center"
+          >
+            <h3>
+              Promo banner authored default subhead
+            </h3>
+          </div>
+          <div
+            class="text-body text-theme-text font-medium mt-m text-center"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                <p>
+                  Some body copy
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 flex flex-col md:flex-row md:content-center md:justify-center mb-0 items-center mt-m mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+          >
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0 mr-m"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-gray px-m py-[9px] font-sans text-button font-heavy hover:bg-gray hover:text-white disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Second Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-legal mt-xxs col-span-12 text-left"
+      >
+        <div>
+          Some legal copy
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`brand color outline renders correctly 1`] = `
+<section
+  data-component="promo/promobannerauthored"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+    >
+      <div
+        class="col-span-12 grid grid-cols-2 md:grid-cols-12 border-2 border-primary"
+      >
+        <div
+          class="col-span-12 px-[15px] py-m flex flex-col lg:px-[4.25rem] lg:pt-l lg:pb-l items-center md:col-span-12 text-center bg-theme-bg text-theme-text"
+        >
+          <div
+            class="items-top font-sans  text-s md:text-m font-heavy text-theme-text text-center"
+          >
+            <h2>
+              Promo Banner Authored Default
+            </h2>
+          </div>
+          <div
+            class="font-sans text-sm-m lg:text-s font-medium mt-2 text-theme-text text-center"
+          >
+            <h3>
+              Promo banner authored default subhead
+            </h3>
+          </div>
+          <div
+            class="text-body text-theme-text font-medium mt-m text-center"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                <p>
+                  Some body copy
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 flex flex-col md:flex-row md:content-center md:justify-center mb-0 items-center mt-m mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+          >
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0 mr-m"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+            <a
+              class="flex w-fit items-center whitespace-nowrap font-sans text-text-link font-heavy text-theme-text hover:underline hover:decoration-secondary hover:underline-offset-8 disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Second Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-legal mt-xxs col-span-12 text-left"
+      >
+        <div>
+          Some legal copy
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="promo/promobannerauthored"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-primary"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+    >
+      <div
+        class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-primary text-white"
+      >
+        <div
+          class="col-span-12 px-[15px] py-m flex flex-col lg:px-[4.25rem] lg:pt-l lg:pb-l items-center md:col-span-12 text-center bg-theme-bg text-theme-text"
+        >
+          <div
+            class="items-top font-sans  text-s md:text-m font-heavy text-theme-text text-center"
+          >
+            <h2>
+              Promo Banner Authored Default
+            </h2>
+            
+          </div>
+          <div
+            class="font-sans text-sm-m lg:text-s font-medium mt-2 text-theme-text text-center"
+          >
+            <h3>
+              Promo banner authored default subhead
+            </h3>
+          </div>
+          <div
+            class="text-body text-theme-text font-medium mt-m text-center"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 flex flex-col md:flex-row md:content-center md:justify-center mb-0 items-center mt-m mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+          >
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0 mr-m"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-gray px-m py-[9px] font-sans text-button font-heavy hover:bg-gray hover:text-white disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Second Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-legal mt-xxs col-span-12 text-left"
+      >
+        <div>
+          Some legal copy
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`right align renders correctly 1`] = `
+<section
+  data-component="promo/promobannerauthored"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-primary"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+    >
+      <div
+        class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-primary text-white"
+      >
+        <div
+          class="col-span-12 px-[15px] py-m flex flex-col md:-order-1 text-center lg:p-[32px] items-center md:items-start md:col-span-8 pb-0 bg-theme-bg text-theme-text"
+        >
+          <div
+            class="items-top font-sans  text-s md:text-m font-heavy text-theme-text text-center md:text-start"
+          >
+            <h2>
+              Promo Banner Authored cta right aligned
+            </h2>
+          </div>
+          <div
+            class="font-sans text-sm-m lg:text-s font-medium mt-2 text-theme-text text-center md:text-start"
+          >
+            <h3>
+              Promo Banner Authored cta right align
+            </h3>
+          </div>
+          <div
+            class="text-body text-theme-text font-medium mt-[10px] text-center md:text-start"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-span-12 flex flex-col md:flex-row md:content-center md:justify-center mb-0 items-center pt-s pr-s pl-s pb-m md:p-m md:col-span-4 bg-theme-bg text-theme-text mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+        >
+          <a
+            class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0 mr-m"
+            href="/"
+            role="link"
+            tabindex="0"
+            target=""
+            title=""
+          >
+            Go!
+            <span
+              class="ml-xxs"
+            />
+          </a>
+          <a
+            class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-gray px-m py-[9px] font-sans text-button font-heavy hover:bg-gray hover:text-white disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0"
+            href="/"
+            role="link"
+            tabindex="0"
+            target=""
+            title=""
+          >
+            Second Go!
+            <span
+              class="ml-xxs"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="text-legal mt-xxs col-span-12 text-left"
+      >
+        <div>
+          Some legal copy
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`with image renders correctly 1`] = `
+<section
+  data-component="promo/promobannerauthored"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-primary"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+    >
+      <div
+        class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-primary text-white"
+      >
+        <div
+          class="col-span-12 md:col-span-4"
+        >
+          <div
+            class="relative mx-auto hidden md:block aspect-picture  "
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+            >
+              <img
+                alt="Hero Half Media Image"
+                data-nimg="fill"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div
+            class="relative block w-full md:hidden aspect-picture max-h-[250px] md:h-full"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+            >
+              <img
+                alt=""
+                data-nimg="fill"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+              />
+              <noscript />
+            </span>
+          </div>
+        </div>
+        <div
+          class="col-span-12 px-[15px] py-m flex flex-col md:-order-1 text-center md:col-span-8 px-[15px] lg:px-m lg:py-[46.5px] items-start bg-theme-bg text-theme-text"
+        >
+          <div
+            class="items-top font-sans  text-s md:text-m font-heavy text-theme-text text-start"
+          >
+            <h2>
+              Promo Banner Authored no image
+            </h2>
+          </div>
+          <div
+            class="font-sans text-sm-m lg:text-s font-medium mt-2 text-theme-text text-start"
+          >
+            <h3>
+              Promo Banner Authored no image subhead
+            </h3>
+          </div>
+          <div
+            class="text-body text-theme-text font-medium mt-m md:mt-s text-start"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 flex flex-col md:flex-row md:content-center md:justify-center mb-0 items-start mt-m mb-s md:mt-[32px] mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+          >
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0 mr-m"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-legal mt-xxs col-span-12 text-left"
+      >
+        <div>
+          Some legal copy
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`with image right align renders correctly 1`] = `
+<section
+  data-component="promo/promobannerauthored"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-primary"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+    >
+      <div
+        class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-primary text-white"
+      >
+        <div
+          class="col-span-12 md:col-span-4"
+        >
+          <div
+            class="relative mx-auto hidden md:block aspect-picture  "
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+            >
+              <img
+                alt="Hero Half Media Image"
+                data-nimg="fill"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div
+            class="relative w-full md:hidden aspect-picture max-h-[250px] md:h-full"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+            >
+              <img
+                alt="Hero Half Media Image"
+                data-nimg="fill"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+              />
+              <noscript />
+            </span>
+          </div>
+        </div>
+        <div
+          class="col-span-12 px-[15px] py-m flex flex-col md:-order-1 text-center md:col-span-8 px-[15px] lg:px-m lg:py-[46.5px] items-start bg-theme-bg text-theme-text"
+        >
+          <div
+            class="items-top font-sans  text-s md:text-m font-heavy text-theme-text text-start"
+          >
+            <h2>
+              Promo Banner Authored with image
+            </h2>
+          </div>
+          <div
+            class="font-sans text-sm-m lg:text-s font-medium mt-2 text-theme-text text-start"
+          >
+            <h3>
+              Promo Banner Authored with image subhead
+            </h3>
+          </div>
+          <div
+            class="text-body text-theme-text font-medium mt-m md:mt-s text-start"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 flex flex-col md:flex-row md:content-center md:justify-center mb-0 items-start mt-m mb-s md:mt-[32px] mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+          >
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mt-s first:mt-0 md:mt-0 mr-0 md:mr-3 md:first:ml-0 md:last:mr-0 mr-m"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Go!
+              <span
+                class="ml-xxs"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text-legal mt-xxs col-span-12 text-left"
+      >
+        <div>
+          Some legal copy
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

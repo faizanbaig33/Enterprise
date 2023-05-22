@@ -1,0 +1,37 @@
+﻿---
+ID: "131e3cf3-2302-4ce3-8218-4b7282218b4f"
+Parent: "aecf6a40-6ac8-4ca0-b3dd-11d220ce6c19"
+Template: "d70d43e4-aef9-43bf-89e5-b49f22675f43"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Insert Options/Elements Folder/Element
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230106T171116Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ff2a903c-6c66-402f-8992-0b23237b9116"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230106T171238Z
+    - ID: "f0c111ff-f7dd-405f-8703-432cdc877f9b"
+      Hint: Rules
+      Value: |
+        <ruleset>
+          <rule
+            uid="{520BEE20-3542-4A04-89D8-817D6BB30D77}">
+            <conditions>
+              <condition
+                id="{D0810F9D-734C-452D-BBB6-4730368D68F1}"
+                uid="6033939552A84B6DB1AB14207ADC39BA"
+                templateid="{7BB09D29-EA13-41B4-A161-F6AB842B0D2D}" />
+            </conditions>
+          </rule>
+        </ruleset>

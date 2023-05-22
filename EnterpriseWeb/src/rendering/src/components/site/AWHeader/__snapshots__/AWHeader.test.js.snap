@@ -1,0 +1,142 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  class=" relative z-[999] block font-sans max-ml:hidden"
+  data-component="site/awheader"
+>
+  <div
+    class="utility-nav h-14 w-full bg-secondary text-white"
+  >
+    <div
+      class="flex h-14 items-center justify-end max-[1480px]:px-s ml:max-w-screen-xl xl:mx-auto"
+    >
+      <ul
+        class="z-50 flex items-center"
+      />
+    </div>
+  </div>
+  <nav
+    class="main-nav mx-auto w-full border-b border-solid border-b-gray bg-white"
+  >
+    <div
+      class="main-nav relative z-20 flex w-full items-center justify-center border-t-0 bg-white max-[1480px]:pl-l ml:max-w-screen-xl xl:mx-auto"
+    >
+      <div
+        class="min-w-[197px]"
+      >
+        <a
+          href="/"
+        >
+          <div
+            class="relative hidden md:block aspect-video    aspect-auto max-w-[197px]"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 14.122533748701974% 0px 0px 0px;"
+              />
+              <img
+                alt="Andersen Windows Logo"
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div
+            class="relative w-full md:hidden aspect-auto max-w-[197px]"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 14.122533748701974% 0px 0px 0px;"
+              />
+              <img
+                alt="Andersen Windows Logo"
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+              />
+              <noscript />
+            </span>
+          </div>
+        </a>
+      </div>
+      <div
+        class="ml-s min-w-[197px] max-ml:hidden"
+      >
+        <a
+          href="/"
+        >
+          <div
+            class="relative hidden md:block aspect-video    aspect-auto max-w-[197px]"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 14.122533748701974% 0px 0px 0px;"
+              />
+              <img
+                alt="Andersen Windows Logo"
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div
+            class="relative w-full md:hidden aspect-auto max-w-[197px]"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 14.122533748701974% 0px 0px 0px;"
+              />
+              <img
+                alt="Andersen Windows Logo"
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+              />
+              <noscript />
+            </span>
+          </div>
+        </a>
+      </div>
+      <div
+        class="mr-[10px] flex w-[86%] items-center justify-end "
+      >
+        <ul
+          class="z-20 flex h-[65px] max-w-[1239px] items-center bg-white pl-[3.5%]"
+        />
+        <div
+          class="z-[9999] mr-0 flex h-l w-l cursor-pointer items-center justify-center rounded-[50%] bg-light-gray transition-[fill] duration-[0.2s] ease-[cubic-bezier(0,0,0.58,1)] bg-light-gray"
+        >
+          <span
+            class=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="relative mx-auto max-w-full"
+    >
+      <div
+        class="absolute right-0 h-auto min-w-[50%] bg-white transition-[height] duration-[0.15s] ease-[cubic-bezier(0,0,0.58,1)]"
+        style="width: 0px;"
+      />
+    </div>
+  </nav>
+</div>
+`;

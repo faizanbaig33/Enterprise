@@ -1,0 +1,453 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  class="awfooter bg-black py-m text-base text-white ml:py-l"
+  data-component="site/awfooter"
+>
+  <div
+    class="max-lg:px-m ml:max-w-screen-lg lg:mx-auto"
+  >
+    <div
+      class="flex flex-col flex-wrap ml:flex-row"
+    >
+      <div
+        class="flex flex-col max-ml:order-4 max-ml:mt-l ml:w-[16.6%] ml:basis-[16.6%] ml:pr-xxs"
+      >
+        <div
+          class="mb-s font-sans text-xs font-heavy uppercase max-ml:hidden "
+        >
+          <h3>
+            LOVE THE LIFE YOU SEE
+          </h3>
+        </div>
+        <div
+          class="mb-s text-body max-ml:order-2"
+        >
+          &copy; 2023 ANDERSEN CORPORATION. ALL RIGHTS RESERVED.
+        </div>
+        <div
+          class="flex flex-wrap max-ml:order-1 max-ml:mb-s"
+        >
+          <div
+            class="mr-xxs mt-xxxs"
+          >
+            <a
+              class=""
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              
+              <span />
+            </a>
+          </div>
+          <div
+            class="mr-xxs mt-xxxs"
+          >
+            <a
+              class=""
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              
+              <span />
+            </a>
+          </div>
+          <div
+            class="mr-xxs mt-xxxs"
+          >
+            <a
+              class=""
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              
+              <span />
+            </a>
+          </div>
+          <div
+            class="mr-xxs mt-xxxs"
+          >
+            <a
+              class=""
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              
+              <span />
+            </a>
+          </div>
+          <div
+            class="mr-xxs mt-xxxs"
+          >
+            <a
+              class=""
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              
+              <span />
+            </a>
+          </div>
+          <div
+            class="mr-xxs mt-xxxs"
+          >
+            <a
+              class=""
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              
+              <span />
+            </a>
+          </div>
+          <div
+            class="mr-xxs mt-xxxs"
+          >
+            <a
+              class=""
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              
+              <span />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex flex-col max-ml:order-1 ml:w-[83.4%] ml:basis-[83.4%] ml:pl-xxs"
+      >
+        <div
+          class="mb-l font-sans text-sm-s font-heavy uppercase ml:hidden"
+        >
+          <h3>
+            LOVE THE LIFE YOU SEE
+          </h3>
+        </div>
+        <div
+          class="flex w-full max-ml:flex-col max-ml:border-b max-ml:border-solid max-ml:border-b-white ml:shrink ml:grow ml:basis-0 ml:justify-between"
+        >
+          <div
+            class="flex flex-col ml:w-[20%] ml:pr-xxs"
+          >
+            <div
+              class="mb-xxxs font-sans text-xxs font-heavy uppercase leading-none"
+            >
+              <span>
+                About Andersen
+              </span>
+            </div>
+            <ul
+              class="flex flex-col"
+            >
+              <li
+                class="py-xxxs"
+              >
+                <a
+                  class="text-body hover:underline"
+                  href="/"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Item Link
+                </a>
+              </li>
+              <li
+                class="py-xxxs"
+              >
+                <a
+                  class="text-body hover:underline"
+                  href="/"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Item Link
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col ml:w-[20%] ml:pr-xxs"
+          >
+            <div
+              class="mb-xxxs font-sans text-xxs font-heavy uppercase leading-none"
+            >
+              <span>
+                RbA
+              </span>
+            </div>
+            <ul
+              class="flex flex-col"
+            >
+              <li
+                class="py-xxxs"
+              >
+                <a
+                  class="text-body hover:underline"
+                  href="/"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Item Link
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col ml:w-[20%] ml:pr-xxs"
+          >
+            <div
+              class="mb-xxxs font-sans text-xxs font-heavy uppercase leading-none"
+            >
+              <span>
+                Explore Products
+              </span>
+            </div>
+            <ul
+              class="flex flex-col"
+            >
+              <li
+                class="py-xxxs"
+              >
+                <a
+                  class="text-body hover:underline"
+                  href="/"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Item Link
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col ml:w-[20%] ml:pr-xxs"
+          >
+            <div
+              class="mb-xxxs font-sans text-xxs font-heavy uppercase leading-none"
+            >
+              <span>
+                Get Started
+              </span>
+            </div>
+            <ul
+              class="flex flex-col"
+            >
+              <li
+                class="py-xxxs"
+              >
+                <a
+                  class="text-body hover:underline"
+                  href="/"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Item Link
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="flex flex-col ml:w-[20%] ml:pr-xxs"
+          >
+            <div
+              class="mb-xxxs font-sans text-xxs font-heavy uppercase leading-none"
+            >
+              <span>
+                Find Help
+              </span>
+            </div>
+            <ul
+              class="flex flex-col"
+            >
+              <li
+                class="py-xxxs"
+              >
+                <a
+                  class="text-body hover:underline"
+                  href="/"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Item Link
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="mt-l flex flex-col max-ml:order-3 max-ml:mb-l ml:w-[16.6%] ml:basis-[16.6%] ml:pr-xxs"
+      >
+        <div
+          class="relative hidden md:block aspect-video    max-w-[120px]"
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 14.122533748701974% 0px 0px 0px;"
+            />
+            <img
+              alt="Andersen Windows Logo"
+              data-nimg="responsive"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="relative w-full md:hidden max-w-[120px]"
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 14.122533748701974% 0px 0px 0px;"
+            />
+            <img
+              alt="Andersen Windows Logo"
+              data-nimg="responsive"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+            />
+            <noscript />
+          </span>
+        </div>
+      </div>
+      <div
+        class="mt-l flex flex-col max-ml:order-3 ml:w-[83.4%] ml:basis-[83.4%] ml:pl-xxs"
+      >
+        <div
+          class="mb-s flex w-full text-body ml:mb-xxs"
+        >
+          <h3>
+            Andersen collects certain categories of personal information. See links for more information.
+          </h3>
+        </div>
+        <div
+          class="w-full flex-wrap max-ml:text-body md:flex"
+        >
+          <span>
+            <a
+              class="text-body underline"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Terms
+            </a>
+            <span
+              class="inline-flex md:px-xxxs"
+            >
+               | 
+            </span>
+          </span>
+          <span>
+            <a
+              class="text-body underline"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Privacy Policy 
+            </a>
+            <span
+              class="inline-flex md:px-xxxs"
+            >
+               | 
+            </span>
+          </span>
+          <span>
+            <a
+              class="text-body underline"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Privacy Notice for CA Residents 
+            </a>
+            <span
+              class="inline-flex md:px-xxxs"
+            >
+               | 
+            </span>
+          </span>
+          <span>
+            <a
+              class="text-body underline"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+               EEO Policy 
+            </a>
+            <span
+              class="inline-flex md:px-xxxs"
+            >
+               | 
+            </span>
+          </span>
+          <span>
+            <a
+              class="text-body underline"
+              href="/"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+               Opt Out of Sale or Sharing of Personal Information
+            </a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

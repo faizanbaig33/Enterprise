@@ -1,0 +1,47 @@
+﻿---
+ID: "697c9ac8-ebc1-4ddb-ada8-1d0a72de6ee7"
+Parent: "16ffcdf7-c3e0-4026-af3d-e3f3c0466a25"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Promo/Promo Review Content Authored/Promo Review Content Authored
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: /~/icon/apps/32x32/Reviews.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {B61A1D20-9EE5-4CCB-9E0D-24A97E58D293}
+    {99969A89-B62F-4155-A052-0F54C8C21B52}
+    {5E2F3CF0-45EC-4618-AA30-0465290A248D}
+    {D47D8920-5527-4C26-92E8-BD999720B197}
+    {30594C7E-1F51-4706-AB7E-6766B1FC3C90}
+    {368747B7-D912-47D5-995E-CD3573E24FDF}
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{599F4630-D958-4ECF-8CC6-4599E4D7D80E}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230110T161713Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ef7e7b35-86e5-405d-a3c3-5ad56731d6cb"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230202T214139Z

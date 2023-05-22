@@ -1,0 +1,19 @@
+<%@ Master Language="C#" AutoEventWireup="true" %>
+
+<!doctype html>
+<html lang="en">
+<head runat="server">
+  <meta charset="utf-8">
+  <title></title>
+  <link href="/sitecore/admin/entweb/css/bootstrap.min.css?v5.2.3" rel="stylesheet">
+  <asp:ContentPlaceHolder ID="head" runat="server" />
+</head>
+<body>
+  <form id="form1" runat="server">
+    <div class="container pt-3">
+      <asp:ContentPlaceHolder ID="ContentContainer" runat="server" />
+    </div>
+  </form>
+  <script src="/sitecore/admin/entweb/js/bootstrap.bundle.min.js?v5.2.3"></script>
+</body>
+</html>

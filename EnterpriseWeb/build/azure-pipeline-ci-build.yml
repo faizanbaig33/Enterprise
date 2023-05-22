@@ -1,0 +1,26 @@
+steps:
+- task: NuGetToolInstaller@1
+  displayName: 'Perform Installing Nuget Tool'
+
+- task: NuGetCommand@2
+  displayName: 'Preparing NuGet Restore'
+  inputs:
+    restoreSolution: 'EnterpriseWeb.sln'
+    feedsToUse: config
+    nugetConfigPath: '$(Build.SourcesDirectory)\nuget.config'
+
+- task: PowerShell@2
+  displayName: 'Remove Dockerignore'
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd $(Build.SourcesDirectory)
+      Remove-Item .dockerignore
+
+- task: VSBuild@1
+  displayName: 'Perform Build Solution'
+  inputs:
+    solution: '$(Build.SourcesDirectory)\src\platform\Platform.csproj'
+    msbuildArgs: '/p:DeployonBuild=true /p:PublishProfile=DevOps'
+    configuration: Release
+    platform: 'AnyCPU'

@@ -1,0 +1,46 @@
+﻿---
+ID: "3daa9f60-5fd6-4287-97f7-de0f96f09cc9"
+Parent: "878bb24d-8a7c-4aba-9f88-69c588c0273c"
+Template: "d2a6884c-04d5-4089-a64e-d27ca9d68d4c"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Presentation/Placeholder Settings/Page/hero
+SharedFields:
+- ID: "7256bdab-1fd2-49dd-b205-cb4873d2917c"
+  Hint: Placeholder Key
+  Value: "headless-hero"
+- ID: "e391b526-d0c5-439d-803e-17512eae6222"
+  Hint: Allowed Controls
+  Value: |
+    {1409F521-3584-41E4-84B1-3E9097C84DEF}
+    {6A481E65-2D33-45BB-BF51-DA34AB53F8AD}
+    {F08A82E2-7945-45B6-B986-826D339FC808}
+    {36107515-7523-4086-B256-AAD592B6E5A1}
+    {EEE84920-F7A4-42BA-9A72-6CCDD7C8F933}
+    {FEA9F746-9907-4EBE-9F98-795514534FCA}
+    {90DDA522-5BB0-4861-A4BB-DBE633FEB532}
+    {D8F94CB6-5199-4B5B-A027-03ADD2E52971}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221116T225549Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "61cff349-9be2-4ebd-b4dd-5973c701b798"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230220T164753Z

@@ -1,0 +1,23 @@
+﻿---
+ID: "e2785c24-a7a1-4175-86af-eb2c90c48d90"
+Parent: "89043f11-f787-49c9-b391-c6a741980708"
+Template: "6f0f9b58-daec-4c55-a519-36b3207d109c"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Facets/Site Search Topic
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230406T173051Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6b8ef434-3be4-4bdb-81f2-bc50e4b8ca75"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230406T173051Z

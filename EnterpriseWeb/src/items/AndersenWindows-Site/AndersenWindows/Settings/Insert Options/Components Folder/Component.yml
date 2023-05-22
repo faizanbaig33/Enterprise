@@ -1,0 +1,41 @@
+﻿---
+ID: "ee4e029f-ea2a-4b71-b448-76244cb90885"
+Parent: "72c0baba-1c0e-41f0-836f-ba2888eac822"
+Template: "d70d43e4-aef9-43bf-89e5-b49f22675f43"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Settings/Insert Options/Components Folder/Component
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/window_dialog.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T195435Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "71e02931-a85a-4762-aeae-3d27fec6f3a4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221221T200352Z
+    - ID: "f0c111ff-f7dd-405f-8703-432cdc877f9b"
+      Hint: Rules
+      Value: |
+        <ruleset>
+          <rule
+            uid="{94BA8C16-CBD2-4206-BD83-31F9CC7E8C44}">
+            <conditions>
+              <condition
+                id="{D0810F9D-734C-452D-BBB6-4730368D68F1}"
+                uid="5B4583B2EF2841B48D7612B4FE1D9713"
+                templateid="{5844117C-21D4-4642-B025-BB62374BE182}" />
+            </conditions>
+          </rule>
+        </ruleset>

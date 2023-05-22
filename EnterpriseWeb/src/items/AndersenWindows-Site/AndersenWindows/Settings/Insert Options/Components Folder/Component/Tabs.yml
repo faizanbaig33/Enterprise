@@ -1,0 +1,26 @@
+﻿---
+ID: "1a761751-e361-43c7-9d22-33a32c5d5ad2"
+Parent: "ee4e029f-ea2a-4b71-b448-76244cb90885"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Settings/Insert Options/Components Folder/Component/Tabs
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221229T103106Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ebd024ed-477e-41e0-9a2f-62e3084fb964"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{4DCE5BC6-9E56-4365-890A-9A9FE6DDB5C0}|{19357571-E295-4CA2-8FB8-38272DE2C30E}|{530EDFDD-EA54-416F-AAFF-B6DFEAF6EEFB}|{7D7FC73C-26FB-442B-965F-E0822BCF0961}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230404T121041Z

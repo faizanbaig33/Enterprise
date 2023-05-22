@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/socialimagecarousel"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="flex flex-col md:flex-row col-span-2 md:col-span-6 items-center theme-white"
+      >
+        <div
+          class="p-3 max-w-[315px] md:min-w-[350px]"
+        >
+          <div
+            class="items-top font-sans  text-theme-text text-sm-m md:text-m font-bold mb-s"
+          >
+            <h2>
+              Real projects. Real perspectives.
+            </h2>
+          </div>
+          <div
+            class=" text-body text-dark-gray"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                Social image carousel body text
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="w-[375px] lg:w-[845px] md:w-[575px]"
+            data-crl8-container-id="product"
+            data-crl8-filter="productId:ES-CAS"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

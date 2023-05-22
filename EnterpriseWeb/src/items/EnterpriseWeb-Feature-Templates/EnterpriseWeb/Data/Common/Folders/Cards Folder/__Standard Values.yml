@@ -1,0 +1,33 @@
+﻿---
+ID: "f47a361c-c28a-40b6-8cef-058980d90b4c"
+Parent: "aa7425e1-2e1b-4c46-9e09-2ebae37f3378"
+Template: "aa7425e1-2e1b-4c46-9e09-2ebae37f3378"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Common/Folders/Cards Folder/__Standard Values
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: office/32x32/playing_card_clubs.png
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{AA7425E1-2E1B-4C46-9E09-2EBAE37F3378}"
+- ID: "a0cb3965-8884-4c7a-8815-b6b2e5ced162"
+  Hint: __Editors
+  Value: "{A0C460F4-DBAE-4A5A-8F3A-C4ADFCDACEEA}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210813T212647Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "45e5e679-ab6e-45a9-8fc7-2d229601fe42"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221221T202751Z

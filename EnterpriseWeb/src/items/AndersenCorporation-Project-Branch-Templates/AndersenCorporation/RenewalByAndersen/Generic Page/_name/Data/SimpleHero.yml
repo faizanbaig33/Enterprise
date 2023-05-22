@@ -1,0 +1,26 @@
+﻿---
+ID: "65a56f9d-4c57-4da4-bd51-937f6bd53274"
+Parent: "5c68e08c-4a87-4b82-8fbc-572a7d11166b"
+Template: "26715daa-b9e1-4f96-803f-e07fcbf620de"
+Path: /sitecore/templates/Branches/Project/AndersenCorporation/RenewalByAndersen/Generic Page/$name/Data/SimpleHero
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T075936Z
+    - ID: "67964309-f6a9-4609-a06b-0b39b4f8886b"
+      Hint: headlineText
+      Value: Page Headline
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "317619eb-1a55-446b-942a-95e743de331e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T080039Z

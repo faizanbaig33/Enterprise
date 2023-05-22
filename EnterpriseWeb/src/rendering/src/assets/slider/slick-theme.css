@@ -1,0 +1,253 @@
+@charset 'UTF-8';
+/* Arrows */
+.slick-prev,
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+
+  position: absolute;
+
+
+  display: block;
+
+  padding: 0;
+
+  cursor: pointer;
+
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 998;
+}
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  color: transparent;
+  outline: none;
+  background: transparent;
+}
+.slick-prev:hover:before,
+.slick-prev:focus:before,
+.slick-next:hover:before,
+.slick-next:focus:before {
+  opacity: 1;
+}
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.25;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick';
+  font-size: 20px;
+  line-height: 1;
+
+  opacity: 0.75;
+  color: white;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[dir='rtl'] .slick-prev {
+  right: -25px;
+  left: auto;
+}
+
+[dir='rtl'] .slick-next {
+  right: auto;
+  left: -25px;
+}
+
+/* Slide */
+.slick-track
+{
+    display: flex !important;
+}
+
+.slick-slide {
+  height: inherit !important;
+  transform: scale(0.6);
+  transition: all 0.4s ease-in-out;
+  padding: 40px 20px;
+}
+
+.slick-center {
+  transform: scale(1.1);
+}
+
+.product-slide-img-wrapper img {
+  transition: all 0.4s ease-in-out;
+}
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px;
+}
+
+.slick-dots {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin: 16px 0;
+  list-style: none;
+  text-align: center;
+}
+.slick-dots li {
+  position: relative;
+
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin: 6px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.rba .slick-dots li{
+  margin: 4px;
+}
+.slick-dots li button {
+  font-size: 0;
+  line-height: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  padding: 5px;
+  cursor: pointer;
+
+  color: transparent;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus {
+  outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before {
+  opacity: 1;
+}
+.slick-dots li button:before {
+  font-family: 'slick';
+  font-size: 30px;
+  line-height: 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 8px;
+  height: 8px;
+
+  content: '•';
+  text-align: center;
+
+  opacity: 1;
+  color: #d9d9d9;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.rba .slick-dots li button:before{
+  color: #ebeae4;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 1;
+  color: #000000;
+}
+.slick-disabled {
+  display: none !important;
+}
+
+/* slider stylings for aw and rba themes */
+
+.theme-black li button:before {
+  color: #686869;
+}
+
+/* Styling for dots */
+.theme-black li.slick-active button:before {
+  color: #ffffff;
+}
+
+/* Styling for custom paging numbers */
+.theme-black li {
+  color: #ffffff;
+}
+
+/* slider stylings for aw and rba themes */
+
+.theme-black li button:before {
+    color: #686869;
+}
+
+/* Styling for dots */
+.theme-black li.slick-active button:before {
+    color: #ffffff;
+  }
+
+/* Styling for custom paging numbers */
+  .theme-black li{
+    color: #ffffff;
+  }
+
+  .slick-prev {
+    right: 101%;
+  }
+  .slick-next {
+    left: 101%;
+  }
+
+  .slick-prev, .slick-next {
+    bottom: 50%;
+    -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  }
+  /* Numbered pagination stylings */
+  .numbered-pagination .slick-prev,
+  .numbered-pagination .slick-next {
+    bottom: 0;
+    -webkit-transform: translateY(-20%);
+  -ms-transform: translateY(-20%);
+  transform: translateY(-20%);
+  }
+
+  .numbered-pagination .slick-prev {
+    left: 46%;
+    right: unset;
+  }
+
+  .numbered-pagination .slick-next {
+    right: 46%;
+    left: unset;
+  }
+
+
+
+@media only screen and (max-width: 960px) {
+  /* numbered pagination style */
+
+
+  .numbered-pagination .slick-next {
+    right: 5px;
+  }
+
+  .numbered-pagination .slick-prev {
+    left: 5px;
+  }
+
+  .slick-next {
+    right: -16px;
+  }
+
+  .slick-prev {
+    left: -16px;
+  }
+}

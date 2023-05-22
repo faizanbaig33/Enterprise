@@ -1,0 +1,41 @@
+﻿---
+ID: "ce3ca0d3-5e86-4dd4-abec-2696e7af456d"
+Parent: "dd163476-8b4c-4621-a9b3-c67054d5038d"
+Template: "d70d43e4-aef9-43bf-89e5-b49f22675f43"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Insert Options/Cards Folder/Card
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: office/32x32/element.png
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T200525Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d2bbd948-d90b-464d-bffe-0e966ce31d99"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221221T200903Z
+    - ID: "f0c111ff-f7dd-405f-8703-432cdc877f9b"
+      Hint: Rules
+      Value: |
+        <ruleset>
+          <rule
+            uid="{16B15455-8A55-4F03-B5A9-8BC1C4C05BEC}">
+            <conditions>
+              <condition
+                id="{D0810F9D-734C-452D-BBB6-4730368D68F1}"
+                uid="D8F6BF53A80646CC8842E261B58FD9A1"
+                templateid="{AA7425E1-2E1B-4C46-9E09-2EBAE37F3378}" />
+            </conditions>
+          </rule>
+        </ruleset>

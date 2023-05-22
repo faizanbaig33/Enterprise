@@ -1,0 +1,38 @@
+﻿---
+ID: "5312d32d-34f2-49dd-842d-e22c243445e5"
+Parent: "4dce5bc6-9e56-4365-890a-9a9fe6ddb5c0"
+Template: "4dce5bc6-9e56-4365-890a-9a9fe6ddb5c0"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Tabs/Accordion/Accordion/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{81D84B05-7E23-4528-81AF-2031EF679550}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230217T160753Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b6ea6b18-04ba-4007-849c-4b16bb09ee40"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230217T161515Z
+    - ID: "ebc0f4f5-3020-4870-960b-524e0d172158"
+      Hint: headlineLevel
+      Value: "{0F556F3A-BBAD-4AA5-952D-B79003B39CD6}"

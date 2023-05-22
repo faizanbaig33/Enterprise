@@ -1,0 +1,110 @@
+{
+  "namespace": "Foundation.EnterpriseWeb",
+  "items": {
+    "includes": [
+      {
+        "name": "EnterpriseWeb-Foundation-Templates",
+        "path": "/sitecore/templates/Foundation/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Foundation-Branches",
+        "path": "/sitecore/templates/Branches/Foundation/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Foundation-Renderings",
+        "path": "/sitecore/layout/renderings/Foundation/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Foundation-PlaceholderSettings",
+        "path": "/sitecore/layout/placeholder settings/Foundation/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Foundation-Settings",
+        "path": "/sitecore/system/Settings/Foundation/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Foundation-Settings-ValidationRules-Fields",
+        "path": "/sitecore/system/Settings/Validation Rules/Field Rules/Custom",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Foundation-Settings-Rules",
+        "path": "/sitecore/system/Settings/Rules/Insert Options/Rules/Page Insert Options",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Foundation-Media",
+        "path": "/sitecore/media library/Foundation/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "allowedPushOperations": "createOnly",
+        "name": "EnterpriseWeb-Settings-PublishingTarget-Edge",
+        "path": "/sitecore/system/Publishing targets/Edge",
+        "scope": "singleItem",
+        "database": "master"
+      },
+      {
+        "allowedPushOperations": "createUpdateAndDelete",
+        "database": "master",
+        "name": "EnterpriseWeb-Settings-APIKeys",
+        "path": "/sitecore/system/Settings/Services/API Keys/EnterpriseWeb",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "allowedPushOperations": "createOnly",
+        "name": "EnterpriseWeb-RenderingContentsResolvers",
+        "path": "/sitecore/system/Modules/Layout Service/Rendering Contents Resolvers/EnterpriseWeb",
+        "scope": "itemAndChildren",
+        "database": "master"
+      },
+      {
+        "allowedPushOperations": "createAndUpdate",
+        "database": "core",
+        "name": "EnterpriseWeb-Core",
+        "path": "/sitecore/EnterpriseWeb",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "allowedPushOperations": "createAndUpdate",
+        "database": "core",
+        "name": "EnterpriseWeb-Core-Ribbons",
+        "path": "/sitecore/content/Applications/Content Editor/Ribbons/Ribbons/Default/EnterpriseWeb",
+        "scope": "singleItem"
+      },
+      {
+        "allowedPushOperations": "createAndUpdate",
+        "database": "core",
+        "name": "EnterpriseWeb-Core-Custom-Experience-Buttons",
+        "path": "/sitecore/content/Applications/WebEdit/Custom Experience Buttons/Enterprise Web",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "allowedPushOperations": "createAndUpdate",
+        "database": "core",
+        "name": "EnterpriseWeb-Core-Custom-Fields",
+        "path": "/sitecore/system/Field types/Enterprise Web",
+        "scope": "itemAndDescendants"
+      }
+    ]
+  },
+  "leprechaun": {
+    "configuration": {
+      "@extends": "EnterpriseWeb.Base",
+      "@name": "Foundation.EnterpriseWeb"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+﻿---
+ID: "db27f617-c33e-46e0-ba53-3df5f6aa7090"
+Parent: "7572cd85-ff90-427e-82ce-692d0856f4a6"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/Default Affiliate Settings/Default Settings
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170707T161420Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "22543cc4-22d5-4704-b654-7c5efbe37545"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20171027T191831Z

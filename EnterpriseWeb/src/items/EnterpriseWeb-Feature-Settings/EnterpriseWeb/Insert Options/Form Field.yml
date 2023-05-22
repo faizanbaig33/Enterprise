@@ -1,0 +1,37 @@
+﻿---
+ID: "66edef71-9fac-412a-b17f-8c662672d1fb"
+Parent: "f2278a29-030e-45da-a7df-0626f4ae2460"
+Template: "d70d43e4-aef9-43bf-89e5-b49f22675f43"
+Path: /sitecore/system/Settings/Feature/EnterpriseWeb/Insert Options/Form Field
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230221T202441Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "fc08aba4-0952-4584-8cf9-c707483a022c"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230221T203625Z
+    - ID: "f0c111ff-f7dd-405f-8703-432cdc877f9b"
+      Hint: Rules
+      Value: |
+        <ruleset>
+          <rule
+            uid="{D50C50B0-A744-4A6D-9429-F7BFFDDCFFA6}">
+            <conditions>
+              <condition
+                id="{D0810F9D-734C-452D-BBB6-4730368D68F1}"
+                uid="C75FF8CCD1F84B93B8872566D0154CC3"
+                templateid="{C4442680-1100-4626-A469-ACC318E25CBF}" />
+            </conditions>
+          </rule>
+        </ruleset>

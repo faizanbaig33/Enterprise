@@ -1,0 +1,41 @@
+﻿---
+ID: "b9f8c372-1222-4933-979f-9094d10aab7b"
+Parent: "edb5e5ea-9020-4486-bf81-c8ceabdead1f"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/Datasources/Location
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Apps/32x32/Shop (1).png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {3A4DECA2-6F8A-4FA4-AD60-D8F0FD3A5CBA}
+    {04F2BB22-A363-4CB8-B776-AAD24E549D50}
+    {9A890CE9-B5F9-4940-8809-8D16285EC97F}
+    {F5B19F06-73A1-4EF8-9D30-5F0FE57F3A87}
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 700
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{8DAD3C04-2165-4D2C-93EA-74B3ACD32C73}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170625T183604Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "5326125c-469f-4027-b45e-d6f43bcffcce"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230502T170924Z

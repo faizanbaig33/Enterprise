@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="hero/herofeaturedproduct"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-12 relative bg-light-gray text-center pt-xs md:pt-l"
+      >
+        <div
+          class="font-bold"
+        >
+          <div
+            class="font-sans text-m text-dark-gray"
+          >
+            <h2>
+              Small Heading
+            </h2>
+          </div>
+          <div
+            class="items-top font-sans  text-sm-xxl md:text-xxl -mb-s"
+          >
+            <h1>
+              Large Heading
+            </h1>
+          </div>
+        </div>
+        <div
+          class="-mb-s ml:-mb-xl h-full"
+        >
+          <div
+            class="relative hidden md:block aspect-video max-w-[592px]   relative h-[310px] md:h-[592px] md:max-w-[592px] mx-auto"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+              />
+              <img
+                alt=""
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div
+            class="relative block w-full md:hidden relative h-[310px] md:h-[592px] md:max-w-[592px] mx-auto"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+              />
+              <img
+                alt=""
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: center;"
+              />
+              <noscript />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

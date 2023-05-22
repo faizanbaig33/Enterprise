@@ -1,0 +1,60 @@
+﻿---
+ID: "a9278813-cfb4-475e-b618-b447475adc18"
+Parent: "b02c25cf-2982-4e24-97a6-07962fd34692"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Products/Series
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/insert_option.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {F1A01A10-C0E2-4098-972A-64538B6BA376}
+    {967A586B-0A71-40C8-BFBF-4A24298B1156}
+    {B605E2A3-70E0-423B-8543-CF1E425F49D7}
+    {8C95BFB1-5870-4BFC-AD48-AB2B4ACB3811}
+    {03969995-A7AD-4454-8A72-A0152CEAF2AA}
+    {9C5D4262-7C1D-4D49-BC5A-8231414BBEC0}
+    {08800A03-89EC-457E-9CBA-16C93F42CAB0}
+    {38128854-C3E7-4EDE-887B-34C7C1791D6E}
+- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
+  Hint: __Read Only
+  Value: 
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 1600
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{C679EA70-9242-43B4-A3BB-B132724A5268}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210707T230223Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "00a41a9a-b385-466f-bf8e-b4567c8a35ac"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230426T181936Z

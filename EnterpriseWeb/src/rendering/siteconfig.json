@@ -1,0 +1,8 @@
+{
+  "sitecore": {
+    "sites": [
+      { "name": "AndersenWindows", "hostName": "", "theme": "aw", "targetHostName": "andersenwindows-dev.vercel.app" },
+      { "name": "RenewalbyAndersen", "hostName": "", "theme": "rba", "targetHostName": "renewalbyandersen-dev.vercel.app" }
+    ]
+  }
+}

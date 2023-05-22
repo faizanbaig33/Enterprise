@@ -1,0 +1,46 @@
+﻿---
+ID: "c2f0e03d-5043-49f4-9dc6-d709e89cc575"
+Parent: "396f8987-9ec8-4916-9b38-7d9f8499e3f6"
+Template: "396f8987-9ec8-4916-9b38-7d9f8499e3f6"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Elements/Media/Vimeo Video/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210707T230223Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "6b23d94b-595e-4758-a4db-1f3566c1ed07"
+      Hint: vimeoAutoPause
+      Value: 1
+    - ID: "74a9939f-3a01-4988-b793-312d6b0463df"
+      Hint: vimeoColor
+      Value: 00adef
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "4ee47cff-b678-490e-ad01-b929eaab6277"
+    - ID: "a51f30fa-1276-4b13-b989-2806930fc976"
+      Hint: vimeoPlaysInline
+      Value: 1
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "c5e1465b-cb5f-4ddd-adc2-ffee2233caa5"
+      Hint: vimeoKeyboard
+      Value: 1
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221110T205054Z
+    - ID: "dac12fec-484b-4b94-aa81-e43b2bddbcc4"
+      Hint: vimeoControls
+      Value: 1

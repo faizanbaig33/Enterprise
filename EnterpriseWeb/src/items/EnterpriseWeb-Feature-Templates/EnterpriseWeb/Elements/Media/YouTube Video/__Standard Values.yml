@@ -1,0 +1,43 @@
+﻿---
+ID: "d965b462-7e23-41f6-936e-0567b3cdde0d"
+Parent: "10ffc85c-56a6-4a99-953c-56bb3405c1e6"
+Template: "10ffc85c-56a6-4a99-953c-56bb3405c1e6"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Elements/Media/YouTube Video/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210707T230223Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd083e6-8a56-46ab-ba39-75d8ba5b84c4"
+      Hint: youTubeShowControls
+      Value: 1
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "6f564615-f431-4bb0-a8a3-00e8401b4574"
+      Hint: youTubeMute
+      Value: 1
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8f9823c1-cbf8-4568-8589-6c9f082feeba"
+    - ID: "8d5648bb-1e79-4fd9-a91a-e0c6c368306e"
+      Hint: youTubeClosedCaptions
+      Value: 1
+    - ID: "92cfc867-381a-491b-92d0-8acbda3cac9d"
+      Hint: youTubeAutoLoop
+      Value: 1
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230224T051405Z

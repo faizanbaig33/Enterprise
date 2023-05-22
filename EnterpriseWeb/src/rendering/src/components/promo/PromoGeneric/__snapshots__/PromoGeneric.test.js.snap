@@ -1,0 +1,310 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`leftImage renders correctly 1`] = `
+<section
+  data-component="general/promogeneric"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="order-last flex items-center pt-2 col-span-6 my-auto md:col-start-8 md:col-span-5 h-full max-w-[480px]"
+      >
+        <div
+          class=""
+        >
+          <div
+            class="text-sm-xxs lg:text-xxs text-dark-gray uppercase font-extralight mb-4"
+          >
+            <h3>
+              This is a subheadline
+            </h3>
+          </div>
+          <div
+            class="items-top font-sans  text-sm-m lg:text-m font-heavy mb-4"
+          >
+            <h2>
+              Generic Promo Headline Text
+            </h2>
+          </div>
+          <div
+            class="text-body text-dark-gray mb-4"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper, justo eget vehicula vestibulum, enim enim suscipit lectus, et sagittis nibh risus vel metus. Quisque eu ornare ante, et gravida mauris.
+              </div>
+            </div>
+          </div>
+          <div
+            class="mb-8 mb-s flex items-start md:flex-row md:items-center"
+          >
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray"
+              href="/"
+              role="link"
+              tabindex="0"
+              target="_blank"
+              title=""
+            >
+              Learn More
+              <span
+                class="ml-xxs"
+              />
+              <span
+                class="sr-only"
+              >
+                 (Opens in a new tab)
+              </span>
+            </a>
+          </div>
+          <div
+            class="items-bottom"
+          >
+            <div
+              class="body-copy !font-sans text-sm-xxs lg:text-xxs font-bold mb-2 uppercase"
+            >
+              <div>
+                BOTTOM HEADLINE
+              </div>
+            </div>
+            <div
+              class="body-copy text-body text-dark-gray mb-4"
+            >
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper, justo eget vehicula vestibulum, enim enim suscipit.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="order-first col-span-6 cols-start-1 md:col-start-1 md:col-span-7 h-full"
+      >
+        <div
+          class="relative hidden md:block  "
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27900%27%20height=%27600%27/%3e"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              alt="Unsplash Source"
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="relative w-full md:hidden aspect-picture"
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27900%27%20height=%27600%27/%3e"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              alt="Unsplash Source"
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="caption"
+        >
+          <div
+            class="text-theme-text ml:text-secondary mt-xxs italic text-left mb-s font-sans text-sm-xxs md:text-caption"
+          >
+            sample caption goes here.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;
+
+exports[`rightImage renders correctly 1`] = `
+<section
+  data-component="general/promogeneric"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="order-last md:order-first flex items-center pt-2 col-span-6 my-auto md:col-start-1 md:col-span-5 h-full max-w-[480px]"
+      >
+        <div
+          class=""
+        >
+          <div
+            class="text-sm-xxs lg:text-xxs text-dark-gray uppercase font-extralight mb-4"
+          >
+            <h3>
+              This is a subheadline
+            </h3>
+          </div>
+          <div
+            class="items-top font-sans  text-sm-m lg:text-m font-heavy mb-4"
+          >
+            <h2>
+              Generic Promo Headline Text
+            </h2>
+          </div>
+          <div
+            class="text-body text-dark-gray mb-4"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper, justo eget vehicula vestibulum, enim enim suscipit lectus, et sagittis nibh risus vel metus. Quisque eu ornare ante, et gravida mauris.
+              </div>
+            </div>
+          </div>
+          <div
+            class="mb-8 mb-s flex items-start md:flex-row md:items-center"
+          >
+            <a
+              class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray"
+              href="/"
+              rel="noopener noreferrer"
+              role="link"
+              tabindex="0"
+              target="_blank"
+              title=""
+            >
+              Learn More
+              <span
+                class="ml-xxs"
+              />
+              <span
+                class="sr-only"
+              >
+                 (Opens in a new tab)
+              </span>
+            </a>
+          </div>
+          <div
+            class="items-bottom"
+          >
+            <div
+              class="body-copy !font-sans text-sm-xxs lg:text-xxs font-bold mb-2 uppercase"
+            >
+              <div>
+                BOTTOM HEADLINE
+              </div>
+            </div>
+            <div
+              class="body-copy text-body text-dark-gray mb-4"
+            >
+              <div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper, justo eget vehicula vestibulum, enim enim suscipit.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="order-first md:order-last col-span-6 cols-start-1 md:col-start-6 md:col-span-7 h-full"
+      >
+        <div
+          class="relative hidden md:block  "
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27900%27%20height=%27600%27/%3e"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              alt="Unsplash Source"
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="relative w-full md:hidden aspect-picture"
+        >
+          <span
+            style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+            >
+              <img
+                alt=""
+                aria-hidden="true"
+                src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27900%27%20height=%27600%27/%3e"
+                style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+              />
+            </span>
+            <img
+              alt="Unsplash Source"
+              data-nimg="intrinsic"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="caption"
+        >
+          <div
+            class="text-theme-text ml:text-secondary mt-xxs italic text-left mb-s font-sans text-sm-xxs md:text-caption"
+          >
+            sample caption goes here.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

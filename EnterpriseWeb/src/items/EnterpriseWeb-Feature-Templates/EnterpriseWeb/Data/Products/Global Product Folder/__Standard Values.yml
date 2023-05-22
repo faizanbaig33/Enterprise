@@ -1,0 +1,47 @@
+﻿---
+ID: "697e4127-b011-4217-9c74-6051d9eec7d7"
+Parent: "f93f3c58-f011-4c02-a3d2-0e71af9a889d"
+Template: "f93f3c58-f011-4c02-a3d2-0e71af9a889d"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Products/Global Product Folder/__Standard Values
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Applications/32x32/folder_cubes.png
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {F357D0CA-DE81-4A52-A15B-E95A0EC3BE2E}
+    {A3B29799-E3C7-4AF7-A78B-14D6EE75B432}
+    {15665680-E4A6-45BA-98E8-4B46A33B7A2D}
+    {5FF30EFD-7AAC-4DEC-992D-267A77BCD240}
+    {3C2872AF-D337-4197-95D7-C33F55B15085}
+    {FAED3C0E-EAC6-40BD-B84E-2EB42D2397B2}
+    {7BB09D29-EA13-41B4-A161-F6AB842B0D2D}
+    {B41BB58B-0E3D-425A-AEB3-3FAA3DB80004}
+    {8A464ADC-B51E-408C-A96A-096E05FFA623}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230420T211245Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "60b2f0fc-7dde-4296-adfb-0edfbad4689e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230427T033111Z

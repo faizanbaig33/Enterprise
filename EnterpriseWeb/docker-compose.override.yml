@@ -1,0 +1,198 @@
+#
+# The docker-compose.yml in this solution is a stock Sitecore XP0 environment, without
+# any changes. This override represents all the additions/changes needed for this solution.
+# Note that some of the overrides point to 'empty' Dockerfiles. This is recommended, even if
+# you are not customizing an image, to enable retagging and later customization. See Sitecore
+# Containers documentation for details.
+#
+
+version: "2.4"
+
+services:
+
+  # A Windows-based nodejs base image
+  nodejs:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-nodejs:${VERSION:-latest}
+    build:
+      context: ./docker/build/nodejs
+      args:
+        PARENT_IMAGE: ${NODEJS_PARENT_IMAGE}
+        NODEJS_VERSION: ${NODEJS_VERSION}
+    scale: 0
+
+  # The solution build image is added here so it can be referenced as a build dependency
+  # for the images which use its output. Setting "scale: 0" means docker-compose will not
+  # include it in the running environment. See Dockerfile for more details.
+  solution:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-solution:${VERSION:-latest}
+    build:
+      context: ./.
+      args:
+        BUILD_CONFIGURATION: ${BUILD_CONFIGURATION}
+        BUILD_IMAGE: mcr.microsoft.com/dotnet/framework/sdk:4.8-windowsservercore-ltsc2019
+    scale: 0
+
+  rendering-aw:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-rendering-aw:${VERSION:-latest}
+    build:
+      context: ./docker/build/rendering
+      target: ${BUILD_CONFIGURATION}
+      args:
+        PARENT_IMAGE: ${REGISTRY}${COMPOSE_PROJECT_NAME}-nodejs:${VERSION:-latest}
+    command: "start:aw"
+    volumes:
+      - .\src\rendering:C:\app
+    environment:
+      SITECORE_API_HOST: "http://cm"
+      NEXTJS_DIST_DIR: ".next-container"
+      PUBLIC_URL: "https://${RENDERING_HOST_AW}"
+      JSS_EDITING_SECRET: ${JSS_EDITING_SECRET}
+      JSS_APP_THEME: "aw"
+      NEXT_PUBLIC_ENVIRONMENT: "Local"
+      ENTERPRISE_WEB_API_DOMAIN: "http://host.docker.internal:5118"
+    depends_on:
+      - cm
+      - nodejs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rendering-aw-secure.entrypoints=websecure"
+      - "traefik.http.routers.rendering-aw-secure.rule=Host(`${RENDERING_HOST_AW}`)"
+      - "traefik.http.routers.rendering-aw-secure.tls=true"
+
+  rendering-rba:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-rendering-rba:${VERSION:-latest}
+    build:
+      context: ./docker/build/rendering
+      target: ${BUILD_CONFIGURATION}
+      args:
+        PARENT_IMAGE: ${REGISTRY}${COMPOSE_PROJECT_NAME}-nodejs:${VERSION:-latest}
+    command: "start:rba"
+    volumes:
+      - .\src\rendering:C:\app
+    environment:
+      SITECORE_API_HOST: "http://cm"
+      NEXTJS_DIST_DIR: ".next-container"
+      PUBLIC_URL: "https://${RENDERING_HOST_RBA}"
+      JSS_EDITING_SECRET: ${JSS_EDITING_SECRET}
+      JSS_APP_THEME: "rba"
+      NEXT_PUBLIC_ENVIRONMENT: "Local"
+    depends_on:
+      - cm
+      - nodejs
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.rendering-rba-secure.entrypoints=websecure"
+      - "traefik.http.routers.rendering-rba-secure.rule=Host(`${RENDERING_HOST_RBA}`)"
+      - "traefik.http.routers.rendering-rba-secure.tls=true"
+
+  # Mount the Traefik configuration and certs.
+  traefik:
+    volumes:
+      - ./docker/traefik:C:/etc/traefik
+    depends_on:
+    - rendering-aw
+    - rendering-rba
+
+  # Mount our SQL data folder and use our custom image with the Headless Services (JSS)
+  # module data added. See Dockerfile for details.
+  mssql:
+    volumes:
+      - type: bind
+        source: ${LOCAL_DATA_PATH}\sql
+        target: c:\data
+
+  # Mount our SQL data folder and use our custom image with the Headless Services (JSS)
+  # module data added. See Dockerfile for details.
+  mssql-init:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-xm1-mssql-init:${VERSION:-latest}
+    build:
+      context: ./docker/build/mssql-init
+      args:
+        PARENT_IMAGE: ${SITECORE_DOCKER_REGISTRY}sitecore-xm1-mssql-init:${SITECORE_VERSION}
+        HEADLESS_SERVICES_IMAGE: ${HEADLESS_SERVICES_IMAGE}
+        SPE_IMAGE: ${SPE_IMAGE}
+
+  # Mount our Solr data folder and use our retagged Solr image.
+  # Some modules (like SXA) also require additions to the Solr image.
+  solr:
+    volumes:
+      - type: bind
+        source: ${LOCAL_DATA_PATH}\solr
+        target: c:\data
+
+  # Mount our Solr data folder and use our retagged Solr image.
+  # Some modules (like SXA) also require additions to the Solr image.
+  solr-init:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-xm1-solr-init:${VERSION:-latest}
+    build:
+      context: ./docker/build/solr-init
+      args:
+        PARENT_IMAGE: ${SITECORE_DOCKER_REGISTRY}sitecore-xm1-solr-init:${SITECORE_VERSION}
+        SXA_IMAGE: ${SXA_IMAGE}
+
+  # Use our retagged Identity Server image.
+  # Configure for a mounted license file instead of using SITECORE_LICENSE.
+  id:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-id6:${VERSION:-latest}
+    build:
+      context: ./docker/build/id
+      args:
+        PARENT_IMAGE: ${SITECORE_DOCKER_REGISTRY}sitecore-id6:${SITECORE_VERSION}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+
+  # Use our custom CM (XP0 Standalone) image with added modules and solution code.
+  # Folders are mounted below for code deployment and log output. See Dockerfile for details.
+  # Configure for a mounted license file instead of using SITECORE_LICENSE.
+  cm:
+    image: ${REGISTRY}${COMPOSE_PROJECT_NAME}-xm1-cm:${VERSION:-latest}
+    build:
+      context: ./docker/build/cm
+      args:
+        PARENT_IMAGE: ${SITECORE_DOCKER_REGISTRY}sitecore-xm1-cm:${SITECORE_VERSION}
+        SOLUTION_IMAGE: ${REGISTRY}${COMPOSE_PROJECT_NAME}-solution:${VERSION:-latest}
+        SPE_IMAGE: ${SPE_IMAGE}
+        SXA_IMAGE: ${SXA_IMAGE}
+        TOOLS_IMAGE: ${TOOLS_IMAGE}
+        MANAGEMENT_SERVICES_IMAGE: ${MANAGEMENT_SERVICES_IMAGE}
+        HEADLESS_SERVICES_IMAGE: ${HEADLESS_SERVICES_IMAGE}
+        EXPERIENCE_EDGE_CONNECTOR_IMAGE: ${EXPERIENCE_EDGE_CONNECTOR_IMAGE}
+    depends_on:
+      - solution
+    volumes:
+      - ${LOCAL_DEPLOY_PATH}\platform:C:\deploy
+      - ${LOCAL_DATA_PATH}\cm:C:\inetpub\wwwroot\App_Data\logs
+      - ${HOST_LICENSE_FOLDER}:c:\license
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+      JSS_EnterpriseWeb_DEPLOYMENT_SECRET: ${JSS_EnterpriseWeb_DEPLOYMENT_SECRET}
+      SITECORE_JSS_EDITING_SECRET: ${JSS_EDITING_SECRET}
+      ## Development Environment Optimizations
+      SITECORE_DEVELOPMENT_PATCHES: DevEnvOn,CustomErrorsOff,HttpErrorsDetailed,DebugOn,DiagnosticsOff,InitMessagesOff,RobotDetectionOff
+      Sitecore_AppSettings_exmEnabled:define: "no" # remove to turn on EXM
+      Sitecore_AppSettings_aspnet:RequestQueueLimitPerSession: "2147483647"
+      ## Experience Edge
+      Sitecore_ConnectionStrings_ExperienceEdge: url=https://one-sc-production.eu.auth0.com/oauth/token;client_id=${EXPERIENCE_EDGE_CLIENT_ID};client_secret=${EXPERIENCE_EDGE_CLIENT_SECRET};audience=${EXPERIENCE_EDGE_CLIENT_AUDIENCE};delivery_endpoint=https://eus-e1-aks-01-publishing.sitecorecloud.io/;cdn_uri=https://edge.sitecorecloud.io;media_prefix=${EXPERIENCE_EDGE_MEDIA_PREFIX}
+      Sitecore_ExperienceEdge_MaxExportEntitiesThreadCount: "20"
+      Sitecore_ExperienceEdge_MaxPublishThreadCount: "2"
+      Sitecore_ExperienceEdge_ExportEntitiesBufferSize: "500"
+      Sitecore_ExperienceEdge_ExportPublishEventsBatchSize: "150"
+      Sitecore_ExperienceEdge_LayoutService_ConfigName: "default"
+      Sitecore_ExperienceEdge_DeliveryEndpoint_TransientFailureRetryCount: "3"
+      Sitecore_ExperienceEdge_DeliveryEndpoint_TransientFailureSleepTime: "00:00:10"
+      Sitecore_ExperienceEdge_DeliveryEndpoint_CircuitBreakerAttemptsBeforeBreak: "12"
+      Sitecore_ExperienceEdge_DeliveryEndpoint_CircuitBreakerDurationOfBreak: "00:15:00"
+      Sitecore_ExperienceEdge_MaxMetadataCacheSize: "100000"
+      Sitecore_ExperienceEdge_CheckDeltaStatusBatchSize: "250"
+      Sitecore_ExperienceEdge_AckCleanupTimeoutSeconds: "25"
+      Sitecore_ExperienceEdge_AckWaitTimeoutSeconds: "600"
+      Sitecore_ExperienceEdge_MaxDependencyResolutionThreadCount: "5"
+      Sitecore_ExperienceEdge_ResolveDependenciesBatchSize: "100"
+      Sitecore_ExperienceEdge_EnableItemLanguageFallback: "false"
+      Sitecore_ExperienceEdge_EnableFieldLanguageFallback: "false"
+    entrypoint: powershell.exe -Command "& C:\tools\entrypoints\iis\Development.ps1"
+    labels:
+      - "traefik.http.routers.cm-secure.rule=HostRegexp(`${CM_HOST}`, `preview.local.{domain:[a-z0-9-.]+}`)"
+

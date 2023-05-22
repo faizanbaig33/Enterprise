@@ -1,0 +1,32 @@
+﻿---
+ID: "a24d1465-49bf-49fd-9bd3-2b1390fa8cd3"
+Parent: "0b963a16-0c78-4ac3-9f8a-7e3becf05878"
+Template: "0b963a16-0c78-4ac3-9f8a-7e3becf05878"
+Path: /sitecore/templates/Project/AndersenCorporation/AndersenWindows/Common/JSS Settings/__Standard Values
+SharedFields:
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: |
+    ar|sitecore\AW Author|pe|+item:read|!*|pd|!*|ar|sitecore\AW Admin|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221129T230341Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "218f5dd0-002a-4a59-bccb-4fa843eeac51"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230206T194659Z

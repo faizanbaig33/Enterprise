@@ -1,0 +1,46 @@
+// Global
+import { Story, Meta } from '@storybook/react';
+
+// Local
+import ImageWrapper, { ImageWrapperProps } from './ImageWrapper';
+import {
+  heroData,
+  videoData,
+  pictureData,
+  snapshotData,
+  squareData,
+  portraitData,
+} from './ImageWrapper.mock-data';
+
+export default {
+  title: 'Helpers/Media/Image Wrapper',
+  component: ImageWrapper,
+} as Meta;
+
+const Template: Story<ImageWrapperProps> = (props) => {
+  return (
+    <div className="grid grid-cols-2 md:grid-cols-12">
+      <div className="min-h-10 col-span-12 md:col-span-6 md:col-start-3">
+        <ImageWrapper height={800} {...props} />
+      </div>
+    </div>
+  );
+};
+
+export const Hero = Template.bind({});
+Hero.args = heroData;
+
+export const Video = Template.bind({});
+Video.args = videoData;
+
+export const Picture = Template.bind({});
+Picture.args = pictureData;
+
+export const Snapshot = Template.bind({});
+Snapshot.args = snapshotData;
+
+export const Square = Template.bind({});
+Square.args = squareData;
+
+export const Portrait = Template.bind({});
+Portrait.args = portraitData;

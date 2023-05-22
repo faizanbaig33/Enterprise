@@ -1,0 +1,40 @@
+﻿---
+ID: "1ac1f260-6482-4283-92f5-33e6b1e3e5c7"
+Parent: "5c3df826-d08a-4685-b455-68b6b4dd8691"
+Template: "5c3df826-d08a-4685-b455-68b6b4dd8691"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Elements/Search/Did You Mean/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1ae45511-4b77-4522-8f8f-dc6d5e893bb4"
+      Hint: autoCorrectionText
+      Value: Query was automatically corrected to
+    - ID: "1b57c3d6-c3bb-4f32-bd8b-bcc9dfe2962c"
+      Hint: noResultsText
+      Value: No results for
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230208T124902Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "74ed42db-a97c-4f0a-b37e-0eb056935c05"
+      Hint: didYouMeanText
+      Value: "Did you mean:"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f49c6311-f147-479e-bf55-8f37c9e50235"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230427T114428Z

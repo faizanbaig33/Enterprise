@@ -1,0 +1,2 @@
+554147  Subitem is published to the Experience Edge endpoint if the root item has non-final workflow state
+557334  The version of the data-source item in a non-final workflow state is returned after performing the get item layout query against the Experience Edge Delivery endpoint

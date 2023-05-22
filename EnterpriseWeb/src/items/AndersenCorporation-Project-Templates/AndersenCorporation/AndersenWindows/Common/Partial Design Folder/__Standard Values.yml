@@ -1,0 +1,37 @@
+﻿---
+ID: "cdec34a1-9d08-4b3f-80c6-03bdf2150bd4"
+Parent: "77a31f8c-0d1a-4533-b9b4-c4b3ee9a6bfa"
+Template: "77a31f8c-0d1a-4533-b9b4-c4b3ee9a6bfa"
+Path: /sitecore/templates/Project/AndersenCorporation/AndersenWindows/Common/Partial Design Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {77A31F8C-0D1A-4533-B9B4-C4B3EE9A6BFA}
+    {FAF6B07E-455E-4B0B-AF92-E66FB99B180E}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221018T193700Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d5a3c277-d385-4746-a2fa-b67d6c64dc24"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221129T233559Z

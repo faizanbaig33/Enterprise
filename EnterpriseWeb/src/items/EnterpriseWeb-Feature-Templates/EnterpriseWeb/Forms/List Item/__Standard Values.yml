@@ -1,0 +1,34 @@
+﻿---
+ID: "493833f3-1c0a-4246-a70d-11a3dfe13dc9"
+Parent: "741b9a7f-3a37-46e0-9980-ea7e53c4e840"
+Template: "741b9a7f-3a37-46e0-9980-ea7e53c4e840"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Forms/List Item/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230221T211019Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6960392b-17d1-4dd8-9154-9a9283768807"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d04866e9-7ea4-4ad8-9c6e-1b751177e26b"
+      Hint: value
+      Value: $name
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230221T211024Z

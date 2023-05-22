@@ -1,0 +1,392 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{929AB6F4-DBBC-4DB0-8B36-E816D12A6FA2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Platform</RootNamespace>
+    <AssemblyName>Platform</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44366</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="App_Config\ConnectionStrings.config.xdt" />
+    <Content Include="App_Config\Include\Foundation\EnterpriseWeb.Foundation.Core.config" />
+    <Content Include="sitecore\admin\entweb\control\AdminTool.ascx" />
+    <Content Include="sitecore\admin\entweb\css\bootstrap.min.css" />
+    <Content Include="sitecore\admin\entweb\default.aspx" />
+    <Content Include="sitecore\admin\entweb\img\document_gear.png" />
+    <Content Include="sitecore\admin\entweb\js\bootstrap.bundle.min.js" />
+    <Content Include="sitecore\admin\entweb\master\Default.master" />
+    <Content Include="sitecore\admin\entweb\RequestHeaders.aspx" />
+    <Content Include="sitecore\admin\entweb\ServerVariables.aspx" />
+    <Content Include="sitecore\shell\Applications\Content Manager\Dialogs\EW.MutliRootTreeListExEditor\MultiRootTreeListExEditor.js" />
+    <Content Include="sitecore\shell\Applications\Content Manager\Dialogs\EW.MutliRootTreeListExEditor\MultiRootTreeListExEditor.xml" />
+    <Content Include="sitecore\shell\Applications\Content Manager\Dialogs\EW.MutliRootTreeListExEditor\MultiRootTreeList.js" />
+    <Content Include="sitecore\shell\Applications\Dialogs\EW.ManageChildDataSources\ManageChildDataSources.css" />
+    <Content Include="sitecore\shell\Applications\Dialogs\EW.ManageChildDataSources\ManageChildDataSources.js" />
+    <Content Include="sitecore\shell\Applications\Dialogs\EW.ManageChildDataSources\ManageChildDataSources.xml" />
+    <Content Include="sitecore\shell\Applications\Dialogs\EW.SelectMaster\SelectMaster.xml" />
+    <Content Include="sitecore\shell\Applications\Dialogs\EW.SelectInsertOption\SelectInsertOptions.xml" />
+    <Content Include="sitecore\shell\Controls\Rich Text Editor\Character Count\CharacterCount.js" />
+    <Content Include="sitecore\shell\Controls\Rich Text Editor\Character Count\ExperienceEditorCharacterCount.js" />
+    <Content Include="sitecore\shell\Hotfixes\SC Hotfix 548027-1 ExpEdge 20.0.0 rev. 00139.txt" />
+    <Content Include="sitecore\shell\Hotfixes\SC Hotfix 549780-1 ExpEdge 20.0.0 rev. 00139.txt" />
+    <Content Include="sitecore\shell\Hotfixes\SC Hotfix 561624-1 ExpEdge 20.0.0 rev. 00139.txt" />
+    <Content Include="sitecore\shell\Hotfixes\SC Hotfix 565190-1 ExpEdge 20.0.0 rev. 00139.txt" />
+    <Content Include="sitecore\shell\Override\Applications\Content Manager\Dialogs\LayoutDetails\LayoutDetails.xml" />
+    <Content Include="App_Config\Include\Sitecore.Owin.Authentication.ClientCredentialsMapping.config" />
+    <Content Include="sitecore\shell\Override\Applications\Dialogs\SelectRenderingDatasource\SelectRenderingDatasource.xml" />
+    <Content Include="App_Config\Include\Project\RTECharacterCount.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\DevOps.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Foundation\Core\Commands\AddMaster.cs" />
+    <Compile Include="Foundation\Core\Commands\InsertElement.cs" />
+    <Compile Include="Foundation\Core\Commands\JssJsonView.cs" />
+    <Compile Include="Foundation\Core\Commands\ManageChildDataSources.cs" />
+    <Compile Include="Foundation\Core\Constants\ItemIds.cs" />
+    <Compile Include="Foundation\Core\Constants\TemplateIds.cs" />
+    <Compile Include="Foundation\Core\Dialogs\LayoutDetails\LayoutDetailsForm.cs" />
+    <Compile Include="Foundation\Core\Dialogs\ManageChildDataSources\ManageChildDataSourcesForm.cs" />
+    <Compile Include="Foundation\Core\Dialogs\ManageChildDataSources\ManageChildDataSourcesOptions.cs" />
+    <Compile Include="Foundation\Core\Commands\InsertChildDataSource.cs" />
+    <Compile Include="Foundation\Core\Dialogs\MultiRootTreeListExEditor\MultiRootTreeListExEditorForm.cs" />
+    <Compile Include="Foundation\Core\Dialogs\SelectInsertOption\SelectInsertOptionForm.cs" />
+    <Compile Include="Foundation\Core\Dialogs\SelectInsertOption\SelectInsertOptionOptions.cs" />
+    <Compile Include="Foundation\Core\Dialogs\SelectMaster\SelectMasterForm.cs" />
+    <Compile Include="Foundation\Core\Dialogs\SelectMaster\SelectMasterOptions.cs" />
+    <Compile Include="Foundation\Core\Dialogs\SelectRenderingDatasource\SelectRenderingDatasourceForm.cs" />
+    <Compile Include="Foundation\Core\Events\ItemEvents.cs" />
+    <Compile Include="Foundation\Core\Extensions\ArgsExtensions.cs" />
+    <Compile Include="Foundation\Core\Fields\FilterableDroptree.cs" />
+    <Compile Include="Foundation\Core\ItemAsResources\AggregatedItemLocations.cs" />
+    <Compile Include="Foundation\Core\ItemAsResources\AggregatedItemLocationsExtensions.cs" />
+    <Compile Include="Foundation\Core\ItemAsResources\DataProviderExtensions.cs" />
+    <Compile Include="Foundation\Core\ItemAsResources\DataSourceExtensions.cs" />
+    <Compile Include="Foundation\Core\Extensions\ItemExtensions.cs" />
+    <Compile Include="Foundation\Core\Fields\MultiRootTreeList.cs" />
+    <Compile Include="Foundation\Core\Fields\MutliRootTreeListEx.cs" />
+    <Compile Include="Foundation\Core\ItemAsResources\ItemLocation.cs" />
+    <Compile Include="Foundation\Core\ItemAsResources\ReadOnlyDataProviderExtensions.cs" />
+    <Compile Include="Foundation\Core\ItemAsResources\ResourceItemLocation.cs" />
+    <Compile Include="Foundation\Core\ItemAsResources\SqlItemLocation.cs" />
+    <Compile Include="Foundation\Core\LayoutService\ItemRendering\ContentsResolvers\RenderingContentsResolverBase.cs" />
+    <Compile Include="Foundation\Core\LayoutService\ItemRendering\ContentsResolvers\RenderingContentsWithChildrenResolver.cs" />
+    <Compile Include="Foundation\Core\LayoutService\Serialization\FieldSerializers\ExtendedInternalLinkFieldSerializer.cs" />
+    <Compile Include="Foundation\Core\LayoutService\Serialization\FieldSerializers\ExtendedMultilistFieldSerializer.cs" />
+    <Compile Include="Foundation\Core\LayoutService\Serialization\ItemSerializers\ExtendedItemSerializer.cs" />
+    <Compile Include="Foundation\Core\Pipelines\ExpandInitialFieldValue\NameKebabToken.cs" />
+    <Compile Include="Foundation\Core\Pipelines\GetContentEditorWarnings\IsItemAsResource.cs" />
+    <Compile Include="Foundation\Core\Pipelines\GetFieldSerializer\GetInternalLinkFieldSerializer.cs" />
+    <Compile Include="Foundation\Core\Pipelines\GetFieldSerializer\GetMultilistFieldSerializer.cs" />
+    <Compile Include="Foundation\Core\Pipelines\GetLayoutServiceContext\GetLayoutContextSettings.cs" />
+    <Compile Include="Foundation\Core\Pipelines\PreprocessRequest\LoadBalancingSchemeFix.cs" />
+    <Compile Include="Foundation\Core\Pipelines\RenderContentEditor\InjectScripts.cs" />
+    <Compile Include="Foundation\Core\Pipelines\RenderJsonRendering\RenderPlaceholdersBase.cs" />
+    <Compile Include="Foundation\Core\Pipelines\RenderJsonRendering\RenderFieldPlaceholders.cs" />
+    <Compile Include="Foundation\Core\Pipelines\RenderJsonRendering\RenderChildPlaceholders.cs" />
+    <Compile Include="Foundation\Core\Processors\UiGetMasters\GetItemMasters.cs" />
+    <Compile Include="Foundation\Core\Services\QueryTokenSourceFilterBuilderFactory.cs" />
+    <Compile Include="Foundation\Core\Services\SitecoreExtensionsConfigurator.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Config\Include\Project\EnterpriseWeb.config" />
+    <Content Include="App_Config\Include\Project\EnterpriseWeb.LoadBalancing.config" />
+    <Content Include="App_Config\Include\Project\EnterpriseWeb.Media.config" />
+    <None Include="Platform.wpp.targets" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Feature\" />
+    <Folder Include="Project\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.14.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.DependencyInjection.3.1.14\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.14.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.14\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RazorGenerator.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RazorGenerator.Mvc.2.4.9\lib\net40\RazorGenerator.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Buckets, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.Buckets.10.2.0\lib\net48\Sitecore.Buckets.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CH.Delivery.EntitySchema, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SC-Hotfix-565190-1.1.0.0\lib\Sitecore.CH.Delivery.EntitySchema.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.CH.Delivery.SC.EntitySchema, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SC-Hotfix-565190-1.1.0.0\lib\Sitecore.CH.Delivery.SC.EntitySchema.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Client, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.Client.10.2.0\lib\net48\Sitecore.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Data.ResourceItems.ProtobufNet, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.Data.ResourceItems.ProtobufNet.10.2.0\lib\netstandard2.0\Sitecore.Data.ResourceItems.ProtobufNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEdge.Connector.Abstraction, Version=20.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SC-Hotfix-565190-1.1.0.0\lib\Sitecore.ExperienceEdge.Connector.Abstraction.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEdge.Connector.ContentHubDelivery, Version=20.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SC-Hotfix-565190-1.1.0.0\lib\Sitecore.ExperienceEdge.Connector.ContentHubDelivery.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEdge.Connector.EntityGenerator, Version=20.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\SC-Hotfix-565190-1.1.0.0\lib\Sitecore.ExperienceEdge.Connector.EntityGenerator.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ExperienceEditor, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.ExperienceEditor.10.2.0\lib\net48\Sitecore.ExperienceEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.JavaScriptServices.Configuration, Version=20.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.JavaScriptServices.Configuration.20.0.1\lib\net48\Sitecore.JavaScriptServices.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.JavaScriptServices.GraphQL, Version=20.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.JavaScriptServices.GraphQL.20.0.1\lib\net48\Sitecore.JavaScriptServices.GraphQL.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.JavaScriptServices.ViewEngine, Version=20.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.JavaScriptServices.ViewEngine.20.0.1\lib\net48\Sitecore.JavaScriptServices.ViewEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.Kernel.10.2.0\lib\net48\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.LayoutService, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.LayoutService.8.1.0\lib\net48\Sitecore.LayoutService.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.LayoutService.Mvc, Version=8.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.LayoutService.Mvc.8.1.0\lib\net48\Sitecore.LayoutService.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sitecore.Mvc, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.Mvc.10.2.0\lib\net48\Sitecore.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XA.Foundation.Abstractions, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.XA.Foundation.Abstractions.10.2.0\lib\net48\Sitecore.XA.Foundation.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XA.Foundation.LocalDatasources, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.XA.Foundation.LocalDatasources.10.2.0\lib\net48\Sitecore.XA.Foundation.LocalDatasources.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XA.Foundation.Multisite, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.XA.Foundation.Multisite.10.2.0\lib\net48\Sitecore.XA.Foundation.Multisite.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XA.Foundation.SitecoreExtensions, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.XA.Foundation.SitecoreExtensions.10.2.0\lib\net48\Sitecore.XA.Foundation.SitecoreExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XA.Foundation.TokenResolution, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.XA.Foundation.TokenResolution.10.2.0\lib\net48\Sitecore.XA.Foundation.TokenResolution.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.XA.JSS.Foundation.Presentation, Version=9.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Sitecore.XA.JSS.Foundation.Presentation.10.2.0\lib\net48\Sitecore.XA.JSS.Foundation.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="sysglobl">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\sysglobl.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
+    <Reference Include="System.AppContext" />
+    <Reference Include="System.Configuration">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Console" />
+    <Reference Include="System.Data">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Design">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Diagnostics.Tracing">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Diagnostics.Tracing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.DirectoryServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.IO.Compression">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.IO.Compression.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.ZipFile" />
+    <Reference Include="System.IO.FileSystem" />
+    <Reference Include="System.IO.FileSystem.Primitives" />
+    <Reference Include="System.Linq" />
+    <Reference Include="System.Linq.Expressions" />
+    <Reference Include="System.Net">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.6\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Net.Http.WebRequest.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets" />
+    <Reference Include="System.Reflection" />
+    <Reference Include="System.Runtime" />
+    <Reference Include="System.Runtime.Caching">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Runtime.Caching.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Extensions" />
+    <Reference Include="System.Runtime.InteropServices" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Security">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms" />
+    <Reference Include="System.Security.Cryptography.Encoding" />
+    <Reference Include="System.Security.Cryptography.Primitives" />
+    <Reference Include="System.Security.Cryptography.X509Certificates" />
+    <Reference Include="System.ServiceModel">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.ServiceModel.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.ServiceModel.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.RegularExpressions" />
+    <Reference Include="System.Threading.Thread" />
+    <Reference Include="System.Web">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Web.ApplicationServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Cors.5.2.6\lib\net45\System.Web.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.6\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Cors.5.2.6\lib\net45\System.Web.Http.Cors.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.Xml.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.ReaderWriter" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4701</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44366/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\..\packages\Sitecore.Assemblies.Platform.10.2.0\build\Sitecore.Assemblies.Platform.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Sitecore.Assemblies.Platform.10.2.0\build\Sitecore.Assemblies.Platform.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Sitecore.Assemblies.SitecoreHeadlessServicesServer.20.0.1\build\Sitecore.Assemblies.SitecoreHeadlessServicesServer.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Sitecore.Assemblies.SitecoreHeadlessServicesServer.20.0.1\build\Sitecore.Assemblies.SitecoreHeadlessServicesServer.targets'))" />
+    <Error Condition="!Exists('..\..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets'))" />
+    <Error Condition="!Exists('..\..\packages\Sitecore.Assemblies.SitecoreExperienceAccelerator.10.2.0\build\Sitecore.Assemblies.SitecoreExperienceAccelerator.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Sitecore.Assemblies.SitecoreExperienceAccelerator.10.2.0\build\Sitecore.Assemblies.SitecoreExperienceAccelerator.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Sitecore.Assemblies.Platform.10.2.0\build\Sitecore.Assemblies.Platform.targets" Condition="Exists('..\..\packages\Sitecore.Assemblies.Platform.10.2.0\build\Sitecore.Assemblies.Platform.targets')" />
+  <Import Project="..\..\packages\Sitecore.Assemblies.SitecoreHeadlessServicesServer.20.0.1\build\Sitecore.Assemblies.SitecoreHeadlessServicesServer.targets" Condition="Exists('..\..\packages\Sitecore.Assemblies.SitecoreHeadlessServicesServer.20.0.1\build\Sitecore.Assemblies.SitecoreHeadlessServicesServer.targets')" />
+  <Import Project="..\..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets" Condition="Exists('..\..\packages\RazorGenerator.MsBuild.2.5.0\build\RazorGenerator.MsBuild.targets')" />
+  <Import Project="..\..\packages\Sitecore.Assemblies.SitecoreExperienceAccelerator.10.2.0\build\Sitecore.Assemblies.SitecoreExperienceAccelerator.targets" Condition="Exists('..\..\packages\Sitecore.Assemblies.SitecoreExperienceAccelerator.10.2.0\build\Sitecore.Assemblies.SitecoreExperienceAccelerator.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,81 @@
+steps:
+- task: PowerShell@2
+  displayName: 'Combine Modules and Create Resource Package'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Don't create new manigest file because we already checked one in.
+      # dotnet new tool-manifest
+
+      # dotnet nuget add source -n Sitecore https://sitecore.myget.org/F/sc-packages/api/v3/index.json
+
+      # Restore tools (e.g. Sitecore.CLI) from version defined in manifest.
+      dotnet tool restore
+
+      #Create resource package of MASTER and CORE database
+      dotnet sitecore itemres create -o "$(Artifacts.OutputDirectory.Resource_Full)"
+
+      #Move CORE package into proper folder structure
+      mkdir "$(Artifacts.OutputDirectory.ResourcePath)\core"
+      Move-Item -Path "$(Artifacts.OutputDirectory.ResourcePath)\items.core.entweb.dat" -Destination "$(Artifacts.OutputDirectory.ResourcePath)\core\items.core.entweb.dat"
+
+      #Move MASTER package into proper folder structure
+      mkdir "$(Artifacts.OutputDirectory.ResourcePath)\master"
+      Move-Item -Path "$(Artifacts.OutputDirectory.ResourcePath)\items.master.entweb.dat" -Destination "$(Artifacts.OutputDirectory.ResourcePath)\master\items.master.entweb.dat"
+    workingDirectory: $(Build.SourcesDirectory)
+
+- powershell: |
+   Write-Host "Printing Web Artifact Directory Contents"
+   Get-ChildItem -path $(Artifacts_OutputDirectory) -recurse
+  displayName: 'Check Built Web Artifact Directories'
+
+- task: Docker@2
+  displayName: 'Perform ACR Login'
+  inputs:
+    containerRegistry: '$(ACR_Registry)'
+    command: login
+
+- task: DockerCompose@0
+  displayName: 'Run a Docker Compose command'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: '$(ACR_Registry)'
+    dockerComposeFile: 'docker-compose-build.yaml'
+    dockerComposeCommand: build
+
+- powershell: |
+   docker images
+   docker tag $(REGISTRY)$(PROJECT_NAME)-xm-cm:$(PREPARED_VERSION) $(REGISTRY)$(PROJECT_NAME)-xm-cm:$(Version.Full)
+   Set-Content -Path $(Build.ArtifactStagingDirectory)\build.txt -Value $(Version.Full)
+  displayName: 'Check and Tag Images'
+
+- task: Docker@2
+  displayName: 'Perform Push For Built CM Image To ACR'
+  inputs:
+    containerRegistry: '$(ACR_Registry)'
+    repository: '$(PROJECT_NAME)-xm-cm'
+    command: push
+    tags: |
+     $(Version.Full)
+     $(PREPARED_VERSION)
+
+- task: CopyFiles@2
+  displayName: 'Copy sitecore.json to artifacts'
+  inputs:
+    contents: 'sitecore.json'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+- task: CopyFiles@2
+  displayName: 'Copy Roles.module.json to artifacts'
+  inputs:
+    contents: 'src\Roles.module.json'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+- task: CopyFiles@2
+  displayName: 'Copy serialized roles to artifacts'
+  inputs:
+    contents: 'src/items/_roles/**'
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifacts: drop'

@@ -1,0 +1,56 @@
+{
+  "namespace": "Feature.EnterpriseWeb",
+  "references": ["Foundation.EnterpriseWeb"],
+  "items": {
+    "includes": [
+      {
+        "name": "EnterpriseWeb-Feature-Templates",
+        "path": "/sitecore/templates/Feature/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Feature-Branches",
+        "path": "/sitecore/templates/Branches/Feature/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Feature-Renderings",
+        "path": "/sitecore/layout/renderings/Feature/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Feature-PlaceholderSettings",
+        "path": "/sitecore/layout/placeholder settings/Feature/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Feature-Settings",
+        "path": "/sitecore/system/Settings/Feature/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "name": "EnterpriseWeb-Feature-Media",
+        "path": "/sitecore/media library/Feature/EnterpriseWeb",
+        "database": "master",
+        "scope": "itemAndDescendants"
+      },
+      {
+        "database": "master",
+        "name": "EnterpriseWeb-Feature-Layouts",
+        "path": "/sitecore/layout/Layouts/Feature/EnterpriseWeb",
+        "scope": "itemAndDescendants"
+      }
+    ]
+  },
+  "leprechaun": {
+    "configuration": {
+      "@extends": "EnterpriseWeb.Base",
+      "@name": "Feature.EnterpriseWeb"
+    }
+  }
+}

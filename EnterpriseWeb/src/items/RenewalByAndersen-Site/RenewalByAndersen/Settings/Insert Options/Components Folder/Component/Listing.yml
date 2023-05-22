@@ -1,0 +1,26 @@
+﻿---
+ID: "ba98a589-05b2-4d4a-8e77-357ba3eb6f13"
+Parent: "0f6e9429-56fa-46a1-8efa-c1723d554efb"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Insert Options/Components Folder/Component/Listing
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T195501Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cf1c311b-210e-4dac-8561-ac5baf774d6d"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{0D366B95-832A-41B2-A3BB-53398AE69F52}|{C016EBFF-6B7E-4F31-9B1F-5274D056B64A}|{4BCBDB80-AC6F-4267-83E8-1E2775E1BEDB}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230403T181427Z

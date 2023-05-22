@@ -1,0 +1,29 @@
+﻿---
+ID: "56dfb932-80a7-4ee9-a2b3-bdea938e2d92"
+Parent: "249cf66e-9232-43c8-9570-d0f6bf7d1092"
+Template: "ccfa4e05-7a6b-47db-9bf3-7439ef68f536"
+Path: /sitecore/templates/Branches/Project/AndersenCorporation/AndersenWindows/Article Page/$name/Data/ArticleHero
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T075859Z
+    - ID: "67964309-f6a9-4609-a06b-0b39b4f8886b"
+      Hint: headlineText
+      Value: Hero Headline
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "765afc9e-444f-467f-b5c9-59e514bf502e"
+    - ID: "8d43ba35-1639-4365-afa5-f4a4ef8d67c9"
+      Hint: stylingVariation
+      Value: "{88C21446-0EB1-4E79-8C8D-740083C9E6E5}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T080013Z

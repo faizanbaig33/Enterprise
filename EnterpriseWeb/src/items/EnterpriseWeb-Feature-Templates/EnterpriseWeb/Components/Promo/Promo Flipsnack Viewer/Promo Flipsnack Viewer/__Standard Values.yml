@@ -1,0 +1,44 @@
+﻿---
+ID: "d331805e-8b9c-400d-a3ea-c88b2eb281b3"
+Parent: "f38d50c7-c768-4fad-a7dc-afcf92095eb8"
+Template: "f38d50c7-c768-4fad-a7dc-afcf92095eb8"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Promo/Promo Flipsnack Viewer/Promo Flipsnack Viewer/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{239EFE5F-15BF-4BA6-AA9D-654DBD3AE056}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230308T205614Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "627c1fb1-8d8e-4017-acf4-d780483cf7aa"
+      Hint: flipsnackPlacement
+      Value: "{0A58D643-E0C1-4A6E-A9F6-03D731A55121}"
+    - ID: "8261cf54-91c1-4843-8fe8-741566e36bdf"
+      Hint: flipsnackBaseSrc
+      Value: 
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c341f920-45d6-4823-a137-a1027efa3754"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230316T181823Z
+    - ID: "ebc0f4f5-3020-4870-960b-524e0d172158"
+      Hint: headlineLevel
+      Value: "{0F556F3A-BBAD-4AA5-952D-B79003B39CD6}"

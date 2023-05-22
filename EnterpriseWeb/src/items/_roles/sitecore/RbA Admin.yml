@@ -1,0 +1,6 @@
+﻿---
+Role: |
+  sitecore\RbA Admin
+MemberOf:
+  Role: |
+    sitecore\RbA Author

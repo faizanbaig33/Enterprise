@@ -1,0 +1,26 @@
+﻿---
+ID: "bfe7ec5f-8702-4795-b412-63d3e5cf851e"
+Parent: "ee4e029f-ea2a-4b71-b448-76244cb90885"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Settings/Insert Options/Components Folder/Component/Listing
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T195501Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "646d2830-ed67-4ec0-b716-e1481b2939b8"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{0D366B95-832A-41B2-A3BB-53398AE69F52}|{C016EBFF-6B7E-4F31-9B1F-5274D056B64A}|{4BCBDB80-AC6F-4267-83E8-1E2775E1BEDB}|{483E1ED9-3223-420F-AC7D-8FAE91A0621F}|{DD22FA88-BB95-4745-B4AE-F49AFF43A24E}|{41A6ED45-B030-4F2D-9453-172F0FF039A1}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\dboeser
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230502T153751Z

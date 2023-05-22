@@ -1,0 +1,40 @@
+﻿---
+ID: "c73a2174-232a-4dd4-bc19-2eca7e7f9c83"
+Parent: "4fd88841-d725-4815-8b03-6ea12c956c18"
+Template: "4fd88841-d725-4815-8b03-6ea12c956c18"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Forms/Fields/Short Text/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230216T192449Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "53c23475-cd3f-4b11-bc8d-f63f24758462"
+      Hint: maxLength
+      Value: 
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "7d52e2f5-4b8d-4bfe-a20b-b8d91cc4282b"
+      Hint: minLength
+      Value: 
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b5c77d90-904d-4870-8c0d-982a3593df8d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d75d14d3-1a4e-47f1-a2d4-496cc1d09c0c"
+      Hint: label
+      Value: $name
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230301T193750Z

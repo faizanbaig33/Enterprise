@@ -1,0 +1,37 @@
+﻿---
+ID: "9ffaf2c2-c697-482e-ac34-22edb4bf0184"
+Parent: "4c7a7cfa-0c24-4306-92e2-ddc9753f105f"
+Template: "4c7a7cfa-0c24-4306-92e2-ddc9753f105f"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Photos/Photos Folder/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {4C7A7CFA-0C24-4306-92E2-DDC9753F105F}
+    {2AC3A258-2F0A-4081-BB8E-F00E281D4311}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230414T050814Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "59597b0f-f74c-4763-93fe-a1e4f2991166"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230414T052845Z

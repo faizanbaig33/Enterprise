@@ -1,0 +1,41 @@
+﻿---
+ID: "5215ea0d-bd24-44fe-8268-3854b8afc4b2"
+Parent: "871beeae-f25c-4ba3-a200-55bc19821e5d"
+Template: "814c1dbb-b118-4511-ba2b-7288ed3d490b"
+Path: /sitecore/system/Modules/Layout Service/Rendering Contents Resolvers/EnterpriseWeb/Datasource Item With Children Depth 5
+SharedFields:
+- ID: "9edd2fcc-04ae-4230-84b4-c46c963f2284"
+  Hint: Rendering Contents Resolver Parameters
+  Value: depth=5
+- ID: "de218ede-a9ad-4b04-86c5-9ff593ccf39d"
+  Hint: Type
+  Value: Platform.Foundation.Core.LayoutService.ItemRendering.ContentsResolvers.RenderingContentsWithChildrenResolver, Platform
+- ID: "fb43a64d-060f-4fa9-b1c3-1511442175e1"
+  Hint: IncludeServerUrlInMediaUrls
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221031T183626Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "f837e7bf-0936-4ee6-ace1-62151d4b77ce"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\dboeser
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230320T152119Z

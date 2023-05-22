@@ -1,0 +1,26 @@
+﻿---
+ID: "5ff8029f-8b4e-4889-a6a4-56cb8c69375d"
+Parent: "131e3cf3-2302-4ce3-8218-4b7282218b4f"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Insert Options/Elements Folder/Element/Tabs
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230106T171340Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "46acaca2-2bef-4e89-a8af-53deff91a287"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{216731C2-FA02-4F53-B8DA-68E2DA2E06FB}|{C98F8740-410B-4C75-AD03-817306DBE80F}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230106T171405Z

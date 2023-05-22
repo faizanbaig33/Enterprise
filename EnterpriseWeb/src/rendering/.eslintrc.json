@@ -1,0 +1,50 @@
+{
+    "root": true,
+    "env": {
+        "browser": true,
+        "node": true,
+        "es2021": true
+    },
+    "extends": [
+        "next",
+        "next/core-web-vitals",
+        "plugin:@typescript-eslint/recommended",
+        "prettier/@typescript-eslint",
+        "plugin:yaml/recommended",
+        "plugin:prettier/recommended"
+    ],
+    "settings": {
+        "react": {
+          "version": "detect"
+        }
+    },
+    "overrides": [
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": [
+        "@typescript-eslint",
+        "prettier",
+        "tailwindcss",
+        "yaml"
+    ],
+    "ignorePatterns": [".generated/**/*", "**/*.d.ts", "**/*.js", "**/*.stories.jsx"],
+    "rules": {
+        "@next/next/no-img-element": "off", // Don't force next/image
+        "jsx-a11y/alt-text": ["warn", { "elements": ["img"] }], // Don't force alt for <Image/> (sourced from Sitecore media)
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "jsx-quotes": ["error", "prefer-double"],
+        "@typescript-eslint/ban-ts-comment": [
+            2,
+            {
+              "ts-ignore": "allow-with-description",
+              "minimumDescriptionLength": 12
+            }
+          ]
+        
+    }
+}

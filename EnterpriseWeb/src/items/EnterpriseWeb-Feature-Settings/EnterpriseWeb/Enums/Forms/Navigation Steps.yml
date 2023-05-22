@@ -1,0 +1,35 @@
+﻿---
+ID: "59a8b5de-2a8e-433f-98ab-d0f2bfb71e32"
+Parent: "cc2e03a9-f5c4-4076-b2ff-eb9553fa6d57"
+Template: "0a92feee-0e15-4e81-b044-2ad901b88ddd"
+Path: /sitecore/system/Settings/Feature/EnterpriseWeb/Enums/Forms/Navigation Steps
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{D2923FEE-DA4E-49BE-830C-E27764DFA269}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230224T162200Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "48732333-fac8-4979-8bc0-a310551a1073"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230228T122756Z

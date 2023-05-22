@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/iframe"
+  id="id1695242607"
+>
+  <div
+    class="py-8 w-full theme-black bg-theme-bg"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-s md:gap-s"
+    >
+      <iframe
+        allowfullscreen="true"
+        class="col-span-12 w-full lg:mx-auto md:max-w-screen-lg px-m"
+        id="iFrameResizer0"
+        iframeborder="0"
+        loading="lazy"
+        scrolling="no"
+        src="https://techpub1.andersenwindows.com/?site=AW"
+        style="overflow: auto;"
+      />
+    </div>
+  </div>
+</section>
+`;

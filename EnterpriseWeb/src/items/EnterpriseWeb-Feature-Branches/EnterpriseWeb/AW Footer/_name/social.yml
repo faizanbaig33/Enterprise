@@ -1,0 +1,23 @@
+﻿---
+ID: "6337da2b-d28d-4f7b-88a8-ac9eb03f13fc"
+Parent: "389e33eb-0e44-4268-841a-47c2f1582931"
+Template: "905c7f52-d418-43cb-834c-bc033560bc4d"
+Path: /sitecore/templates/Branches/Feature/EnterpriseWeb/AW Footer/$name/social
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T055203Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8bb94be7-eb8b-4333-b23c-741ffe78d953"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T055203Z

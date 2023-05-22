@@ -1,0 +1,26 @@
+﻿---
+ID: "96fc37f4-686a-447f-ac3e-723f9ed64ac7"
+Parent: "0f6e9429-56fa-46a1-8efa-c1723d554efb"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Insert Options/Components Folder/Component/Hero
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T195510Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "68ec58e3-1c4d-43c6-afe9-7d47e6ae1bb3"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{CCFA4E05-7A6B-47DB-9BF3-7439EF68F536}|{8AA467E6-925F-4A39-A8B7-F68587D85A07}|{0711FD6A-8D7A-4C51-9EC1-31DD1C2CF89A}|{A602608D-D14D-43D7-BFCB-0C936151921D}|{08F94231-3F06-4FB3-B7E7-165CEC0767D4}|{26715DAA-B9E1-4F96-803F-E07FCBF620DE}|{5FC4A193-9C83-4098-A507-0D3877DEE5AE}|{B23F556C-BB0E-42C6-8665-F626CDCEB7C0}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T212110Z

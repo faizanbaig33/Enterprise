@@ -1,0 +1,190 @@
+{
+  "namespace": "Content.AndersenCorporation",
+  "references": [
+    "Foundation.EnterpriseWeb",
+    "Feature.EnterpriseWeb",
+    "Project.AndersenCorporation"
+  ],
+  "items": {
+    "includes": [
+      {
+        "name": "AndersenCorporation-Sites",
+        "path": "/sitecore/content/AndersenCorporation",
+        "scope": "itemAndChildren",
+        "allowedPushOperations": "createOnly"
+      },
+      {
+        "name": "AndersenCorporation-Media",
+        "path": "/sitecore/media library/Project/AndersenCorporation",
+        "scope": "singleItem",
+        "allowedPushOperations": "createOnly"
+      },
+      {
+        "name": "AndersenWindows-Site",
+        "path": "/sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createAndUpdate",
+        "rules": [
+          {
+            "path": "/Data",
+            "scope": "itemAndChildren"
+          },
+          {
+            "path": "/Dictionary",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Home",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Media",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Presentation",
+            "scope": "itemAndDescendants"
+          },
+          {
+            "path": "/Presentation/Available Renderings",
+            "scope": "itemAndDescendants"
+          },
+          {
+            "path": "/Presentation/Partial Designs/Empty",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Presentation/Placeholder Settings",
+            "scope": "itemAndDescendants"
+          },
+          {
+            "path": "/Presentation/Styles",
+            "scope": "itemAndDescendants"
+          },
+          {
+            "path": "/Settings/Facets",
+            "scope": "itemAndChildren"
+          },
+          {
+            "path": "/Settings",
+            "scope": "itemAndDescendants",
+            "allowedPushOperations": "createAndUpdate"
+          },
+          {
+            "path": "*",
+            "scope": "ignored"
+          }
+        ]
+      },
+      {
+        "name": "AndersenWindows-Media",
+        "path": "/sitecore/media library/Project/AndersenCorporation/AndersenWindows",
+        "scope": "itemAndChildren",
+        "allowedPushOperations": "createOnly"
+      },
+      {
+        "name": "AndersenCorporation-Global",
+        "path": "/sitecore/content/AndersenCorporation/AndersenWindows/Global",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createOnly",
+        "rules": [
+          {
+            "path": "/Facets",
+            "scope": "itemAndChildren"
+          },
+          {
+            "path": "/Products",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Technical Documents",
+            "scope": "singleItem"
+          }
+        ]
+      },
+      {
+        "name": "RenewalByAndersen-Site",
+        "path": "/sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createAndUpdate",
+        "rules": [
+          {
+            "path": "/Data",
+            "scope": "itemAndChildren"
+          },
+          {
+            "path": "/Dictionary",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Home",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Media",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Presentation",
+            "scope": "itemAndDescendants"
+          },
+          {
+            "path": "/Presentation/Available Renderings",
+            "scope": "itemAndDescendants"
+          },
+          {
+            "path": "/Presentation/Partial Designs/Empty",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Presentation/Placeholder Settings",
+            "scope": "itemAndDescendants"
+          },
+          {
+            "path": "/Presentation/Styles",
+            "scope": "itemAndDescendants"
+          },
+          {
+            "path": "/Settings/Facets",
+            "scope": "itemAndChildren"
+          },
+          {
+            "path": "/Settings",
+            "scope": "itemAndDescendants",
+            "allowedPushOperations": "createAndUpdate"
+          },
+          {
+            "path": "*",
+            "scope": "ignored"
+          }
+        ]
+      },
+      {
+        "name": "RenewalByAndersen-Media",
+        "path": "/sitecore/media library/Project/AndersenCorporation/RenewalByAndersen",
+        "scope": "itemAndChildren",
+        "allowedPushOperations": "createOnly"
+      },
+      {
+        "name": "RenewalByAndersen-Global",
+        "path": "/sitecore/content/AndersenCorporation/RenewalByAndersen/Global",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createOnly",
+        "rules": [
+          {
+            "path": "/Affiliates",
+            "scope": "singleItem"
+          },
+          {
+            "path": "/Facets",
+            "scope": "itemAndChildren"
+          },
+          {
+            "path": "/Technical Documents",
+            "scope": "singleItem"
+          }
+        ]
+      }
+    ]
+  }
+}

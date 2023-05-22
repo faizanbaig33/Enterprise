@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  class="items-top font-sans  justify-center text-theme-text text-sm-m lg:text-m font-medium -mb-s lg:-mb-s mt-8 lg:mx-auto lg:max-w-5xl px-m lg:px-0"
+>
+  <h3>
+    Headline Text
+  </h3>
+  
+</div>
+`;

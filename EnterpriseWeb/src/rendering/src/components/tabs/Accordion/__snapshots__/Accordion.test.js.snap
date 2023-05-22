@@ -1,0 +1,117 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="tabs/accordion"
+  id="id1695242607"
+>
+  <div
+    class="theme-white my-8"
+  >
+    <div
+      class="items-top font-sans  px-m md:max-w-screen-lg lg:mx-auto text-sm-m md:text-m font-heavy mb-s "
+    >
+      <h2>
+        Accordion Headline
+      </h2>
+      
+    </div>
+    <section
+      class="[&:last-child_.sectionTitleWrapper]:border-b"
+      id="section1"
+    >
+      <div
+        aria-expanded="false"
+        class="sectionTitleWrapper border-t  py-m border-gray md:max-w-screen-lg lg:mx-auto px-m flex w-full items-center justify-between hover:underline hover:underline-offset-4   group"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="font-sans  text-sm-s md:text-s font-heavy max-w-[80%]"
+        >
+          Section 1
+        </div>
+        <span
+          class="border-2 border-primary rounded-full h-ml w-ml flex items-center justify-center group-hover:bg-primary group-hover:text-white"
+        />
+      </div>
+      <div
+        class="hidden"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            PromoGeneric
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="hidden"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            PromoGeneric
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="[&:last-child_.sectionTitleWrapper]:border-b"
+      id="section1"
+    >
+      <div
+        aria-expanded="false"
+        class="sectionTitleWrapper border-t  py-m border-gray md:max-w-screen-lg lg:mx-auto px-m flex w-full items-center justify-between hover:underline hover:underline-offset-4   group"
+        role="button"
+        tabindex="0"
+      >
+        <div
+          class="font-sans  text-sm-s md:text-s font-heavy max-w-[80%]"
+        >
+          Section 1
+        </div>
+        <span
+          class="border-2 border-primary rounded-full h-ml w-ml flex items-center justify-center group-hover:bg-primary group-hover:text-white"
+        />
+      </div>
+      <div
+        class="hidden"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            PromoGeneric
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="hidden"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            PromoGeneric
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+`;

@@ -1,0 +1,13 @@
+name: $(BuildID)
+
+trigger:
+- none
+
+pool:
+  vmImage: 'windows-2019'
+  
+variables:
+- group: 'Build Pipeline Variables'
+
+steps:
+- template: azure-pipeline-ci-run-pr.yml

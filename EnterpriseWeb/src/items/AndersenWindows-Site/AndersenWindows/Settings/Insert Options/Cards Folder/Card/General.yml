@@ -1,0 +1,26 @@
+﻿---
+ID: "4e7ccde1-fc3d-4f8b-a490-34c7442013a0"
+Parent: "fec2a6ad-2b4b-4662-aebf-eb08649d6e59"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Settings/Insert Options/Cards Folder/Card/General
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T200617Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ddee70c5-05ab-42ec-86b1-6cf56c2cbff3"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{C20BAA56-E054-467C-B2F9-BFB9DB10DB3E}|{C263410E-8154-4BF2-A1A0-3FE377E6A08E}|{2822566C-F31C-4B97-BAEA-080501C27A05}|{072D2B82-EE98-4140-BA29-20203BDFB369}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\dboeser
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230428T185407Z

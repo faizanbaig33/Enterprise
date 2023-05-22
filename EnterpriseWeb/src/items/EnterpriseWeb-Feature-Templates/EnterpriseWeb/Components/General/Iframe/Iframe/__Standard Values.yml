@@ -1,0 +1,35 @@
+﻿---
+ID: "2902d36f-c5c1-427b-8025-276ee944c2d6"
+Parent: "79817669-c516-4474-8a1e-0391ee5ef169"
+Template: "79817669-c516-4474-8a1e-0391ee5ef169"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/General/Iframe/Iframe/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{9D5851A0-C782-462B-AF45-5C112A998A06}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230301T201200Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "07077465-3c33-4295-bb2b-2cb4ab70421e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230301T214608Z

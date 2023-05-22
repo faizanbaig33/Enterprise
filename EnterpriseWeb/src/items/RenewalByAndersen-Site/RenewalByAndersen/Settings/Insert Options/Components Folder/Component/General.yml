@@ -1,0 +1,26 @@
+﻿---
+ID: "66ea8e86-e46e-44fe-8270-38de68e367af"
+Parent: "0f6e9429-56fa-46a1-8efa-c1723d554efb"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Insert Options/Components Folder/Component/General
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T195455Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "79a94a06-6d2d-454b-8089-b5901820e807"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{854A16CA-AAC0-49F2-8207-FDB85DBA39AC}|{312D260C-1E0D-4A1B-B73D-CC2D9FCF7632}|{AAA0E684-F22F-46E5-907C-83E4E47F1153}|{DCDD6619-0FC9-42AC-A957-B06677354875}|{F0FF41EB-EB09-5AF7-907A-279A823AECD4}|{91161173-F8DC-4340-B139-C14240C81287}|{1747FF20-72E9-4DD7-9E75-5562B8F13227}|{96C59AE8-FA41-46DF-8755-D138F82C0AE0}|{79817669-C516-4474-8A1E-0391EE5EF169}|{42B88AEA-5B6D-4C9F-B3A2-D5D580DDC68F}|{C274B7D7-B916-4F82-B3B1-237A55239F89}|{7166B847-4EB0-4E93-928C-12AC73E333FA}|{BDC21156-D02A-450E-BC37-E80BA985D7B4}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230509T195901Z

@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="hero/heroproducttabs"
+  id="id1695242607"
+>
+  <div
+    class="my-8 w-full theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 0 gap-s md:gap-s"
+    >
+      <div
+        class=" col-span-12"
+      >
+        <div
+          class="react-tabs"
+          data-rttabs="true"
+        >
+          <div
+            class="heroproducttabs-wrapper z-[70] w-full border-b border-b-gray bg-white"
+          >
+            <div
+              class="flex w-full flex-col items-center justify-between ml:flex-row ml:px-m lg:mx-auto lg:max-w-screen-lg"
+            >
+              <div
+                class="w-full ml:w-[50%]"
+              >
+                <h1
+                  class="text-sm-s lg:text-s font-heavy font-sans uppercase max-ml:pl-ml max-ml:pb-xxs"
+                >
+                  Hero Product Tabs Headline
+                </h1>
+              </div>
+              <div
+                class="ml-auto w-full max-ml:border-t max-ml:border-t-gray ml:w-[50%]"
+              >
+                <ul
+                  class="react-tabs__tab-list"
+                  role="tablist"
+                >
+                  <div
+                    class="slick-slider heroproducttabs slick-initialized"
+                    dir="ltr"
+                  >
+                    <div
+                      class="slick-list"
+                    >
+                      <div
+                        class="slick-track"
+                        style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+                      >
+                        <div
+                          aria-hidden="false"
+                          class="slick-slide slick-active slick-current"
+                          data-index="0"
+                          style="outline: none;"
+                          tabindex="-1"
+                        >
+                          <div>
+                            <div
+                              class="react-tabs__tab flex h-full ml:min-w-[120px] relative justify-center text-center items-center px-xxs py-xs md:px-s border-b-8 w-[12rem] react-tabs__tab--selected border-b-primary "
+                            >
+                              <h3
+                                class="font-heavy font-sans uppercase text-sm-xs ml:text-sm-s text-dark-gray hover:text-black text-base lg:text-sm-s justify-center text-center text-black"
+                              >
+                                Hero Product Tab Item 1
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          aria-hidden="false"
+                          class="slick-slide slick-active"
+                          data-index="1"
+                          style="outline: none;"
+                          tabindex="-1"
+                        >
+                          <div>
+                            <div
+                              class="react-tabs__tab flex h-full ml:min-w-[120px] relative justify-center text-center items-center px-xxs py-xs md:px-s border-b-8 w-[12rem] text-dark-gray border-b-white  "
+                            >
+                              <h3
+                                class="font-heavy font-sans uppercase text-sm-xs ml:text-sm-s text-dark-gray hover:text-black text-base lg:text-sm-s justify-center text-center"
+                              >
+                                Hero Product Tab Item 2
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          aria-hidden="true"
+                          class="slick-slide"
+                          data-index="2"
+                          style="outline: none;"
+                          tabindex="-1"
+                        >
+                          <div>
+                            <div
+                              class="react-tabs__tab flex h-full ml:min-w-[120px] relative justify-center text-center items-center px-xxs py-xs md:px-s border-b-8 w-[12rem] text-dark-gray border-b-white  "
+                            >
+                              <h3
+                                class="font-heavy font-sans uppercase text-sm-xs ml:text-sm-s text-dark-gray hover:text-black text-base lg:text-sm-s justify-center text-center"
+                              >
+                                Hero Product Tab Item 3
+                              </h3>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-labelledby="react-tabs-0"
+            class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+            id="react-tabs-1"
+            role="tabpanel"
+          >
+            <div
+              class="col-span-12"
+            >
+              <div
+                style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+              >
+                <h2>
+                  PromoGeneric
+                </h2>
+                <p>
+                  JSS component is missing React implementation. See the developer console for more information.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-labelledby="react-tabs-2"
+            class="react-tabs__tab-panel"
+            id="react-tabs-3"
+            role="tabpanel"
+          >
+            <div
+              class="col-span-12"
+            >
+              <div
+                style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+              >
+                <h2>
+                  PromoGeneric
+                </h2>
+                <p>
+                  JSS component is missing React implementation. See the developer console for more information.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            aria-labelledby="react-tabs-4"
+            class="react-tabs__tab-panel"
+            id="react-tabs-5"
+            role="tabpanel"
+          >
+            <div
+              class="col-span-12"
+            >
+              <div
+                style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+              >
+                <h2>
+                  PromoGeneric
+                </h2>
+                <p>
+                  JSS component is missing React implementation. See the developer console for more information.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

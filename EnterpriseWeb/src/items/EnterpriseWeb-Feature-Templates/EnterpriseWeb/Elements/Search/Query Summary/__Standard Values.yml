@@ -1,0 +1,34 @@
+﻿---
+ID: "b8e14684-6121-4105-b087-40c781bb3082"
+Parent: "bea24c05-c310-482c-b285-13e7f207bec2"
+Template: "bea24c05-c310-482c-b285-13e7f207bec2"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Elements/Search/Query Summary/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230208T124857Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "6333fb25-a4e8-455b-8b12-49f2922a2880"
+      Hint: summaryText
+      Value: "<p>Results <strong>${firstResult}-${lastResult}</strong> of <strong>${total}</strong></p>"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a2ec1cf4-f132-46f7-bbe8-10e53d7b8d3f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230215T085437Z

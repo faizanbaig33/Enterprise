@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="promo/tabsfeaturedpromo"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-12"
+      >
+        <div
+          class="items-top font-sans  text-s ml:text-m font-bold"
+        >
+          <h2>
+            Tabs Featured Promo gray1
+          </h2>
+          
+        </div>
+      </div>
+      <div
+        class="col-span-12"
+      >
+        <div
+          class="flex flex-col ml:flex-row min-h-[542px]"
+        >
+          <div
+            class="w-full ml:w-1/4 ml:pr-s flex flex-col ml:inline-block"
+          >
+            <div
+              class="order-2 max-w-[70%]"
+            />
+            <div
+              class="flex items-center border-t pt-s mb-xxs uppercase"
+            >
+              <span
+                class="mr-xxxs"
+              />
+              <div
+                class="items-top font-sans  text-xs font-heavy"
+              >
+                <h2>
+                  Type of Windows
+                </h2>
+                
+              </div>
+            </div>
+            <div
+              class="relative flex order-3 ml:order-none"
+            >
+              <ul
+                class="order-3 flex ml:inline-block overflow-auto snap-x ml:snap-none"
+              >
+                <li
+                  class="text-body ml:text-xs text-dark-gray cursor-pointer mx-xxs ml:mx-0 py-xxxs ml:px-xxs ml:border-l-2 my-s snap-start whitespace-nowrap !text-secondary font-heavy border-b-2 ml:border-b-0 border-primary"
+                  id="tab-5"
+                  role="button"
+                  tabindex="0"
+                >
+                  <h4>
+                    Tab 5
+                  </h4>
+                </li>
+                <li
+                  class="text-body ml:text-xs text-dark-gray cursor-pointer mx-xxs ml:mx-0 py-xxxs ml:px-xxs ml:border-l-2 my-s snap-start whitespace-nowrap"
+                  id="tab-6"
+                  role="button"
+                  tabindex="0"
+                >
+                  <h4>
+                    Tab 6
+                  </h4>
+                </li>
+                <li
+                  class="text-body ml:text-xs text-dark-gray cursor-pointer mx-xxs ml:mx-0 py-xxxs ml:px-xxs ml:border-l-2 my-s snap-start whitespace-nowrap"
+                  id="tab-7"
+                  role="button"
+                  tabindex="0"
+                >
+                  <h4>
+                    Tab 7
+                  </h4>
+                </li>
+                <li
+                  class="text-body ml:text-xs text-dark-gray cursor-pointer mx-xxs ml:mx-0 py-xxxs ml:px-xxs ml:border-l-2 my-s snap-start whitespace-nowrap"
+                  id="tab-8"
+                  role="button"
+                  tabindex="0"
+                >
+                  <h4>
+                    Tab 8
+                  </h4>
+                </li>
+              </ul>
+              <div
+                class="absolute left-full top-1/2 -translate-y-1/2 cursor-pointer bg-white before:absolute before:right-full before:inline-block before:h-[30px] before:w-[30px] before:bg-gradient-to-l before:from-white before:content-[""] ml:hidden"
+              >
+                <span />
+              </div>
+            </div>
+            <div
+              class="flex items-center border-t pt-s mb-xxs uppercase"
+            >
+              <span
+                class="mr-xxxs"
+              />
+              <div
+                class="items-top font-sans  text-xs font-heavy"
+              >
+                <h2>
+                  Doors by Type
+                </h2>
+                
+              </div>
+            </div>
+            <div
+              class="relative flex order-3 ml:order-none"
+            >
+              <ul
+                class="order-3 flex ml:inline-block overflow-auto snap-x ml:snap-none"
+              >
+                <li
+                  class="text-body ml:text-xs text-dark-gray cursor-pointer mx-xxs ml:mx-0 py-xxxs ml:px-xxs ml:border-l-2 my-s snap-start whitespace-nowrap"
+                  id="tab-1"
+                  role="button"
+                  tabindex="0"
+                >
+                  <h4>
+                    Tab 1
+                  </h4>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="w-full ml:w-3/4"
+          >
+            <div
+              class="theme-gray bg-theme-bg h-full flex flex-col ml:flex-row items-center justify-between p-m ml:px-xl ml:py-l"
+            >
+              <div
+                class="w-full ml:w-3/5 mb-xxs ml:mb-0"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 99.83388704318938% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="tabs-featured-promo"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 99.83388704318938% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="tabs-featured-promo"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="w-full ml:w-2/6"
+              >
+                <div
+                  class="items-top font-sans  text-s ml:text-m text-theme-text font-bold mb-s"
+                >
+                  <h2>
+                    Primary headline
+                  </h2>
+                  
+                </div>
+                <div
+                  class="font-sans text-sm-s ml:text-s text-theme-text font-medium mb-s"
+                >
+                  <h4>
+                    Optional sub-heading
+                  </h4>
+                </div>
+                <div
+                  class="text-body text-dark-gray mb-m"
+                >
+                  <div
+                    class="body-copy"
+                  >
+                    <div>
+                      <p>
+                        Est voluptatum tempore nihil provident alias quis enim. Possimus voluptatibus deserunt. Ea sint repellendus nihil eligendi neque. Delectus et veritatis voluptas quia ut.Test1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="mb-s flex items-start md:flex-row md:items-center"
+                >
+                  <a
+                    class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray"
+                    href="/"
+                    role="link"
+                    tabindex="0"
+                    target="_blank"
+                    title=""
+                  >
+                    Learn More
+                    <span
+                      class="ml-xxs"
+                    />
+                    <span
+                      class="sr-only"
+                    >
+                       (Opens in a new tab)
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

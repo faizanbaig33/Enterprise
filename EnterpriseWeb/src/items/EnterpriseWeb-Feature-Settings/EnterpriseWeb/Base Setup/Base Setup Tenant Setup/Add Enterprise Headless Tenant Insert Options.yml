@@ -1,0 +1,41 @@
+﻿---
+ID: "8d43b4ea-5b5e-4f3a-98d6-231af60d9f9a"
+Parent: "8e848d70-43c7-4ffc-ba1d-cf6bc2b831bb"
+Template: "88752f77-9109-424c-b1d8-af91e6369a2e"
+Path: /sitecore/system/Settings/Feature/EnterpriseWeb/Base Setup/Base Setup Tenant Setup/Add Enterprise Headless Tenant Insert Options
+SharedFields:
+- ID: "614f52cf-d54b-47d1-a242-d9a7d42860f4"
+  Hint: EditType
+  Value: AddInsertOptions
+- ID: "67b6641e-309d-4c1e-8e97-63965c7e2c5f"
+  Hint: Template
+  Value: "{3C5F38CB-3D52-4C70-B506-0D0CE1F8730B}"
+- ID: "e830af53-210b-4981-b6a8-f8939f587eb1"
+  Hint: Arguments
+  Value: "{FC1EB258-5764-44B9-A4CF-D0A24FFC8DA7}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221129T223140Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "302c0d4e-d81a-4f66-9fb6-b5b71610a0cb"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230322T103548Z

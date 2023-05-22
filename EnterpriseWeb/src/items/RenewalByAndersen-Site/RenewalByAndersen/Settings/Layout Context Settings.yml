@@ -1,0 +1,43 @@
+﻿---
+ID: "fe009f4c-ac12-464f-abc2-fbaa8e5f893d"
+Parent: "31fab7ed-51b7-4327-8981-c40f50d89d11"
+Template: "74b06d13-0249-4d12-a842-fab6336deeb1"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Layout Context Settings
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "019b2924-d3b0-4394-adc5-96aea539980b"
+      Hint: faviconSvg
+      Value: testFaviconSvg
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230209T163531Z
+    - ID: "3aaec820-8fea-443c-9792-1fbe0803847b"
+      Hint: locationId
+      Value: testLocationId
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cff4d3c0-7ef9-40c5-9aeb-663aaa7c76a7"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d893da0c-917f-4453-91c7-e5d4d867bd07"
+      Hint: gtmId
+      Value: testGtmId
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230209T164058Z
+    - ID: "fa3dba09-c509-406f-ae11-e22e63422472"
+      Hint: gtmParameters
+      Value: testGtmParams

@@ -1,0 +1,56 @@
+﻿---
+ID: "4584016e-f199-4042-b908-62bd921a52ab"
+Parent: "3347ad6d-86e1-49e7-a71f-2e5db9719666"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Promo/Promo Generic/Promo Generic
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Applications/32x32/nav_right_blue.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {B61A1D20-9EE5-4CCB-9E0D-24A97E58D293}
+    {3B07C9C9-0B99-48F5-814B-C4EFBB330F1D}
+    {99969A89-B62F-4155-A052-0F54C8C21B52}
+    {D53C5457-C518-40CA-A74D-B2A6FF63C675}
+    {5E2F3CF0-45EC-4618-AA30-0465290A248D}
+    {565E77B0-8234-479E-9F8F-0B44BDB36FC4}
+    {30594C7E-1F51-4706-AB7E-6766B1FC3C90}
+    {368747B7-D912-47D5-995E-CD3573E24FDF}
+- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
+  Hint: __Read Only
+  Value: 
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{8AB5F248-D0F3-4E70-866D-5D7382C963D7}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210707T230223Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "64feed5c-7d6e-4b08-8095-a7b1786396d4"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230307T161851Z

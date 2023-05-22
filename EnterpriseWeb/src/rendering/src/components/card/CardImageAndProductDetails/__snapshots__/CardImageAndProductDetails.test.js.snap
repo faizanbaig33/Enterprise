@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="card/cardimageandproductdetails"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-0 gap-s md:gap-s"
+    >
+      <div
+        class="inline-block relative col-span-12 max-w-[512px]"
+      >
+        <div
+          class="relative hidden md:block aspect-square   "
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 75% 0px 0px 0px;"
+            />
+            <img
+              alt=""
+              data-nimg="responsive"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="relative w-full md:hidden"
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 75% 0px 0px 0px;"
+            />
+            <img
+              alt=""
+              data-nimg="responsive"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="collapse absolute"
+        >
+          <div
+            class="p-2"
+          >
+            <div
+              class="items-top font-sans  p-2 leading-[18px] text-xs font-serif mb:leading-5"
+            >
+              <h3>
+                Card Image Headline
+              </h3>
+            </div>
+            <div
+              class="product-links"
+            >
+              <div>
+                <a
+                  class="mb:leading-[22px] flex w-fit items-center whitespace-nowrap p-2 text-text-link font-normal leading-[10px] text-theme-text hover:underline hover:decoration-primary hover:underline-offset-8 disabled:border-gray disabled:text-gray"
+                  href="/Data/Product/Products/Big-Doors/BEEFY-BIFOLD"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Beefy Bifold Door
+                  <span
+                    class="ml-[10px] text-theme-btn-bg-hover hover:underline hover:decoration-primary hover:underline-offset-8"
+                  />
+                </a>
+              </div>
+              <div>
+                <a
+                  class="mb:leading-[22px] flex w-fit items-center whitespace-nowrap p-2 text-text-link font-normal leading-[10px] text-theme-text hover:underline hover:decoration-primary hover:underline-offset-8 disabled:border-gray disabled:text-gray"
+                  href="/Data/Product/Products/Big-Doors/BEEFY-BIFOLD"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Beefy Bifold Door
+                  <span
+                    class="ml-[10px] text-theme-btn-bg-hover hover:underline hover:decoration-primary hover:underline-offset-8"
+                  />
+                </a>
+              </div>
+              <div>
+                <a
+                  class="mb:leading-[22px] flex w-fit items-center whitespace-nowrap p-2 text-text-link font-normal leading-[10px] text-theme-text hover:underline hover:decoration-primary hover:underline-offset-8 disabled:border-gray disabled:text-gray"
+                  href="/Data/Product/Products/Big-Doors/BEEFY-BIFOLD"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Beefy Bifold Door
+                  <span
+                    class="ml-[10px] text-theme-btn-bg-hover hover:underline hover:decoration-primary hover:underline-offset-8"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-span-12"
+      >
+        <button
+          class="font-sans space-between relative ml-7 flex w-full grow items-center font-medium text-sm-xs md:text-xs text-secondary hover:underline hover:decoration-black hover:underline-offset-8 uppercase"
+          type="button"
+        >
+          View Details
+          <span
+            class="absolute -left-7 flex h-6 w-6 items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-white"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+`;

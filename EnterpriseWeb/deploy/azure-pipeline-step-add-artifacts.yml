@@ -1,0 +1,27 @@
+steps:
+#download drop location on Agent workdir
+- task: DownloadBuildArtifacts@0
+  displayName: "Download publish location on Agent workdir"
+  inputs:
+    buildType: 'specific'
+    project: '$(System.TeamProject)'
+    pipeline: '$(BuildPipelineName)'
+    buildVersionToDownload: '$(buildVersionToDownload)'
+    buildId: '$(SitecoreBuildRevision)'
+    downloadType: 'specific'
+    downloadPath: '$(System.DefaultWorkingDirectory)'
+
+#Getting version of NuGet Package
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      $buildnumber = Get-Content -Path $(System.DefaultWorkingDirectory)/drop/build.txt
+      echo $buildnumber
+      $buildVersionToDownload="specific"
+      $SitecoreBuildRevision= $buildnumber -replace "0.0.",""
+      echo "##vso[task.setvariable variable=NugetVersion]$buildnumber"
+      echo "##vso[task.setvariable variable=buildVersionToDownload;isOutput=true]$buildVersionToDownload"
+      echo "##vso[task.setvariable variable=SitecoreBuildRevision;isOutput=true]$SitecoreBuildRevision"
+  displayName: 'Getting Package Version from build.txt'
+  name: GetPackageVersion

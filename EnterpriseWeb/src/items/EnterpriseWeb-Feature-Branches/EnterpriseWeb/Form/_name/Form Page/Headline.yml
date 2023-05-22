@@ -1,0 +1,30 @@
+﻿---
+ID: "404f5ea3-2410-49ff-83f1-541d6ec52809"
+Parent: "3602b70a-505f-4311-8f2d-c18bc00c1f62"
+Template: "78e78e19-8b37-4637-8c04-9de221572d0d"
+Path: /sitecore/templates/Branches/Feature/EnterpriseWeb/Form/$name/Form Page/Headline
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 100
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T185752Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b64e25b8-2665-4fe6-be6e-54532ccee05f"
+    - ID: "b2a74f5b-05db-4e79-8ce9-328512c478cf"
+      Hint: headlineText
+      Value: Headline
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T185823Z

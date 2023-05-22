@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/favoritedesigns"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-12"
+      >
+        <div
+          class="flex justify-between"
+        >
+          <div
+            class="items-top font-sans  text-theme-text text-sm-m md:text-m font-bold mb-s"
+          >
+            <h3>
+              Favorite Designs
+            </h3>
+            
+          </div>
+          <div
+            class="hidden cursor-pointer items-center justify-center text-primary md:flex"
+            id="print-icon"
+          >
+            <span />
+            <span
+              class="ml-xxs"
+            >
+              Print
+            </span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-span-12"
+      />
+    </div>
+  </div>
+</section>
+`;

@@ -1,0 +1,6 @@
+﻿---
+Role: |
+  sitecore\AW Admin
+MemberOf:
+  Role: |
+    sitecore\AW Author

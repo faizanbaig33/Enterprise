@@ -1,0 +1,41 @@
+﻿---
+ID: "3c7c9b24-b610-43a8-b53e-bf49767f9316"
+Parent: "e8649e68-3c19-4f61-bc47-4ba681fa0ab8"
+Template: "e8649e68-3c19-4f61-bc47-4ba681fa0ab8"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Promo/Promo Banner/Promo Banner Authored/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{5CC3BC76-E26C-4854-9BBD-DC6857DCA2FB}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1377d959-963f-4516-b739-5e2b270c6c3c"
+      Hint: imgPosition
+      Value: "{0A58D643-E0C1-4A6E-A9F6-03D731A55121}"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221121T150817Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9ea2911b-dfac-48de-a80b-b2ddc4f58378"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230104T214223Z
+    - ID: "e03f009a-f9fb-4a72-94a5-cc4c164b96b4"
+      Hint: componentStyle
+      Value: "{63F4F0C1-E9EF-43F4-869B-819379CAB845}"

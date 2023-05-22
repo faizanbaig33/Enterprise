@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  class="theme-white m-0 flex h-full flex-col md:max-w-screen-lg lg:mx-auto"
+  data-component="card/generic"
+>
+  <div
+    class="flex grow flex-col"
+  >
+    <div
+      class="flex grow flex-col"
+    >
+      <div
+        class="flex grow flex-col mt-s text-left"
+      >
+        <div
+          class="text-sm-xs md:text-xs uppercase text-dark-gray mb-s font-regular"
+        />
+        <div
+          class="items-top font-sans  mb-xxs text-sm-s md:text-s font-heavy"
+        />
+        <div
+          class="font-sans mb-xxs text-sm-xs md:text-xs font-medium"
+        />
+        <div
+          class="text-theme-body text-body font-regular mb-s"
+        />
+      </div>
+      <div
+        class="mb-s flex items-start md:flex-row md:items-center md:space-x-4 mb-m col-span-12 flex flex-row"
+      />
+    </div>
+  </div>
+</div>
+`;

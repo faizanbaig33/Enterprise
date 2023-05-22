@@ -1,0 +1,53 @@
+﻿---
+ID: "38d3316b-ea14-4db1-b419-b8d25a9cf936"
+Parent: "4bcbdb80-ac6f-4267-83e8-1e2775e1bedb"
+Template: "4bcbdb80-ac6f-4267-83e8-1e2775e1bedb"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Listing/Xup Card Collection/Xup Card Container/__Standard Values
+SharedFields:
+- ID: "04f7cae7-23fd-45b2-b664-347aa0c9439c"
+  Hint: cta1Style
+  Value: "{DD818850-EC95-4D32-9774-7CC8173E277B}"
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: 
+- ID: "5e672aaa-c172-49f8-878e-3134b9d1fc0e"
+  Hint: cta1Icon
+  Value: "{50590EDC-7EA7-4436-9A3E-701C87A07DB2}"
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{289FFDF1-6A0B-4F08-9F4F-7883C32B08D4}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221128T065305Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "af84511c-743d-45f2-b9e0-fc127516f9ac"
+    - ID: "ac1ab66f-be6c-47cf-a8f7-ad0f98319510"
+      Hint: headlineText
+      Value: $name
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "bca65d02-c849-41e7-b5b2-81ac9ee13cd7"
+      Hint: cardsPerRow
+      Value: "{1EF447F3-ED4F-4305-86C8-02B708063CAE}"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230403T181657Z
+    - ID: "ebc0f4f5-3020-4870-960b-524e0d172158"
+      Hint: headlineLevel
+      Value: "{0F556F3A-BBAD-4AA5-952D-B79003B39CD6}"

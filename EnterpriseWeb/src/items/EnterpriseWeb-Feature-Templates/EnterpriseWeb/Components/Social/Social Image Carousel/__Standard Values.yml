@@ -1,0 +1,41 @@
+﻿---
+ID: "c5cf74a5-45c7-47e1-be24-80155b87054a"
+Parent: "bd5bb132-4f45-41b1-8493-506628c9ae34"
+Template: "bd5bb132-4f45-41b1-8493-506628c9ae34"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Social/Social Image Carousel/__Standard Values
+SharedFields:
+- ID: "32a0a4a0-2c24-4894-8629-4cd02476348e"
+  Hint: headlineLevel
+  Value: "{0F556F3A-BBAD-4AA5-952D-B79003B39CD6}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "07235808-f3b0-439b-bf27-c570b499a2c6"
+      Hint: siteName
+      Value: 
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230109T162924Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "656a3026-8cac-4658-9935-74090467ac67"
+      Hint: inlineStack
+      Value: "{3EB18869-C0B0-4352-BF58-08D205BD2501}"
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b32f172d-d2da-40c8-b36b-ec4aab0b73e3"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230302T020519Z

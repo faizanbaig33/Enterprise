@@ -1,0 +1,78 @@
+steps:
+- task: NuGetToolInstaller@1
+  displayName: 'Install Nuget'
+
+- task: NuGetCommand@2
+  displayName: 'Restore NuGet Packages'
+  inputs:
+    restoreSolution: 'EnterpriseWeb.sln'
+    feedsToUse: config
+    nugetConfigPath: '$(Build.SourcesDirectory)\nuget.config'
+
+- task: VSBuild@1
+  displayName: 'Build Visual Studio Solution'
+  inputs:
+    solution: '$(Build.SourcesDirectory)\src\platform\Platform.csproj'
+    msbuildArgs: '/p:DeployonBuild=true /p:PublishProfile=DevOps'
+    configuration: Release
+    platform: 'AnyCPU'
+
+- task: PowerShell@2
+  displayName: 'Restore DotNet CLI tools'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Don't create new manigest file because we already checked one in.
+      # dotnet new tool-manifest
+      # dotnet nuget add source -n Sitecore https://sitecore.myget.org/F/sc-packages/api/v3/index.json
+      # Restore tools (e.g. Sitecore.CLI) from version defined in manifest.
+      dotnet tool restore
+    workingDirectory: $(Build.SourcesDirectory)
+
+- task: PowerShell@2
+  displayName: 'Create Resource Package'
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Create resource package of MASTER and CORE database
+      dotnet sitecore itemres create -o "$(Artifacts.OutputDirectory.Resource_Full)"
+    workingDirectory: $(Build.SourcesDirectory)
+
+- task: NodeTool@0
+  displayName: 'Install Node'
+  inputs:
+    versionSpec: 16.18.0
+
+- task: PowerShell@2
+  displayName: 'Install Vercel CLI'
+  inputs:
+    targetType: 'inline'
+    script: |
+      npm i -g vercel
+    workingDirectory: $(System.DefaultWorkingDirectory)
+
+- task: PowerShell@2
+  displayName: 'Get Vercel Variables'
+  inputs:
+    targetType: 'inline'
+    script: |
+      vercel env pull --yes --token=$(VERCEL_TOKEN)
+    workingDirectory: $(System.DefaultWorkingDirectory)\src\rendering
+
+- task: PowerShell@2
+  displayName: 'Build Front End'
+  inputs:
+    targetType: 'inline'
+    script: |
+     npm install
+     npm run build
+    workingDirectory: $(System.DefaultWorkingDirectory)\src\rendering
+
+- task: PowerShell@2
+  displayName: 'Run Front End Tests'
+  inputs:
+    targetType: 'inline'
+    script: |
+      Set-Location $(Build.SourcesDirectory)\src\rendering
+      npm run test:silent
+    workingDirectory: $(System.DefaultWorkingDirectory)\src\rendering

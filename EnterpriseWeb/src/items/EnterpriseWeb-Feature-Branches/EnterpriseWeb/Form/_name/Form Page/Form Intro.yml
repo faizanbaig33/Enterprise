@@ -1,0 +1,27 @@
+﻿---
+ID: "2c19c289-203e-4b1d-9d34-743ec00127b6"
+Parent: "3602b70a-505f-4311-8f2d-c18bc00c1f62"
+Template: "1e258863-055b-4c0d-b775-59541b0a90fd"
+Path: /sitecore/templates/Branches/Feature/EnterpriseWeb/Form/$name/Form Page/Form Intro
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 200
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T185815Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e62881ad-b0d2-4cae-adb1-20b217699e2f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T185823Z

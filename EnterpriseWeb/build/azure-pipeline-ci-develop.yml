@@ -1,0 +1,20 @@
+name: $(BuildID)
+
+trigger: none
+# trigger:
+# - develop
+
+pool:
+  vmImage: 'windows-2019'
+
+variables:
+- group: 'Build Pipeline Variables'
+- group: 'Release Pipeline Variables - Dev'
+- name: ACR_Registry
+  value: prodentwb1acr1
+- name: REGISTRY
+  value: prodentwb1acr1.azurecr.io/
+
+steps:
+- template: azure-pipeline-ci-build.yml
+- template: azure-pipeline-ci-common.yml

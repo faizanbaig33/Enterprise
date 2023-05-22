@@ -1,0 +1,35 @@
+﻿---
+ID: "3f663155-5baa-44b4-94f0-ca5fa892c6bf"
+Parent: "aaa0e684-f22f-46e5-907c-83e4e47f1153"
+Template: "aaa0e684-f22f-46e5-907c-83e4e47f1153"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/General/Blog Quote/Blog Quote/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{5D08DBED-CC99-4C48-BDF4-59F4FF2A6015}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230321T165049Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "77cd11f3-fa92-4e05-9cf4-151436cc63ed"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230321T165114Z

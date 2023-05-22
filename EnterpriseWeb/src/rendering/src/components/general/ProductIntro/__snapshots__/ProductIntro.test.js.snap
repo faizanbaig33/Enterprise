@@ -1,0 +1,599 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/productintro"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-6 md:col-span-5 "
+      >
+        <div
+          class="slick-slider slick-initialized"
+          dir="ltr"
+        >
+          <button
+            class="slick-arrow slick-prev slick-disabled"
+            data-role="none"
+            style="display: block;"
+            type="button"
+          >
+             
+            Previous
+          </button>
+          <div
+            class="slick-list"
+          >
+            <div
+              class="slick-track"
+              style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+            >
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-current"
+                data-index="0"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="relative hidden md:block   w-fit mx-auto"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27389%27%20height=%27390%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt="RBAA"
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                  <div
+                    class="relative block w-full md:hidden w-fit mx-auto"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%27389%27%20height=%27390%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt="RBAA"
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="1"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="relative hidden md:block   w-fit mx-auto"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271200%27%20height=%27900%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt=""
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                  <div
+                    class="relative block w-full md:hidden w-fit mx-auto"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271200%27%20height=%27900%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt=""
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="2"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="relative hidden md:block   w-fit mx-auto"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%272250%27%20height=%273000%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt="400 Series Casement Window Exterior"
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                  <div
+                    class="relative block w-full md:hidden w-fit mx-auto"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%272250%27%20height=%273000%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt="400 Series Casement Window Exterior"
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="3"
+                style="outline: none; width: 0px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="relative hidden md:block   w-fit mx-auto"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271200%27%20height=%271000%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt=""
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                  <div
+                    class="relative block w-full md:hidden w-fit mx-auto"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: inline-block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"
+                    >
+                      <span
+                        style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"
+                      >
+                        <img
+                          alt=""
+                          aria-hidden="true"
+                          src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%271200%27%20height=%271000%27/%3e"
+                          style="display: block; max-width: 100%; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"
+                        />
+                      </span>
+                      <img
+                        alt=""
+                        data-nimg="intrinsic"
+                        decoding="async"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                        style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                      />
+                      <noscript />
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="slick-arrow slick-next"
+            data-role="none"
+            style="display: block;"
+            type="button"
+          >
+             
+            Next
+          </button>
+        </div>
+        <div
+          class="mt-m mb-m flex justify-center"
+        >
+          <div
+            class="relative rounded-full border border-gray text-center"
+          >
+            <button
+              class="text-regular inline-block rounded-full px-l py-[8px] text-small uppercase leading-tight border-2 border-black font-heavy text-secondary"
+            >
+              Interior
+            </button>
+            <button
+              class="inline-block rounded-full px-l py-[8px] text-small uppercase leading-tight font-heavy text-dark-gray"
+            >
+              Exterior
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="md:col-start-7 col-span-6"
+      >
+        <div
+          class="text-sm-xxs md:text-xxs text-dark-gray font-regular mb-xxxs"
+        >
+          <h3>
+            BEST SELLING
+          </h3>
+        </div>
+        <div
+          class="items-top font-sans  text-sm-s md:text-s font-heavy mb-xxs"
+        >
+          <h2>
+            CASEMENT WINDOW
+          </h2>
+          
+        </div>
+        <div
+          class="mb-s text-dark-gray"
+        >
+          <div
+            class="body-copy"
+          >
+            <div>
+              <p>
+                <span
+                  style="background-color: #ffffff; color: #202124;"
+                >
+                  Casement windows crank outward from the right or the left with hardware that tucks away into a recessed opening when not in use. Offering top-to-bottom ventilation when fully open, casement windows are beautiful, as well as energy efficient. Renewal by Andersen’s casement windows are ideal for maximizing a room’s view and its ventilation. They are an excellent choice for above cabinets and counters where opening requires a reach.
+                </span>
+              </p>
+              
+
+              <ol>
+                
+    
+                <li>
+                  <span
+                    style="background-color: #ffffff; color: #202124;"
+                  >
+                    test 1
+                  </span>
+                </li>
+                
+    
+                <li>
+                  <span
+                    style="background-color: #ffffff; color: #202124;"
+                  >
+                    test2
+                  </span>
+                </li>
+                
+    
+                <li>
+                  <span
+                    style="background-color: #ffffff; color: #202124;"
+                  >
+                    teste
+                  </span>
+                </li>
+                
+
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex items-center mb-s"
+        >
+          <div
+            class="flex mr-m"
+          >
+            <span
+              class="text-secondary "
+            />
+            <span
+              class="text-secondary "
+            />
+            <span
+              class="text-secondary "
+            />
+            <span
+              class="text-secondary "
+            />
+            <span
+              class="text-grey"
+            />
+          </div>
+          <div
+            class="mr-m"
+          >
+            <h5>
+              5.0(12)
+            </h5>
+          </div>
+          <div
+            class="border-l border-secondary px-xxs py-xs"
+          >
+            <h6>
+              $$$$$
+            </h6>
+          </div>
+        </div>
+        <div
+          class="flex-col md:items-center mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+        >
+          <a
+            class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-black px-m py-[9px] font-sans text-button font-heavy hover:bg-black hover:text-white disabled:border-gray disabled:text-gray mr-m"
+            href="/Components/Product-intro"
+            role="link"
+            tabindex="0"
+            target=""
+            title=""
+          >
+            Call to action
+            <span
+              class="ml-xxs"
+            />
+          </a>
+          <a
+            class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-gray px-m py-[9px] font-sans text-button font-heavy hover:bg-gray hover:text-white disabled:border-gray disabled:text-gray my-s md:my-0"
+            href="/"
+            role="link"
+            tabindex="0"
+            target=""
+            title=""
+          >
+            View in Augmented Reality
+            <span
+              class="ml-xxs"
+            />
+          </a>
+        </div>
+        <div
+          class="font-sans !font-sans font-heavy text-sm-xxs md:text-base mb-s uppercase"
+        >
+          <div>
+            Most popular interior options
+          </div>
+        </div>
+        <ul
+          class="mb-m flex gap-m"
+        >
+          <li
+            class="flex flex-col items-center"
+          >
+            <span
+              class="h-[46px] w-[46px]  rounded-full p-[2px] border-2 cursor-pointer"
+              tabindex="0"
+            >
+              <span
+                class="h-[38px] w-[38px] rounded-full [&_img]:rounded-full"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="black-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative block w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="black-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </span>
+            </span>
+            <div
+              class="font-sans mt-xxs text-center font-regular text-base font-serif"
+            >
+              <span>
+                Green
+              </span>
+            </div>
+          </li>
+          <li
+            class="flex flex-col items-center"
+          >
+            <span
+              class="h-[46px] w-[46px]  rounded-full p-[2px] cursor-pointer"
+              tabindex="0"
+            >
+              <span
+                class="h-[38px] w-[38px] rounded-full [&_img]:rounded-full"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="cocoa-bean-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative block w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="cocoa-bean-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </span>
+            </span>
+            <div
+              class="font-sans mt-xxs text-center font-regular text-base font-serif"
+            >
+              <span>
+                Red
+              </span>
+            </div>
+          </li>
+        </ul>
+        <div
+          class="mb-s flex items-start md:flex-row md:items-center"
+        >
+          <a
+            class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-gray px-m py-[9px] font-sans text-button font-heavy hover:bg-gray hover:text-white disabled:border-gray disabled:text-gray"
+            href="undefined#0dfe76d9-eca7-42da-aaea-803c2be81418"
+            role="link"
+            tabindex="0"
+            target=""
+            title=""
+          >
+            Go To Tab 3
+            <span
+              class="ml-xxs"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

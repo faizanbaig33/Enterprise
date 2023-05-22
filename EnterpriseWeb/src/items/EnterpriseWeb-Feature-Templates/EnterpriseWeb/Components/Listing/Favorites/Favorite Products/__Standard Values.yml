@@ -1,0 +1,50 @@
+﻿---
+ID: "52b4f34c-f363-46bd-897f-bfd858b596a9"
+Parent: "41a6ed45-b030-4f2d-9453-172f0ff039a1"
+Template: "41a6ed45-b030-4f2d-9453-172f0ff039a1"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Listing/Favorites/Favorite Products/__Standard Values
+SharedFields:
+- ID: "04f7cae7-23fd-45b2-b664-347aa0c9439c"
+  Hint: cta1Style
+  Value: "{49A23327-0397-4CCE-A930-E76918D37C42}"
+- ID: "32a0a4a0-2c24-4894-8629-4cd02476348e"
+  Hint: headlineLevel
+  Value: "{7F10288A-BEB1-4D95-A139-32DF40094441}"
+- ID: "5e672aaa-c172-49f8-878e-3134b9d1fc0e"
+  Hint: cta1Icon
+  Value: "{50590EDC-7EA7-4436-9A3E-701C87A07DB2}"
+- ID: "90fdb48f-27b0-4906-aa06-9d50bb974234"
+  Hint: cta2Icon
+  Value: "{50590EDC-7EA7-4436-9A3E-701C87A07DB2}"
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{2A2FDCAE-03DA-493F-AA0F-7B3C2F1D0E6F}"
+- ID: "d7cf8c67-489a-46ae-9b9a-c2436c11d3d7"
+  Hint: cta2Style
+  Value: "{49A23327-0397-4CCE-A930-E76918D37C42}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230428T183952Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\dboeser
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\dboeser
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "004e58bb-e236-4bd7-9393-ff27160ebe83"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\dboeser
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230508T154447Z

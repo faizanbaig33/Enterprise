@@ -1,0 +1,38 @@
+﻿---
+ID: "2ad6d5c5-3c92-4335-a7d9-f9206705975d"
+Parent: "e9de8594-3a46-43e2-80e5-d2cfce395ddf"
+Template: "e9de8594-3a46-43e2-80e5-d2cfce395ddf"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Listing/List Image with Callouts/List Image with Callouts Item/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221114T070511Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "df1a11c0-b0d9-466f-a301-a148c901fc5e"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230103T211925Z
+    - ID: "ebc0f4f5-3020-4870-960b-524e0d172158"
+      Hint: headlineLevel
+      Value: "{7F10288A-BEB1-4D95-A139-32DF40094441}"

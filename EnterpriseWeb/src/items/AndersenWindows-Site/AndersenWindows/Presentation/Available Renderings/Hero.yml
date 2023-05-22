@@ -1,0 +1,42 @@
+﻿---
+ID: "577f88f3-3cf7-483b-a2f5-5389513f5ff3"
+Parent: "f24b8f51-0c42-451d-bdef-c4ebe71fc7f8"
+Template: "76da0a8d-fc7e-42b2-af1e-205b49e43f98"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Presentation/Available Renderings/Hero
+SharedFields:
+- ID: "715ae6c0-71c8-4744-ab4f-65362d20ad65"
+  Hint: Renderings
+  Value: |
+    {1409F521-3584-41E4-84B1-3E9097C84DEF}
+    {6A481E65-2D33-45BB-BF51-DA34AB53F8AD}
+    {F08A82E2-7945-45B6-B986-826D339FC808}
+    {36107515-7523-4086-B256-AAD592B6E5A1}
+    {EEE84920-F7A4-42BA-9A72-6CCDD7C8F933}
+    {FEA9F746-9907-4EBE-9F98-795514534FCA}
+    {90DDA522-5BB0-4861-A4BB-DBE633FEB532}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T195552Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d226dfd7-e7d2-4f45-b7f2-d17388928f21"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230220T200128Z

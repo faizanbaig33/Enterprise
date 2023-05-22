@@ -1,0 +1,116 @@
+.aw {
+  --theme-body: theme('colors.dark-gray');
+  --theme-btn-bg: theme('colors.white');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.secondary');
+  --theme-btn-text-hover: theme('colors.white');
+  --theme-btn-border: theme('colors.primary');
+  --theme-btn-border-hover: theme('colors.primary')
+}
+
+.rba {
+  --theme-body: theme('colors.dark-gray');
+  --theme-btn-bg: theme('colors.secondary');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.white');
+  --theme-btn-text-hover: theme('colors.secondary');
+  --theme-btn-border: theme('colors.primary');
+  --theme-btn-border-hover: theme('colors.primary')
+}
+
+.aw .theme-black {
+  --theme-bg: theme('colors.secondary');
+  --theme-text: theme('colors.white');
+  --theme-body: theme('colors.white');
+  --theme-btn-bg: theme('colors.white');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.secondary');
+  --theme-btn-text-hover: theme('colors.white');
+  --theme-btn-border: theme('colors.primary');
+  --theme-btn-border-hover: theme('colors.secondary')
+}
+
+.rba .theme-black {
+  --theme-bg: theme('colors.secondary');
+  --theme-text: theme('colors.white');
+  --theme-body: theme('colors.white');
+  --theme-btn-bg: theme('colors.white');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.secondary');
+  --theme-btn-text-hover: theme('colors.secondary');
+  --theme-btn-border: theme('colors.secondary');
+  --theme-btn-border-hover: theme('colors.secondary')
+}
+
+.aw .theme-gray {
+  --theme-bg: theme('colors.light-gray');
+  --theme-text: theme('colors.secondary');
+  --theme-body: theme('colors.dark-gray');
+  --theme-btn-bg: theme('colors.white');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.secondary');
+  --theme-btn-text-hover: theme('colors.white');
+  --theme-btn-border: theme('colors.primary');
+  --theme-btn-border-hover: theme('colors.primary')
+}
+
+.rba .theme-gray {
+  --theme-bg: theme('colors.light-gray');
+  --theme-text: theme('colors.secondary');
+  --theme-body: theme('colors.dark-gray');
+  --theme-btn-bg: theme('colors.secondary');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.white');
+  --theme-btn-text-hover: theme('colors.secondary');
+  --theme-btn-border: theme('colors.primary');
+  --theme-btn-border-hover: theme('colors.primary')
+}
+
+.aw .theme-primary {
+  --theme-bg: theme('colors.primary');
+  --theme-text: theme('colors.white');
+  --theme-body: theme('colors.white');
+  --theme-btn-bg: theme('colors.white');
+  --theme-btn-bg-hover: theme('colors.secondary');
+  --theme-btn-text: theme('colors.secondary');
+  --theme-btn-text-hover: theme('colors.white');
+  --theme-btn-border: theme('colors.white');
+  --theme-btn-border-hover: theme('colors.secondary')
+}
+
+.rba .theme-primary {
+  --theme-bg: theme('colors.secondary');
+  --theme-text: theme('colors.white');
+  --theme-body: theme('colors.white');
+  --theme-btn-bg: theme('colors.white');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.secondary');
+  --theme-btn-text-hover: theme('colors.secondary');
+  --theme-btn-border: theme('colors.secondary');
+  --theme-btn-border-hover: theme('colors.secondary')
+}
+
+.aw .theme-secondary {
+  --theme-bg: theme('colors.black');
+  --theme-text: theme('colors.white');
+  --theme-body: theme('colors.white');
+  --theme-btn-bg: theme('colors.white');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.secondary');
+  --theme-btn-text-hover: theme('colors.white');
+  --theme-btn-border: theme('colors.white');
+  --theme-btn-border-hover: theme('colors.primary')
+}
+
+.rba .theme-secondary {
+  --theme-bg: theme('colors.primary');
+  --theme-text: theme('colors.black');
+  --theme-body: theme('colors.white');
+  --theme-btn-bg: theme('colors.white');
+  --theme-btn-bg-hover: theme('colors.primary');
+  --theme-btn-text: theme('colors.secondary');
+  --theme-btn-text-hover: theme('colors.secondary');
+  --theme-btn-border: theme('colors.secondary');
+  --theme-btn-border-hover: theme('colors.secondary')
+}
+

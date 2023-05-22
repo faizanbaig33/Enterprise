@@ -1,0 +1,58 @@
+﻿---
+ID: "91161173-f8dc-4340-b139-c14240c81287"
+Parent: "8235eb8a-e322-4980-9025-49808629d2fa"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/General/Content Block with Media/ContentBlockWithMedia
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: office/32x32/object_alignment_horizontal.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {B61A1D20-9EE5-4CCB-9E0D-24A97E58D293}
+    {B8D1C158-95E5-401A-80D8-6EBF6400F496}
+    {5FB8ACDF-E52A-4EE9-A3D9-83CD1C5C5CB1}
+    {30594C7E-1F51-4706-AB7E-6766B1FC3C90}
+    {BB8D733E-930A-42D3-B263-25BCA778580E}
+    {368747B7-D912-47D5-995E-CD3573E24FDF}
+    {A1F83235-B232-4DA1-907C-F9699A302B34}
+    {DEA616A7-3579-43D1-934E-583A045F5121}
+    {20F6A380-8182-48AD-9ED0-5C75FCF4086F}
+    {206E2322-2899-408A-8C27-749A2C929D13}
+- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
+  Hint: __Read Only
+  Value: 
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{F6A13D5B-A6F5-4838-B614-7553A96D0BDE}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: Content Block with Media
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210707T230223Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "099f5691-68cf-4649-91ed-a3c101c931c5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230224T045417Z

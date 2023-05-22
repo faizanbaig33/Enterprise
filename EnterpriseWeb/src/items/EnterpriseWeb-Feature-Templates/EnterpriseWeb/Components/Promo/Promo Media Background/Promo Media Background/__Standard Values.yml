@@ -1,0 +1,43 @@
+﻿---
+ID: "e9b2d19b-9471-4ab1-94b4-2719f7094d3e"
+Parent: "0bfac9cb-e34a-4544-ad08-3b4c16d4d395"
+Template: "0bfac9cb-e34a-4544-ad08-3b4c16d4d395"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Promo/Promo Media Background/Promo Media Background/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1bb99f94-7968-439b-bdfa-5d5b9d72801b"
+      Hint: eyebrowLevel
+      Value: "{7F10288A-BEB1-4D95-A139-32DF40094441}"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230421T132247Z
+    - ID: "27c46ffe-a6b3-4c29-9064-dc8e2c1e003f"
+      Hint: overlay
+      Value: "{CEC0AF91-E32D-4183-86B2-1594757D8052}"
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "74c9135b-0427-4805-815d-118f19280f3b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "ceb6a4ab-1257-4343-b5a8-f7dabe2b4957"
+      Hint: fontColor
+      Value: "{12A26C7B-7F96-4C40-9762-187D4132DD6B}"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230501T132018Z
+    - ID: "ebc0f4f5-3020-4870-960b-524e0d172158"
+      Hint: headlineLevel
+      Value: "{0F556F3A-BBAD-4AA5-952D-B79003B39CD6}"

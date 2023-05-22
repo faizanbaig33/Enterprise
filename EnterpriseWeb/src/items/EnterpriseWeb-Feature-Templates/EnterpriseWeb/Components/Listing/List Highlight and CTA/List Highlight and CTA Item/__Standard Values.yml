@@ -1,0 +1,41 @@
+﻿---
+ID: "8cf80c5d-a163-4022-8b49-a27922315453"
+Parent: "a03e9efe-8b1b-4f3c-893c-5f59d61d6c0b"
+Template: "a03e9efe-8b1b-4f3c-893c-5f59d61d6c0b"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Listing/List Highlight and CTA/List Highlight and CTA Item/__Standard Values
+SharedFields:
+- ID: "04f7cae7-23fd-45b2-b664-347aa0c9439c"
+  Hint: cta1Style
+  Value: "{49A23327-0397-4CCE-A930-E76918D37C42}"
+- ID: "5e672aaa-c172-49f8-878e-3134b9d1fc0e"
+  Hint: cta1Icon
+  Value: "{50590EDC-7EA7-4436-9A3E-701C87A07DB2}"
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221114T070511Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9ed0bd94-d787-4d19-8aa3-4a43c58079fb"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230131T174419Z

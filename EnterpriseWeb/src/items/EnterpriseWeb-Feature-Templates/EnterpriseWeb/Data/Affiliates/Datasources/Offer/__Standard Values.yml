@@ -1,0 +1,47 @@
+﻿---
+ID: "0fe30fe9-82d7-4902-9a23-d336fb50d4d9"
+Parent: "3b07fb29-6eca-4d8e-809d-1027f71ce17e"
+Template: "3b07fb29-6eca-4d8e-809d-1027f71ce17e"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/Datasources/Offer/__Standard Values
+SharedFields:
+- ID: "a4f985d9-98b3-4b52-aaaf-4344f6e747c6"
+  Hint: __Workflow
+  Value: 
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{38962021-FA11-4DDB-8C14-1C26B08AAE29}"
+- ID: "fd4e2050-186c-4375-8b99-e8a85dd7436e"
+  Hint: __Enable item fallback
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170714T160657Z
+    - ID: "30eb38c3-1879-4dcd-8478-2943ef20a33a"
+      Hint: Link
+      Value: |
+        <link text="SEE OFFER DETAILS" anchor="" linktype="internal" class="" title="Schedule a Consulation" target="" querystring="" id="{BF00DB45-B48E-405C-9853-6D6FAFAE1D4B}" />
+    - ID: "3e431de1-525e-47a3-b6b0-1ccbec3a8c98"
+      Hint: __Workflow state
+      Value: 
+    - ID: "40c9547c-4e12-4285-99f2-25ce1db47ffd"
+      Hint: Name
+      Value: $name
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2b1dad91-3b9f-4a30-8ece-4623ab415d6f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20200129T135143Z

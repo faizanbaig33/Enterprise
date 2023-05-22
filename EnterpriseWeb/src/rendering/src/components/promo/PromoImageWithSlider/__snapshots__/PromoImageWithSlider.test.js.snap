@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="promo/promoimagewithslider"
+  id="id151852150"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-12 order-last"
+      >
+        <div
+          class="grid grid-cols-12 "
+        >
+          <div
+            class="col-span-12 md:col-span-10"
+          >
+            <div
+              class="caption"
+            >
+              <div
+                class="md:mb-0 font-heavy text-small text-theme-text ml:text-secondary mt-xxs  text-left mb-s font-sans text-sm-xxs md:text-caption"
+              >
+                Image caption goes here.
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 md:col-span-2 md:justify-self-end "
+          >
+            <button
+              class="flex flex-row md:flex-row-reverse items-center gap-x-xxs  group"
+            >
+              <span
+                class="flex h-m w-m items-center justify-center rounded-full border-2 border-primary hover:bg-primary"
+              />
+              <span
+                class="text-text-link font-sans font-regular group-hover:underline underline-offset-4"
+              >
+                SHOW DETAILS
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-span-12"
+      >
+        <div>
+          <div
+            class="items-top font-sans  text-theme-text text-sm-m md:text-m  font-heavy mb-xxs md:mb-s"
+          >
+            <h2>
+              Headline Text
+            </h2>
+            
+          </div>
+          <div
+            class="relative -mx-m md:mx-0"
+            tabindex="0"
+          >
+            <div
+              class="before-after-slider"
+            >
+              <div
+                class="before-after-slider__first-photo-container after:block after:py-s after:text-center after:min-w-[160px] after:bg-black after:text-white after:uppercase after:w-fit after:content-none md:after:content-[attr(data-afterLabel)]"
+                data-afterlabel="After"
+              >
+                <img
+                  alt="woman in entrance of home with andersen black framed door open"
+                  draggable="false"
+                  src="https://source.unsplash.com/random/1200x675?after"
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-center bg-light-gray px-m"
+            >
+              <span
+                class="top-[30px] z-10 inline-block py-s text-center text-sm-xxs md:text-xs font-sans font-heavy text-black md:absolute md:w-[160px] md:bg-black md:text-white uppercase md:hidden left-[30px]"
+              >
+                Before
+              </span>
+              <span
+                class="top-[30px] z-10 inline-block py-s text-center text-sm-xxs md:text-xs font-sans font-heavy text-black md:absolute md:w-[160px] md:bg-black md:text-white uppercase md:hidden right-[30px]"
+              >
+                After
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

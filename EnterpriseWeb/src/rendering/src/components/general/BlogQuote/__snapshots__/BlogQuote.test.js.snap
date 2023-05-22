@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/blogquote"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-12"
+      >
+        <div
+          class="flex justify-start"
+        >
+          <div
+            class="mr-xs md:mr-m"
+          >
+            <svg
+              fill="none"
+              height="34"
+              viewBox="0 0 54 35"
+              width="54"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M53.88 0.479994L43.08 0L24.84 33.48L40.56 34.32L53.88 0.479994ZM28.92 0.479994L18.12 0L0 33.48L15.72 34.32L28.92 0.479994Z"
+                fill="#F26924"
+              />
+            </svg>
+          </div>
+          <div
+            class="font-sans text-sm-xs font-medium md:text-xs"
+          >
+            <div
+              class="font-heavy text-sm-s md:!text-s mb-xxs"
+            >
+              <div>
+                <h3>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </h3>
+              </div>
+            </div>
+            <p>
+              Saad Patel
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

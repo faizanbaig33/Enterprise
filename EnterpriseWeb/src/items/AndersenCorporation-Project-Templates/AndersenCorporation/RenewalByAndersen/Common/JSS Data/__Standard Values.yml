@@ -1,0 +1,31 @@
+﻿---
+ID: "021d1e3f-50c3-434a-8e6a-d5311a2171d7"
+Parent: "c0fb6db7-9bbe-4983-9340-4cea7cca9160"
+Template: "c0fb6db7-9bbe-4983-9340-4cea7cca9160"
+Path: /sitecore/templates/Project/AndersenCorporation/RenewalByAndersen/Common/JSS Data/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221129T230341Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "38be1aae-c7e5-493d-8f4d-01ef326ad273"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221129T231111Z

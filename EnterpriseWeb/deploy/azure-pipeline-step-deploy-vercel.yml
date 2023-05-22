@@ -1,0 +1,87 @@
+steps:
+#Getting Selected version of Packages
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "BuildVersionToDownload is: " $(buildVersionToDownload)
+      echo "SitecoreBuildRevision is: " $(SitecoreBuildRevision)
+  displayName: 'Getting Selected Package Versions'
+
+#Download package to agent directory
+- template: 'azure-pipeline-step-add-artifacts.yml'
+
+#Getting version of Deployment Packages
+- powershell: |
+    echo "Your selected Web Package Version is: " $(NugetVersion)
+    echo "BuildVersionToDownload is: " $(GetPackageVersion.buildVersionToDownload)
+    echo "SitecoreBuildRevision is: " $(GetPackageVersion.SitecoreBuildRevision)
+  displayName: 'Getting Deployment Package Versions'
+
+- task: NodeTool@0
+  displayName: 'Install Node'
+  inputs:
+    versionSpec: 16.18.0
+
+- task: PowerShell@2
+  displayName: 'Restore DotNet CLI tools'
+  inputs:
+    targetType: 'inline'
+    script: |
+      cd $(Build.SourcesDirectory)
+      # Don't create new manigest file because we already checked one in.
+      # dotnet new tool-manifest
+      dotnet nuget add source -n Sitecore https://sitecore.myget.org/F/sc-packages/api/v3/index.json
+      # Restore tools (e.g. Sitecore.CLI) from version defined in manifest.
+      dotnet tool restore
+
+- powershell: |
+    npm i -g vercel
+  workingDirectory: $(System.DefaultWorkingDirectory)
+  displayName: 'Install Vercel CLI'
+
+- powershell: |
+    npm install
+  workingDirectory: $(System.DefaultWorkingDirectory)/src/rendering
+  displayName: 'Run NPM install'
+
+- powershell: |
+    dotnet leprechaun -g -c src/Leprechaun.config
+  workingDirectory: $(System.DefaultWorkingDirectory)
+  displayName: 'Run Leprechaun'
+
+- powershell: |
+    npm run bootstrap
+  workingDirectory: $(System.DefaultWorkingDirectory)/src/rendering
+  displayName: 'Run JSS Bootstrap'
+
+# - powershell: |
+#     npm run precommit
+#   workingDirectory: $(System.DefaultWorkingDirectory)/src/rendering
+#   displayName: 'Run Precommit'
+
+- powershell: |
+    rm .babelrc
+  workingDirectory: $(System.DefaultWorkingDirectory)/src/rendering
+  displayName: 'Remove .babelrc'
+
+# Build & Deploy frontend Code - Vercel
+- powershell: |
+    $deployUrl = vercel --scope $(VERCEL_SCOPE) --token $(VERCEL_DEPLOY_TOKEN)
+    echo "$deployUrl"
+    echo "##vso[task.setvariable variable=deployUrl]$deployUrl"
+  workingDirectory: $(System.DefaultWorkingDirectory)/src/rendering
+  displayName: 'Deploy to Vercel'
+
+# Setting Alias (Switching) for Vercel frontend App
+- powershell: |
+    vercel alias $(deployUrl) $(alias_url) --scope $(VERCEL_SCOPE) --token $(VERCEL_DEPLOY_TOKEN)
+    echo "Vercel Aliasing Complete!"
+  displayName: 'Setting Alias (Switching) for Vercel App'
+
+# Perform Health Check - frontend
+- task: PowerShell@2
+  inputs:
+    filePath: '$(System.DefaultWorkingDirectory)/deploy/PerfromHealthCheck.ps1'
+    arguments: '-Url $(VercelAppUrl)'
+  displayName: 'Perform Health Check'

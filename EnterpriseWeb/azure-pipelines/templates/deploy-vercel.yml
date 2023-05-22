@@ -1,0 +1,99 @@
+parameters:
+  displayName: ''
+  devopsEnvironment: ''
+  vercelAliasUrl: ''
+  vercelDeployToken: ''
+  vercelScope: ''
+  siteUrl: ''
+
+jobs:
+- deployment: DeployVercel
+  displayName: Deploy to Vercel
+  environment: ${{ parameters.devopsEnvironment }}
+  pool:
+    vmImage: ubuntu-latest
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - checkout: self
+
+        - task: NodeTool@0
+          displayName: Install Node
+          inputs:
+            versionSpec: 16.18.0
+
+        - task: PowerShell@2
+          displayName: Restore DotNet CLI tools
+          inputs:
+            targetType: inline
+            script: |
+              dotnet tool restore
+            workingDirectory: $(Build.SourcesDirectory)
+
+        - task: PowerShell@2
+          displayName: Install Vercel CLI
+          inputs:
+            targetType: inline
+            script: |
+              npm i -g vercel
+
+        - task: PowerShell@2
+          displayName: Restore NPM packages
+          inputs:
+            targetType: inline
+            script: |
+              npm install
+            workingDirectory: $(Build.SourcesDirectory)/src/rendering
+
+        - task: PowerShell@2
+          displayName: Run Leprechaun
+          inputs:
+            targetType: inline
+            script: |
+              dotnet leprechaun -g -c src/Leprechaun.config
+            workingDirectory: $(Build.SourcesDirectory)
+
+        - task: PowerShell@2
+          displayName: Run JSS Bootstrap
+          inputs:
+            targetType: inline
+            script: |
+              npm run bootstrap
+            workingDirectory: $(Build.SourcesDirectory)/src/rendering
+
+        - task: PowerShell@2
+          displayName: Remove .babelrc
+          inputs:
+            targetType: inline
+            script: |
+              rm .babelrc
+            workingDirectory: $(Build.SourcesDirectory)/src/rendering
+
+        - task: PowerShell@2
+          displayName: Deploy to Vercel
+          inputs:
+            targetType: inline
+            script: |
+              # Write-Host "$deployUrl = vercel --scope ${{ parameters.vercelScope }} --token ${{ parameters.vercelDeployToken }}"
+              $deployUrl = vercel --scope ${{ parameters.vercelScope }} --token ${{ parameters.vercelDeployToken }}
+              echo "$deployUrl"
+              echo "##vso[task.setvariable variable=deployUrl]$deployUrl"
+            workingDirectory: $(Build.SourcesDirectory)/src/rendering
+
+        - task: PowerShell@2
+          displayName: Setting Alias (Switching) for Vercel App
+          inputs:
+            targetType: inline
+            script: |
+              # Write-Host "vercel alias $(deployUrl) ${{ parameters.vercelAliasUrl }} --scope ${{ parameters.vercelScope }} --token ${{ parameters.vercelDeployToken }}"
+              vercel alias $(deployUrl) ${{ parameters.vercelAliasUrl }} --scope ${{ parameters.vercelScope }} --token ${{ parameters.vercelDeployToken }}
+              echo "Vercel Aliasing Complete!"
+            #workingDirectory: $(Build.SourcesDirectory)/src/rendering
+
+        # Perform Health Check - frontend
+        - task: PowerShell@2
+          displayName: Perform Health Check
+          inputs:
+            filePath: $(Build.SourcesDirectory)/azure-pipelines/deploy/SiteHealthCheck.ps1
+            arguments: -Url ${{ parameters.siteUrl }}

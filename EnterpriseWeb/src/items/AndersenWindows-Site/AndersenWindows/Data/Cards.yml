@@ -1,0 +1,31 @@
+﻿---
+ID: "2a1987a9-3f89-4332-b92f-f40de167b3ca"
+Parent: "a44a65ef-9c1f-445c-8fbd-b7c494bac2b3"
+Template: "aa7425e1-2e1b-4c46-9e09-2ebae37f3378"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Data/Cards
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221215T192941Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "9c694c50-db52-415d-ac4a-9183378f27a0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221215T192941Z

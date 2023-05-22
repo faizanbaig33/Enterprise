@@ -1,0 +1,40 @@
+﻿---
+ID: "58c323c9-50b7-4b2c-ad61-31c47b1d3f30"
+Parent: "a1d62e74-51c3-4bdd-8547-1ece87422ec9"
+Template: "a1d62e74-51c3-4bdd-8547-1ece87422ec9"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Forms/Fields/Email/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230216T192449Z
+    - ID: "4b2287e4-e63b-41d1-92c1-7af2c3b1c742"
+      Hint: minLength
+      Value: 
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6ace97d5-da7b-4305-87c1-1598cc7dea7d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "c8771bb6-e63c-4a72-9cc5-4c2d1091acec"
+      Hint: maxLength
+      Value: 
+    - ID: "d75d14d3-1a4e-47f1-a2d4-496cc1d09c0c"
+      Hint: label
+      Value: $name
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230417T212652Z

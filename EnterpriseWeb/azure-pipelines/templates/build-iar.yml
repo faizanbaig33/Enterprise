@@ -1,0 +1,35 @@
+steps:
+- task: UseDotNet@2
+  displayName: Install .Net Core
+  inputs:
+    version: 6.x
+
+- task: DotNetCoreCLI@2
+  displayName: Restore the .Net Core Tools
+  inputs:
+    command: custom
+    custom: tool
+    arguments: restore
+    workingDirectory: $(Build.SourcesDirectory)
+
+- task: DotNetCoreCLI@2
+  displayName: Create Core and Master Resource Files
+  inputs:
+    command: custom
+    custom: sitecore
+    arguments: itemres create -o $(Build.SourcesDirectory)\resource\entweb
+    workingDirectory: $(Build.SourcesDirectory)
+
+- task: PowerShell@2
+  displayName: Move Sitecore resource files
+  inputs:
+    targetType: inline
+    script: |
+      #Move CORE package into proper folder structure
+      mkdir "$(Build.SourcesDirectory)\deploy\artifacts\sitecore modules\items\core"
+      Move-Item -Path "$(Build.SourcesDirectory)\resource\items.core.entweb.dat" -Destination "$(Build.SourcesDirectory)\deploy\artifacts\sitecore modules\items\core\items.core.entweb.dat"
+
+      #Move MASTER package into proper folder structure
+      mkdir "$(Build.SourcesDirectory)\deploy\artifacts\sitecore modules\items\master"
+      Move-Item -Path "$(Build.SourcesDirectory)\resource\items.master.entweb.dat" -Destination "$(Build.SourcesDirectory)\deploy\artifacts\sitecore modules\items\master\items.master.entweb.dat"
+    workingDirectory: $(Build.SourcesDirectory)

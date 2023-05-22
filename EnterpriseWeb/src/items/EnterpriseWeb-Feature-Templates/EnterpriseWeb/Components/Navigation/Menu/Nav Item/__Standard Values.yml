@@ -1,0 +1,44 @@
+﻿---
+ID: "d1e961dd-b9ba-48ee-802c-6b3fac28ddc0"
+Parent: "06067cc8-00e9-454a-809e-c1d804d1e40f"
+Template: "06067cc8-00e9-454a-809e-c1d804d1e40f"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Navigation/Menu/Nav Item/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: |
+    {06067CC8-00E9-454A-809E-C1D804D1E40F}
+    {5DEBF87F-461F-4E52-8772-09AFF1219C30}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T061820Z
+    - ID: "39721738-52f4-4a0b-873b-d51008f8eb20"
+      Hint: navItemStyle
+      Value: "{1ED23026-A2FD-49B0-99E3-64CAB99F22D3}"
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7c1cf9d6-9213-45e4-84c1-dbcd53fd9e63"
+    - ID: "a9828f98-b891-44e9-958e-cfa762a571aa"
+      Hint: navItemLink
+      Value: |
+        <link text="Item Link" anchor="" linktype="internal" class="" title="" target="" querystring="" id="{7FB335D2-8E99-458E-9EF9-562A78CCB821}" />
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230323T155646Z

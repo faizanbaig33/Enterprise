@@ -1,0 +1,38 @@
+﻿---
+ID: "c9a1ebdf-c1e8-45fa-9c60-ff021e5c3a65"
+Parent: "38f8e205-c367-494c-877e-57344f0f0ffd"
+Template: "38f8e205-c367-494c-877e-57344f0f0ffd"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Forms/Form/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{C4442680-1100-4626-A469-ACC318E25CBF}"
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{9092277E-6395-49EB-8170-CDB4613A6185}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230216T192830Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "cdab456e-7b30-42ce-9563-ce95b125e0ba"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230216T194118Z

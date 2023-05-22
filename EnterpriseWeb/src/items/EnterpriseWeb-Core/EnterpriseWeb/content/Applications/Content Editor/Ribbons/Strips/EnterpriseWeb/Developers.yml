@@ -1,0 +1,35 @@
+﻿---
+ID: "60272c48-b8b9-4101-9fc7-876cdc8bc848"
+Parent: "85288f43-d78a-42c8-9384-9da329bceee2"
+Template: "ef295cd8-19d4-4e02-9438-94c926ef5284"
+Path: /sitecore/EnterpriseWeb/content/Applications/Content Editor/Ribbons/Strips/EnterpriseWeb/Developers
+SharedFields:
+- ID: "c9ce97fb-3e8e-4384-9430-7dba75b275dd"
+  Hint: Reference
+  Value: "{C49F6CD0-7D8B-440E-A64E-67C13BBE34DA}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221108T225935Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b4bd0c8f-5e1e-4d50-a8dc-adef0a6b93f0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221108T225952Z

@@ -1,0 +1,167 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="listing/xupcardcollection"
+  id="XupCardCollection"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-10"
+      >
+        <div
+          class="items-top font-sans  text-sm-m md:text-m font-bold mb-xxs"
+        >
+          <h2>
+            Xup Card Collection
+          </h2>
+        </div>
+        <div
+          class="text-body text-dark-gray font-regular mb-m"
+        >
+          <div
+            class="body-copy"
+          >
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum lobor.
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-start mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+        >
+          <a
+            class="flex w-fit items-center whitespace-nowrap font-sans text-text-link font-heavy text-theme-text hover:underline hover:decoration-secondary hover:underline-offset-8 disabled:border-gray disabled:text-gray mr-m"
+            href="/"
+            role="link"
+            tabindex="0"
+            title=""
+          >
+            Call to Action
+            <span
+              class="ml-xxs"
+            />
+          </a>
+        </div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-4"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            GenericCard
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-4"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            GenericCard
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-4"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            GenericCard
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-4"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            GenericCard
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-4"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            GenericCard
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-4"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            GenericCard
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-4 md:col-start-1"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            GenericCard
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-span-12 md:col-span-4 md:col-start-5"
+      >
+        <div
+          style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+        >
+          <h2>
+            GenericCard
+          </h2>
+          <p>
+            JSS component is missing React implementation. See the developer console for more information.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

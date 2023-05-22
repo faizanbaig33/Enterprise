@@ -1,0 +1,23 @@
+﻿---
+ID: "98ec5d11-35e9-4a3f-9627-eb48d8e2f584"
+Parent: "e7db5932-53ec-47b4-80bb-961efe0b4ee6"
+Template: "905c7f52-d418-43cb-834c-bc033560bc4d"
+Path: /sitecore/templates/Branches/Feature/EnterpriseWeb/AW Header/$name/utility
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T055245Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "0331512d-3898-4cca-aa83-58ef89393ba5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T055245Z

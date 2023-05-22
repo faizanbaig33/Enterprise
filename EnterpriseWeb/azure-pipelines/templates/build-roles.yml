@@ -1,0 +1,18 @@
+steps:
+- task: CopyFiles@2
+  displayName: Copy sitecore.json to artifacts
+  inputs:
+    contents: sitecore.json
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+- task: CopyFiles@2
+  displayName: Copy Roles.module.json to artifacts
+  inputs:
+    contents: src\Roles.module.json
+    targetFolder: $(Build.ArtifactStagingDirectory)
+
+- task: CopyFiles@2
+  displayName: Copy serialized roles to artifacts
+  inputs:
+    contents: src/items/_roles/**
+    targetFolder: $(Build.ArtifactStagingDirectory)

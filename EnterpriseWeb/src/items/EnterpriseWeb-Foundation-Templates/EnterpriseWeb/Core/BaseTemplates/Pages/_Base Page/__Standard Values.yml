@@ -1,0 +1,30 @@
+﻿---
+ID: "d19a181f-07ab-4b6c-b7d6-5a52e993951e"
+Parent: "abf549d3-3225-4821-9336-3d395cd86d32"
+Template: "abf549d3-3225-4821-9336-3d395cd86d32"
+Path: /sitecore/templates/Foundation/EnterpriseWeb/Core/BaseTemplates/Pages/_Base Page/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230316T205150Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "64e31970-4a00-4319-9ad3-4352a04b8289"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d12bfd1d-500c-4a60-a535-d7c7eca48f8d"
+      Hint: headerSticky
+      Value: 1
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230316T205154Z

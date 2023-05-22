@@ -1,0 +1,106 @@
+﻿---
+ID: "a7f916a5-19ce-4e79-a6a2-47afb1500ba3"
+Parent: "ff0bc016-2d01-4f55-a020-ef6fc2fe7559"
+Template: "664e5035-eb8c-4ba1-9731-a098fcc9127a"
+Path: /sitecore/system/Settings/Rules/Insert Options/Rules/Page Insert Options
+SharedFields:
+- ID: "fa307b86-da2a-44bd-887d-e2057cdb4948"
+  Hint: Rule
+  Value: |
+    <ruleset>
+      <rule
+        uid="{9A82177C-32B2-4C9B-B347-14769338BDED}"
+        name="AW Insert Options">
+        <conditions>
+          <and
+            uid="36E89188347F4E278513BED3F72AFD6C">
+            <condition
+              id="{D0810F9D-734C-452D-BBB6-4730368D68F1}"
+              uid="3758F91B3008466AA0E82A26007FAA4B"
+              templateid="{ABF549D3-3225-4821-9336-3D395CD86D32}" />
+            <condition
+              id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+              uid="958D37952A3D48C0A65F3F02206A76A1"
+              itemid="{1233C395-5E60-4446-A0CC-C32243940F74}" />
+          </and>
+        </conditions>
+        <actions>
+          <action
+            id="{918FFCF0-F9E1-4DB6-A191-3EFA5A91C583}"
+            uid="24890F32A08A466B9681C4BF3E20F67D"
+            insertoptionid="{59CB7E9A-9F63-4E3D-BFFA-74B5D55397FD}" />
+          <action
+            id="{918FFCF0-F9E1-4DB6-A191-3EFA5A91C583}"
+            uid="DBC54031754E489C838F0EAE4168A0BA"
+            insertoptionid="{50CD9BAC-14FB-4BC9-B28E-B947FBE8B787}" />
+          <action
+            id="{918FFCF0-F9E1-4DB6-A191-3EFA5A91C583}"
+            uid="FC90013078D34E0DB2B7DD4F2BF6BBF7"
+            insertoptionid="{2A15E3B9-8DC6-4217-870B-16FBC609CEB2}" />
+        </actions>
+      </rule>
+      <rule
+        uid="{36D9D1E7-F0EA-4D15-B16F-954A153EE166}"
+        name="RbA Insert Options">
+        <conditions>
+          <and
+            uid="2B98FBB506F54ABEA1B54C770556B026">
+            <condition
+              id="{D0810F9D-734C-452D-BBB6-4730368D68F1}"
+              uid="DD13E8604BCD4106A0A134DC05C1C70B"
+              templateid="{ABF549D3-3225-4821-9336-3D395CD86D32}" />
+            <condition
+              id="{7D5DA661-BEF9-441C-B1F7-D80DE3E0972F}"
+              uid="F3876C0CA975459F9D7DAB56781BFCD6"
+              itemid="{AD40DD20-0D78-44F9-98C0-80761B7468DE}" />
+          </and>
+        </conditions>
+        <actions>
+          <action
+            id="{918FFCF0-F9E1-4DB6-A191-3EFA5A91C583}"
+            uid="08E889FCBB824D19B5B6288BF17897C8"
+            insertoptionid="{A93F50CB-E80E-47E7-9085-236FB086D7E5}" />
+          <action
+            id="{918FFCF0-F9E1-4DB6-A191-3EFA5A91C583}"
+            uid="DCFEFB51F0D940DCB5AE78F1EE99060E"
+            insertoptionid="{C48025CD-4833-4814-B4EB-E7CCF9CCCCE4}" />
+          <action
+            id="{918FFCF0-F9E1-4DB6-A191-3EFA5A91C583}"
+            uid="1A5FCB62EB464435801DE564DF404B5A"
+            insertoptionid="{B7ACC114-A5D4-497A-8C4F-1DDCB101C4B7}" />
+          <action
+            id="{918FFCF0-F9E1-4DB6-A191-3EFA5A91C583}"
+            uid="CB5A2088149D4F61A7EA165B76EDD9DD"
+            insertoptionid="{F4F0A17D-5282-40F9-8911-714AA22D57D9}" />
+        </actions>
+      </rule>
+    </ruleset>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T074958Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d150ff81-9e3a-4299-aeef-ca3ec7f0f6f5"
+    - ID: "9e0287d9-af90-41ad-8d36-332375e194d6"
+      Hint: Name
+      Value: When on a Page Item, allow insert options of other pages.
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230224T074937Z

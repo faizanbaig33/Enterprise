@@ -1,0 +1,27 @@
+parameters:
+  containerRegistry: ''
+  repository: ''
+  latestTag: 'latest'
+
+steps:
+- task: Docker@2
+  displayName: Login to Container Registry
+  inputs:
+    containerRegistry: ${{ parameters.containerRegistry }}
+    command: login
+
+- task: Docker@2
+  displayName: Push Docker image
+  inputs:
+    containerRegistry: ${{ parameters.containerRegistry }}
+    repository: ${{ parameters.repository }}
+    command: push
+    tags: |
+      $(Build.BuildNumber)
+      ${{ parameters.latestTag }}
+
+# - task: PublishPipelineArtifact@1
+#   displayName: "Publish Artifacts"
+#   inputs:
+#     targetPath: '$(Build.ArtifactStagingDirectory)'
+#     artifactName: 'EnterpriseWeb'

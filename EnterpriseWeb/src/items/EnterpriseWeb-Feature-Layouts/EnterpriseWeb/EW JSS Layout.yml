@@ -1,0 +1,40 @@
+﻿---
+ID: "dd2c902a-d7d2-4db9-8538-c7748dab080d"
+Parent: "78c88b0f-70c8-4c4f-853e-085a5e6515dc"
+Template: "e4e11508-04a4-4b0b-a263-5201f811c9cd"
+Path: /sitecore/layout/Layouts/Feature/EnterpriseWeb/EW JSS Layout
+SharedFields:
+- ID: "80334869-86dc-4472-aa89-44cf1b2f6c9b"
+  Hint: Placeholders
+  Value: |
+    {94DFDB00-7859-421E-9F2A-EE0AB42D610A}
+    {F7DA9361-8906-443B-BBD8-552D1044635B}
+    {62B42B26-2356-4069-94BB-CEB7C34DF762}
+    {D3B37690-FD33-41B3-A8DE-F6F26875D44E}
+    {37B5EA89-ED3A-46E2-B528-D334A32BF95D}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221101T084914Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "db75eb10-185d-4de0-b9b9-9e20e78f37ff"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221110T214628Z

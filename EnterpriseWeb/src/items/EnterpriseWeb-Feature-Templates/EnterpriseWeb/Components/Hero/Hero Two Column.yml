@@ -1,0 +1,47 @@
+﻿---
+ID: "5fc4a193-9c83-4098-a507-0d3877dee5ae"
+Parent: "5903ecaf-dbe9-4046-a551-fef7af6aff52"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Hero/Hero Two Column
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/document_orientation_portrait.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {B61A1D20-9EE5-4CCB-9E0D-24A97E58D293}
+    {F5185659-6DAA-4A22-B22A-4CCCFB074F24}
+    {FE668145-9C15-4834-A884-A77F29AD6205}
+    {5E2F3CF0-45EC-4618-AA30-0465290A248D}
+    {565E77B0-8234-479E-9F8F-0B44BDB36FC4}
+    {E36771DC-C474-4722-B024-0305666A6A08}
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{F7F8E41C-C22F-4EC9-ADFC-241C28CDE5D8}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221118T123833Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "34165ef8-2a8f-4647-8033-df4ef8527432"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221118T143440Z

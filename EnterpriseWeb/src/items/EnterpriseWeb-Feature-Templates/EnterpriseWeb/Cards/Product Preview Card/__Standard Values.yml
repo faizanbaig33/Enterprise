@@ -1,0 +1,47 @@
+﻿---
+ID: "f0cd5615-d716-48da-99e1-4f75b4080e1a"
+Parent: "c263410e-8154-4bf2-a1a0-3fe377e6a08e"
+Template: "c263410e-8154-4bf2-a1a0-3fe377e6a08e"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Cards/Product Preview Card/__Standard Values
+SharedFields:
+- ID: "04f7cae7-23fd-45b2-b664-347aa0c9439c"
+  Hint: cta1Style
+  Value: "{49A23327-0397-4CCE-A930-E76918D37C42}"
+- ID: "32a0a4a0-2c24-4894-8629-4cd02476348e"
+  Hint: headlineLevel
+  Value: "{AADA53F8-582E-4687-B9B6-3F2C01437A23}"
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{672D7082-AC93-452C-88C6-BB95CAE4A1E9}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1bb99f94-7968-439b-bdfa-5d5b9d72801b"
+      Hint: eyebrowLevel
+      Value: "{AADA53F8-582E-4687-B9B6-3F2C01437A23}"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221228T103934Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3e491234-85d0-499b-a296-d481c54999d4"
+    - ID: "b2a74f5b-05db-4e79-8ce9-328512c478cf"
+      Hint: headlineText
+      Value: $name
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230111T170751Z

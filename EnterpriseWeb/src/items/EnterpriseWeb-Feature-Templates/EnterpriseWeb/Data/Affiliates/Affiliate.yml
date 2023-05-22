@@ -1,0 +1,46 @@
+﻿---
+ID: "561698e7-fa54-4801-b8c4-f1866f10b57f"
+Parent: "ce1b6e6f-5e18-4d2c-a569-bc2adb78fb5f"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/Affiliate
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/handshake.png
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{E269FBB5-3750-427A-9149-7AA950B49301}"
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {1930BBEB-7805-471A-A3BE-4858AC7CF696}
+    {29BE014C-011F-4EDE-8EFB-ED0D41CBCFCC}
+    {0B3FC208-1220-4C39-B90B-2CA20FD6F222}
+    {C39345AF-A972-417D-A14E-3E5B099E59B5}
+    {75BB2105-FAAC-4D2E-820A-175ECE787DFC}
+    {5D9AE431-4428-4BA4-B3B8-0CBC7322705C}
+    {F5B19F06-73A1-4EF8-9D30-5F0FE57F3A87}
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 0
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{8B8A8C47-3BD2-4390-AA4A-6A117E1DB20B}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170625T183619Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8b92f8f5-5d34-431d-95cd-0baabc913820"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230502T170835Z

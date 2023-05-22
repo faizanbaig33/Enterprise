@@ -1,0 +1,91 @@
+name: $(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)-pr
+
+trigger: none
+
+pool:
+  vmImage: windows-latest
+
+variables:
+  - group: Web - Build Deploy - Global
+  - name: buildConfiguration
+    value: Debug
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    displayName: Build Solution
+    steps:
+    - template: templates\build-cm.yml
+      parameters:
+        buildConfiguration: $(buildConfiguration)
+    - template: templates\build-iar.yml
+
+    - task: NodeTool@0
+      displayName: Install Node
+      inputs:
+        versionSpec: 16.18.0
+
+    - task: PowerShell@2
+      displayName: Install Vercel CLI
+      inputs:
+        targetType: inline
+        script: |
+          npm i -g vercel
+
+    # - task: PowerShell@2
+    #   displayName: Get Vercel variables
+    #   inputs:
+    #     targetType: inline
+    #     script: |
+    #       vercel env pull --yes --token=$(VercelDeployToken)
+    #     workingDirectory: $(Build.SourcesDirectory)\src\rendering
+
+    - task: PowerShell@2
+      displayName: Restore NPM packages
+      inputs:
+        targetType: inline
+        script: |
+          npm install
+        workingDirectory: $(Build.SourcesDirectory)\src\rendering
+
+    # - task: PowerShell@2
+    #   displayName: Build Front End
+    #   inputs:
+    #     targetType: inline
+    #     script: |
+    #       npm run build
+    #     workingDirectory: $(Build.SourcesDirectory)\src\rendering
+
+    - task: PowerShell@2
+      displayName: Run Front End Lint
+      inputs:
+        targetType: inline
+        script: |
+          npm run lint
+        workingDirectory: $(Build.SourcesDirectory)\src\rendering
+
+    - task: PowerShell@2
+      displayName: Run Front End Generators
+      inputs:
+        targetType: inline
+        script: |
+          npm run leprechaun
+          npm run bootstrap
+        workingDirectory: $(Build.SourcesDirectory)\src\rendering
+
+    - task: PowerShell@2
+      displayName: Run Front End Tests
+      inputs:
+        targetType: inline
+        script: |
+          npm run test
+        workingDirectory: $(Build.SourcesDirectory)\src\rendering
+
+    - task: PowerShell@2
+      displayName: Run Front End Compile
+      inputs:
+        targetType: inline
+        script: |
+          npx tsc --project tsconfig.json
+        workingDirectory: $(Build.SourcesDirectory)\src\rendering

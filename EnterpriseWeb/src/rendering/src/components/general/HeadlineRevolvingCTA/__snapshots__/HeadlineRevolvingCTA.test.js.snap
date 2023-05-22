@@ -1,0 +1,282 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/headlinerevolvingcta"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="headlinerevolvingcta col-span-12"
+      >
+        <div
+          class=" mx-auto flex flex-col md:flex-row md:items-center md:justify-center"
+        >
+          <div
+            class="fadeInUp "
+          >
+            <div
+              class="items-top font-sans  font-heavy text-m ml:text-xl"
+            >
+              <h2>
+                Static headline area
+              </h2>
+              
+            </div>
+          </div>
+          <div
+            class="slider-wrapper fadeInUp md:pl-s"
+            style="max-width: 246px;"
+          >
+            <div
+              class="block"
+            >
+              <div
+                class="slick-slider slick-vertical slick-initialized"
+                dir="ltr"
+              >
+                <button
+                  class="slick-arrow slick-prev"
+                  data-role="none"
+                  style="display: block;"
+                  type="button"
+                >
+                   
+                  Previous
+                </button>
+                <div
+                  class="slick-list setgap"
+                  style="height: 0px;"
+                >
+                  <div
+                    class="slick-track"
+                    style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+                  >
+                    <div
+                      aria-hidden="true"
+                      class="slick-slide slick-cloned"
+                      data-index="-1"
+                      style="width: 0px;"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <div
+                          class="flex cursor-pointer items-center"
+                          style="width: 100%; display: inline-block;"
+                          tabindex="-1"
+                        >
+                          <a
+                            class="title inline-flex items-center font-sans text-m font-heavy ml:text-xl "
+                            href="/"
+                            role="link"
+                            tabindex="0"
+                            target=""
+                            title=""
+                          >
+                            Link 3 Headline
+                            <span
+                              class="icon flex items-center justify-center"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="slick-slide slick-current"
+                      data-index="0"
+                      style="outline: none; width: 0px;"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <div
+                          class="flex cursor-pointer items-center"
+                          style="width: 100%; display: inline-block;"
+                          tabindex="-1"
+                        >
+                          <a
+                            class="title inline-flex items-center font-sans text-m font-heavy ml:text-xl"
+                            href="/"
+                            role="link"
+                            tabindex="0"
+                            target=""
+                            title=""
+                          >
+                            Link 2 Headline
+                            <span
+                              class="icon flex items-center justify-center"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="slick-slide"
+                      data-index="1"
+                      style="outline: none; width: 0px;"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <div
+                          class="flex cursor-pointer items-center"
+                          style="width: 100%; display: inline-block;"
+                          tabindex="-1"
+                        >
+                          <a
+                            class="title inline-flex items-center font-sans text-m font-heavy ml:text-xl "
+                            href="/"
+                            role="link"
+                            tabindex="0"
+                            target=""
+                            title=""
+                          >
+                            Link 1 Headline
+                            <span
+                              class="icon flex items-center justify-center"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="slick-slide"
+                      data-index="2"
+                      style="outline: none; width: 0px;"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <div
+                          class="flex cursor-pointer items-center"
+                          style="width: 100%; display: inline-block;"
+                          tabindex="-1"
+                        >
+                          <a
+                            class="title inline-flex items-center font-sans text-m font-heavy ml:text-xl "
+                            href="/"
+                            role="link"
+                            tabindex="0"
+                            target=""
+                            title=""
+                          >
+                            Link 3 Headline
+                            <span
+                              class="icon flex items-center justify-center"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-hidden="false"
+                      class="slick-slide slick-active slick-cloned"
+                      data-index="3"
+                      style="width: 0px;"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <div
+                          class="flex cursor-pointer items-center"
+                          style="width: 100%; display: inline-block;"
+                          tabindex="-1"
+                        >
+                          <a
+                            class="title inline-flex items-center font-sans text-m font-heavy ml:text-xl"
+                            href="/"
+                            role="link"
+                            tabindex="0"
+                            target=""
+                            title=""
+                          >
+                            Link 2 Headline
+                            <span
+                              class="icon flex items-center justify-center"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="slick-slide slick-cloned"
+                      data-index="4"
+                      style="width: 0px;"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <div
+                          class="flex cursor-pointer items-center"
+                          style="width: 100%; display: inline-block;"
+                          tabindex="-1"
+                        >
+                          <a
+                            class="title inline-flex items-center font-sans text-m font-heavy ml:text-xl "
+                            href="/"
+                            role="link"
+                            tabindex="0"
+                            target=""
+                            title=""
+                          >
+                            Link 1 Headline
+                            <span
+                              class="icon flex items-center justify-center"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      aria-hidden="true"
+                      class="slick-slide slick-cloned"
+                      data-index="5"
+                      style="width: 0px;"
+                      tabindex="-1"
+                    >
+                      <div>
+                        <div
+                          class="flex cursor-pointer items-center"
+                          style="width: 100%; display: inline-block;"
+                          tabindex="-1"
+                        >
+                          <a
+                            class="title inline-flex items-center font-sans text-m font-heavy ml:text-xl "
+                            href="/"
+                            role="link"
+                            tabindex="0"
+                            target=""
+                            title=""
+                          >
+                            Link 3 Headline
+                            <span
+                              class="icon flex items-center justify-center"
+                            />
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="slick-arrow slick-next"
+                  data-role="none"
+                  style="display: block;"
+                  type="button"
+                >
+                   
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

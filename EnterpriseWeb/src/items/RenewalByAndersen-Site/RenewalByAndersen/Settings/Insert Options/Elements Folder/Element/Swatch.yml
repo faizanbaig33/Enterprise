@@ -1,0 +1,26 @@
+﻿---
+ID: "b4de9014-705f-4da1-b5a6-1acfd5d26fb5"
+Parent: "131e3cf3-2302-4ce3-8218-4b7282218b4f"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Insert Options/Elements Folder/Element/Swatch
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230106T171254Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "37241882-bd6b-42e8-aabc-322fc5c744d3"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{C7E82176-D156-410F-B728-D4C465148578}|{863DCC2E-CCA5-4236-B10F-8B4872E1C47C}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230106T171314Z

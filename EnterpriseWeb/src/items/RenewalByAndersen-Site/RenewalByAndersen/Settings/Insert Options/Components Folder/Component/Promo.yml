@@ -1,0 +1,26 @@
+﻿---
+ID: "96a30620-b564-4b7e-bb53-9dbe6b3be673"
+Parent: "0f6e9429-56fa-46a1-8efa-c1723d554efb"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Settings/Insert Options/Components Folder/Component/Promo
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221221T195515Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ddf174a9-ad66-45ed-ad00-de89d960df35"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{E8649E68-3C19-4F61-BC47-4BA681FA0AB8}|{5E2F7DBF-E70B-4420-991B-A53EED31AE33}|{F38D50C7-C768-4FAD-A7DC-AFCF92095EB8}|{4584016E-F199-4042-B908-62BD921A52AB}|{E61FB57E-417D-427A-9902-EF6ACBDE54A1}|{697C9AC8-EBC1-4DDB-ADA8-1D0A72DE6EE7}|{5B7D33A4-8416-4487-A340-CD22910F6DA3}|{660D7A4D-D54E-4663-AF5A-B7B6C963D9D2}|{0BFAC9CB-E34A-4544-AD08-3B4C16D4D395}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230421T141055Z

@@ -1,0 +1,54 @@
+﻿---
+ID: "5e2f7dbf-e70b-4420-991b-a53eed31ae33"
+Parent: "958be38c-e1d3-4d89-bbff-2ab7ebcbdd1c"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Promo/Promo Featured Media/Promo Featured Media
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/painting_landscape.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {B61A1D20-9EE5-4CCB-9E0D-24A97E58D293}
+    {30594C7E-1F51-4706-AB7E-6766B1FC3C90}
+    {BB8D733E-930A-42D3-B263-25BCA778580E}
+    {368747B7-D912-47D5-995E-CD3573E24FDF}
+    {CAE26F1D-BA51-4F92-82AD-131AA3D48BDA}
+    {5FB8ACDF-E52A-4EE9-A3D9-83CD1C5C5CB1}
+    {5E2F3CF0-45EC-4618-AA30-0465290A248D}
+    {565E77B0-8234-479E-9F8F-0B44BDB36FC4}
+    {D47D8920-5527-4C26-92E8-BD999720B197}
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{9B90FF27-3BAF-442E-AB88-85D4CBED9EDC}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221206T144944Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "b8a40824-0887-49d1-a732-8ce15c34ed77"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230208T113800Z

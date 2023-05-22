@@ -1,0 +1,11 @@
+version: "2.4"
+services:
+  cm:
+    image: ${REGISTRY}${PROJECT_NAME}-xm-cm:${PREPARED_VERSION}
+    build:
+      context: .
+      dockerfile: .\build\cm\Dockerfile
+      args:
+        BASE_IMAGE: ${REGISTRY}sitecore-cm-custom-xm:${SITECORE_VERSION}
+        ARTIFACT_PATH: ${Artifacts_OutputDirectory}
+        RESOURCE_ARTIFACT_PATH: ${Artifacts_OutputDirectory_Resource}

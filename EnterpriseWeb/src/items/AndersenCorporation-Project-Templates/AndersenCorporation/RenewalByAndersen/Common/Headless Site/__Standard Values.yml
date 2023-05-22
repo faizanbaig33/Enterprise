@@ -1,0 +1,41 @@
+﻿---
+ID: "9e907f9a-a844-447b-b80c-c59096e05757"
+Parent: "971865f7-b38b-464a-8773-8f07ab03afe3"
+Template: "971865f7-b38b-464a-8773-8f07ab03afe3"
+Path: /sitecore/templates/Project/AndersenCorporation/RenewalByAndersen/Common/Headless Site/__Standard Values
+SharedFields:
+- ID: "1230d2cb-4948-4d43-8a3b-b39978f6f1b3"
+  Hint: Modules
+  Value: |
+    {AE5D1384-BB75-4C6B-A8B5-4B008C2AC5DA}
+    {CA502DCF-20D2-4618-A735-E4FCB6D5E114}
+    {E2AF1A41-799E-481B-8FDC-B2D33FB729A1}
+    {C4658673-5D70-44ED-9004-D66EAC1DC718}
+    {6768E655-3DA7-418A-B025-D1066A677CCC}
+    {7482A055-363C-4A10-834E-AB12BADCF766}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221018T193713Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "26c5cecd-42a3-41c7-a59c-f79510396f07"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221108T230505Z

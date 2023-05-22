@@ -1,0 +1,43 @@
+﻿---
+ID: "c2a26e0e-ffcb-4071-8b36-61ac529fa8a6"
+Parent: "2a15e3b9-8dc6-4217-870b-16fbc609ceb2"
+Template: "5b287b68-3631-4640-b98e-a954686c30a8"
+Path: /sitecore/templates/Branches/Project/AndersenCorporation/AndersenWindows/Product Page/$name
+SharedFields:
+- ID: "24171bf1-c0e1-480e-be76-4c0a1876f916"
+  Hint: Page Design
+  Value: "{03068396-A2E5-447D-B12A-81120F1396D2}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{6F06953E-9972-4A01-940B-3D06E3093DC7}"
+              s:ds="local:/Data/HeroProduct"
+              s:id="{D8F94CB6-5199-4B5B-A027-03ADD2E52971}"
+              s:par=""
+              s:ph="headless-hero"
+              s:ccb="Clear on publish" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T080059Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1d7834af-ba49-4422-abd6-1861f7dc9690"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230224T074228Z

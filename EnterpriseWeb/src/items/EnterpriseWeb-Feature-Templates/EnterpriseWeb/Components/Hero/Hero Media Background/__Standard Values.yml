@@ -1,0 +1,41 @@
+﻿---
+ID: "145c9035-912f-483c-a73b-01269405c34a"
+Parent: "a602608d-d14d-43d7-bfcb-0c936151921d"
+Template: "a602608d-d14d-43d7-bfcb-0c936151921d"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Hero/Hero Media Background/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{36107515-7523-4086-B256-AAD592B6E5A1}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1bb99f94-7968-439b-bdfa-5d5b9d72801b"
+      Hint: eyebrowLevel
+      Value: "{0F556F3A-BBAD-4AA5-952D-B79003B39CD6}"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230113T093907Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1b5cad3a-e942-471b-950b-ce62e02fcb84"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230113T102002Z
+    - ID: "f52bf19f-0e72-4e3d-82f3-ee1cf5a39e9f"
+      Hint: overlay
+      Value: "{CEC0AF91-E32D-4183-86B2-1594757D8052}"

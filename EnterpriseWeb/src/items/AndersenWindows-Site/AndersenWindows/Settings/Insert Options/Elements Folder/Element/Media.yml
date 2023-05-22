@@ -1,0 +1,26 @@
+﻿---
+ID: "fdb05ff5-185e-4ada-b18e-feea149be06d"
+Parent: "3fbc7737-4481-4c6c-b91e-ae1cd108a28f"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Settings/Insert Options/Elements Folder/Element/Media
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230106T171457Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "06de2681-de32-49a7-be49-91e2da549975"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{969570F5-DE11-4CE7-81A8-912CEBBA33F0}|{E2DD131A-BD4E-43AB-8A8C-DE118FE9AFF2}|{396F8987-9EC8-4916-9B38-7D9F8499E3F6}|{10FFC85C-56A6-4A99-953C-56BB3405C1E6}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230203T193530Z

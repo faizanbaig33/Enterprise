@@ -1,0 +1,30 @@
+﻿---
+ID: "b76d6290-de51-44a9-b57a-d520ddf93167"
+Parent: "84e924ae-8aeb-4521-8af5-1e2314fb47bd"
+Template: "84e924ae-8aeb-4521-8af5-1e2314fb47bd"
+Path: /sitecore/templates/Project/AndersenCorporation/RenewalByAndersen/Pages/Article Page/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T072145Z
+    - ID: "54627eba-5f0c-4434-a28d-1773f5126213"
+      Hint: articleTitle
+      Value: $name
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c7f48507-e953-48fb-ac62-680ccc705f6d"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T080522Z

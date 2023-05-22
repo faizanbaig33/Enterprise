@@ -1,0 +1,122 @@
+parameters:
+  devopsEnvironment: ''
+  azureSubscription: ''
+  aksSubscription: ''
+  aksClusterName: ''
+  aksClusterResourceGroup: ''
+  aksPodName: ''
+  aksNamespace: 'sitecore'
+  sitecoreEnvironment: ''
+  sitecoreCmUrl: ''
+  sitecoreIdUrl: ''
+  sitecoreCliClientId: ''
+  sitecoreCliClientSecret: ''
+  repository: ''
+
+jobs:
+- deployment: DeployCM
+  displayName: Deploy to AKS
+  environment: ${{ parameters.devopsEnvironment }}
+  pool:
+    name: AKS
+    demands:
+      - kubectl -equals 1.25.0
+      - kubelogin -equals 0.0.20
+      - AzureCLI -equals 2.42.0
+  strategy:
+    runOnce:
+      deploy:
+        steps:
+        - checkout: self
+        - checkout: enterprise-deployment
+
+        # Authenticate to AKS Cluster - Method 2
+        - task: AzureCLI@2
+          displayName: Authenticate with AKS
+          inputs:
+            azureSubscription: ${{ parameters.azureSubscription }}
+            scriptType: ps
+            scriptLocation: inlineScript
+            inlineScript: |
+              # Authenticate to kubernetes with kubelogin
+              Write-Host "Logging into Azure Subscription: ${{ parameters.aksSubscription }}" -ForegroundColor DarkGray
+              az account set --name "${{ parameters.aksSubscription }}"
+
+              Write-Host "Getting AKS Credentials, Cluster Name: ${{ parameters.aksClusterName }}, Cluster Resource Group: ${{ parameters.aksClusterResourceGroup }}" -ForegroundColor DarkGray
+              az aks get-credentials -n ${{ parameters.aksClusterName }} -g ${{ parameters.aksClusterResourceGroup }} --overwrite-existing
+
+              $env:KUBECONFIG="$HOME/.kube/config"
+
+              Write-Host "Converting the Azure login to K8s" -ForegroundColor DarkGray
+              kubelogin convert-kubeconfig -l azurecli
+
+              # Verify connectivity to AKS cluster
+              Write-Host "Verify connectivity to AKS cluster, Namespace: ${{ parameters.aksNamespace }}" -ForegroundColor DarkGray
+              kubectl get po -n ${{ parameters.aksNamespace }}
+
+        #Roll out CM Deployment
+        - task: PowerShell@2
+          displayName: Roll out CM Deployment
+          inputs:
+            filePath: $(Build.SourcesDirectory)\EnterpriseWeb\azure-pipelines\deploy\RolloutCM.ps1
+            arguments: -environment ${{ parameters.sitecoreEnvironment }} -buildnumber $(Build.BuildNumber) -repository ${{ parameters.repository }}
+
+        #Wait for Updated CM Pod to Come Up!
+        - task: PowerShell@2
+          displayName: Wait for Updated CM Pod to Come Up!
+          inputs:
+            filePath: $(Build.SourcesDirectory)\EnterpriseWeb\azure-pipelines\deploy\PodHealthCheck.ps1
+            arguments: -appname ${{ parameters.aksPodName }}
+
+- job: HealthCheckAndSitecoreSync
+  displayName: Health Check and Sitecore Sync
+  dependsOn:
+  - DeployCM
+  pool:
+    name: Enterprise Web
+  steps:
+  # Probably need to open a port for this
+  # - task: UseDotNet@2
+  #   displayName: "Install .Net Core"
+  #   inputs:
+  #     version: '6.x'
+
+  - task: DotNetCoreCLI@2
+    displayName: Restore the .Net Core Tools
+    inputs:
+      command: custom
+      custom: tool
+      arguments: restore
+      workingDirectory: $(Build.SourcesDirectory)
+
+  - task: PowerShell@2
+    displayName: Wait for Updated CM Site to Come Up!
+    inputs:
+      filePath: $(Build.SourcesDirectory)\azure-pipelines\deploy\SiteHealthCheck.ps1
+      arguments: '-Url ${{ parameters.sitecoreCmUrl }}'
+
+  - task: DotNetCoreCLI@2
+    displayName: Login to Sitecore
+    inputs:
+      command: custom
+      custom: sitecore
+      arguments: login --client-id ${{ parameters.sitecoreCliClientId }} --client-secret ${{ parameters.sitecoreCliClientSecret }} --cm ${{ parameters.sitecoreCmUrl }} --authority ${{ parameters.sitecoreIdUrl }} --allow-write true --client-credentials true
+      workingDirectory: $(Build.SourcesDirectory)
+
+  - task: DotNetCoreCLI@2
+    displayName: Push Roles to Sitecore instance
+    inputs:
+      command: custom
+      custom: sitecore
+      arguments: ser push --include Roles --verbose
+      workingDirectory: $(Build.SourcesDirectory)
+    # enabled: false
+
+  - task: DotNetCoreCLI@2
+    displayName: Publish to Experience Edge
+    inputs:
+      command: custom
+      custom: sitecore
+      arguments: publish --pt Edge --verbose
+      workingDirectory: $(Build.SourcesDirectory)
+    # enabled: false

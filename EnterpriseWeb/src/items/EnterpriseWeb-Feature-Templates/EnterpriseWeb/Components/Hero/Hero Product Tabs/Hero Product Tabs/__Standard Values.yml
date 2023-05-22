@@ -1,0 +1,35 @@
+﻿---
+ID: "c853a07b-3629-4f88-98ac-b9f898478813"
+Parent: "08f94231-3f06-4fb3-b7e7-165cec0767d4"
+Template: "08f94231-3f06-4fb3-b7e7-165cec0767d4"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Hero/Hero Product Tabs/Hero Product Tabs/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{8B70967E-A2AC-4F92-A099-2584E1D30523}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230217T160753Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "fab35f93-5c28-438e-b651-dad90614588f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230220T164225Z

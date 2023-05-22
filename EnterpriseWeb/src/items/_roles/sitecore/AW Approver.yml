@@ -1,0 +1,6 @@
+﻿---
+Role: |
+  sitecore\AW Approver
+MemberOf:
+  Role: |
+    sitecore\AW Author

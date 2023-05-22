@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  class="mx-m lg:mx-0 pb-[1px]"
+  data-component="hero/heroblogarticle"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 relative gap-x-0"
+    >
+      <div
+        class="col-span-12 lg:flex lg:flex-col lg:self-center lg:h-[100%] lg:justify-center lg:col-span-4 lg:mr-s lg:border-b lg:border-b-gray border-solid border-t border-black py-m"
+      >
+        <div
+          class="font-sans text-theme-text text-sm-xxs text-xxs uppercase mb-s"
+        >
+          <h2>
+            Small Headline/Eyebrow
+          </h2>
+        </div>
+        <div
+          class="items-top font-sans  text-theme-text text-sm-m lg:text-m font-heavy mb-s last:mb-0"
+        >
+          <h1>
+            Default Headline Lorem ipsum dolor amit
+          </h1>
+        </div>
+        <div
+          class="text-theme-body text-body font-regular mb-m last:mb-0"
+        >
+          <div
+            class="body-copy"
+          >
+            <div>
+              <p>
+                Est voluptatum tempore nihil provident alias quis enim. Possimus voluptatibus deserunt. Ea sint repellendus nihil eligendi neque.zz
+              </p>
+              
+
+              <p>
+                 
+              </p>
+              
+
+              <br />
+            </div>
+          </div>
+        </div>
+        <div
+          class="caption"
+        >
+          <div
+            class="absolute top-[100%] left-0 text-black text-theme-text ml:text-secondary mt-xxs  text-left mb-s font-sans text-sm-xxs md:text-caption"
+          >
+            <p>
+              Optional component caption
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-span-12 lg:col-span-8 lg:content-right lg:items-right"
+      >
+        <div
+          class="relative hidden md:block aspect-video   "
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 56.25% 0px 0px 0px;"
+            />
+            <img
+              alt="Img"
+              data-nimg="responsive"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="relative w-full md:hidden"
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 56.25% 0px 0px 0px;"
+            />
+            <img
+              alt="Img"
+              data-nimg="responsive"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+            />
+            <noscript />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -1,0 +1,43 @@
+﻿---
+ID: "5b9510c9-fe60-4a74-b07c-e1621f3c47fa"
+Parent: "a93f50cb-e80e-47e7-9085-236fb086d7e5"
+Template: "79c7f0af-3f65-49ca-8211-80f33eff62ee"
+Path: /sitecore/templates/Branches/Project/AndersenCorporation/RenewalByAndersen/Generic Page/$name
+SharedFields:
+- ID: "24171bf1-c0e1-480e-be76-4c0a1876f916"
+  Hint: Page Design
+  Value: "{D1541C3F-7A2B-473C-87B8-B67D9A95FCE9}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{7D96191A-9BAC-4C00-A9C3-C1425ABED543}"
+              s:ds="local:/Data/SimpleHero"
+              s:id="{EEE84920-F7A4-42BA-9A72-6CCDD7C8F933}"
+              s:par=""
+              s:ph="headless-hero"
+              s:ccb="Clear on publish" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T075438Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ae945a9a-5994-4a06-be32-0e7f95637f8b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230224T074538Z

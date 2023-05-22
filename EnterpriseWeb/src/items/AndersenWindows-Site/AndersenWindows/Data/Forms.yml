@@ -1,0 +1,23 @@
+﻿---
+ID: "0d5e2019-f49a-46c7-a352-18d8f9264040"
+Parent: "a44a65ef-9c1f-445c-8fbd-b7c494bac2b3"
+Template: "0c525bac-a5fe-4ccb-acd3-dc0552b7c1cc"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Data/Forms
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230216T193428Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "38d6da66-2586-44b4-8910-99b7b48d7c0b"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230216T193428Z

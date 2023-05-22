@@ -1,0 +1,35 @@
+﻿---
+ID: "f711c660-ecf3-4e50-91e0-34e899d9b8b7"
+Parent: "df68327f-dbc2-4ff8-984d-1db4a11a9865"
+Template: "d2923fee-da4e-49be-830c-e27764dfa269"
+Path: /sitecore/system/Settings/Foundation/EnterpriseWeb/Enums/Navigation Display Type/Desktop And Mobile
+SharedFields:
+- ID: "f917c951-1f75-4d62-b14a-bc6888d7eeca"
+  Hint: Value
+  Value: "desktop-and-mobile"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230330T194623Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "41e9cb7e-75e2-45c7-97b3-55dc8ccdc80f"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230330T194632Z

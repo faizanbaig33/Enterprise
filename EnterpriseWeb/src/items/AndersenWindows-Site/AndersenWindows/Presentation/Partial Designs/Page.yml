@@ -1,0 +1,23 @@
+﻿---
+ID: "71e05187-68ce-4e6f-aeda-4337f0b0b480"
+Parent: "50a144ef-da0a-4a65-ae05-ebb192dc05cd"
+Template: "77a31f8c-0d1a-4533-b9b4-c4b3ee9a6bfa"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Presentation/Partial Designs/Page
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221116T231124Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "323f004e-8954-4558-8f87-4263b7aaba25"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221116T231124Z

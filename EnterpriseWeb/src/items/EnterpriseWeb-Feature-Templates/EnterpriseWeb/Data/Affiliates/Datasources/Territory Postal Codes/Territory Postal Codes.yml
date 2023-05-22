@@ -1,0 +1,23 @@
+﻿---
+ID: "77195705-f2e1-45d7-8e3c-0d83dd0caa38"
+Parent: "04f2bb22-a363-4cb8-b776-aad24e549d50"
+Template: "e269fbb5-3750-427a-9149-7aa950b49301"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/Datasources/Territory Postal Codes/Territory Postal Codes
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20170705T185435Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7dfcf784-bb6b-4ef6-b60f-c1dbb3c54af0"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20171027T191832Z

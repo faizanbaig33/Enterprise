@@ -1,0 +1,272 @@
+trigger: none
+
+resources:
+  # pipelines:
+  # - pipeline: build-main # Name of the pipeline resource.
+  #   source: Build-Main # The name of the pipeline referenced by this pipeline resource.
+  #   project: EnterpriseWeb # Required only if the source pipeline is in another project
+  #   trigger:
+  #     branches:
+  #       include:
+  #       - main # Run pipeline when any run of Build-Main completes on main branch
+  repositories:
+  - repository: enterprise-deployment
+    type: git
+    name: enterprise-deployment
+
+stages:
+- stage: GetArtifactVersion
+  jobs:
+  - job: GetArtifactVersion
+    displayName: "Get Deployment Package Version"
+    pool:
+      vmImage: 'windows-2019'
+    variables:
+    - name: BuildPipelineName
+      value: Build-Main
+    steps:
+    - checkout: 'self'
+    - template: 'azure-pipeline-step-get-package.yml'
+
+- stage: DeployCMUAT
+  dependsOn:
+  - GetArtifactVersion
+  jobs:
+  - deployment: DeployCMUAT
+    displayName: "CM Deployment - UAT"
+    environment: 'BED-UAT'
+    workspace:
+      clean: all
+    pool:
+      name: AKS
+      demands:
+      - kubectl -equals 1.25.0
+      - kubelogin -equals 0.0.20
+      - AzureCLI -equals 2.42.0
+    variables:
+    - name: buildVersionToDownload
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.buildVersionToDownload'] ]
+    - name: SitecoreBuildRevision
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.SitecoreBuildRevision'] ]
+    - name: sitecore_environment
+      value: stage
+    - group: 'Release Pipeline Variables - UAT'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: 'enterprise-deployment'
+          - checkout: 'self'
+          - template: 'azure-pipeline-step-deploy-cm.yml'
+            parameters:
+              azsubscription: DEV_ENTWB1
+  - job: HealthCheckAndSync
+    dependsOn:
+    - DeployCMUAT
+    displayName: "HealthCheck And Sync"
+    workspace:
+      clean: all
+    pool:
+      name: 'Enterprise Web'
+#      demands:
+#      - Purpose -equals SitecoreHealthCheckAnDotnetCommands
+    variables:
+    - name: buildVersionToDownload
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.buildVersionToDownload'] ]
+    - name: SitecoreBuildRevision
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.SitecoreBuildRevision'] ]
+    - name: sitecore_environment
+      value: stage
+    - group: 'Release Pipeline Variables - UAT'
+    steps:
+    - checkout: 'self'
+    - checkout: 'enterprise-deployment'
+    - template: 'azure-pipeline-step-deploy-common.yml'
+      parameters:
+        azsubscription: DEV_ENTWB1
+
+- stage: DeployVercelAndersenWindowsUAT
+  dependsOn:
+  - GetArtifactVersion
+  - DeployCMUAT
+  jobs:
+  - deployment: DeployVercelAndersenWindowsUAT
+    displayName: "Deploy Vercel AndersenWindows - UAT"
+    environment: 'FED-UAT'
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables:
+    - name: buildVersionToDownload
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.buildVersionToDownload'] ]
+    - name: SitecoreBuildRevision
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.SitecoreBuildRevision'] ]
+    - name: VERCEL_PROJECT_ID
+      value: prj_9sYXVOTeJJjhGNhoV0LWlmRGvU7b
+    - name: application
+      value: aw
+    - name: alias_url
+      value: andersenwindows-uat.vercel.app
+    - name: VercelAppUrl
+      value: https://andersenwindows-uat.vercel.app
+    - name: BuildPipelineName
+      value: Build-Main
+    - group: 'Release Pipeline Variables - UAT'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: 'self'
+          - template: 'azure-pipeline-step-deploy-vercel.yml'
+
+- stage: DeployVercelRenewalByAndersenUAT
+  dependsOn:
+  - GetArtifactVersion
+  - DeployCMUAT
+  jobs:
+  - deployment: DeployVercelRenewalByAndersenUAT
+    displayName: "Deploy Vercel RenewalByAndersen - UAT"
+    environment: 'FED-UAT'
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables:
+    - name: buildVersionToDownload
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.buildVersionToDownload'] ]
+    - name: SitecoreBuildRevision
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.SitecoreBuildRevision'] ]
+    - name: VERCEL_PROJECT_ID
+      value: prj_MHBPO9iSObOlAn02F7bt3a77yNsX
+    - name: application
+      value: rba
+    - name: alias_url
+      value: renewalbyandersen-uat.vercel.app
+    - name: VercelAppUrl
+      value: https://renewalbyandersen-uat.vercel.app
+    - name: BuildPipelineName
+      value: Build-Main
+    - group: 'Release Pipeline Variables - UAT'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: 'self'
+          - template: 'azure-pipeline-step-deploy-vercel.yml'
+
+#- stage: DeployCMProd
+#  dependsOn:
+#  - GetArtifactVersion
+#  - DeployCMUAT
+#  jobs:
+#  - deployment: DeployCMProd
+#    displayName: "CM Deployment - Prod"
+#    environment: 'BED-Prod'
+#    pool:
+#      name: AKS
+#      demands:
+#      - kubectl -equals 1.25.0
+#      - kubelogin -equals 0.0.20
+#      - AzureCLI -equals 2.42.0
+#    variables:
+#    - name: buildVersionToDownload
+#      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.buildVersionToDownload'] ]
+#    - name: SitecoreBuildRevision
+#      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.SitecoreBuildRevision'] ]
+#    - name: sitecore_environment
+#      value: prod
+#    - group: 'Release Pipeline Variables - Prod'
+#    strategy:
+#      runOnce:
+#        deploy:
+#          steps:
+#          - checkout: 'enterprise-deployment'
+#          - checkout: 'self'
+#          - template: 'azure-pipeline-step-deploy-cm.yml'
+#            parameters:
+#              azsubscription: DEV_ENTWB1
+#  - job: HealthCheckAndSync
+#    dependsOn:
+#    - DeployCM
+#    displayName: "HealthCheck And Sync"
+#    pool:
+#      name: 'Enterprise Web'
+##      demands:
+##      - Purpose -equals SitecoreHealthCheckAnDotnetCommands
+#    variables:
+#    - name: buildVersionToDownload
+#      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.buildVersionToDownload'] ]
+#    - name: SitecoreBuildRevision
+#      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.SitecoreBuildRevision'] ]
+#    - name: sitecore_environment
+#      value: prod
+#    - group: 'Release Pipeline Variables - Prod'
+#    steps:
+#    - checkout: 'self'
+#    - checkout: 'enterprise-deployment'
+#    - template: 'azure-pipeline-step-deploy-common.yml'
+#      parameters:
+#        azsubscription: DEV_ENTWB1
+
+- stage: DeployVercelAndersenWindowsProd
+  dependsOn:
+  - GetArtifactVersion
+  - DeployVercelAndersenWindowsUAT
+  jobs:
+  - deployment: DeployVercelAndersenWindowsProd
+    displayName: "Deploy Vercel AndersenWindows - Prod"
+    environment: 'FED-Prod'
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables:
+    - name: buildVersionToDownload
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.buildVersionToDownload'] ]
+    - name: SitecoreBuildRevision
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.SitecoreBuildRevision'] ]
+    - name: VERCEL_PROJECT_ID
+      value: prj_7ArELqi0fbHYDmjSRmbJcvpExZ01
+    - name: application
+      value: aw
+    - name: alias_url
+      value: andersenwindows-prod.vercel.app
+    - name: VercelAppUrl
+      value: https://andersenwindows-prod.vercel.app
+    - name: BuildPipelineName
+      value: Build-Main
+    - group: 'Release Pipeline Variables - Prod'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: 'self'
+          - template: 'azure-pipeline-step-deploy-vercel.yml'
+
+- stage: DeployVercelRenewalByAndersenProd
+  dependsOn:
+  - GetArtifactVersion
+  - DeployVercelRenewalByAndersenUAT
+  jobs:
+  - deployment: DeployVercelRenewalByAndersenProd
+    displayName: "Deploy Vercel RenewalByAndersen - Prod"
+    environment: 'FED-Prod'
+    pool:
+      vmImage: 'ubuntu-latest'
+    variables:
+    - name: buildVersionToDownload
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.buildVersionToDownload'] ]
+    - name: SitecoreBuildRevision
+      value: $[ stageDependencies.GetArtifactVersion.GetArtifactVersion.outputs['GetPackageVersion.SitecoreBuildRevision'] ]
+    - name: VERCEL_PROJECT_ID
+      value: prj_VgVe2i02BSyT93e4OgtuiB7TJcfe
+    - name: application
+      value: rba
+    - name: alias_url
+      value: renewalbyandersen-prod.vercel.app
+    - name: VercelAppUrl
+      value: https://renewalbyandersen-prod.vercel.app
+    - name: BuildPipelineName
+      value: Build-Main
+    - group: 'Release Pipeline Variables - Prod'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - checkout: 'self'
+          - template: 'azure-pipeline-step-deploy-vercel.yml'

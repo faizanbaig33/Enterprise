@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+ <add name="experienceedge" connectionString="url=https://one-sc-production.eu.auth0.com/oauth/token;client_id=EXPERIENCE_EDGE_CLIENT_ID;client_secret=EXPERIENCE_EDGE_CLIENT_SECRET;audience=EXPERIENCE_EDGE_CLIENT_AUDIENCE;delivery_endpoint=https://eus-e1-aks-01-publishing.sitecorecloud.io/;cdn_uri=https://edge.sitecorecloud.io;media_prefix=EXPERIENCE_EDGE_MEDIA_PREFIX" xdt:Locator="Match(name)" xdt:Transform="Insert" />
+</connectionStrings>

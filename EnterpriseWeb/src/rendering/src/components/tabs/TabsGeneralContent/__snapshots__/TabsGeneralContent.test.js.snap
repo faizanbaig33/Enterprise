@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="tabs/tabsgeneralcontent"
+  id="id1695242607"
+>
+  <div
+    class="theme-white col-span-12 my-8"
+  >
+    <div
+      class="items-top font-sans  text-s lg:text-m font-heavy pb-s px-m md:max-w-screen-lg lg:mx-auto"
+    >
+      <h2>
+        Tabs General Content Test
+      </h2>
+      
+    </div>
+    <div
+      class="react-tabs"
+      data-rttabs="true"
+    >
+      <ul
+        class="react-tabs__tab-list px-m md:max-w-screen-lg lg:mx-auto"
+        role="tablist"
+      >
+        <div
+          class="slick-slider tabsgeneralcontent slick-initialized"
+        >
+          
+          <div
+            class="slick-list"
+          >
+            <div
+              class="slick-track"
+              style="opacity: 1; transform: translate3d(0px, 0px, 0px);"
+            >
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-current"
+                data-index="0"
+                style="outline: none;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="border-r-2 border-r-gray"
+                  >
+                    <div
+                      class="react-tabs__tab flex h-full justify-center text-center items-center pb-s pr-s pl-s pt-m border-t-8 w-[36rem] text-gray border-t-light-gray bg-light-gray hover:border-t-primary hover:bg-white hover:text-black"
+                    >
+                      <div
+                        class="items-top font-sans flex flex-nowrap font-heavy mb-xxs text-base lg:text-xs justify-center text-center"
+                      >
+                        <h3>
+                          Tab Item 1
+                        </h3>
+                        <sup
+                          class="basis-0 text-small font-light hover:underline"
+                        >
+                          <a
+                            class=""
+                            href="#test"
+                            role="link"
+                            tabindex="0"
+                            title=""
+                          >
+                            1
+                          </a>
+                        </sup>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active"
+                data-index="1"
+                style="outline: none;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="border-r-2 border-r-gray"
+                  >
+                    <div
+                      class="react-tabs__tab flex h-full justify-center text-center items-center pb-s pr-s pl-s pt-m border-t-8 w-[36rem] react-tabs__tab--selected border-t-primary border-r-gray border-r-0"
+                    >
+                      <div
+                        class="items-top font-sans  font-heavy mb-xxs text-base lg:text-xs justify-center text-center"
+                      >
+                        <h3>
+                          Tab Item 2
+                        </h3>
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+        </div>
+      </ul>
+      <div
+        aria-labelledby="react-tabs-0"
+        class="react-tabs__tab-panel"
+        id="react-tabs-1"
+        role="tabpanel"
+      >
+        <div
+          class="col-span-12"
+        >
+          <div
+            style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+          >
+            <h2>
+              ContentBlockWithMedia
+            </h2>
+            <p>
+              JSS component is missing React implementation. See the developer console for more information.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="react-tabs-2"
+        class="react-tabs__tab-panel react-tabs__tab-panel--selected"
+        id="react-tabs-3"
+        role="tabpanel"
+      >
+        <div
+          class="col-span-12"
+        >
+          <div
+            style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+          >
+            <h2>
+              ContentBlockWithMedia
+            </h2>
+            <p>
+              JSS component is missing React implementation. See the developer console for more information.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

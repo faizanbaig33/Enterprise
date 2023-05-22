@@ -1,0 +1,45 @@
+﻿---
+ID: "d3d71f57-b9b7-45c1-b2d6-2485282522f1"
+Parent: "bec9921c-87e9-4a13-9401-fe3fa50a9798"
+Template: "76da0a8d-fc7e-42b2-af1e-205b49e43f98"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Presentation/Available Renderings/General
+SharedFields:
+- ID: "715ae6c0-71c8-4744-ab4f-65362d20ad65"
+  Hint: Renderings
+  Value: |
+    {2F7C4742-A920-431E-B1E2-5023E3699C63}
+    {9DAFF515-C692-4D7B-956D-0A2F14EF8ABC}
+    {4385140E-BCCF-4D2D-BCC4-7AFB700D6CCD}
+    {B3B40BBF-63B4-4CBB-9237-4772724213FC}
+    {197700F4-C8A4-43D9-A3F8-D32B44FD987A}
+    {9D5851A0-C782-462B-AF45-5C112A998A06}
+    {28C27CCB-C692-43DD-A48C-CC1AA9D3D620}
+    {B76947D7-B58E-432D-8D54-8D522674B434}
+    {87D803F5-B876-4152-A8D9-A05B92DEFB08}
+    {8C9BADF0-DF98-488C-B6B1-B510C1A3A4D5}
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221116T200220Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e94d52bf-7a21-4ec0-8b06-4d9e58743e26"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230509T200123Z

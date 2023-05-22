@@ -1,0 +1,44 @@
+{
+  "namespace": "Project.AndersenCorporation",
+  "references": ["Foundation.EnterpriseWeb", "Feature.EnterpriseWeb"],
+  "items": {
+    "includes": [
+      {
+        "name": "AndersenCorporation-Project-Templates",
+        "path": "/sitecore/templates/Project/AndersenCorporation",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createAndUpdate"
+      },
+      {
+        "name": "AndersenCorporation-Project-Branch-Templates",
+        "path": "/sitecore/templates/Branches/Project/AndersenCorporation",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createAndUpdate"
+      },
+      {
+        "name": "AndersenCorporation-Project-Renderings",
+        "path": "/sitecore/layout/Renderings/Project/AndersenCorporation",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createAndUpdate"
+      },
+      {
+        "name": "AndersenCorporation-Project-PlaceholderSettings",
+        "path": "/sitecore/layout/Placeholder Settings/Project/AndersenCorporation",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createAndUpdate"
+      },
+      {
+        "name": "AndersenCorporation-Project-Settings",
+        "path": "/sitecore/system/Settings/Project/AndersenCorporation",
+        "scope": "itemAndDescendants",
+        "allowedPushOperations": "createAndUpdate"
+      }
+    ]
+  },
+  "leprechaun": {
+    "configuration": {
+      "@extends": "EnterpriseWeb.Base",
+      "@name": "Project.AndersenCorporation"
+    }
+  }
+}

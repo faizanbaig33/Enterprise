@@ -1,0 +1,107 @@
+name: $(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)-alpha
+
+#trigger: none
+trigger:
+  batch: true
+  branches:
+    include:
+      - develop
+
+resources:
+  repositories:
+  - repository: enterprise-deployment
+    type: git
+    name: enterprise-deployment
+
+pool:
+  vmImage: windows-latest
+
+variables:
+- group: Web - Build Deploy - Global
+- name: buildConfiguration
+  value: Debug
+- name: containerRegistry
+  value: prodentwb1acr1
+- name: repository
+  value: enterpriseweb/enterpriseweb-xm1-cm
+- name: VERCEL_ORG_ID # Need this defined as an environment variable for the vercel cli
+  value: team_Te46li2AMhv2GDNDb4O9Tc9e
+
+stages:
+- stage: Build
+  jobs:
+  - job: Build
+    displayName: Build and Publish Solution
+    pool:
+      vmImage: windows-2019
+    steps:
+    - template: templates\build-cm.yml
+      parameters:
+        buildConfiguration: $(buildConfiguration)
+    - template: templates\build-iar.yml
+    #- template: templates\build-roles.yml
+    - template: templates\build-docker.yml
+      parameters:
+        containerRegistry: $(containerRegistry)
+        repository: $(repository)
+        latestTag: latest-alpha
+    - template: templates\publish.yml
+      parameters:
+        containerRegistry: $(containerRegistry)
+        repository: $(repository)
+        latestTag: latest-alpha
+
+- stage: DevelopmentCM
+  dependsOn: Build
+  displayName: Development CM
+  variables:
+  - group: Web - Build Deploy - Dev
+  jobs:
+  - template: templates\deploy-cm.yml
+    parameters:
+      devopsEnvironment: BED-Dev
+      azureSubscription: DEV_ENTWB1
+      aksSubscription: AKS - ARM
+      aksClusterName: AKS-Cluster1
+      aksClusterResourceGroup: AKS_Cluster1a
+      aksPodName: cm-dev
+      sitecoreEnvironment: dev
+      sitecoreCmUrl: https://cm.dev.ew.andersencorp.com
+      sitecoreIdUrl: https://id.dev.ew.andersencorp.com
+      sitecoreCliClientId: SitecoreCLIServer
+      sitecoreCliClientSecret: $(SitecoreCliClientSecret)
+      repository: $(repository)
+
+- stage: DevelopmentVercelAW
+  dependsOn: DevelopmentCM
+  displayName: "Development Vercel Andersen Windows"
+  variables:
+  - group: Web - Build Deploy - Dev
+  - name: VERCEL_PROJECT_ID # Need this defined as an environment variable for the vercel cli
+    value: prj_sgXutj2yEXZ9SEOiWAsidIa6iQ3G
+  jobs:
+  - template: templates\deploy-vercel.yml
+    parameters:
+      displayName: Andersen Windows
+      devopsEnvironment: FED-Dev
+      vercelAliasUrl: andersenwindows-dev.vercel.app
+      vercelDeployToken: $(VercelDeployToken)
+      vercelScope: andersen-corporation
+      siteUrl: https://andersenwindows-dev.vercel.app
+
+- stage: DevelopmentVercelRbA
+  dependsOn: DevelopmentCM
+  displayName: "Development Vercel Renewal by Andersen"
+  variables:
+  - group: Web - Build Deploy - Dev
+  - name: VERCEL_PROJECT_ID
+    value: prj_nbEjEAvh75SSSkcOBDvlHzTHlU1c
+  jobs:
+  - template: templates\deploy-vercel.yml
+    parameters:
+      displayName: Renewal By Andersen
+      devopsEnvironment: FED-Dev
+      vercelAliasUrl: renewalbyandersen-dev.vercel.app
+      vercelDeployToken: $(VercelDeployToken)
+      vercelScope: andersen-corporation
+      siteUrl: https://renewalbyandersen-dev.vercel.app

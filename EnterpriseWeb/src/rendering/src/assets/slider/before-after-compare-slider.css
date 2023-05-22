@@ -1,0 +1,91 @@
+.before-after-slider .before-after-slider__delimiter {
+  width: 4px;
+}
+
+.before-after-slider-range {
+  width: 100%;
+  max-width: 265px;
+  height: 1px;
+  background-color: theme('colors.gray');
+  transition: 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.before-after-slider-range::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 48px;
+  height: 24px;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.before-after-slider-range::-moz-range-thumb {
+  width: 48px;
+  height: 24px;
+  border-radius: 100px;
+  background-color: theme('colors.primary');
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.aw .before-after-slider-range::-webkit-slider-thumb {
+  background-image: url('/before-after-slider-arrow-aw.svg');
+  background-color: theme('colors.primary');
+}
+.rba .before-after-slider-range::-webkit-slider-thumb {
+  background-image: url('/before-after-slider-arrow-rba.svg');
+  background-color: theme('colors.black');
+}
+
+.before-after-slider__first-photo-container {
+  position: relative;
+}
+
+.aw .before-after-slider__first-photo-container::after {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-family: theme('fontFamily.sans');
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 100%;
+}
+
+.rba .before-after-slider__first-photo-container::after {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  font-family: theme('fontFamily.serif');
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}
+
+.before-after-slider__second-photo-container {
+  position: relative;
+}
+
+.aw .before-after-slider__second-photo-container::after {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-family: theme('fontFamily.sans');
+  font-weight: 600;
+  font-size: 1.125rem;
+  line-height: 100%;
+}
+
+.rba .before-after-slider__second-photo-container::after {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  font-family: theme('fontFamily.serif');
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.25rem;
+}

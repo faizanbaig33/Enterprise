@@ -1,0 +1,70 @@
+parameters:
+  - name: azsubscription
+    type: string
+
+steps:
+#Getting Selected version of Packages
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "BuildVersionToDownload is: " $(buildVersionToDownload)
+      echo "SitecoreBuildRevision is: " $(SitecoreBuildRevision)
+      echo "azsubscription is: " $(azsubscription)
+  displayName: 'Get Selected Package Versions'
+
+#Download package to agent directory
+- template: '/deploy/azure-pipeline-step-add-artifacts.yml'
+
+#Getting version of Deployment Packages
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "Your selected Web Package Version is: " $(NugetVersion)
+      echo "BuildVersionToDownload is: " $(GetPackageVersion.buildVersionToDownload)
+      echo "SitecoreBuildRevision is: " $(GetPackageVersion.SitecoreBuildRevision)
+  displayName: 'Get Final Deployment Package Versions'
+
+#Perform Health Check
+- task: PowerShell@2
+  inputs:
+    filePath: $(System.DefaultWorkingDirectory)\EnterpriseWeb\deploy\PerfromHealthCheck.ps1
+    arguments: '-Url $(WebAppUrl.CM)'
+  enabled: true
+  displayName: "Wait for Updated CM Site to Come Up!"
+
+#Perform Sitecore Publishing
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      dotnet new tool-manifest
+      dotnet nuget add source -n Sitecore https://sitecore.myget.org/F/sc-packages/api/v3/index.json
+      dotnet tool install Sitecore.CLI --version 5.1.25
+
+      # #Sitecore login
+      dotnet sitecore login --client-id '$(SitecoreCLIClientId)' --client-secret '$(SitecoreCLIClientSecret)' --cm '$(WebAppUrl.CM)' --authority '$(WebAppUrl.ID)' --allow-write true --client-credentials true
+    workingDirectory: $(System.DefaultWorkingDirectory)/drop
+  displayName: 'Install sitecore.cli on agent'
+  enabled: true
+
+#Perform Sitecore Publishing
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      dotnet sitecore publish --pt Edge --verbose
+    workingDirectory: $(System.DefaultWorkingDirectory)/drop
+  displayName: 'Publish to Sitecore Edge'
+  enabled: true
+
+#Perform Sitecore Role Sync
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      dotnet sitecore ser push --verbose
+    workingDirectory: $(System.DefaultWorkingDirectory)/drop
+  displayName: 'Push Roles to Sitecore instance'
+  enabled: true

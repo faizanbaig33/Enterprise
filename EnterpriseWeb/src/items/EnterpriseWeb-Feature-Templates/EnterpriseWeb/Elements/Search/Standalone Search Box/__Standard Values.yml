@@ -1,0 +1,55 @@
+﻿---
+ID: "d3fc797b-0eb2-4906-84a1-3aa7437e0071"
+Parent: "32154a4b-a94b-4576-bb0e-130da0aed393"
+Template: "32154a4b-a94b-4576-bb0e-130da0aed393"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Elements/Search/Standalone Search Box/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1a75494e-358d-40d3-9336-9c01548da629"
+      Hint: suggestedResultsLabel
+      Value: Suggested Results
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230316T095749Z
+    - ID: "362c0260-d7c8-4034-ad79-0687f7cbbee6"
+      Hint: numberOfSuggestions
+      Value: 5
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "5e7302d9-92a5-4d57-b3d1-46a9cb1dcec9"
+      Hint: queryPipeline
+      Value: default
+    - ID: "67d17c9f-5e35-4dd4-baff-04f5899370d3"
+      Hint: placeholderText
+      Value: "What can we help you find?"
+    - ID: "689b628e-f532-4c84-850f-023bfe425c4b"
+      Hint: numberOfSuggestedResults
+      Value: 3
+    - ID: "759476aa-e293-46a9-a7bd-9a601d7306c4"
+      Hint: searchHub
+      Value: search
+    - ID: "7d8a673b-a694-4580-9242-e5ba78c938fe"
+      Hint: showSuggestedResults
+      Value: 1
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3e1481a4-4b23-4869-a33a-4698363495fe"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230321T084133Z
+    - ID: "fa3c50ee-adb8-4e6d-a020-04a81ba7e183"
+      Hint: showSuggestions
+      Value: 1

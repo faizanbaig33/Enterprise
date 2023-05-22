@@ -1,0 +1,40 @@
+﻿---
+ID: "0a557b5f-e6c9-47ab-9da4-f6cd52801339"
+Parent: "f405005e-94f4-407c-90f5-fc909959618d"
+Template: "f405005e-94f4-407c-90f5-fc909959618d"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/General/Curated Image Display/Curated Image Display/__Standard Values
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230417T090620Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "6b42fb5f-a0d8-4986-b9c1-a2462c9c3762"
+      Hint: nextLabel
+      Value: Next
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "ed776dcc-9c29-461a-a50c-b2f1eb578937"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230419T062059Z
+    - ID: "ebc0f4f5-3020-4870-960b-524e0d172158"
+      Hint: headlineLevel
+      Value: "{0F556F3A-BBAD-4AA5-952D-B79003B39CD6}"
+    - ID: "feb50608-37a1-4240-b7ce-746c14e76e9e"
+      Hint: previousLabel
+      Value: Previous

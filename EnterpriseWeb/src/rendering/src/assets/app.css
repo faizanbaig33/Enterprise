@@ -1,0 +1,142 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+@import './utilities/_utilities.theme.css';
+
+@import './slider/slick.css';
+@import './slider/slick-theme.css';
+@import './slider/before-after-compare-slider.css';
+@import './tabs/react-tabs.css';
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    font-family: open-sans, system-ui, sans-serif;
+  }
+  /* Styling for RTE blocks */
+  .body-copy {
+    font-size: theme('fontSize.body');
+  }
+  .body-copy ol {
+    list-style: decimal;
+    list-style-position: inside;
+  }
+
+  .body-copy ol li::marker {
+    font-size: inherit;
+  }
+
+  .aw .body-copy a {
+    font-family: theme('fontFamily.serif');
+    color: theme('colors.darkprimary');
+    cursor: pointer;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+  }
+
+  .aw .body-copy ul li {
+    color: inherit;
+    padding-left: 15px;
+    position: relative;
+  }
+
+  .aw .body-copy ul li::before {
+    content: '';
+    position: absolute;
+    top: calc((1.125rem - 7px) / 2);
+    left: 0;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: theme('colors.secondary');
+  }
+
+  .aw .theme-black .body-copy ul li::before {
+    background-color: theme('colors.white');
+  }
+
+  .aw .caption a {
+    font-family: theme('fontFamily.sans');
+    color: theme('colors.darkprimary');
+    cursor: pointer;
+    text-decoration-line: underline;
+  }
+
+  .aw .caption a span.svg-icon {
+    margin-top: -0.25rem;
+  }
+
+  .rba .body-copy a {
+    font-family: theme('fontFamily.serif');
+    color: theme('colors.darkprimary');
+    cursor: pointer;
+    text-decoration-line: underline;
+    font-weight: 700;
+  }
+
+  .rba .body-copy ul li {
+    color: inherit;
+    padding-left: 8px;
+    position: relative;
+    line-height: 1.5;
+  }
+
+  .rba .body-copy ul li::before {
+    content: '';
+    position: absolute;
+    top: calc((1.5em - 4px) / 2);
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: theme('colors.dark-gray');
+  }
+
+  .rba .theme-black .body-copy ul li::before {
+    background-color: theme('colors.white');
+  }
+
+  .rba .caption a {
+    font-family: theme('fontFamily.serif');
+    color: theme('colors.darkprimary');
+    cursor: pointer;
+    text-decoration-line: underline;
+    font-weight: 700;
+  }
+
+  .awfooter .accordion-item {
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+    height: auto;
+    max-height: 9999px;
+  }
+
+  .awfooter .accordion-item.collapsed {
+    max-height: 0;
+    transition: max-height 0.35s cubic-bezier(0, 1, 0, 1);
+  }
+
+  @media only screen and (max-width: 959px) {
+    body main {
+      padding-top: 55px;
+    }
+
+    header {
+      position: relative;
+      z-index: 10;
+    }
+  }
+  header a:hover,
+  header a:focus,
+  header a:active:hover,
+  header a:active:focus,
+  header a:visited:hover,
+  header a:visited:focus {
+    text-decoration: underline;
+  }
+}

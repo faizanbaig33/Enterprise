@@ -1,0 +1,31 @@
+﻿---
+ID: "68839581-cb10-491c-a8a0-1c49f97b0d81"
+Parent: "ea6b7c6d-2cd6-45e2-a249-e8f9b51c0936"
+Template: "ea6b7c6d-2cd6-45e2-a249-e8f9b51c0936"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/_featuredProject/__Standard Values
+SharedFields:
+- ID: "fd4e2050-186c-4375-8b99-e8a85dd7436e"
+  Hint: __Enable item fallback
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190723T160119Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\jglass
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "d4b22db7-4684-4590-bb40-9dfeacabad92"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20200305T180407Z

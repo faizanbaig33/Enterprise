@@ -1,0 +1,58 @@
+parameters:
+  - name: azsubscription
+    type: string
+
+steps:
+#Getting Selected version of Packages
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "BuildVersionToDownload is: " $(buildVersionToDownload)
+      echo "SitecoreBuildRevision is: " $(SitecoreBuildRevision)
+      echo "azsubscription is: " $(azsubscription)
+  displayName: 'Getting Selected Package Versions'
+
+#Download package to agent directory
+- template: '/deploy/azure-pipeline-step-add-artifacts.yml'
+
+#Getting version of Deployment Packages
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      echo "Your selected Web Package Version is: " $(NugetVersion)
+      echo "BuildVersionToDownload is: " $(GetPackageVersion.buildVersionToDownload)
+      echo "SitecoreBuildRevision is: " $(GetPackageVersion.SitecoreBuildRevision)
+  displayName: 'Getting Final Deployment Package Versions'
+
+# Authenticate to AKS Cluster - Method 2
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: '${{ parameters.azsubscription }}'
+    scriptType: 'ps'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+
+      #Authenticate to kubernetes with kubelogin
+      az account set --name $(azureSubscription)
+      az aks get-credentials -n $(primary_cluster) -g $(primary_cluster_rg) --overwrite-existing
+      $env:KUBECONFIG="$HOME/.kube/config"
+      kubelogin convert-kubeconfig -l azurecli
+
+      #Verify connectivity to AKS cluster
+      kubectl get po -n sitecore
+
+#Roll out CM Deployment
+- task: PowerShell@2
+  inputs:
+    filePath: $(System.DefaultWorkingDirectory)\EnterpriseWeb\deploy\RolloutCM.ps1
+    arguments: '-sitecore_environment $(sitecore_environment)'
+  displayName: 'Roll out CM Deployment'
+
+#Wait for Updated CM Pod to Come Up!
+- task: PowerShell@2
+  displayName: "Wait for Updated CM Pod to Come Up!"
+  inputs:
+    filePath: $(System.DefaultWorkingDirectory)\EnterpriseWeb\deploy\podhealthcheck.ps1
+    arguments: '-appname $(pod.cm)'

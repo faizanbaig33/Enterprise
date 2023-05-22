@@ -1,0 +1,30 @@
+﻿---
+ID: "2b4a6b30-d851-4162-abe6-c4aa17f056b4"
+Parent: "c7e82176-d156-410f-b728-d4c465148578"
+Template: "c7e82176-d156-410f-b728-d4c465148578"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Elements/Swatches/Swatch Collection/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: 
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210813T212647Z
+    - ID: "3436a7cb-5d45-4570-a3e1-e25cd49052dc"
+      Hint: swatchCollectionName
+      Value: $name
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a7c2bbe0-4e62-4679-a28a-98ba8e1eb686"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230405T181750Z

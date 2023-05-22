@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  class="relative"
+  data-component="hero/heromediabackground"
+>
+  <div
+    class="relative max-md:mb-s"
+  >
+    <div
+      class="relative mx-auto hidden md:block aspect-hero   h-[280px] md:h-[620px]"
+    >
+      <span
+        style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      >
+        <img
+          alt="about-hero-image-1440x617"
+          data-nimg="fill"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+        />
+        <noscript />
+      </span>
+    </div>
+    <div
+      class="relative w-full md:hidden h-[280px]"
+    >
+      <span
+        style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px;"
+      >
+        <img
+          alt="about-hero-image-1440x617"
+          data-nimg="fill"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+        />
+        <noscript />
+      </span>
+    </div>
+  </div>
+  <div
+    class="max-md:px-m md:absolute w-full h-full z-[1] flex items-center md:top-0 md:text-white"
+  >
+    <div
+      class="max-w-screen-xl md:ml-[8%] 2xl:ml-auto flex flex-col basis-full mx-auto md:text-white"
+    >
+      <div
+        class="my-xxxs md:max-w-[585px] texy-sm-xs md:text-xs font-medium uppercase font-sans md:text-white"
+      >
+        <h2>
+          About us
+        </h2>
+      </div>
+      <div
+        class="items-top font-sans  my-xxxs md:max-w-[585px] text-sm-l md:text-l font-heavy md:text-white"
+      >
+        <h2>
+          AMERICA'S MOST LOVED BRAND OF WINDOWS AND DOORS
+        </h2>
+      </div>
+      <div
+        class="body-copy my-xxxs md:max-w-[585px] text-body md:text-white"
+      >
+        <div>
+          <p>
+            2022 Andersen Brand Surveys of U.S. realtors, contractors, builders & homeowners
+          </p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,38 @@
+﻿---
+ID: "8cc75120-b6ea-4706-a979-fabc002ec675"
+Parent: "0711fd6a-8d7a-4c51-9ec1-31dd1c2cf89a"
+Template: "0711fd6a-8d7a-4c51-9ec1-31dd1c2cf89a"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Hero/Hero Half Media/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{F08A82E2-7945-45B6-B986-826D339FC808}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "1377d959-963f-4516-b739-5e2b270c6c3c"
+      Hint: imgPosition
+      Value: "{0A58D643-E0C1-4A6E-A9F6-03D731A55121}"
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230105T184501Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e295a8d6-8f7d-4823-bc60-f5b3f1e307d5"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230113T102115Z

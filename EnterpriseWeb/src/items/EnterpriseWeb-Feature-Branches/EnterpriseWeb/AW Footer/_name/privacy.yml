@@ -1,0 +1,23 @@
+﻿---
+ID: "0a81703f-36b6-4317-a5b0-211182b1b81d"
+Parent: "389e33eb-0e44-4268-841a-47c2f1582931"
+Template: "905c7f52-d418-43cb-834c-bc033560bc4d"
+Path: /sitecore/templates/Branches/Feature/EnterpriseWeb/AW Footer/$name/privacy
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T055232Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "a7484d92-4970-4453-8248-0eb553995805"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T055232Z

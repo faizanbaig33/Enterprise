@@ -1,0 +1,38 @@
+﻿---
+ID: "72982ee1-7154-4ea3-9197-3cfccfaeee0f"
+Parent: "7e4c6b3d-465f-4e7c-b992-8be553a1ac57"
+Template: "7e4c6b3d-465f-4e7c-b992-8be553a1ac57"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Pages/Article Tags/Article Tags/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{B511B8FC-60C4-47A0-A307-31DC5B7946A9}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230403T133913Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8a7b4556-4efa-46e1-8c50-8f45c0dd3a8b"
+      Hint: tagId
+      Value: tags
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "09edbef4-9f8c-4c0f-bdb8-4345efb97f56"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230412T172529Z

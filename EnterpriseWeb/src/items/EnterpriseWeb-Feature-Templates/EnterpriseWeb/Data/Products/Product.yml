@@ -1,0 +1,62 @@
+﻿---
+ID: "afe4a298-0fb4-4d78-a699-e96b98ce94de"
+Parent: "b02c25cf-2982-4e24-97a6-07962fd34692"
+Template: "ab86861a-6030-46c5-b394-e8f99e8b87db"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Products/Product
+SharedFields:
+- ID: "06d5295c-ed2f-4a54-9bf2-26228d113318"
+  Hint: __Icon
+  Value: Office/32x32/credit_card.png
+- ID: "12c33f3f-86c5-43a5-aeb4-5598cec45116"
+  Hint: __Base template
+  Value: |
+    {B61A1D20-9EE5-4CCB-9E0D-24A97E58D293}
+    {BCD96EB5-B307-4230-918E-A5F9FC5DBCEF}
+    {38128854-C3E7-4EDE-887B-34C7C1791D6E}
+    {A8C8CC2F-7239-4E1B-9EAA-CEE8DCD61ABA}
+    {6302BFC7-CB18-49AB-A86C-CED81CA33E91}
+    {6A062B47-C0C5-4FC9-BC91-0188BCD9CB2B}
+    {7E56E35B-A878-4B94-A5E3-C534BEAE20DB}
+    {62A1B3F5-319F-444A-8F88-D6087BE807C9}
+    {25ED1DD6-5EBD-46E4-9AB1-B1251BB53D20}
+    {B9BB5203-83F1-4146-A2F8-3152839D34F4}
+    {967A586B-0A71-40C8-BFBF-4A24298B1156}
+- ID: "9c6106ea-7a5a-48e2-8cad-f0f693b1e2d4"
+  Hint: __Read Only
+  Value: 
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 1100
+- ID: "f7d48a55-2158-4f02-9356-756654404f73"
+  Hint: __Standard values
+  Value: "{37348190-EAE6-44AE-83CB-1F8E39536DA8}"
+Languages:
+- Language: en
+  Fields:
+  - ID: "b5e02ad9-d56f-4c41-a065-a133db87bdeb"
+    Hint: __Display name
+    Value: 
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20210707T230223Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "1960afca-d4b5-4ab8-938a-c29e2d3dcc44"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230427T194651Z

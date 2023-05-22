@@ -1,0 +1,26 @@
+﻿---
+ID: "7b75b396-387c-48fb-9270-d7b684f7d10f"
+Parent: "66edef71-9fac-412a-b17f-8c662672d1fb"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/system/Settings/Feature/EnterpriseWeb/Insert Options/Form Field/Basic
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230221T203527Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "11e0f7a2-e7bf-4248-844c-474625975f12"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{4FD88841-D725-4815-8B03-6EA12C956C18}|{62D234CA-1C65-4699-8BFE-339C28D92761}|{BBF6C209-A5C6-436A-8242-77EB43E6FFC6}|{36FDF099-4B66-485D-9064-90943DCFBFCA}|{15F038D2-0C3F-4D84-ACC5-1F83589BEC81}|{B01E7CAE-D802-4AE5-9742-BDCDA546554B}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230228T184402Z

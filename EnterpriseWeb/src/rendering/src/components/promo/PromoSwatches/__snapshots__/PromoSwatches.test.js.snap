@@ -1,0 +1,1197 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="promo/promoswatches"
+  id="id1969683138"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-y-m gap-x-s"
+    >
+      <div
+        class="col-span-12 order-last"
+      >
+        <div
+          class="font-sans text-xxs font-regular text-dark-gray uppercase mb-m ml:mb-m"
+        >
+          <h3>
+            Eyebrow Text
+          </h3>
+        </div>
+        <div
+          class="items-top font-sans  text-theme-text text-sm-m ml:text-m font-medium ml:font-heavy mb-s"
+        >
+          <h2>
+            Headline Text
+          </h2>
+          
+        </div>
+        <div
+          class="text-theme-body text-body mb-m ml:mb-l font-regular"
+        >
+          <div
+            class="body-copy"
+          >
+            <div>
+              Et aut sed voluptas occaecati. Voluptatem rerum autem maxime voluptas ex eligendi neque. Laboriosam ex reiciendis cumque magni quo adipisci. Et provident sint mollitia non nisi mollitia numquam aut. Fuga eius minima possimus dolorem quo voluptas odit.
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="items-top font-sans  text-theme-text text-sm-xs ml:text-xs font-medium mt-m ml:mt-l  mb-xs"
+          >
+            <h3>
+              Doors Exterior
+            </h3>
+            
+          </div>
+          <div
+            class="font-regular text-dark-gray text-body mb-m"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                This is an optional RTE. Headline lorem ipsum dolor. Et aut sed voluptas occaecati. Voluptatem rerum autem maxime voluptas ex eligendi neque.
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-wrap justify-start gap-y-m gap-x-[35px] ml:gap-x-[62px] ml:gap-y-l justify-center ml:justify-start"
+          >
+            <div
+              class="w-[82px] ml:w-[86px]  flex flex-col"
+            >
+              <div
+                class="h-[64px] ml:h-[86px] w-[64px] ml:w-[86px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="white-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="white-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  White
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[82px] ml:w-[86px]  flex flex-col"
+            >
+              <div
+                class="h-[64px] ml:h-[86px] w-[64px] ml:w-[86px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="sandtone-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="sandtone-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Sandstone
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[82px] ml:w-[86px]  flex flex-col"
+            >
+              <div
+                class="h-[64px] ml:h-[86px] w-[64px] ml:w-[86px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="terratone-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="terratone-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Terratone
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[82px] ml:w-[86px]  flex flex-col"
+            >
+              <div
+                class="h-[64px] ml:h-[86px] w-[64px] ml:w-[86px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="cocoa-bean-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="cocoa-bean-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Cocoa Bean
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[82px] ml:w-[86px]  flex flex-col"
+            >
+              <div
+                class="h-[64px] ml:h-[86px] w-[64px] ml:w-[86px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="black-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="black-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Black
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[82px] ml:w-[86px]  flex flex-col"
+            >
+              <div
+                class="h-[64px] ml:h-[86px] w-[64px] ml:w-[86px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="dark-bronze-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="dark-bronze-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  White
+                </h4>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="items-top font-sans  text-theme-text text-sm-xs ml:text-xs font-medium mt-m ml:mt-l  mb-xs"
+          >
+            <h3>
+              Doors Exterior
+            </h3>
+            
+          </div>
+          <div
+            class="font-regular text-dark-gray text-body mb-m"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                This is an optional RTE. Headline lorem ipsum dolor. Et aut sed voluptas occaecati. Voluptatem rerum autem maxime voluptas ex eligendi neque.
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-wrap justify-start gap-x-[52px] gap-y-m ml:gap-x-[38px] justify-center ml:justify-start"
+          >
+            <div
+              class="w-xxl ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-xxl w-xxl ml:h-[160px] ml:w-[160px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="white-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="white-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  White
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-xxl ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-xxl w-xxl ml:h-[160px] ml:w-[160px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="terratone-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="terratone-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Terratone
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-xxl ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-xxl w-xxl ml:h-[160px] ml:w-[160px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="sandtone-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="sandtone-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Sandstone
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-xxl ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-xxl w-xxl ml:h-[160px] ml:w-[160px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="dark-bronze-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="dark-bronze-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  White
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-xxl ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-xxl w-xxl ml:h-[160px] ml:w-[160px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="cocoa-bean-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="cocoa-bean-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Cocoa Bean
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-xxl ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-xxl w-xxl ml:h-[160px] ml:w-[160px] rounded-full [&_img]:rounded-full mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="black-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="black-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Black
+                </h4>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div
+            class="items-top font-sans  text-theme-text text-sm-xs ml:text-xs font-medium mt-m ml:mt-l  mb-xs"
+          >
+            <h3>
+              Doors Exterior
+            </h3>
+            
+          </div>
+          <div
+            class="font-regular text-dark-gray text-body mb-m"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                This is an optional RTE. Headline lorem ipsum dolor. Et aut sed voluptas occaecati. Voluptatem rerum autem maxime voluptas ex eligendi neque.
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex flex-wrap justify-start gap-x-[15px] ml:gap-x-l gap-y-m"
+          >
+            <div
+              class="w-[156px] ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-[156px] w-[156px] ml:h-[160px] ml:w-[160px] mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="white-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="white-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  White
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[156px] ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-[156px] w-[156px] ml:h-[160px] ml:w-[160px] mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="sandtone-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="sandtone-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Sandstone
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[156px] ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-[156px] w-[156px] ml:h-[160px] ml:w-[160px] mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="terratone-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="terratone-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Terratone
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[156px] ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-[156px] w-[156px] ml:h-[160px] ml:w-[160px] mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="cocoa-bean-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="cocoa-bean-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Cocoa Bean
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[156px] ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-[156px] w-[156px] ml:h-[160px] ml:w-[160px] mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="black-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="black-exterior-80x80 (1)"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  Black
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[156px] ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-[156px] w-[156px] ml:h-[160px] ml:w-[160px] mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="dark-bronze-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="dark-bronze-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  White
+                </h4>
+                
+              </div>
+            </div>
+            <div
+              class="w-[156px] ml:w-[160px] flex flex-col"
+            >
+              <div
+                class="h-[156px] w-[156px] ml:h-[160px] ml:w-[160px] mx-auto mb-xxs"
+              >
+                <div
+                  class="relative hidden md:block aspect-video   "
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="dark-bronze-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+                <div
+                  class="relative w-full md:hidden"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                  >
+                    <span
+                      style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                    />
+                    <img
+                      alt="dark-bronze-exterior-color-swatch"
+                      data-nimg="responsive"
+                      decoding="async"
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                    />
+                    <noscript />
+                  </span>
+                </div>
+              </div>
+              <div
+                class="items-top font-sans  mx-auto !font-serif text-dark-gray text-small text-center font-regular "
+              >
+                <h4>
+                  White
+                </h4>
+                
+              </div>
+            </div>
+          </div>
+          <div
+            class="body-copy font-regular text-theme-body text-small text-dark-gray mt-m"
+          >
+            <div>
+              This is an optional RTE. Headline lorem ipsum dolor. Et aut sed
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-span-12"
+      >
+        <div
+          class="relative hidden md:block aspect-video   "
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+            />
+            <img
+              alt="andersen big doors looking from the inside out to patio garden area"
+              data-nimg="responsive"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+            />
+            <noscript />
+          </span>
+        </div>
+        <div
+          class="relative block w-full md:hidden"
+        >
+          <span
+            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+          >
+            <span
+              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+            />
+            <img
+              alt="andersen big doors looking from the inside out to patio garden area"
+              data-nimg="responsive"
+              decoding="async"
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: center;"
+            />
+            <noscript />
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

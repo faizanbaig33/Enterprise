@@ -1,0 +1,17 @@
+{
+  "namespace": "Roles",
+  "roles": [
+    {
+      "domain": "sitecore",
+      "pattern": "EntWeb .*"
+    },
+    {
+      "domain": "sitecore",
+      "pattern": "AW .*"
+    },
+    {
+      "domain": "sitecore",
+      "pattern": "RbA .*"
+    }
+  ]
+}

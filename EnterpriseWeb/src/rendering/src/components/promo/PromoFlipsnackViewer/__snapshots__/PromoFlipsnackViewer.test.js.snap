@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="promo/promoflipsnackviewer"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-12 ml:col-span-8 mb-s ml:mb-0"
+      >
+        <iframe
+          allowfullscreen=""
+          class="w-full h-full min-h-[100vw] md:min-h-[500px]"
+          frameborder="0"
+          loading="lazy"
+          scrolling="no"
+          seamless=""
+          src="https://player.flipsnack.com?hash=OTlDRTk1RUJEQzkraGthNjkzaXRrNQ&t="
+        />
+      </div>
+      <div
+        class="col-span-12 ml:col-span-4 ml:order-first"
+      >
+        <div
+          class="items-top font-sans  text-theme-text text-s md:text-m font-heavy mb-s"
+        >
+          <h2>
+            Headline lorem ipsum dolor amit lorem ipsum
+          </h2>
+          
+        </div>
+        <div
+          class="text-theme-body text-body mb-m ml:mb-l"
+        >
+          <div
+            class="body-copy"
+          >
+            <div>
+              <p>
+                Est voluptatum tempore nihil provident alias quis enim. Possimus voluptatibus deserunt. Ea sint repellendus nihil eligendi neque. 
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex-col md:flex-col items-start md:!items-start mb-0 mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+        >
+          <a
+            class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mb-m ml:mb-s last:mb-0 mr-m"
+            href="/Carousel"
+            role="link"
+            tabindex="0"
+            target=""
+            title=""
+          >
+            Download
+            <span
+              class="ml-xxs"
+            />
+          </a>
+          <a
+            class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-black px-m py-[9px] font-sans text-button font-heavy hover:bg-black hover:text-white disabled:border-gray disabled:text-gray !ml-0"
+            href="/Components"
+            role="link"
+            tabindex="0"
+            target=""
+            title=""
+          >
+            View product guide
+            <span
+              class="ml-xxs"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

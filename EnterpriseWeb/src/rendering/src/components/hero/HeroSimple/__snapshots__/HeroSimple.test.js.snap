@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/herosimple"
+  id="Hero Simple"
+>
+  <div
+    class="w-full theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+    >
+      <div
+        class="col-span-12"
+      >
+        <div
+          class="md:max-w-screen-lg lg:mx-auto"
+        >
+          <div
+            class="items-top font-sans  text-theme-text text-sm-l md:text-l font-heavy mb-m mt-m md:mb-l md:mt-l border-primary border-b-6 pb-xxs"
+          >
+            <h1>
+              Hero headline
+            </h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/contentblockwithsidebar"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m  "
+    >
+      <div
+        class="grid-cols-12 col-span-9"
+      >
+        <div
+          class="items-top font-sans  text-theme-text text-sm-m md:text-m font-bold mb-s"
+        >
+          <h2>
+            Headline text
+          </h2>
+          
+        </div>
+        <div
+          class="text-theme-body text-body mb-s"
+        >
+          <div
+            class="body-copy"
+          >
+            <div>
+              Test Body
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="sm-px-0 border-t col-span-9 border-gray md:col-span-3 md:p-3 md:border-l md:border-t-0"
+      >
+        <div
+          class="text-theme-body text-body mb-s"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

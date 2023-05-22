@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<article
+  data-component="tabs/blogcontainer"
+  id="id1695242607"
+>
+  <div
+    class="block col-span-12"
+  >
+    <div
+      style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+    >
+      <h2>
+        ContentBlockWithMedia
+      </h2>
+      <p>
+        JSS component is missing React implementation. See the developer console for more information.
+      </p>
+    </div>
+  </div>
+  <div
+    class="block col-span-12"
+  >
+    <div
+      style="background: darkorange; outline: 5px solid orange; padding: 10px; color: white; max-width: 500px;"
+    >
+      <h2>
+        PromoGeneric
+      </h2>
+      <p>
+        JSS component is missing React implementation. See the developer console for more information.
+      </p>
+    </div>
+  </div>
+</article>
+`;

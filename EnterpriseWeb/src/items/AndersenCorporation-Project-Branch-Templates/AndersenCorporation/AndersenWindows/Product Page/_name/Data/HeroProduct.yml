@@ -1,0 +1,23 @@
+﻿---
+ID: "3003e3cd-f47d-4366-89d9-f9613b517698"
+Parent: "cfc4b0c7-f0d5-4a94-96fb-49150ef0e15c"
+Template: "08f94231-3f06-4fb3-b7e7-165cec0767d4"
+Path: /sitecore/templates/Branches/Project/AndersenCorporation/AndersenWindows/Product Page/$name/Data/HeroProduct
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230223T080219Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "e65e62df-6837-4b0b-9785-1efc7d44dc59"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230223T080219Z

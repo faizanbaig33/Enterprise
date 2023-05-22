@@ -1,0 +1,31 @@
+﻿---
+ID: "089c8daa-c633-4f08-861b-abd87e28c158"
+Parent: "04f2bb22-a363-4cb8-b776-aad24e549d50"
+Template: "04f2bb22-a363-4cb8-b776-aad24e549d50"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/Datasources/Territory Postal Codes/__Standard Values
+SharedFields:
+- ID: "fd4e2050-186c-4375-8b99-e8a85dd7436e"
+  Hint: __Enable item fallback
+  Value: 1
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190417T151440Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\jglass
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "2adc9c03-d858-4de7-b501-dc114b5f4097"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20191115T132832Z

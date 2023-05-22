@@ -1,0 +1,31 @@
+﻿---
+ID: "91035c4b-9909-409e-94d5-5473f21d95a5"
+Parent: "199de135-8734-4ee0-b4b1-2bee8ce55c72"
+Template: "199de135-8734-4ee0-b4b1-2bee8ce55c72"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Data/Affiliates/Datasources/Community Involvement/__Standard Values
+SharedFields:
+- ID: "ca9b9f52-4fb0-4f87-a79f-24dea62cda65"
+  Hint: __Default workflow
+  Value: "{38962021-FA11-4DDB-8C14-1C26B08AAE29}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20190918T200315Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\jglass
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "8f57373f-d964-4451-a221-c4288857ea13"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\unicorn
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20200129T135143Z

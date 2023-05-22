@@ -1,0 +1,38 @@
+﻿---
+ID: "599f4630-d958-4ecf-8cc6-4599e4d7d80e"
+Parent: "697c9ac8-ebc1-4ddb-ada8-1d0a72de6ee7"
+Template: "697c9ac8-ebc1-4ddb-ada8-1d0a72de6ee7"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Promo/Promo Review Content Authored/Promo Review Content Authored/__Standard Values
+SharedFields:
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{A1E6DA84-D34D-490D-961F-AAE7083B5325}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230110T164534Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "7354ae24-f0c6-4cd0-bedc-a2504912d708"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230324T192233Z
+    - ID: "ebc0f4f5-3020-4870-960b-524e0d172158"
+      Hint: headlineLevel
+      Value: "{7F10288A-BEB1-4D95-A139-32DF40094441}"

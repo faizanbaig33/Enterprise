@@ -1,0 +1,47 @@
+﻿---
+ID: "b2cf8c62-9501-401b-8493-bbdac037a370"
+Parent: "7d7fc73c-26fb-442b-965f-e0822bcf0961"
+Template: "7d7fc73c-26fb-442b-965f-e0822bcf0961"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Components/Tabs/Tabs General Content/Tabs General Content/__Standard Values
+SharedFields:
+- ID: "1172f251-dad4-4efb-a329-0c63500e4f1e"
+  Hint: __Masters
+  Value: "{683549B0-BCC7-426B-9D29-F09AACAF89F3}"
+- ID: "32a0a4a0-2c24-4894-8629-4cd02476348e"
+  Hint: headlineLevel
+  Value: "{0F556F3A-BBAD-4AA5-952D-B79003B39CD6}"
+- ID: "b03569b1-1534-43f2-8c83-bd064b7d782c"
+  Hint: __Renderers
+  Value: "{AF3B3A64-5E46-4BAE-816A-34DB146F1F8D}"
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221229T103203Z
+    - ID: "50bbd6d2-1c9b-4446-86bd-23fde13b91ec"
+      Hint: tabLabelView
+      Value: "{8655AFB5-CB94-42B0-B942-FE2A5A11A304}"
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "16b2932b-5032-4dd1-8c36-5fef76eaeb9b"
+    - ID: "b2a74f5b-05db-4e79-8ce9-328512c478cf"
+      Hint: headlineText
+      Value: $name
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230201T191352Z

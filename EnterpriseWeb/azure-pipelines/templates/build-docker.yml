@@ -1,0 +1,32 @@
+parameters:
+  containerRegistry: ''
+  repository: ''
+  latestTag: 'latest'
+
+steps:
+- task: DockerInstaller@0
+  displayName: Install Docker CLI
+  inputs:
+    dockerVersion: 20.10.24
+
+- task: PowerShell@2
+  displayName: Remove .dockerignore
+  inputs:
+    targetType: inline
+    script: |
+      Remove-Item .dockerignore
+    workingDirectory: $(Build.SourcesDirectory)
+
+- task: Docker@2
+  displayName: Build Docker image
+  inputs:
+    command: build
+    containerRegistry: ${{ parameters.containerRegistry }}
+    repository: ${{ parameters.repository }}
+    dockerfile: azure-pipelines/build/cm/Dockerfile
+    buildContext: .
+    arguments: --build-arg PARENT_IMAGE=scr.sitecore.com/sxp/sitecore-xm1-cm:10.2-ltsc2019 --build-arg MANAGEMENT_SERVICES_IMAGE=scr.sitecore.com/sxp/modules/sitecore-management-services-xm1-assets:5.1.25-1809 --build-arg HEADLESS_SERVICES_IMAGE=scr.sitecore.com/sxp/modules/sitecore-headless-services-xm1-assets:20.0.1-1809 --build-arg TOOLS_IMAGE=scr.sitecore.com/tools/sitecore-docker-tools-assets:10.2.0-1809 --build-arg SPE_IMAGE=scr.sitecore.com/sxp/modules/sitecore-spe-assets:6.3-1809 --build-arg SXA_IMAGE=scr.sitecore.com/sxp/modules/sitecore-sxa-xm1-assets:10.2-1809 --build-arg EXPERIENCE_EDGE_CONNECTOR_IMAGE=scr.sitecore.com/sxp/modules/sitecore-experience-edge-connector-xm1-assets:20.0.0-1809
+    tags: |
+      $(Build.BuildNumber)
+      ${{ parameters.latestTag }}
+    workingDirectory: $(Build.SourcesDirectory)

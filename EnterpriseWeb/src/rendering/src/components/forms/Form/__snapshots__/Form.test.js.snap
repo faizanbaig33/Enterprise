@@ -1,0 +1,135 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  class="block max-w-lg p-6"
+>
+  <form
+    novalidate=""
+  >
+    <div
+      class="pages"
+    >
+      <div
+        class=""
+      >
+        <div
+          class="relative mb-s"
+        >
+          <div
+            class="items-top font-sans  text-theme-text text-sm-m md:text-m font-heavy"
+          >
+            <h2>
+              Headline
+            </h2>
+            
+          </div>
+        </div>
+        <div
+          class="relative mb-s"
+        >
+          <div
+            class="body-copy"
+          >
+            <div>
+              Lorem ipsum stuff here
+            </div>
+          </div>
+        </div>
+        <div
+          class="relative mb-s"
+          data-te-input-wrapper-init="true"
+        >
+          <label
+            class="text-body font-regular flex mb-xxs"
+            for="1bdb2818-0846-4998-8a68-a9d0401a9be2"
+          >
+            Short Text
+             
+            *
+          </label>
+          <input
+            class="flex h-12 w-full rounded-none border border-gray outline-none focus:border-black py-3 pr-3 pl-2"
+            id="1bdb2818-0846-4998-8a68-a9d0401a9be2"
+            maxlength="5"
+            minlength="2"
+            name="Short Text"
+            placeholder=""
+            required=""
+            type="text"
+            value="Default value"
+          />
+        </div>
+        <div
+          class="relative mb-s"
+          data-te-input-wrapper-init="true"
+        >
+          <label
+            class="text-body font-regular flex mb-xxs"
+            for="2bdb2818-0846-4998-8a68-a9d0401a9be2"
+          >
+            Email
+             
+            *
+          </label>
+          <input
+            class="flex h-12 w-full rounded-none border border-gray outline-none focus:border-black py-3 pr-3 pl-2"
+            id="2bdb2818-0846-4998-8a68-a9d0401a9be2"
+            name="Email address"
+            placeholder=""
+            required=""
+            type="text"
+            value=""
+          />
+        </div>
+        <div
+          class="relative mb-s"
+          data-te-input-wrapper-init="true"
+        >
+          <label
+            class="text-body font-regular flex mb-xxs"
+            for="181f6d65-9671-4fd8-8484-d34a1bcdaacc"
+          >
+            Long Text
+             
+            *
+          </label>
+          <textarea
+            class="peer block min-h-[auto] w-full rounded-none border border-gray outline-none focus:border-black py-3 pr-3 pl-2"
+            id="181f6d65-9671-4fd8-8484-d34a1bcdaacc"
+            minlength="0"
+            name="Long Text"
+            placeholder="Placeholder text"
+            required=""
+            rows="5"
+          >
+            Other default value
+          </textarea>
+        </div>
+        <div
+          class="relative mb-s"
+          data-te-input-wrapper-init="true"
+        >
+          <input
+            id="d96e2463-c348-4876-92eb-aef28923b606"
+            name="Hidden"
+            readonly=""
+            type="hidden"
+            value="2"
+          />
+        </div>
+        <div
+          class="relative mb-s"
+        >
+          <button
+            name="Button"
+            type="submit"
+          >
+            Button
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;

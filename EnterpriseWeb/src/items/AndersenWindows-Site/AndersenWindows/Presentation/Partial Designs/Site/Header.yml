@@ -1,0 +1,62 @@
+﻿---
+ID: "a4c49193-57c1-4c85-9a1c-11fcb45aef50"
+Parent: "6e7f756d-a156-447e-8195-6d335474440f"
+Template: "fd2059fd-6043-4dfe-8c04-e2437ce87634"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Presentation/Partial Designs/Site/Header
+SharedFields:
+- ID: "55faae90-3bba-4f7f-96fe-13c3f40055ff"
+  Hint: Signature
+  Value: header
+- ID: "f1a1fe9e-a60c-4ddb-a3a0-bb5b29fe732e"
+  Hint: __Renderings
+  Value: |
+    <r xmlns:p="p" xmlns:s="s"
+      p:p="1">
+      <d
+        id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"
+        s:l="{DD2C902A-D7D2-4DB9-8538-C7748DAB080D}" />
+    </r>
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "04bf00db-f5fb-41f7-8ab7-22408372a981"
+      Hint: __Final Renderings
+      Value: |
+        <r xmlns:p="p" xmlns:s="s"
+          p:p="1">
+          <d
+            id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}">
+            <r
+              uid="{829CBAB9-AD15-4A50-A475-32D305A1BFC7}"
+              p:before="*"
+              s:ds="{DAE407D8-B73C-4C62-9D4C-E9B6856ED751}"
+              s:id="{4CC58A5A-A1EE-451E-A5DD-80B8998AB093}"
+              s:par=""
+              s:ph="headless-header"
+              s:ccb="Clear on publish" />
+            <r
+              uid="{A6AE705C-C658-4C6A-9A92-31BAE028B56D}"
+              p:after="*[1=2]"
+              s:id="{30BADB1F-CB68-4C39-8F1D-999928307C33}"
+              s:ph="headless-header" />
+          </d>
+        </r>
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221116T231135Z
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "c5fbfe47-009a-4b21-99d2-d31b8fdc4d78"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230412T162717Z

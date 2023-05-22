@@ -1,0 +1,258 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  class="flex flex-col items-start border border-gray h-full relative"
+  data-component="card/productpreview"
+>
+  <div
+    class="absolute top-0 right-0"
+  >
+    <div
+      class="favorite-product absolute right-0 top-0 inline h-0 w-0 cursor-pointer border-t-0 border-l-0 border-r-[60px] border-b-[60px] border-solid border-[transparent_#e3e3e3_transparent_transparent] transition-[border-color]  duration-500 ease-[ease]"
+      data-product-id="Product ID 123"
+    >
+      <span
+        class="absolute -right-[51px] top-[11px]"
+      />
+    </div>
+  </div>
+  <div
+    class="flex flex-col items-start px-s pb-s pt-m gap-2 order-1"
+  >
+    <a
+      class="order-2"
+      href="/"
+    >
+      <div
+        class="items-top font-sans  text-xs font-heavy hover:underline"
+      >
+        <h4>
+          Unique Opening Architectures
+        </h4>
+        
+      </div>
+    </a>
+    <div
+      class="flex items-center order-3"
+    >
+      <div
+        class="flex mr-xxs"
+      >
+        <span
+          class="text-primary"
+        />
+        <span
+          class="text-primary"
+        />
+        <span
+          class="text-primary"
+        />
+        <span
+          class="text-primary"
+        />
+        <span
+          class="text-gray"
+        />
+      </div>
+      <div
+        class="pr-xxs text-xs"
+      >
+        <h5>
+          5.0
+        </h5>
+      </div>
+      <div
+        class="border-l border-secondary px-xxs leading-none flex [&>*:nth-child(2)]:text-gray"
+      >
+        <span
+          class="text-xs font-heavy"
+        >
+          $$
+        </span>
+        <span
+          class="text-xs font-heavy"
+          ttag="span"
+        >
+          $$$
+        </span>
+      </div>
+    </div>
+  </div>
+  <div
+    class="order-2 my-xxs self-stretch"
+  >
+    <a
+      class=""
+      href="/"
+    >
+      <div
+        class="relative hidden md:block aspect-video   "
+      >
+        <span
+          style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+        >
+          <span
+            style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 61.12956810631229% 0px 0px 0px;"
+          />
+          <img
+            alt="door"
+            data-nimg="responsive"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          />
+          <noscript />
+        </span>
+      </div>
+      <div
+        class="relative w-full md:hidden"
+      >
+        <span
+          style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+        >
+          <span
+            style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 61.12956810631229% 0px 0px 0px;"
+          />
+          <img
+            alt="door"
+            data-nimg="responsive"
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+          />
+          <noscript />
+        </span>
+      </div>
+    </a>
+  </div>
+  <div
+    class="px-s my-s order-3 text-dark-gray"
+  >
+    <div
+      class="body-copy"
+    >
+      <div>
+        A odio eius esse soluta. Quia ipsam laborum dolorem eum et asperiores architecto voluptate. Exercitationem magnam qui aperiam rerum. A consequuntur id nihil et aut ab ut quos aut.
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex max-lg:flex-wrap  lg:mb-s lg:items-end justify-between w-full mt-auto max-lg:mb-s order-3"
+  >
+    <div
+      class="px-xs max-lg:mb-s"
+    >
+      <h4
+        class="text-small"
+      >
+        Exterior Color Options
+      </h4>
+      <a
+        class="order-2"
+        href="/"
+      >
+        <div
+          class="mt-xxxs flex"
+        >
+          <div
+            class="h-[30px] w-[30px] rounded-full mr-[14px] [&_*]:h-[30px] [&_*]:w-[30px] [&_img]:rounded-full"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+              />
+              <img
+                alt="cocoa-bean-exterior-color-swatch"
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div
+            class="h-[30px] w-[30px] rounded-full mr-[14px] [&_*]:h-[30px] [&_*]:w-[30px] [&_img]:rounded-full"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+              />
+              <img
+                alt="white-exterior-80x80 (1)"
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div
+            class="h-[30px] w-[30px] rounded-full mr-[14px] [&_*]:h-[30px] [&_*]:w-[30px] [&_img]:rounded-full"
+          >
+            <span
+              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+            >
+              <span
+                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+              />
+              <img
+                alt="sandtone-exterior-color-swatch"
+                data-nimg="responsive"
+                decoding="async"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+              />
+              <noscript />
+            </span>
+          </div>
+          <div>
+            +
+            2
+          </div>
+        </div>
+      </a>
+    </div>
+    <div
+      class="px-xxs md:px-s order-5 max-md:[&_a]:px-xxs [&_a]:mr-0 max-md:mt-auto"
+    >
+      <div
+        class="mb-0 mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+      >
+        <a
+          class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray mb-0 mr-m"
+          href="/"
+          role="link"
+          tabindex="0"
+          target=""
+          title=""
+        >
+          Default state
+          <span
+            class="ml-xxs"
+          />
+        </a>
+        <a
+          class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-gray px-m py-[9px] font-sans text-button font-heavy hover:bg-gray hover:text-white disabled:border-gray disabled:text-gray"
+          href="/Demo-HeadlineTwoColumn"
+          role="link"
+          tabindex="0"
+          target=""
+          title=""
+        >
+          Default state
+          <span
+            class="ml-xxs"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`adds new tab content appropriately 1`] = `
+<a
+  class="hover:underline"
+  href="https://www.horizontaldigital.com"
+  rel="noopener noreferrer"
+  role="link"
+  tabindex="0"
+  target="_blank"
+>
+  Link Text
+  <span
+    class="sr-only"
+  >
+    Only screen readers can access this text
+     (Opens in a new tab)
+  </span>
+</a>
+`;
+
+exports[`allows for field to be of type LinkFieldValue 1`] = `
+<a
+  class="hover:underline"
+  href="https://www.horizontaldigital.com"
+  rel="noopener noreferrer"
+  role="link"
+  tabindex="0"
+  target="_blank"
+>
+  Link Text
+  <span
+    class="sr-only"
+  >
+    Only screen readers can access this text
+     (Opens in a new tab)
+  </span>
+</a>
+`;
+
+exports[`can suppress text and icons 1`] = `
+<a
+  class="hover:underline"
+  href="https://www.horizontaldigital.com"
+  rel="noopener noreferrer"
+  role="link"
+  tabindex="0"
+  target="_blank"
+>
+  
+  <span
+    class="sr-only"
+  >
+    Only screen readers can access this text
+     (Opens in a new tab)
+  </span>
+</a>
+`;

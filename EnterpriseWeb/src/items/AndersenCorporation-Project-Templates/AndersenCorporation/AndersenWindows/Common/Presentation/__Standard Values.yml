@@ -1,0 +1,36 @@
+﻿---
+ID: "257cbc12-ffb1-4020-83f0-3e71337af707"
+Parent: "da89e0ed-0e9f-4152-9d67-29f0181b0718"
+Template: "da89e0ed-0e9f-4152-9d67-29f0181b0718"
+Path: /sitecore/templates/Project/AndersenCorporation/AndersenWindows/Common/Presentation/__Standard Values
+SharedFields:
+- ID: "dec8d2d5-e3cf-48b6-a653-8e69e2716641"
+  Hint: __Security
+  Value: |
+    ar|sitecore\AW Author|pe|+item:read|!*|pd|!*|ar|sitecore\AW Admin|pe|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|pd|+item:create|+item:read|+item:rename|+item:admin|+item:write|+item:delete|
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221129T230340Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "3872c385-2252-4878-ac1f-2eeccb3b8982"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230206T194652Z

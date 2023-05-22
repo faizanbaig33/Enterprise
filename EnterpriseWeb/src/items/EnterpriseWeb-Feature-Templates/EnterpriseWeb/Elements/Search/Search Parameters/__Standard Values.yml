@@ -1,0 +1,80 @@
+﻿---
+ID: "12fbb9a2-27cd-4391-a811-51f6b0ac763a"
+Parent: "af4c725f-4863-4ec3-9976-d35a39e8aa62"
+Template: "af4c725f-4863-4ec3-9976-d35a39e8aa62"
+Path: /sitecore/templates/Feature/EnterpriseWeb/Elements/Search/Search Parameters/__Standard Values
+SharedFields:
+- ID: "ba3f86a2-4a1c-4d78-b63d-91c2779c1b5e"
+  Hint: __Sortorder
+  Value: 600
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "2089543b-9994-43d7-822f-a8f1fd41d9ed"
+      Hint: noFacetResultsBody
+      Value: No results found.
+    - ID: "2559797b-393a-4297-a91c-0d8143fc2045"
+      Hint: facetSearchLabel
+      Value: Search
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230202T140852Z
+    - ID: "4c7dc9e5-c33d-43c8-90f3-59e677900f02"
+      Hint: facetSectionHeading
+      Value: Refine By
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "56ede122-7ba3-45c0-8049-3df41dbfa203"
+      Hint: showMoreLabel
+      Value: Show More
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "5e7302d9-92a5-4d57-b3d1-46a9cb1dcec9"
+      Hint: queryPipeline
+      Value: default
+    - ID: "61aa06bd-074e-423b-b09a-8f50da811846"
+      Hint: showLessLabel
+      Value: Show Less
+    - ID: "759476aa-e293-46a9-a7bd-9a601d7306c4"
+      Hint: searchHub
+      Value: search
+    - ID: "81fcebed-9d9a-4ec2-9a72-6ee0fcc58101"
+      Hint: noResultsBody
+      Value: |
+        <p>Search Tips:</p>
+        <ul>
+            <li>Check the spelling of your keywords.
+            </li>
+            <li>Try adjusting your search</li>
+        </ul>
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "83b3c1c2-5635-4a0f-89ce-93f2c445e735"
+    - ID: "b5ad500f-8ca4-4b03-bda3-e31d957b78be"
+      Hint: filtersLabel
+      Value: Filters
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "c0ead25e-080b-4674-b366-1d65fb6ac142"
+      Hint: clearAllLabel
+      Value: Clear All
+    - ID: "c4bf1b93-3312-46af-926c-28106af1304c"
+      Hint: showResultsLabel
+      Value: Show Results
+    - ID: "c4cc29e0-bdda-4297-a77a-02cc70147b6b"
+      Hint: numberOfResultsPerPage
+      Value: 10
+    - ID: "ccd54456-8572-4dd8-8dcd-ccc413fbe76e"
+      Hint: noResultsHeadline
+      Value: "Sorry! No results found"
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230508T144143Z

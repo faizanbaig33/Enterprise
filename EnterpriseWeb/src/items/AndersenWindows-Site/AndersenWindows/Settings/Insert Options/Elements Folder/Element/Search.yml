@@ -1,0 +1,26 @@
+﻿---
+ID: "bb032170-b33e-4459-9483-2bb00c985404"
+Parent: "3fbc7737-4481-4c6c-b91e-ae1cd108a28f"
+Template: "57314660-99fe-4363-9aa4-16e701dc4e54"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Settings/Insert Options/Elements Folder/Element/Search
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230211T151731Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "202db90d-4c3f-4c99-88f8-7dd9e6c6aa9c"
+    - ID: "9ac18edf-76b4-46f8-afbe-56a079e13e35"
+      Hint: Templates
+      Value: "{5C3DF826-D08A-4685-B455-68B6B4DD8691}|{91B5C789-F80A-43EF-B337-B21DB163B0F1}|{90A1D44E-2140-4CBB-93F3-702C1433E3CD}|{F520A88A-C710-4363-AA8C-0FF65FF906DB}|{37FA519E-15F3-40E2-8212-56CF5007F97D}|{BEA24C05-C310-482C-B285-13E7F207BEC2}|{080BC455-3B78-4FA7-95EE-E5DEA94157DA}|{B83EBADE-6B1C-44C9-904F-5857A393209F}|{AF4C725F-4863-4EC3-9976-D35A39E8AA62}|{32154A4B-A94B-4576-BB0E-130DA0AED393}"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230419T062348Z

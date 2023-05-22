@@ -1,0 +1,31 @@
+﻿---
+ID: "806a0de3-8e0b-46bf-9a84-05bfb61931b4"
+Parent: "28f9d5a6-6092-42e2-8528-876a1eb37346"
+Template: "c14bf746-030f-4e59-8594-395f6d299e61"
+Path: /sitecore/content/AndersenCorporation/AndersenWindows/AndersenWindows/Settings/Shared Sites Settings
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20221018T193827Z
+    - ID: "52807595-0f8f-4b20-8d2a-cb71d28c6103"
+      Hint: __Owner
+      Value: |
+        sitecore\Admin
+    - ID: "5dd74568-4d4b-44c1-b513-0af5f4cda34f"
+      Hint: __Created by
+      Value: |
+        sitecore\Admin
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "29736a5e-2762-4fe6-a302-f3be0870a359"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20221018T193827Z

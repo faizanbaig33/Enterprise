@@ -1,0 +1,42 @@
+{
+  "name": "@enterprise-web/root",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "engines": {
+    "node": ">=16.15.0 <17.0.0",
+    "npm": ">=8.5.5 <9.0.0",
+    "yarn": "yarn is not supported, please use npm"
+  },
+  "scripts": {
+    "install-all": "npm install && cd src/rendering && npm install",
+    "precommit": "cd src/rendering && npm run precommit",
+    "prepush": "cd src/rendering && npm run prepush",
+    "prepare": "cd .. && husky install",
+    "test": "cd src/rendering && npm run test",
+    "lint": "cd src/rendering && npm run lint",
+    "generate": "dotnet leprechaun -c ./src/leprechaun.config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://andersencorp.visualstudio.com/EnterpriseWeb/_git/EnterpriseWeb"
+  },
+  "author": "Andersen Windows",
+  "bugs": {
+    "url": "https://andersenwindows.atlassian.net/jira/software/c/projects/EW/boards/427"
+  },
+  "homepage": "https://andersenwindows.atlassian.net/wiki/spaces/EW/overview",
+  "devDependencies": {
+    "@commitlint/cli": "^13.1.0",
+    "@types/inquirer": "^9.0.3",
+    "commitlint-config-jira": "^1.5.1",
+    "commitlint-plugin-jira-rules": "^1.5.1",
+    "husky": "^7.0.1",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "all": "^0.0.0",
+    "axios": "^0.27.2",
+    "eslint": "^8.29.0"
+  }
+}

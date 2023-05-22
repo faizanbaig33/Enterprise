@@ -1,0 +1,23 @@
+﻿---
+ID: "1f5ab56b-f49f-4148-94ff-25e6867d7434"
+Parent: "440f9d54-60b8-40dd-96e9-3ec0a6af8cf1"
+Template: "d5fcfc22-8828-4b90-b20c-e09ed3d1f754"
+Path: /sitecore/content/AndersenCorporation/RenewalByAndersen/Global/Affiliates
+Languages:
+- Language: en
+  Versions:
+  - Version: 1
+    Fields:
+    - ID: "25bed78c-4957-4165-998a-ca1b52f67497"
+      Hint: __Created
+      Value: 20230502T172951Z
+    - ID: "8cdc337e-a112-42fb-bbb4-4143751e123f"
+      Hint: __Revision
+      Value: "6f826a63-d8f9-4129-9351-871ef9890ee2"
+    - ID: "badd9cf9-53e0-4d0c-bcc0-2d784c282f6a"
+      Hint: __Updated by
+      Value: |
+        sitecore\Admin
+    - ID: "d9cf14b1-fa16-4ba6-9288-e8a174d4d522"
+      Hint: __Updated
+      Value: 20230502T172951Z
