@@ -1,19 +1,16 @@
 import classNames from 'classnames';
 // import { withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
-import { Component } from 'src/helpers/Component';
 import { useTheme } from 'lib/context/ThemeContext';
 
-import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
 import { useForm } from 'react-hook-form';
 import React, { ChangeEvent, useState } from 'react';
+import { FiArrowLeft } from 'react-icons/fi';
+
 import ModalWrapper from 'src/helpers/ModalWrapper/ModalWrapper';
-import { ESeriesSizingCalculatorTheme } from '../E-SeriesSizingCalculator/ESeriesSizingCalculator.theme';
+import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 import { SvgIcon } from 'src/helpers/SvgIcon';
 import { RichTextWrapper } from 'src/helpers/RichTextWrapper';
 import { useExperienceEditor } from 'lib/utils';
-
-export type ESeriesSizingCalculatorProps =
-  Feature.EnterpriseWeb.Components.Tool.ESeriesSizingCalculator;
 
 type CalcForm = {
   calcUsing: string; //known_size
@@ -27,8 +24,9 @@ type CalcForm = {
   sillNosingCustom: string; //csns
 };
 
-export const StepESeriesSizingCalculator = (props: ESeriesSizingCalculatorProps): JSX.Element => {
-  const { themeData } = useTheme(ESeriesSizingCalculatorTheme());
+export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
+  const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
+  const { fields } = props;
   const isEE = useExperienceEditor();
 
   //Modal settings
@@ -55,6 +53,8 @@ export const StepESeriesSizingCalculator = (props: ESeriesSizingCalculatorProps)
   const [casingSizeCustomText, setCasingSizeCustomText] = useState<string>();
   const [sillNosingText, setSillNosingText] = useState<string>('No Sill Nosing');
   const [sillNosingCustomText, setSillNosingCustomText] = useState<string>();
+
+  const [isShowResults, setIsShowResults] = useState<boolean>(false);
 
   const {
     register,
@@ -267,15 +267,22 @@ export const StepESeriesSizingCalculator = (props: ESeriesSizingCalculatorProps)
       mh = ch - sg;
     }
     setMasonryOpeningHeight(mh.toString());
+    setIsShowResults(true);
+    
+    props.lastStep();
+    props.completeCallback();
   };
 
-  if (!props.fields) {
+  if (!fields) {
     return <></>;
   }
 
   return (
-    <Component variant="lg" dataComponent="tool/eseriessizingcalculator" {...props}>
-      <form onSubmit={handleSubmit(onSubmit)} className="col-span-12">
+    <div>
+      <div className='font-bold'>
+        {fields?.StepThreeTitle?.value}
+      </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="col-span-12 mt-5">
         <div className={themeData.classes.formWrapper}>
           <div className={themeData.classes.columnSpan2}>
             <label className={themeData.classes.labelClass} htmlFor="calcUsing">
@@ -544,9 +551,17 @@ export const StepESeriesSizingCalculator = (props: ESeriesSizingCalculatorProps)
           </div>
           {/* Submit section */}
           <div className={themeData.classes.submitWrapper}>
-            <button type="submit" className={themeData.classes.submitButton}>
-              Calculate
-            </button>
+            {isShowResults && (
+              <button type='button' className={themeData.classes.prevButton} onClick={() => props.previousStep()}>
+                <FiArrowLeft size={16} />
+                <span className='ml-2'>{fields?.PreviousButtonText?.value}</span>
+              </button>
+            )}
+            {!isShowResults && (
+              <button type="submit" className={themeData.classes.submitButton}>
+                {fields?.CalculateButtonText?.value}
+              </button>
+            )}
             <button type="button" onClick={resetForm} className={themeData.classes.resetButton}>
               Reset calculator
               <span className="ml-xxs">
@@ -556,130 +571,133 @@ export const StepESeriesSizingCalculator = (props: ESeriesSizingCalculatorProps)
           </div>
         </div>
       </form>
-
-      <div className="col-span-12 flex flex-row items-center justify-between">
-        <div className="mb-s font-sans text-sm-m font-heavy text-theme-text last:mb-0 lg:text-m">
-          <h1>Results:</h1>
-        </div>
-        <div className="mb-s hidden items-end pr-2 md:relative md:block">
-          <button type="button" className={themeData.classes.printButton} onClick={printResults}>
-            <span className="mr-xxs text-darkprimary">
-              <SvgIcon icon="print" />
-            </span>
-            Print
-          </button>
-        </div>
-      </div>
-      <div className={themeData.classes.resultsOutputWrapper} id="resultsOutput">
-        <div className={themeData.classes.columnSpan1}>
-          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-              <div className="overflow-hidden">
-                <div className="hidden print:block">E-Series Sizing Calculator Results</div>
-                {/* Options Selected Table */}
-                <table className="min-w-full font-sans text-sm font-light">
-                  <thead className={themeData.classes.tableHead}>
-                    <tr>
-                      <th colSpan={2} scope="col" className={themeData.classes.thLeft}>
-                        Options Selected
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Calculate Using Known</td>
-                      <td className={themeData.classes.tdColumnCenter}>{calcUsingText}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Width</td>
-                      <td className={themeData.classes.tdColumnCenter}>{widthText}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Height</td>
-                      <td className={themeData.classes.tdColumnCenter}>{heightText}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Shim Space (in inches)</td>
-                      <td className={themeData.classes.tdColumnCenter}>{shimSpaceText}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Sealant Gap (in inches)</td>
-                      <td className={themeData.classes.tdColumnCenter}>{sealantGapText}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Profiled Casing</td>
-                      <td className={themeData.classes.tdColumnCenter}>{casingSizeText}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Casing Size</td>
-                      <td className={themeData.classes.tdColumnCenter}>{casingSizeCustomText}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Sill Nosing</td>
-                      <td className={themeData.classes.tdColumnCenter}>{sillNosingText}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Sill Nosing Size</td>
-                      <td className={themeData.classes.tdColumnCenter}>{sillNosingCustomText}</td>
-                    </tr>
-                  </tbody>
-                </table>
+      {isShowResults && (
+        <div className='mt-4'>
+          <div className="col-span-12 flex flex-row items-center justify-between">
+            <div className="mb-s font-sans text-sm-m font-heavy text-theme-text last:mb-0 lg:text-m">
+              <h1>Results:</h1>
+            </div>
+            <div className="mb-s hidden items-end pr-2 md:relative md:block">
+              <button type="button" className={themeData.classes.printButton} onClick={printResults}>
+                <span className="mr-xxs text-darkprimary">
+                  <SvgIcon icon="print" />
+                </span>
+                Print
+              </button>
+            </div>
+          </div>
+          <div className={themeData.classes.resultsOutputWrapper} id="resultsOutput">
+            <div className={themeData.classes.columnSpan1}>
+              <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                  <div className="overflow-hidden">
+                    <div className="hidden print:block">E-Series Sizing Calculator Results</div>
+                    {/* Options Selected Table */}
+                    <table className="min-w-full font-sans text-sm font-light">
+                      <thead className={themeData.classes.tableHead}>
+                        <tr>
+                          <th colSpan={2} scope="col" className={themeData.classes.thLeft}>
+                            Options Selected
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Calculate Using Known</td>
+                          <td className={themeData.classes.tdColumnCenter}>{calcUsingText}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Width</td>
+                          <td className={themeData.classes.tdColumnCenter}>{widthText}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Height</td>
+                          <td className={themeData.classes.tdColumnCenter}>{heightText}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Shim Space (in inches)</td>
+                          <td className={themeData.classes.tdColumnCenter}>{shimSpaceText}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Sealant Gap (in inches)</td>
+                          <td className={themeData.classes.tdColumnCenter}>{sealantGapText}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Profiled Casing</td>
+                          <td className={themeData.classes.tdColumnCenter}>{casingSizeText}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Casing Size</td>
+                          <td className={themeData.classes.tdColumnCenter}>{casingSizeCustomText}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Sill Nosing</td>
+                          <td className={themeData.classes.tdColumnCenter}>{sillNosingText}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Sill Nosing Size</td>
+                          <td className={themeData.classes.tdColumnCenter}>{sillNosingCustomText}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className={themeData.classes.columnSpan1}>
+              <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
+                  <div className="overflow-hidden">
+                    {/* Calculated Dimensions Table */}
+                    <table className="min-w-full font-sans text-sm font-light ">
+                      <thead className={themeData.classes.tableHead}>
+                        <tr>
+                          <th scope="col" className={themeData.classes.thLeft}>
+                            Calculated Dimensions
+                          </th>
+                          <th scope="col" className={themeData.classes.thCenter}>
+                            Width
+                          </th>
+                          <th scope="col" className={themeData.classes.thRight}>
+                            Height
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Overall Unit Size</td>
+                          <td className={themeData.classes.tdColumnCenter}>{overallUnitSizeWidth}</td>
+                          <td className={themeData.classes.tdColumnCenter}>{overallUnitSizeHeight}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Rough Opening</td>
+                          <td className={themeData.classes.tdColumnCenter}>{roughOpeningWidth}</td>
+                          <td className={themeData.classes.tdColumnCenter}>{roughOpeningHeight}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Casing Dimensions</td>
+                          <td className={themeData.classes.tdColumnCenter}>{casingDimensionWidth}</td>
+                          <td className={themeData.classes.tdColumnCenter}>{casingDimensionHeight}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Masonry Opening</td>
+                          <td className={themeData.classes.tdColumnCenter}>{masonryOpeningWidth}</td>
+                          <td className={themeData.classes.tdColumnCenter}>{masonryOpeningHeight}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className={themeData.classes.columnSpan1}>
-          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-              <div className="overflow-hidden">
-                {/* Calculated Dimensions Table */}
-                <table className="min-w-full font-sans text-sm font-light ">
-                  <thead className={themeData.classes.tableHead}>
-                    <tr>
-                      <th scope="col" className={themeData.classes.thLeft}>
-                        Calculated Dimensions
-                      </th>
-                      <th scope="col" className={themeData.classes.thCenter}>
-                        Width
-                      </th>
-                      <th scope="col" className={themeData.classes.thRight}>
-                        Height
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Overall Unit Size</td>
-                      <td className={themeData.classes.tdColumnCenter}>{overallUnitSizeWidth}</td>
-                      <td className={themeData.classes.tdColumnCenter}>{overallUnitSizeHeight}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Rough Opening</td>
-                      <td className={themeData.classes.tdColumnCenter}>{roughOpeningWidth}</td>
-                      <td className={themeData.classes.tdColumnCenter}>{roughOpeningHeight}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Casing Dimensions</td>
-                      <td className={themeData.classes.tdColumnCenter}>{casingDimensionWidth}</td>
-                      <td className={themeData.classes.tdColumnCenter}>{casingDimensionHeight}</td>
-                    </tr>
-                    <tr className={themeData.classes.tableRow}>
-                      <td className={themeData.classes.tdColumn}>Masonry Opening</td>
-                      <td className={themeData.classes.tdColumnCenter}>{masonryOpeningWidth}</td>
-                      <td className={themeData.classes.tdColumnCenter}>{masonryOpeningHeight}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      )}
       {(props.fields?.footer || isEE) && (
         <div className="col-span-12">
           <RichTextWrapper field={props.fields?.footer} className={themeData.classes.footer} />
         </div>
       )}
-    </Component>
+    </div>
   );
 };

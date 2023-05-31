@@ -36,7 +36,7 @@ export const MultiSlideSizingCalculatorActionButtons = (props: any) => {
           </button>
         )}
         {props.currentStep === props.totalSteps && (
-          <button className={themeData.classes.submitButton} onClick={handleFinish}>{fields?.CalculateButtonText?.value}</button>
+          <button type='button' className={themeData.classes.submitButton} onClick={handleFinish}>{fields?.CalculateButtonText?.value}</button>
         )}
       </div>
     </div>

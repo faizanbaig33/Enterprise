@@ -88,7 +88,7 @@ const Component = ({
     <section
       className={fluidBackground}
       data-component={dataComponent}
-      id={fields?.sectionId?.value || `id${hashCode(rendering?.dataSource)}`}
+      id={fields?.sectionId?.value || `id${hashCode(rendering.dataSource)}`}
     >
       <div
         className={classNames(

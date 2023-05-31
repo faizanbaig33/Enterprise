@@ -28,36 +28,6 @@ import { SvgIcon } from 'src/helpers/SvgIcon';
 import { RichTextWrapper } from 'src/helpers/RichTextWrapper';
 import { useExperienceEditor } from 'lib/utils'; */
 
-
-
-const StepThree = (props: any): JSX.Element => {
-  const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
-  const { fields } = props;
-
-  const [selected, setSelected] = useState(null)
-  const [error, setError] = useState(null)
-
-  const handleClickNext = () => {
-    setError(null)
-    props.lastStep();
-    props.completeCallback();
-  }
-
-  return (
-    <div>
-      <div className='font-bold'>
-        {fields?.StepThreeTitle?.value}
-      </div>
-      <div>
-        <StepESeriesSizingCalculator fields={fields} />
-      </div>
-      {/* <div className='mt-5'>
-        <MultiSlideSizingCalculatorActionButtons {...props} nextStep={handleClickNext} />
-      </div> */}
-    </div>
-  )
-}
-
 export type MultiSlideSizingCalculatorProps =
   Feature.EnterpriseWeb.Components.Tool.MultiSlideSizingCalculatorProps;
 
@@ -67,6 +37,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
   const [stepWizard, setStepWizard] = useState(null);
   const [data, setData] = useState({});
   const [activeStep, setActiveStep] = useState(0);
+  const [isComplete, setIsComplete] = useState(false)
 
   const assignStepWizard = (instance: any) => {
     setStepWizard(instance);
@@ -88,7 +59,8 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
   };
 
   const handleComplete = () => {
-    alert("You r done. TQ");
+    // alert("You r done. TQ");
+    setIsComplete(true)
   };
 
   // stepper props
@@ -154,6 +126,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
             <Step
               label="Step 3"
               styleConfig={styleConfig}
+              children={isComplete && <FiCheck size={16} />}
             />
           </Stepper>
         </div>
@@ -161,7 +134,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
           <StepWizard instance={assignStepWizard} onStepChange={handleStepChange}>
             <StepConfigurationOption fields={props.fields} userCallback={assignUser} />
             <StepPanelStyle data={data} fields={props.fields} userCallback={assignUser} />
-            <StepThree fields={props.fields} data={data} completeCallback={handleComplete} />
+            <StepESeriesSizingCalculator fields={props.fields} completeCallback={handleComplete} />
           </StepWizard>
         </div>
       </div>
