@@ -9,7 +9,7 @@ exports[`renders correctly 1`] = `
     class="py-8 w-full theme-black bg-theme-bg"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-s md:gap-s"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-s md:gap-s "
     >
       <iframe
         allowfullscreen="true"

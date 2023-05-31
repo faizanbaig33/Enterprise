@@ -15,6 +15,8 @@ import { StandaloneSearchBox } from 'src/helpers/Coveo/StandaloneSearchBox/Stand
 export type AWHeaderProps = Feature.EnterpriseWeb.Components.Navigation.Header.AWHeader;
 const AWMobileHeader = (props: AWHeaderProps) => {
   const fields = props.fields;
+  const favoriteProductsCount = props.favoriteProductsCount;
+  const favoriteProductsCountText = `{${favoriteProductsCount}}`;
   const [showSearchBox, setShowSearchBox] = useState(false);
   const [showModalMob, setShowModalMob] = useState(false);
   const [currentMenuMob, setCurrentMenuMob] = useState([]);
@@ -327,7 +329,7 @@ const AWMobileHeader = (props: AWHeaderProps) => {
               }
               onClick={() => handleMenuDisplay()}
             >
-              <div className="relative h-s w-s cursor-pointer transition-[0.2s] duration-[cubic-bezier(0.42,0,0.58,1)]">
+              <div className="relative h-[15px] w-[15px] cursor-pointer transition-[0.2s] duration-[cubic-bezier(0.42,0,0.58,1)]">
                 <span
                   className={classNames(
                     'absolute top-0 left-0 h-[2px] rotate-0 bg-black opacity-100 transition-[0.2s] duration-[cubic-bezier(0.42,0,0.58,1)]',
@@ -470,6 +472,10 @@ const AWMobileHeader = (props: AWHeaderProps) => {
                       const showMobile =
                         getEnum(menu.fields.displayType) &&
                         menu.fields.displayType.fields.Value.value !== 'desktop';
+                      const isMyFavoritesLink =
+                        menu.fields?.navItemLink?.value?.class &&
+                        menu.fields?.navItemLink.value.class === 'MyFavorites';
+
                       return menu.templateName === 'Separator'
                         ? null
                         : showMobile && (
@@ -496,9 +502,16 @@ const AWMobileHeader = (props: AWHeaderProps) => {
                                       'inline-flex text-sm-xxs capitalize',
                                       menu.fields?.navItemLink.value.target === '_blank'
                                         ? ' flex-row items-start'
-                                        : 'flex-row-reverse items-center'
+                                        : 'flex-row-reverse items-center',
+                                      menu.fields?.navItemLink.value.class &&
+                                        menu.fields?.navItemLink.value.class
                                     )}
-                                    field={menu.fields?.navItemLink}
+                                    field={{
+                                      href: menu.fields?.navItemLink.value.href,
+                                      text: `${menu.fields?.navItemLink.value.text} ${
+                                        isMyFavoritesLink && favoriteProductsCountText
+                                      }`,
+                                    }}
                                   >
                                     <NavLinkItems
                                       navItem={menu}

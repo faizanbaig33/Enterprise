@@ -58,7 +58,9 @@ const PromoSwatches = (props: PromoSwatchesProps) => {
   return (
     <Component
       variant="lg"
-      gap={classNames(themeName === 'aw' ? 'gap-y-m gap-x-s' : 'gap-y-ml gap-x-s')}
+      gap={classNames(
+        themeName === 'aw' ? 'gap-y-s ml:gap-y-m gap-x-s' : 'gap-y-m ml:gap-y-ml gap-x-s'
+      )}
       dataComponent="promo/promoswatches"
       {...props}
     >

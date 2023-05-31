@@ -9,7 +9,7 @@ exports[`dark renders correctly 1`] = `
     class="my-8 w-full theme-black bg-theme-bg"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 ml:col-span-6 ml:content-right ml:items-right"
@@ -117,7 +117,7 @@ exports[`gray renders correctly 1`] = `
     class="my-8 w-full theme-gray bg-light-gray"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 ml:col-span-6 ml:content-right ml:items-right"
@@ -225,7 +225,7 @@ exports[`left align renders correctly 1`] = `
     class="my-8 w-full theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 ml:col-span-6 ml:content-right ml:items-right"
@@ -333,7 +333,7 @@ exports[`renders correctly 1`] = `
     class="my-8 w-full theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 ml:col-span-6 ml:content-right ml:items-right"
@@ -441,7 +441,7 @@ exports[`video renders correctly 1`] = `
     class="my-8 w-full theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 ml:col-span-6 ml:content-right ml:items-right"

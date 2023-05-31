@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="listing/xupcardcollectiondynamic"
+  id="id191270289"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s "
+    >
+      <div
+        class="col-span-10"
+      >
+        <div
+          class="items-top font-sans  text-sm-m md:text-m font-heavy mb-s"
+        >
+          <h2>
+            Component headline goes here
+          </h2>
+          
+        </div>
+        <div
+          class="text-body text-dark-gray font-regular mb-s"
+        >
+          <div
+            class="body-copy"
+          >
+            <div>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex flex-col md:flex-row items-start mb-s flex items-start md:flex-row md:items-center md:space-x-4"
+        >
+          <a
+            class="flex w-fit items-center whitespace-nowrap font-sans text-text-link font-heavy text-theme-text hover:underline hover:decoration-secondary hover:underline-offset-8 disabled:border-gray disabled:text-gray mr-m"
+            href="/"
+            role="link"
+            tabindex="0"
+            title=""
+          >
+            Call to Action
+            <span
+              class="ml-xxs"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

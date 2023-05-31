@@ -38,7 +38,7 @@ export const HeroWithNavigationTheme = (spacing: ComponentSpacing): ThemeFile =>
         linkStyle:
           'border-b border-gray py-xs text-left ml:mx-s ml:border-l ml:border-b-0 ml:py-0 ml:align-middle',
         linkWrapperStyle:
-          'space-between font-sans ml:items-left relative flex w-full grow flex-row text-xs font-bold hover:underline hover:decoration-black hover:underline-offset-8 ml:flex-col ml:px-s ml:text-s ml:font-medium',
+          'space-between font-serif ml:font-sans ml:items-left relative flex w-full grow flex-row text-xs font-bold hover:underline hover:decoration-black hover:underline-offset-8 ml:flex-col ml:px-s ml:text-s ml:font-medium',
         svgWrapper: 'flex items-center',
         svgIconStyle:
           'absolute right-0 pr-xs text-theme-btn-bg-hover hover:underline-offset-8 ml:static ml:pr-0 ml:pt-xxs ml:pb-1',

@@ -10,14 +10,16 @@ import ImageWrapper from 'src/helpers/Media/ImageWrapper';
 import SingleButton from 'src/helpers/SingleButton/SingleButton';
 import { SvgIcon } from 'src/helpers/SvgIcon';
 import { RichTextWrapper } from 'src/helpers/RichTextWrapper';
-import { getScreenType, ScreenSizeProps } from 'lib/utils/get-screen-type';
 import { StandaloneSearchBox } from 'src/helpers/Coveo/StandaloneSearchBox/StandaloneSearchBox';
 import { getEnum } from 'lib/utils';
+import { useCurrentScreenType } from 'lib/utils/get-screen-type';
 import AWMobileHeader from './AWMobileHeader';
 
 export type AWHeaderProps = Feature.EnterpriseWeb.Components.Navigation.Header.AWHeader;
 const AWHeader = (props: AWHeaderProps) => {
   const { fields } = props;
+  const favoriteProductsCount = props.favoriteProductsCount;
+  const favoriteProductsCountText = `{${favoriteProductsCount}}`;
   const [showSearchBox, setShowSearchBox] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [currentMenu, setCurrentMenu] = useState();
@@ -29,27 +31,12 @@ const AWHeader = (props: AWHeaderProps) => {
   const listref = useRef<HTMLUListElement | null>(null);
   const [listWidth, setlistWidth] = useState('');
   const [listOverlayWidth, setlistOverlayWidth] = useState('');
-  const [screenType, setScreenType] = useState<ScreenSizeProps>();
-
-  useEffect(() => {
-    function handleWindowResize() {
-      setScreenType(getScreenType(window.innerWidth));
-    }
-
-    window.addEventListener('resize', handleWindowResize);
-
-    // Get screen type on first load
-    setScreenType(getScreenType(window.innerWidth));
-
-    return () => {
-      window.removeEventListener('resize', handleWindowResize);
-    };
-  }, []);
+  const { screenType } = useCurrentScreenType();
 
   useEffect(() => {
     let setWidth = '';
-    setlistWidth((listref.current && (listref.current.clientWidth as number)) + 'px');
-    if (screenType && screenType.screenType === 'xl') {
+    setlistWidth((listref.current && ((listref.current.clientWidth + 20) as number)) + 'px');
+    if (screenType === 'xl') {
       setWidth = '50%';
     } else {
       setWidth = `calc(100% - ${listWidth})`;
@@ -416,6 +403,10 @@ const AWHeader = (props: AWHeaderProps) => {
                 const showDesktop =
                   getEnum(menu.fields.displayType) &&
                   menu.fields.displayType.fields.Value.value !== 'mobile';
+
+                const isMyFavoritesLink =
+                  menu.fields?.navItemLink?.value?.class &&
+                  menu.fields?.navItemLink.value.class === 'MyFavorites';
                 return menu.templateName === 'Separator' && showDesktop ? (
                   <span key={index}>|</span>
                 ) : (
@@ -431,12 +422,18 @@ const AWHeader = (props: AWHeaderProps) => {
                       ) : (
                         menu.fields?.navItemLink && (
                           <LinkWrapper
-                            field={menu.fields?.navItemLink}
+                            field={{
+                              href: menu.fields?.navItemLink.value.href,
+                              text: `${menu.fields?.navItemLink.value.text} ${
+                                isMyFavoritesLink && favoriteProductsCountText
+                              }`,
+                            }}
                             className={classNames(
                               'flex items-center text-xxs',
                               menu.fields?.navItemLink.value.target === '_blank'
                                 ? ' flex-row items-start'
-                                : 'flex-row-reverse items-center'
+                                : 'flex-row-reverse items-center',
+                              isMyFavoritesLink && !favoriteProductsCount && 'hidden'
                             )}
                           >
                             {menu.fields?.navItemLink.value.target === '_blank' && (
@@ -623,7 +620,7 @@ const AWHeader = (props: AWHeaderProps) => {
         </nav>
       </div>
 
-      <AWMobileHeader fields={fields} />
+      <AWMobileHeader fields={fields} favoriteProductsCount={favoriteProductsCount} />
     </>
   );
 };

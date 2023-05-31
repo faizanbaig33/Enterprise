@@ -38,9 +38,11 @@ export type IconTypes =
   | 'location-pin'
   | 'favorite'
   | 'pdf'
+  | 'pdf-aw'
   | 'zoom-pinch'
   | 'caret-right'
   | 'print'
+  | 'reset'
   | 'share';
 
 export interface SvgIconProps {

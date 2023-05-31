@@ -63,19 +63,19 @@
 }
 
 /* Slide */
-.slick-track
+.product-carousel .slick-track
 {
     display: flex !important;
 }
 
-.slick-slide {
+.product-carousel .slick-slide {
   height: inherit !important;
   transform: scale(0.6);
   transition: all 0.4s ease-in-out;
   padding: 40px 20px;
 }
 
-.slick-center {
+.product-carousel .slick-center {
   transform: scale(1.1);
 }
 

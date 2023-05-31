@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/bazaarvoicereviewsubmission"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s "
+    >
+      <div
+        class="col-span-12 lg:grid lg:grid-cols-12"
+      >
+        <div
+          class="items-top font-sans  col-span-12 text-s md:text-m font-heavy text-theme-text pb-xs"
+        >
+          <h2>
+            headline!
+          </h2>
+        </div>
+        <div
+          class="body-copy col-span-12 text-body text-theme-text font-medium text-theme-body text-body"
+        >
+          <div>
+            body copy of bv review submission
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -9,7 +9,7 @@ exports[`leftImage renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s "
     >
       <div
         class="order-last flex items-center pt-2 col-span-6 my-auto md:col-start-8 md:col-span-5 h-full max-w-[480px]"
@@ -163,7 +163,7 @@ exports[`rightImage renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s "
     >
       <div
         class="order-last md:order-first flex items-center pt-2 col-span-6 my-auto md:col-start-1 md:col-span-5 h-full max-w-[480px]"

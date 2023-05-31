@@ -41,6 +41,10 @@ const ProductIntro = (props: ProductIntroProps) => {
   const { asPath } = router || {};
   const { fields } = props;
   const { themeName, themeData } = useTheme(ProductIntroTheme);
+  const favoriteProductsArr = props.favoriteProducts || [];
+  const showFavorite = fields.productFavorite.value;
+  const productID = fields.productItem.fields.productId?.value;
+  const isFavorited = favoriteProductsArr.includes(productID);
 
   const [isInterior, setIsInterior] = useState<boolean>(true);
 
@@ -167,6 +171,25 @@ const ProductIntro = (props: ProductIntroProps) => {
 
   return (
     <Component variant="lg" dataComponent="general/productintro" {...props}>
+      {/* Favourite */}
+      {showFavorite && (
+        <div className="absolute -top-[16px] right-0">
+          <div
+            className={classNames(
+              themeData.classes.favoriteProduct,
+              isFavorited ? 'favorited border-[transparent_#f26924_transparent_transparent]' : ''
+            )}
+            data-product-id={productID}
+          >
+            <SvgIcon
+              icon="favorite"
+              fillId="text-primary"
+              size="xl"
+              className={themeData.classes.favoriteIcon}
+            />
+          </div>
+        </div>
+      )}
       <div className={themeData.classes.imageColClasses}>
         {themeName === 'aw' ? (
           <ImageToggleWrapper

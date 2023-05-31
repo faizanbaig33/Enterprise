@@ -12,6 +12,7 @@ interface FacetProps {
   showMoreLabel: Field<string>;
   showLessLabel: Field<string>;
   searchLabel: Field<string>;
+  noFacetResultsBody: Field<string>;
   facetClasses?: {
     [property: string]: any;
   };
@@ -97,6 +98,7 @@ export const Facet: FunctionComponent<FacetProps> = (props) => {
                 facetSearchState={state.facetSearch}
                 facetSearchClasses={facetClasses?.facetSearch}
                 searchLabel={props.searchLabel}
+                noFacetResultsBody={props.noFacetResultsBody}
               />
             </>
           )}

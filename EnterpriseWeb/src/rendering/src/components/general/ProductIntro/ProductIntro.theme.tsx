@@ -18,6 +18,9 @@ export const ProductIntroTheme: ThemeFile = {
       ratingsIconsList: 'flex mr-m',
       ratingsText: 'mr-m',
       priceText: 'border-l border-secondary px-xxs py-xs',
+      favoriteProduct:
+        'favorite-product absolute right-0 top-0 inline h-0 w-0 cursor-pointer border-t-0 border-l-0 border-r-[52px] border-b-[52px] border-solid border-[transparent_#e3e3e3_transparent_transparent] transition-[border-color]  duration-500 ease-[ease]',
+      favoriteIcon: 'absolute -right-[46px] top-[7px]',
       swatchHeadline: '!font-sans font-heavy text-sm-xxs md:text-base mb-s uppercase',
       swatchTitle: 'mt-xxs text-center font-regular text-base font-serif',
     },

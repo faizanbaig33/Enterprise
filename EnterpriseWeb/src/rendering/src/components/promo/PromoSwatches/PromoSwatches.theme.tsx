@@ -31,8 +31,8 @@ export const PromoSwatchesTheme = (layoutStyle: layoutStyle): ThemeFile => {
             '!font-serif text-theme-text text-body font-bold mt-l mb-xxs',
             layoutStyle === 'full-width' ? 'ml:mt-l' : 'ml:mt-ml'
           ),
-          swatchDescription: 'font-regular text-dark-gray text-body ',
-          swatchLabel: 'mx-auto font-serif text-dark-gray text-body font-regular ',
+          swatchDescription: 'font-regular text-dark-gray text-body',
+          swatchLabel: 'mx-auto !font-serif text-dark-gray text-body font-regular ',
           swatchFooterCopy: 'font-regular text-theme-body text-xxs text-dark-gray',
         },
       },

@@ -20,8 +20,8 @@ export const ContentBlockWithMediaTheme = (props: ContentBlockWithMediaProps): T
       classes: {
         headingContainer: 'col-span-12',
         headlineContainer: 'text-s md:text-m font-heavy pb-xxs md:pb-s',
-        topCopyContainer: 'pb-s font-regular font-serif',
-        bodyContainer: 'col-span-12 font-regular font-serif mb-s',
+        topCopyContainer: 'pb-s font-regular font-serif text-theme-body',
+        bodyContainer: 'col-span-12 font-regular font-serif mb-s text-theme-body',
         imageOuterContainer: classNames('mb-m', getImageOuterContainerClasses(props)),
         imageContainer: getImageContainerClasses(props),
         captionContainer: 'mt-xxs italic text-left mb-s font-sans text-sm-xxs md:text-caption',
@@ -31,8 +31,8 @@ export const ContentBlockWithMediaTheme = (props: ContentBlockWithMediaProps): T
       classes: {
         headingContainer: 'col-span-12',
         headlineContainer: 'text-theme-text text-sm-m md:text-m font-medium mb-s',
-        topCopyContainer: 'mb-s font-regular font-serif',
-        bodyContainer: 'col-span-12 font-regular font-serif mb-s',
+        topCopyContainer: 'mb-s font-regular font-serif text-theme-body',
+        bodyContainer: 'col-span-12 font-regular font-serif mb-s text-theme-body',
         imageOuterContainer: classNames('mb-s', getImageOuterContainerClasses(props)),
         imageContainer: getImageContainerClasses(props),
         captionContainer:

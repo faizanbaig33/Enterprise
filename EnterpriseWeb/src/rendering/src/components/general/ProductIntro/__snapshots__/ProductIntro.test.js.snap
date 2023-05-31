@@ -9,8 +9,20 @@ exports[`renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s relative"
     >
+      <div
+        class="absolute -top-[16px] right-0"
+      >
+        <div
+          class="favorite-product absolute right-0 top-0 inline h-0 w-0 cursor-pointer border-t-0 border-l-0 border-r-[52px] border-b-[52px] border-solid border-[transparent_#e3e3e3_transparent_transparent] transition-[border-color]  duration-500 ease-[ease]"
+          data-product-id="Product ID"
+        >
+          <span
+            class="absolute -right-[46px] top-[7px]"
+          />
+        </div>
+      </div>
       <div
         class="col-span-6 md:col-span-5 "
       >

@@ -24,10 +24,6 @@ const FontLinks: Record<ThemeName, string> = {
   rba: 'https://use.typekit.net/shy7gxo.css',
 };
 
-const BazaarvoiceScriptUrl =
-  'https://apps.bazaarvoice.com/deployments/andersenwindows/main_site/staging/en_US/bv.js';
-// Todo: switch between staging and production version depending on environment.
-
 const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
   const { route } = layoutData.sitecore;
   const isPageEditing = layoutData.sitecore.context.pageEditing;
@@ -37,7 +33,7 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
 
   const recentlyViewedLinks = useRecentlyViewed();
   const favoriteProducts = useFavorites();
-  //const favoriteProductsCount = favoriteProducts.length;
+  const favoriteProductsCount = favoriteProducts.length;
 
   return (
     <>
@@ -45,7 +41,6 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
         <title>{route?.fields?.pageTitle?.value || 'Page'}</title>
         <link rel="icon" href={`${publicUrl}/favicon.ico`} />
         <link rel="stylesheet" href={FontLinks[themeName]} />
-        <script async src={BazaarvoiceScriptUrl}></script>
       </Head>
       <MetaData />
       {/*
@@ -60,7 +55,15 @@ const Layout = ({ layoutData }: LayoutProps): JSX.Element => {
       {/* root placeholder for the app, which we add components to using route data */}
       <div className={`${mainClassPageEditing} ${themeName}`}>
         <header>
-          <div id="header">{route && <Placeholder name="headless-header" rendering={route} />}</div>
+          <div id="header">
+            {route && (
+              <Placeholder
+                name="headless-header"
+                rendering={route}
+                favoriteProductsCount={favoriteProductsCount}
+              />
+            )}
+          </div>
         </header>
         <main>
           <div id="hero">{route && <Placeholder name="headless-hero" rendering={route} />}</div>

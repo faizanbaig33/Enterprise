@@ -49,8 +49,8 @@ export const getResultItemIndex = (
     for (const [index, resultItem] of resultEntities.entries()) {
       const templateIdsToMatch: string[] = [];
 
-      if (resultItem.fields?.pageType) {
-        for (const pageType of resultItem.fields.pageType) {
+      if (resultItem.fields?.resultType) {
+        for (const pageType of resultItem.fields.resultType) {
           const pageTypeIds = getEnum<string>(pageType);
           if (pageTypeIds) {
             templateIdsToMatch.push(...pageTypeIds.split('|'));

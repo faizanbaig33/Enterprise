@@ -19,6 +19,13 @@ import {
   loadAdvancedSearchQueryActions,
   buildUrlManager,
   UrlManager,
+  SortCriterion,
+  buildFieldSortCriterion,
+  buildRelevanceSortCriterion,
+  buildDateSortCriterion,
+  SortOrder,
+  buildSort,
+  Sort,
 } from '@coveo/headless';
 import {
   BreadcrumbManager,
@@ -40,6 +47,7 @@ import { EnumField } from 'lib/utils/get-enum';
 import { SearchProps } from 'components/search/Search/Search';
 import { getBreakpoint } from 'lib/utils/get-screen-type';
 import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
+import { XupCardCollectionDynamicProps } from 'components/listing/XupCardCollectionDynamic/XupCardCollectionDynamic';
 
 const getVisiblePagerNumbers = (
   fields: Feature.EnterpriseWeb.Elements.Search.Pager['fields']
@@ -48,13 +56,15 @@ const getVisiblePagerNumbers = (
     ? fields?.numberOfPagesMobile.value ?? 3
     : fields?.numberOfPages.value ?? 5;
 };
-
 interface FacetControllerTypes {
   [key: string]: {
     facet: Facet;
     dependsOn: string | null;
   };
 }
+
+type sortType = 'relevancy' | 'date' | 'field';
+type sortDirection = 'ascending' | 'descending';
 
 export class CoveoEngine {
   public siteName!: string;
@@ -74,7 +84,8 @@ export class CoveoEngine {
       | Pager
       | SearchStatus
       | BreadcrumbManager
-      | DidYouMean;
+      | DidYouMean
+      | Sort;
   };
 
   constructor(searchToken: string) {
@@ -137,20 +148,77 @@ export class CoveoEngine {
   };
 
   async initiateSearchEngine(
-    props: SearchProps | Feature.EnterpriseWeb.Elements.Search.StandaloneSearchBox,
+    props:
+      | SearchProps
+      | Feature.EnterpriseWeb.Elements.Search.StandaloneSearchBox
+      | XupCardCollectionDynamicProps,
     siteName: string,
     language: string,
-    isStandaloneSearch = false
+    isStandaloneSearch = false,
+    isDynamicXupCollection = false
   ) {
     // If engine is being initiated first time then update search queries
     if (!this.isStandaloneInitiated && !this.isEngineInitiated) {
       const { updateAdvancedSearchQueries } = loadAdvancedSearchQueryActions(this.headlessEngine);
       this.headlessEngine.dispatch(
         updateAdvancedSearchQueries({
-          cq: `(@ew_excludefromsearch=="false") AND (@ew_sitename==${siteName} OR @ew_document_site=${siteName}) AND (@ew_sitelanguage==${language}) AND (@source==EnterpriseWeb-${process.env.NEXT_PUBLIC_COVEO_FARM_NAME})`,
+          cq: `(@ew_excludefromsearch=="false") AND (@ew_sitename==${siteName}) AND (@ew_sitelanguage==${language}) AND (@source==EnterpriseWeb-${process.env.NEXT_PUBLIC_COVEO_FARM_NAME}) `,
+          aq:
+            'searchParameters' in props.fields
+              ? props?.fields?.searchParameters?.fields?.filterExpression?.value
+              : props?.fields?.filterExpression?.value,
         })
       );
     }
+
+    // function to get the intitial value of sorting critarion based on layout service response
+    function getInitialCriterion(
+      props: SearchProps | Feature.EnterpriseWeb.Elements.Search.StandaloneSearchBox
+    ): SortCriterion {
+      const { fields } = props;
+
+      const sortType =
+        getEnum<sortType>(
+          'searchParameters' in fields
+            ? fields?.searchParameters?.fields?.sortType
+            : fields?.sortType
+        ) || 'relevancy';
+      const sortDirection =
+        getEnum<sortDirection>(
+          'searchParameters' in fields
+            ? fields?.searchParameters?.fields?.sortDirection
+            : fields?.sortDirection
+        ) || 'descending';
+      const sortField =
+        getEnum<string>(
+          'searchParameters' in fields
+            ? fields?.searchParameters?.fields?.sortField
+            : fields?.sortField
+        ) || '';
+
+      let sortCriterion: SortCriterion;
+      switch (sortType) {
+        case 'relevancy':
+          sortCriterion = buildRelevanceSortCriterion();
+          break;
+        case 'date':
+          sortCriterion = buildDateSortCriterion(
+            sortDirection === 'ascending' ? SortOrder.Ascending : SortOrder.Descending
+          );
+          break;
+        case 'field':
+          sortCriterion = buildFieldSortCriterion(
+            sortField,
+            sortDirection === 'ascending' ? SortOrder.Ascending : SortOrder.Descending
+          );
+          break;
+        default:
+          sortCriterion = buildRelevanceSortCriterion();
+      }
+
+      return sortCriterion;
+    }
+
     if (isStandaloneSearch) {
       const { fields } = props as Feature.EnterpriseWeb.Elements.Search.StandaloneSearchBox;
       if (fields) {
@@ -165,6 +233,21 @@ export class CoveoEngine {
         );
         this.isStandaloneInitiated = true;
       }
+    }
+    // In case of dynamic Xup component
+    else if (isDynamicXupCollection) {
+      const { fields } = props as XupCardCollectionDynamicProps;
+
+      if (this.isEngineInitiated) {
+        this.controllers;
+      } else {
+        this.resultTemplateManager = buildResultTemplatesManager(this.headlessEngine);
+
+        this.buildResultListController(fields?.numberOfCards?.value || 12);
+
+        this.buildSortController(getInitialCriterion(props));
+        this.isEngineInitiated = true;
+      }
     } else {
       const { fields } = props as SearchProps;
       this.resultTemplateManager = buildResultTemplatesManager(this.headlessEngine);
@@ -178,6 +261,7 @@ export class CoveoEngine {
       this.buildSearchStatusController();
       this.buildDidYouMeanController();
       this.buildPagerController(getVisiblePagerNumbers(fields.pager.fields));
+      this.buildSortController(getInitialCriterion(props));
       fields.facets.forEach(
         (
           facet: Feature.EnterpriseWeb.Elements.Search.Facet & {
@@ -335,6 +419,14 @@ export class CoveoEngine {
 
   buildBreadcrumbController() {
     this.controllers['breadcrumbManager'] = buildBreadcrumbManager(this.headlessEngine);
+  }
+
+  buildSortController(initialCriterion: SortCriterion) {
+    this.controllers['sortController'] = buildSort(this.headlessEngine, {
+      initialState: {
+        criterion: initialCriterion,
+      },
+    });
   }
 
   initiateResultTemplatesManager(): ResultTemplatesManager<(result: Result) => JSX.Element> {

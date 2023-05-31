@@ -47,7 +47,7 @@ const containerBgVariants: Record<ComponentWrapperProps['backgroundVariant'], st
 };
 
 export function hashCode(s: string) {
-  let hash = s.split('').reduce((a, b) => {
+  let hash = s?.split('').reduce((a, b) => {
     a = (a << 5) - a + b.charCodeAt(0);
     return a & a;
   }, 0);
@@ -82,13 +82,13 @@ const Component = ({
 
   const gridClass = `section-grid grid grid-cols-2 md:grid-cols-12 ${padding || 'px-m'} ${
     gap || 'gap-s md:gap-s'
-  }`;
+  } ${dataComponent === 'general/productintro' ? 'relative' : ''}`;
 
   return (
     <section
       className={fluidBackground}
       data-component={dataComponent}
-      id={fields?.sectionId?.value || `id${hashCode(rendering.dataSource)}`}
+      id={fields?.sectionId?.value || `id${hashCode(rendering?.dataSource)}`}
     >
       <div
         className={classNames(

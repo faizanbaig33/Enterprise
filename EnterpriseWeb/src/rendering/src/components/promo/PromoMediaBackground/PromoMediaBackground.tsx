@@ -37,6 +37,12 @@ const PromoMediaBackground = (props: PromoMediaBackgroundProps) => {
     if (fields.headlineText.value.length > 0 || fields.body.value.length > 0) {
       hasOverlay = true;
     }
+    if (fields.overlay === null) {
+      hasOverlay = true;
+    }
+    if (getEnum(fields.overlay) === '') {
+      hasOverlay = false;
+    }
   }
 
   const togglePlayPause = () => {

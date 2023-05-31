@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12 relative gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12 relative gap-x-0 "
     >
       <div
         class="col-span-12 lg:flex lg:flex-col lg:self-center lg:h-[100%] lg:justify-center lg:col-span-4 lg:mr-s lg:border-b lg:border-b-gray border-solid border-t border-black py-m"

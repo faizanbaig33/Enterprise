@@ -25,6 +25,8 @@ export const useFavorites = () => {
     const favoritesProductsSaved = aw_favorites_products ? JSON.parse(aw_favorites_products) : [];
     setFavoriteProducts(favoritesProductsSaved);
 
+    document.addEventListener('click', handleFavoriteProductClick);
+
     return () => {
       favoriteProductsLinks.forEach((link) => {
         link.removeEventListener('click', handleFavoriteProductClick);
@@ -33,7 +35,8 @@ export const useFavorites = () => {
   }, []);
 
   const handleFavoriteProductClick = (event: any) => {
-    const link = event.currentTarget;
+    const link = event.target.closest('.favorite-product');
+    if (!link) return;
     const productID = link.getAttribute('data-product-id');
 
     // Favorites Products array from local storage,
@@ -64,5 +67,6 @@ export const useFavorites = () => {
       setFavoriteProducts(favoritesProductsSaved);
     }
   };
+
   return favoriteProducts;
 };

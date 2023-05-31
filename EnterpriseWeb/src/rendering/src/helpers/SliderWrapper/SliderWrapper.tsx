@@ -1,6 +1,6 @@
 import classNames from 'classnames';
 import { ThemeName } from 'lib/context/ThemeContext';
-import React, { ReactElement, useState, forwardRef } from 'react';
+import React, { ReactElement, useState } from 'react';
 import Slider from 'react-slick';
 import { SvgIcon } from '../SvgIcon';
 
@@ -11,7 +11,7 @@ type SliderWrapperProps = {
   children: ReactElement[];
 };
 
-export const SliderWrapper = forwardRef(({ sliderSettings, sliderRef, children }: SliderWrapperProps) => {
+export const SliderWrapper = ({ sliderSettings, sliderRef, children }: SliderWrapperProps) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   const renderIcon = (direction: 'left' | 'right') => {
@@ -50,8 +50,9 @@ export const SliderWrapper = forwardRef(({ sliderSettings, sliderRef, children }
     dots: true,
     arrows: true,
     infinite: true,
+    speed: 500,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    adaptiveHeight: true,
     nextArrow: <ArrowIcon direction="right" classes={sliderSettings?.nextArrowClasses} />,
     prevArrow: <ArrowIcon direction="left" classes={sliderSettings?.prevArrowClasses} />,
     afterChange: (currentIndex: number) => setCurrentSlideIndex(currentIndex),
@@ -59,7 +60,7 @@ export const SliderWrapper = forwardRef(({ sliderSettings, sliderRef, children }
   };
 
   if (sliderSettings?.enableNumberedPagination) {
-    settings.className = 'numbered-pagination center';
+    settings.className = 'numbered-pagination';
     settings.dotsClass = sliderSettings.numberedPaginationClasses
       ? sliderSettings.numberedPaginationClasses
       : 'mt-xs text-center';
@@ -73,4 +74,4 @@ export const SliderWrapper = forwardRef(({ sliderSettings, sliderRef, children }
       {children}
     </Slider>
   );
-});
+};

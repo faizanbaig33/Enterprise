@@ -57,7 +57,12 @@ export class SearchQueryService<T> {
    * Creates an instance of search query service.
    * @param {GraphQLClient} client that fetches data from a GraphQL endpoint.
    */
-  constructor(protected client: GraphQLClient) {}
+  // Moved the client property declaration out here because storybook didn't like the inline declaration
+  protected client: GraphQLClient;
+
+  constructor(client: GraphQLClient) {
+    this.client = client;
+  }
 
   /**
    * 1. Validates mandatory search query arguments

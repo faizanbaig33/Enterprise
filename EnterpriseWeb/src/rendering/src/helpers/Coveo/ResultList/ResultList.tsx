@@ -20,7 +20,7 @@ interface ResultListProps {
   };
   layoutType?: LayoutType;
   gridStyle?: GridStyle;
-  columns: Feature.EnterpriseWeb.Elements.Search.ResultColumn[];
+  columns?: Feature.EnterpriseWeb.Elements.Search.ResultColumn[];
   resultItems: Feature.EnterpriseWeb.Elements.Search.GridResultItem[] | undefined;
 }
 
@@ -61,7 +61,7 @@ export const ResultList: FunctionComponent<ResultListProps> = (props) => {
       {/* Render columns if current layout is table. p.s. Document list has the table layout */}
       {layoutType === 'table' && (
         <ul className="hidden ml:flex">
-          {columns.map((column, index) => {
+          {columns?.map((column, index) => {
             return (
               <li
                 key={index}
@@ -95,7 +95,7 @@ export const ResultList: FunctionComponent<ResultListProps> = (props) => {
                   tabIndex={0}
                   key={result.uniqueId}
                   className={classNames(
-                    'col-span-12',
+                    'col-span-12 h-full',
                     isFacetsAvailable ? 'md:col-span-4' : 'md:col-span-3'
                   )}
                   onClick={() => {
@@ -159,9 +159,7 @@ export const ResultList: FunctionComponent<ResultListProps> = (props) => {
         <ul>
           {state.results.map((result) => {
             const template = resultTemplatesManager.selectTemplate(result);
-
             if (!template) throw new Error(`No result template provided for ${result.title}.`);
-
             return template(result);
           })}
         </ul>

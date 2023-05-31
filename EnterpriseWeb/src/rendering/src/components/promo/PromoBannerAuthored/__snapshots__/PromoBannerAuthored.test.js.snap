@@ -9,7 +9,7 @@ exports[`black outline renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 grid grid-cols-2 md:grid-cols-12 border-2 border-secondary"
@@ -97,7 +97,7 @@ exports[`black solid renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-secondary"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-secondary text-white"
@@ -185,7 +185,7 @@ exports[`brand color outline renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 grid grid-cols-2 md:grid-cols-12 border-2 border-primary"
@@ -273,7 +273,7 @@ exports[`renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-primary"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-primary text-white"
@@ -362,7 +362,7 @@ exports[`right align renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-primary"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-primary text-white"
@@ -450,7 +450,7 @@ exports[`with image renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-primary"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-primary text-white"
@@ -561,7 +561,7 @@ exports[`with image right align renders correctly 1`] = `
     class="my-8 lg:mx-auto md:max-w-screen-lg theme-primary"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0"
+      class="section-grid grid grid-cols-2 md:grid-cols-12   gap-x-0 "
     >
       <div
         class="col-span-12 grid grid-cols-2 md:grid-cols-12 bg-primary text-white"

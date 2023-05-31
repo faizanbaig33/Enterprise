@@ -143,8 +143,8 @@ export const getGridLayout = (
       return (
         <div
           className={classNames(
-            'group relative w-full cursor-pointer',
-            gridStyle !== 'photo-gallery' && gridLayoutClasses.gridItem
+            'group relative  w-full ',
+            gridStyle !== 'photo-gallery' ? gridLayoutClasses.gridItem : 'cursor-pointer'
           )}
         >
           {renderingFields.thumbnailImage && (

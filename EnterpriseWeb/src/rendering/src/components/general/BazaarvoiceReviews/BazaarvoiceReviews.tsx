@@ -1,6 +1,7 @@
 // Global
 import { withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
 import { useTheme } from 'lib/context/ThemeContext';
+import { useBVScript } from 'lib/utils/use-bv-script';
 import { useEffect, useState } from 'react';
 import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
 
@@ -16,13 +17,17 @@ const BazaarvoiceReviews = (props: BazaarvoiceReviewsProps) => {
   const { themeData } = useTheme(BazaarvoiceReviewsTheme);
   const productItem = props?.fields?.productItem;
   const bazaarvoiceProductId = productItem?.fields?.bazaarvoiceProductId?.value;
-  const componentId = 'bazaarvoiceReview-' + bazaarvoiceProductId; // Math.round(Math.random() * Number.MAX_SAFE_INTEGER);
+  const componentId = 'bazaarvoiceReview-' + bazaarvoiceProductId;
   const [isOpen, setOpen] = useState(false);
+
+  // Add the bazaarvoice script
+  useBVScript();
 
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => {
     setHasMounted(true);
   }, []);
+
   if (!hasMounted) {
     return null;
   }

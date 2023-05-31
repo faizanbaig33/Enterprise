@@ -33,7 +33,6 @@ export type TabsGeneralContentProps =
   Feature.EnterpriseWeb.Components.Tabs.TabsGeneralContent.TabsGeneralContent;
 const TabsGeneralContent = (props: TabsGeneralContentProps): JSX.Element => {
   resetIdCounter();
-
   const tabLabelView = getEnum<TabLabelView>(props.fields?.tabLabelView) || 'standard';
   const numberOfTabs = props.fields?.children.length;
 
@@ -198,6 +197,7 @@ const TabsGeneralContent = (props: TabsGeneralContentProps): JSX.Element => {
                         </div>
                       ))
                     }
+                    favoriteProducts={props.favoriteProducts}
                   />
                 </TabPanel>
               );

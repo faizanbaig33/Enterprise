@@ -28,7 +28,7 @@ const Accordion = (props: AccordionProps) => {
     >
       <div className="theme-white my-8">
         <Headline {...props} classes={themeData.classes.headline} />
-        {props.fields.children.map((accordionSection: AccordionSectionProps, index: number) => {
+        {props?.fields?.children?.map((accordionSection: AccordionSectionProps, index: number) => {
           return <AccordionSection key={index} {...accordionSection} themeData={themeData} />;
         })}
       </div>

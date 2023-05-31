@@ -2,6 +2,7 @@ import { ComponentRendering, Placeholder } from '@sitecore-jss/sitecore-jss-next
 import classNames from 'classnames';
 import React from 'react';
 import { SliderWrapper } from 'src/helpers/SliderWrapper';
+import { getLayoutClasses } from './XupCardCollectionUtil';
 
 type FavoriteProducts = {
   favoriteProducts: string[];
@@ -11,7 +12,7 @@ type RenderingProps = {
 };
 
 type GridDisplayProps = {
-  getLayoutClasses?: (numberOfCards: number, currentIndex: number) => string;
+  maxCardsPerRow?: number;
 } & RenderingProps &
   FavoriteProducts;
 
@@ -20,11 +21,7 @@ type SliderDisplayProps = {
 } & RenderingProps &
   FavoriteProducts;
 
-export const GridDisplay = ({
-  rendering,
-  getLayoutClasses,
-  favoriteProducts,
-}: GridDisplayProps) => {
+export const GridDisplay = ({ rendering, maxCardsPerRow, favoriteProducts }: GridDisplayProps) => {
   return (
     <Placeholder
       name="cards"
@@ -36,7 +33,7 @@ export const GridDisplay = ({
             key={index}
             className={classNames(
               'col-span-12',
-              getLayoutClasses && getLayoutClasses(cards.length, index)
+              maxCardsPerRow && getLayoutClasses(cards.length, index, maxCardsPerRow)
             )}
           >
             {card}

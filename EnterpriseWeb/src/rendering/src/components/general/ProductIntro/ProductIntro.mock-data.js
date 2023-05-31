@@ -33,6 +33,9 @@ const defaultData = {
       templateName: 'Hero Product Tab Item',
     },
     componentSpacing: null,
+    productFavorite: {
+      value: true
+    },
     sectionId: {
       value: '',
     },

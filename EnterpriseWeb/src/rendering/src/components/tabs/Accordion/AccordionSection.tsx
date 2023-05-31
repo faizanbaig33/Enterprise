@@ -25,7 +25,7 @@ const AccordionSection = (props: accordionSectionProps) => {
     const onHashChanges = () => {
       if (typeof window !== 'undefined' && window.location.hash !== '') {
         const hash = window.location.hash.replace('#', '');
-        if (props.fields?.sectionAnchorName.value === hash) {
+        if (props?.fields?.sectionAnchorName?.value === hash) {
           setIsExpanded(true);
         }
       }
@@ -58,7 +58,7 @@ const AccordionSection = (props: accordionSectionProps) => {
         themeData.classes.accordionSection,
         !isExpanded ? '[&:last-child_.sectionTitleWrapper]:border-b' : ''
       )}
-      id={props.fields?.sectionAnchorName.value}
+      id={props.fields?.sectionAnchorName?.value}
     >
       <div
         aria-expanded={isExpanded}
@@ -72,12 +72,12 @@ const AccordionSection = (props: accordionSectionProps) => {
         }}
         className={themeData.classes.sectionTitleWrapper}
       >
-        {props.fields && (
+        {props?.fields && (
           <Subheadline
             useTag=""
             classes={themeData.classes.sectiontitle}
             fields={{
-              subheadlineText: props.fields.sectionTitle,
+              subheadlineText: props?.fields?.sectionTitle,
             }}
           />
         )}

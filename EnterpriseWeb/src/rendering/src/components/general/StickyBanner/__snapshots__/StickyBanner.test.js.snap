@@ -9,7 +9,7 @@ exports[`renders correctly 1`] = `
     class="my-8 w-full theme-white"
   >
     <div
-      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s"
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s "
     >
       <div
         class="theme-black fixed bottom-0 left-0 right-0 col-span-12 place-items-center bg-theme-bg"

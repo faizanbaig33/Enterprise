@@ -123,6 +123,7 @@ const FacetGroup = (props: SearchProps & FacetGroupProps) => {
                 showMoreLabel={fields?.searchParameters.fields.showMoreLabel}
                 showLessLabel={fields?.searchParameters.fields.showLessLabel}
                 searchLabel={fields?.searchParameters.fields.facetSearchLabel}
+                noFacetResultsBody={fields?.searchParameters?.fields?.noFacetResultsBody}
               />
             )
           );

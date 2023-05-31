@@ -19,13 +19,13 @@ type priceLevel = 1 | 2 | 3 | 4 | 5;
 
 type ProductItem = Feature.EnterpriseWeb.Data.Products.Product & {
   fields?: {
-    exteriorSwatchCollection?: Feature.EnterpriseWeb.Elements.Swatches.SwatchCollection & {
+    standardInteriorColors?: Feature.EnterpriseWeb.Elements.Swatches.SwatchCollection & {
       fields?: {
         swatches: Feature.EnterpriseWeb.Elements.Swatches.Swatch[];
       };
     };
     priceLevel: EnumField<priceLevel>;
-    featuredExteriorColors: Feature.EnterpriseWeb.Elements.Swatches.Swatch[];
+    featuredInteriorColors: Feature.EnterpriseWeb.Elements.Swatches.Swatch[];
   };
 };
 
@@ -42,19 +42,19 @@ const ProductPreviewCard = (props: ProductPreviewCardProps) => {
 
   if (!fields) return null;
 
-  const productID = fields.productItem.fields.productId?.value;
-  //Check if the current product is favorited
+  const showFavorite = fields?.favorite?.value;
+  const productID = fields.productItem?.fields?.productId?.value;
   const isFavorited = favoriteProductsArr.includes(productID);
 
-  const colorSwatchesAll = fields.productItem?.fields.exteriorSwatchCollection?.fields.swatches;
+  const colorSwatchesAll = fields.productItem?.fields?.standardInteriorColors?.fields?.swatches;
   const colorSwatchesTotal = colorSwatchesAll && colorSwatchesAll.length;
 
-  const featuredExteriorColors = fields?.productItem?.fields?.featuredExteriorColors;
+  const featuredInteriorColors = fields?.productItem?.fields?.featuredInteriorColors || [];
 
   let colorSwatchesCount = 0;
 
   if (colorSwatchesTotal) {
-    colorSwatchesCount = colorSwatchesTotal - featuredExteriorColors?.length;
+    colorSwatchesCount = colorSwatchesTotal - featuredInteriorColors?.length;
   }
 
   const priceLevel =
@@ -141,7 +141,7 @@ const ProductPreviewCard = (props: ProductPreviewCardProps) => {
   const ColorAndActions = (): JSX.Element => {
     return (
       <>
-        {featuredExteriorColors?.length > 0 && (
+        {featuredInteriorColors?.length > 0 && (
           <div className={themeData.classes.colorSwatchesWrapper}>
             {fields.colorLabel && fields.colorLabel.value && (
               <Text tag={'h4'} field={fields.colorLabel} className={themeData.classes.colorLabel} />
@@ -149,7 +149,7 @@ const ProductPreviewCard = (props: ProductPreviewCardProps) => {
             <Link href={fields.cta1Link.value.href ?? ''}>
               <a className={themeData.classes.headlineWrapper}>
                 <div className={themeData.classes.swatches}>
-                  {featuredExteriorColors?.map(
+                  {featuredInteriorColors?.map(
                     (color: Feature.EnterpriseWeb.Elements.Swatches.Swatch, index: number) => {
                       return (
                         <div key={index} className={themeData.classes.colorSwatches}>
@@ -177,22 +177,24 @@ const ProductPreviewCard = (props: ProductPreviewCardProps) => {
       data-component="card/productpreview"
     >
       {/* Favourite */}
-      <div className="absolute top-0 right-0">
-        <div
-          className={classNames(
-            themeData.classes.favoriteProduct,
-            isFavorited ? 'favorited border-[transparent_#f26924_transparent_transparent]' : ''
-          )}
-          data-product-id={productID}
-        >
-          <SvgIcon
-            icon="favorite"
-            fillId="text-primary"
-            size="xl"
-            className={themeData.classes.favoriteIcon}
-          />
+      {showFavorite && (
+        <div className="absolute top-0 right-0">
+          <div
+            className={classNames(
+              themeData.classes.favoriteProduct,
+              isFavorited ? 'favorited border-[transparent_#f26924_transparent_transparent]' : ''
+            )}
+            data-product-id={productID}
+          >
+            <SvgIcon
+              icon="favorite"
+              fillId="text-primary"
+              size="xl"
+              className={themeData.classes.favoriteIcon}
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       <div className={themeData.classes.headerWrapper}>
         <Eyebrow classes={themeData.classes.eyebrow} {...props} />

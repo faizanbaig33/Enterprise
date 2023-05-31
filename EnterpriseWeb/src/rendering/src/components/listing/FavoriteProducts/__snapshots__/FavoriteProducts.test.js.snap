@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="listing/favoriteproducts"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s "
+    >
+      <div
+        class="printSection col-span-12 flex justify-between"
+      >
+        <div
+          class="items-top font-sans  font-sans font-heavy text-black text-m"
+        >
+          <h4>
+            Favorite Products
+          </h4>
+          
+        </div>
+      </div>
+      <div
+        class="col-span-12"
+      >
+        <div>
+          <div>
+            Looks like you have no saved products.
+            <div
+              class="body-copy"
+            >
+              <div
+                class="mt-[20px]"
+              >
+                Here's some other stuff to try.
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-m grid grid-cols-1 gap-4 ml:grid-cols-2"
+          >
+            <div>
+              <div
+                class="relative hidden md:block aspect-video   "
+              >
+                <span
+                  style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                  />
+                  <img
+                    alt="Big-Doors-900x900"
+                    data-nimg="responsive"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                  />
+                  <noscript />
+                </span>
+              </div>
+              <div
+                class="relative block w-full md:hidden"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                  />
+                  <img
+                    alt="Big-Doors-900x900"
+                    data-nimg="responsive"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: center;"
+                  />
+                  <noscript />
+                </span>
+              </div>
+              <div
+                class="mt-s"
+              >
+                No results headline 1
+              </div>
+              <div>
+                No results subheadline 1
+              </div>
+              <div
+                class="mt-m mb-s flex items-start md:flex-row md:items-center"
+              >
+                <a
+                  class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray"
+                  href="/Components"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Link text 1
+                  <span
+                    class="ml-xxs"
+                  />
+                </a>
+              </div>
+            </div>
+            <div>
+              <div
+                class="relative hidden md:block aspect-video   "
+              >
+                <span
+                  style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                  />
+                  <img
+                    alt="woman in entrance of home with andersen black framed door open"
+                    data-nimg="responsive"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                  />
+                  <noscript />
+                </span>
+              </div>
+              <div
+                class="relative block w-full md:hidden"
+              >
+                <span
+                  style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                >
+                  <span
+                    style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                  />
+                  <img
+                    alt="woman in entrance of home with andersen black framed door open"
+                    data-nimg="responsive"
+                    decoding="async"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                    style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: contain; object-position: center;"
+                  />
+                  <noscript />
+                </span>
+              </div>
+              <div
+                class="mt-s"
+              >
+                No results headline 2
+              </div>
+              <div>
+                No results subheadline 2
+              </div>
+              <div
+                class="mt-m mb-s flex items-start md:flex-row md:items-center"
+              >
+                <a
+                  class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray"
+                  href="/Components"
+                  role="link"
+                  tabindex="0"
+                  target=""
+                  title=""
+                >
+                  Link text 2
+                  <span
+                    class="ml-xxs"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

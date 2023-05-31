@@ -17,9 +17,9 @@ module.exports = {
       'error': '#B91515',
     },
     screens: {
-      xl: '1440px',
-      lg: '1200px',
-      ml: '960px',
+      xl: '1488px', // 1440 + 48 padding
+      lg: '1248px', // 1200 + 48 padding
+      ml: '1008px', // 960 + 48 padding
       md: '672px',
       sm: '375px',
     },

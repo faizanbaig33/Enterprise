@@ -210,6 +210,7 @@ const HeroProductTabs = (props: HeroProductTabsProps) => {
                       </div>
                     ))
                   }
+                  favoriteProducts={props.favoriteProducts}
                 />
               </TabPanel>
             );

@@ -7,67 +7,101 @@ const defaultData = {
     "colorLabel": {
       "value": "Exterior Color Options"
     },
+    "favorite": {
+      "value": true
+    },
     "productItem": {
-      "id": "2600a49c-02b0-45f2-9bb1-2c6c75fd891a",
-      "url": "/Data/Product/Products/Product-2",
-      "name": "Product 2",
-      "displayName": "Product 2",
+      "id": "b774b14a-cedd-4d72-9031-725ab90d10fa",
+      "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Doors/100-series/100-series-gliding-patio",
+      "name": "100-series-gliding-patio",
+      "displayName": "100-series-gliding-patio",
       "fields": {
         "bazaarvoiceProductId": {
           "value": ""
         },
+        "renoworksKey": {
+          "value": ""
+        },
+        "renoworksName": {
+          "value": ""
+        },
+        "productId": {
+          "value": "1001"
+        },
+        "productImage": {
+          "value": {
+            "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Images/Images/Picture/photo-1459535653751-d571815e906b.jpg?h=900&iar=0&w=1200",
+            "alt": "Image",
+            "width": "1200",
+            "height": "900"
+          }
+        },
+        "productImageMobile": {
+          "value": {}
+        },
+        "productImageMobileFocusArea": null,
+        "productName": {
+          "value": "100 Series Gliding Patio Door"
+        },
+        "productSubtitle": {
+          "value": "Low-maintenance and energy-efficient."
+        },
+        "productDescription": {
+          "value": "<ul class=\"bullets\">\n                        \n                        <li>Made with our sustainable composite Fibrex® material which is twice as strong as vinyl</li>\n                        \n                        \n                        <li>Our entry-level gliding patio door</li>\n                        \n                        \n                        <li>Available in standard sizes as 2-panel configurations. Custom sizes also available.</li>\n                        \n                        \n                    </ul>"
+        },
+        "materials": [
+          {
+            "id": "3202c02b-a446-444a-81ec-c3fef1119ee9",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Materials/Wood-Interior",
+            "name": "Wood Interior",
+            "displayName": "Wood Interior",
+            "fields": {
+              "materialDescription": {
+                "value": ""
+              },
+              "materialName": {
+                "value": "Wood Interior"
+              }
+            },
+            "templateId": "2a299ab6-e151-41a8-80ea-291745fa3206",
+            "templateName": "Material"
+          },
+          {
+            "id": "4028a833-162d-48da-906f-06b61936376e",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Materials/Vinyl-Exterior",
+            "name": "Vinyl Exterior",
+            "displayName": "Vinyl Exterior",
+            "fields": {
+              "materialDescription": {
+                "value": ""
+              },
+              "materialName": {
+                "value": "Vinyl Exterior*"
+              }
+            },
+            "templateId": "2a299ab6-e151-41a8-80ea-291745fa3206",
+            "templateName": "Material"
+          }
+        ],
+        "customWindowSizes": {
+          "value": "Yes"
+        },
+        "standardPatioDoorHeights": {
+          "value": ""
+        },
+        "standardPatioDoorWidths": {
+          "value": ""
+        },
+        "standardWindowSizes": {
+          "value": "<p>Max Width: 3' 10-1/8\"</p>\n<p>Max Height: 7'8-7/8\"</p>"
+        },
+        "customPatioDoorSizes": {
+          "value": "Yes"
+        },
         "featuredExteriorColors": [
           {
-            "id": "9cf39282-0393-4ab9-ba3f-6114297e2d7f",
-            "url": "/Data/Elements/Swatches/Swatch/Exterior/Cocoa-Bean",
-            "name": "Cocoa Bean",
-            "displayName": "Cocoa Bean",
-            "fields": {
-              "swatchDescription": {
-                "value": "Cocoa Bean"
-              },
-              "swatchImage": {
-                "value": {
-                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
-                  "alt": "cocoa-bean-exterior-color-swatch",
-                  "width": "77",
-                  "height": "77"
-                }
-              },
-              "swatchName": {
-                "value": "Black"
-              }
-            },
-            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
-            "templateName": "Swatch"
-          },
-          {
-            "id": "45ceaae4-e0b0-4fe9-9333-a5747253e691",
-            "url": "/Data/Elements/Swatches/Swatch/Exterior/White",
-            "name": "White",
-            "displayName": "White",
-            "fields": {
-              "swatchDescription": {
-                "value": "<br class=\"t-last-br\" />"
-              },
-              "swatchImage": {
-                "value": {
-                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/white-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
-                  "alt": "white-exterior-80x80 (1)",
-                  "width": "80",
-                  "height": "80"
-                }
-              },
-              "swatchName": {
-                "value": "Black"
-              }
-            },
-            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
-            "templateName": "Swatch"
-          },
-          {
-            "id": "efd95c9d-de77-482e-8e92-07f4d076a7b4",
-            "url": "/Data/Elements/Swatches/Swatch/Exterior/Sandstone",
+            "id": "3bf4c246-149c-4165-8e5c-0d904a2e06ef",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Sandstone",
             "name": "Sandstone",
             "displayName": "Sandstone",
             "fields": {
@@ -76,7 +110,129 @@ const defaultData = {
               },
               "swatchImage": {
                 "value": {
-                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/sandtone-exterior-color-swatch.png?h=77&iar=0&w=77",
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/sandtone-exterior-color-swatch.png?h=77&iar=0&w=77",
+                  "alt": "sandtone-exterior-color-swatch",
+                  "width": "77",
+                  "height": "77"
+                }
+              },
+              "swatchName": {
+                "value": "Sandstone"
+              }
+            },
+            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+            "templateName": "Swatch"
+          },
+          {
+            "id": "3e243c9e-56e6-4cb2-b613-3162debd04ad",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Terratone",
+            "name": "Terratone",
+            "displayName": "Terratone",
+            "fields": {
+              "swatchDescription": {
+                "value": ""
+              },
+              "swatchImage": {
+                "value": {
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/terratone-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                  "alt": "terratone-exterior-80x80 (1)",
+                  "width": "80",
+                  "height": "80"
+                }
+              },
+              "swatchName": {
+                "value": "Terratone"
+              }
+            },
+            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+            "templateName": "Swatch"
+          },
+          {
+            "id": "32d5c352-f767-4f6b-8535-b2f6de4d5e70",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/White",
+            "name": "White",
+            "displayName": "White",
+            "fields": {
+              "swatchDescription": {
+                "value": ""
+              },
+              "swatchImage": {
+                "value": {
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/white-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                  "alt": "white-exterior-80x80 (1)",
+                  "width": "80",
+                  "height": "80"
+                }
+              },
+              "swatchName": {
+                "value": "White"
+              }
+            },
+            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+            "templateName": "Swatch"
+          }
+        ],
+        "featuredInteriorColors": [
+          {
+            "id": "ee17223a-52d5-4112-a15c-d7d39f2d54da",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Cocoa-Bean",
+            "name": "Cocoa Bean",
+            "displayName": "Cocoa Bean",
+            "fields": {
+              "swatchDescription": {
+                "value": ""
+              },
+              "swatchImage": {
+                "value": {
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
+                  "alt": "cocoa-bean-exterior-color-swatch",
+                  "width": "77",
+                  "height": "77"
+                }
+              },
+              "swatchName": {
+                "value": "Cocoa Bean"
+              }
+            },
+            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+            "templateName": "Swatch"
+          },
+          {
+            "id": "8cf0a418-a4d1-458c-9caf-04aa3a258483",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Dark-Bronze",
+            "name": "Dark Bronze",
+            "displayName": "Dark Bronze",
+            "fields": {
+              "swatchDescription": {
+                "value": ""
+              },
+              "swatchImage": {
+                "value": {
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/dark-bronze-exterior-color-swatch.png?h=77&iar=0&w=77",
+                  "alt": "dark-bronze-exterior-color-swatch",
+                  "width": "77",
+                  "height": "77"
+                }
+              },
+              "swatchName": {
+                "value": "White"
+              }
+            },
+            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+            "templateName": "Swatch"
+          },
+          {
+            "id": "3bf4c246-149c-4165-8e5c-0d904a2e06ef",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Sandstone",
+            "name": "Sandstone",
+            "displayName": "Sandstone",
+            "fields": {
+              "swatchDescription": {
+                "value": ""
+              },
+              "swatchImage": {
+                "value": {
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/sandtone-exterior-color-swatch.png?h=77&iar=0&w=77",
                   "alt": "sandtone-exterior-color-swatch",
                   "width": "77",
                   "height": "77"
@@ -90,26 +246,16 @@ const defaultData = {
             "templateName": "Swatch"
           }
         ],
-        "featuredInteriorColors": [],
-        "interiorSwatchCollection": {
-          "id": "f3a20ecb-1538-4ba2-b9c0-ac74b9536f9a",
-          "url": "/Data/Elements/Swatches/Collection/Big-Doors-Exterior",
-          "name": "Big Doors Exterior",
-          "displayName": "Big Doors Exterior",
+        "standardExteriorColors": {
+          "id": "287b56b0-9f63-4a75-a739-e74dd419ae5e",
+          "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Collection/Windows/100-Series",
+          "name": "100 Series",
+          "displayName": "100 Series",
           "fields": {
-            "swatchCollectionDescription": {
-              "value": ""
-            },
-            "swatchCollectionFooterCopy": {
-              "value": ""
-            },
-            "swatchCollectionName": {
-              "value": "Big Doors Exterior"
-            },
             "swatches": [
               {
-                "id": "f87b79e7-7012-4749-90bf-c5a35d27e589",
-                "url": "/Data/Elements/Swatches/Swatch/Exterior/Black",
+                "id": "15e39681-b7cd-4388-a87f-e2e0f8b6ec30",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Black",
                 "name": "Black",
                 "displayName": "Black",
                 "fields": {
@@ -118,7 +264,7 @@ const defaultData = {
                   },
                   "swatchImage": {
                     "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
                       "alt": "black-exterior-80x80 (1)",
                       "width": "80",
                       "height": "80"
@@ -132,32 +278,56 @@ const defaultData = {
                 "templateName": "Swatch"
               },
               {
-                "id": "9cf39282-0393-4ab9-ba3f-6114297e2d7f",
-                "url": "/Data/Elements/Swatches/Swatch/Exterior/Cocoa-Bean",
-                "name": "Cocoa Bean",
-                "displayName": "Cocoa Bean",
+                "id": "8cf0a418-a4d1-458c-9caf-04aa3a258483",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Dark-Bronze",
+                "name": "Dark Bronze",
+                "displayName": "Dark Bronze",
                 "fields": {
                   "swatchDescription": {
-                    "value": "Cocoa Bean"
+                    "value": ""
                   },
                   "swatchImage": {
                     "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
-                      "alt": "cocoa-bean-exterior-color-swatch",
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/dark-bronze-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "dark-bronze-exterior-color-swatch",
                       "width": "77",
                       "height": "77"
                     }
                   },
                   "swatchName": {
-                    "value": "Black"
+                    "value": "White"
                   }
                 },
                 "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
                 "templateName": "Swatch"
               },
               {
-                "id": "efd95c9d-de77-482e-8e92-07f4d076a7b4",
-                "url": "/Data/Elements/Swatches/Swatch/Exterior/Sandstone",
+                "id": "32d5c352-f767-4f6b-8535-b2f6de4d5e70",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/White",
+                "name": "White",
+                "displayName": "White",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/white-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "alt": "white-exterior-80x80 (1)",
+                      "width": "80",
+                      "height": "80"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "White"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "3bf4c246-149c-4165-8e5c-0d904a2e06ef",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Sandstone",
                 "name": "Sandstone",
                 "displayName": "Sandstone",
                 "fields": {
@@ -166,7 +336,7 @@ const defaultData = {
                   },
                   "swatchImage": {
                     "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/sandtone-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/sandtone-exterior-color-swatch.png?h=77&iar=0&w=77",
                       "alt": "sandtone-exterior-color-swatch",
                       "width": "77",
                       "height": "77"
@@ -180,8 +350,456 @@ const defaultData = {
                 "templateName": "Swatch"
               },
               {
-                "id": "bd2695d1-332e-4e5d-b68c-cd2cbb347051",
-                "url": "/Data/Elements/Swatches/Swatch/Exterior/Terratone",
+                "id": "ee17223a-52d5-4112-a15c-d7d39f2d54da",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Cocoa-Bean",
+                "name": "Cocoa Bean",
+                "displayName": "Cocoa Bean",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "cocoa-bean-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Cocoa Bean"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              }
+            ],
+            "swatchCollectionDescription": {
+              "value": ""
+            },
+            "swatchCollectionFooterCopy": {
+              "value": ""
+            },
+            "swatchCollectionName": {
+              "value": "100 Series"
+            }
+          },
+          "templateId": "c7e82176-d156-410f-b728-d4c465148578",
+          "templateName": "Swatch Collection"
+        },
+        "standardInteriorColors": {
+          "id": "287b56b0-9f63-4a75-a739-e74dd419ae5e",
+          "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Collection/Windows/100-Series",
+          "name": "100 Series",
+          "displayName": "100 Series",
+          "fields": {
+            "swatches": [
+              {
+                "id": "15e39681-b7cd-4388-a87f-e2e0f8b6ec30",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Black",
+                "name": "Black",
+                "displayName": "Black",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "alt": "black-exterior-80x80 (1)",
+                      "width": "80",
+                      "height": "80"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Black"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "8cf0a418-a4d1-458c-9caf-04aa3a258483",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Dark-Bronze",
+                "name": "Dark Bronze",
+                "displayName": "Dark Bronze",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/dark-bronze-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "dark-bronze-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "White"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "32d5c352-f767-4f6b-8535-b2f6de4d5e70",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/White",
+                "name": "White",
+                "displayName": "White",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/white-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "alt": "white-exterior-80x80 (1)",
+                      "width": "80",
+                      "height": "80"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "White"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "3bf4c246-149c-4165-8e5c-0d904a2e06ef",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Sandstone",
+                "name": "Sandstone",
+                "displayName": "Sandstone",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/sandtone-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "sandtone-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Sandstone"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "ee17223a-52d5-4112-a15c-d7d39f2d54da",
+                "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Cocoa-Bean",
+                "name": "Cocoa Bean",
+                "displayName": "Cocoa Bean",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "cocoa-bean-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Cocoa Bean"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              }
+            ],
+            "swatchCollectionDescription": {
+              "value": ""
+            },
+            "swatchCollectionFooterCopy": {
+              "value": ""
+            },
+            "swatchCollectionName": {
+              "value": "100 Series"
+            }
+          },
+          "templateId": "c7e82176-d156-410f-b728-d4c465148578",
+          "templateName": "Swatch Collection"
+        },
+        "standardInteriorFinishesOptions": null,
+        "hardwareFinishes": {
+          "value": ""
+        },
+        "insectScreen": {
+          "value": ""
+        },
+        "featuredInteriorFinishesOptions": [
+          {
+            "id": "3e243c9e-56e6-4cb2-b613-3162debd04ad",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Terratone",
+            "name": "Terratone",
+            "displayName": "Terratone",
+            "fields": {
+              "swatchDescription": {
+                "value": ""
+              },
+              "swatchImage": {
+                "value": {
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/terratone-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                  "alt": "terratone-exterior-80x80 (1)",
+                  "width": "80",
+                  "height": "80"
+                }
+              },
+              "swatchName": {
+                "value": "Terratone"
+              }
+            },
+            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+            "templateName": "Swatch"
+          },
+          {
+            "id": "15e39681-b7cd-4388-a87f-e2e0f8b6ec30",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Black",
+            "name": "Black",
+            "displayName": "Black",
+            "fields": {
+              "swatchDescription": {
+                "value": ""
+              },
+              "swatchImage": {
+                "value": {
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                  "alt": "black-exterior-80x80 (1)",
+                  "width": "80",
+                  "height": "80"
+                }
+              },
+              "swatchName": {
+                "value": "Black"
+              }
+            },
+            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+            "templateName": "Swatch"
+          },
+          {
+            "id": "ee17223a-52d5-4112-a15c-d7d39f2d54da",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Swatch/Cocoa-Bean",
+            "name": "Cocoa Bean",
+            "displayName": "Cocoa Bean",
+            "fields": {
+              "swatchDescription": {
+                "value": ""
+              },
+              "swatchImage": {
+                "value": {
+                  "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
+                  "alt": "cocoa-bean-exterior-color-swatch",
+                  "width": "77",
+                  "height": "77"
+                }
+              },
+              "swatchName": {
+                "value": "Cocoa Bean"
+              }
+            },
+            "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+            "templateName": "Swatch"
+          }
+        ],
+        "artGlass": {
+          "value": ""
+        },
+        "blindsShadesSwitchableGlazings": {
+          "value": ""
+        },
+        "patternGlass": {
+          "value": ""
+        },
+        "protectiveFlim": {
+          "value": ""
+        },
+        "fullDividedLight": {
+          "value": "Yes"
+        },
+        "grilleBetweenGlass": {
+          "value": "Finelight 3/4\" & 1\" contoured"
+        },
+        "simulatedDividedLight": {
+          "value": "Yes"
+        },
+        "optionalPGUpgrade": {
+          "value": "PG50"
+        },
+        "optionalStormwatchProtection": {
+          "value": "PG50 (TW)"
+        },
+        "standardPerformance": {
+          "value": "PG40 (TW)"
+        },
+        "thermalPerformance": {
+          "value": ".30/.21"
+        },
+        "glassCoverage": {
+          "value": "20 years"
+        },
+        "nonGlassComponentCoverage": {
+          "value": "10 years"
+        },
+        "painFinishCoverage": {
+          "value": "-"
+        },
+        "warrantyTransferability": {
+          "value": "Yes - Owner2Owner transerability"
+        },
+        "productDoorTypeFacet": null,
+        "productSeriesFacet": null,
+        "productTypeFacet": null,
+        "productWindowTypeFacet": null,
+        "productSeries": {
+          "value": "100 Series"
+        },
+        "productType": {
+          "value": "Exterior Door"
+        },
+        "windowProductType": {
+          "value": ""
+        },
+        "exteriorDoorProductType": {
+          "value": "Gliding"
+        },
+        "stormDoorProductType": {
+          "value": ""
+        },
+        "designToolLink": {
+          "value": {
+            "href": ""
+          }
+        },
+        "homeDepotLink": {
+          "value": {
+            "href": ""
+          }
+        },
+        "productDetailPageLink": {
+          "value": {
+            "href": "https://www.andersenwindows.com/windows-and-doors/doors/sliding-patio-doors/100-series-gliding-patio-door/#/learn",
+            "linktype": "external",
+            "url": "https://www.andersenwindows.com/windows-and-doors/doors/sliding-patio-doors/100-series-gliding-patio-door/#/learn",
+            "anchor": "",
+            "target": ""
+          }
+        },
+        "sizingDocumentsPageLink": {
+          "value": {
+            "href": ""
+          }
+        },
+        "bigDoorConfigurations": {
+          "value": ""
+        },
+        "maximumDoorSize": {
+          "value": ""
+        },
+        "maximumPanelWidth": {
+          "value": ""
+        },
+        "minimumPanelHeight": {
+          "value": ""
+        },
+        "customDoorSizes": {
+          "value": ""
+        },
+        "standardHeights": {
+          "value": ""
+        },
+        "standardWidths": {
+          "value": ""
+        },
+        "swingOptions": [],
+        "priceLevel": {
+          "id": "80b5f364-fee7-499a-bb18-8bbc68179be1",
+          "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Price-Level-Folder/Level-3",
+          "name": "Level 3",
+          "displayName": "Level 3",
+          "fields": {
+            "priceLevelText": {
+              "value": "3"
+            }
+          },
+          "templateId": "ec3c479a-d9b2-44ab-9cd6-b9aa86b2d760",
+          "templateName": "Price Level"
+        },
+        "productMaterials": [
+          {
+            "id": "4028a833-162d-48da-906f-06b61936376e",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Materials/Vinyl-Exterior",
+            "name": "Vinyl Exterior",
+            "displayName": "Vinyl Exterior",
+            "fields": {
+              "materialDescription": {
+                "value": ""
+              },
+              "materialName": {
+                "value": "Vinyl Exterior*"
+              }
+            },
+            "templateId": "2a299ab6-e151-41a8-80ea-291745fa3206",
+            "templateName": "Material"
+          },
+          {
+            "id": "3202c02b-a446-444a-81ec-c3fef1119ee9",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Materials/Wood-Interior",
+            "name": "Wood Interior",
+            "displayName": "Wood Interior",
+            "fields": {
+              "materialDescription": {
+                "value": ""
+              },
+              "materialName": {
+                "value": "Wood Interior"
+              }
+            },
+            "templateId": "2a299ab6-e151-41a8-80ea-291745fa3206",
+            "templateName": "Material"
+          }
+        ],
+        "interiorWoodSpecies": {
+          "id": "3049d83b-170f-43f9-b0cd-96078025c25c",
+          "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Collection/Doors/Doors-Interior",
+          "name": "Doors Interior",
+          "displayName": "Doors Interior",
+          "fields": {
+            "swatches": [
+              {
+                "id": "92934436-7d09-4463-a661-7dd082712dd8",
+                "url": "/Data/Elements/Swatches/Swatch/White",
+                "name": "White",
+                "displayName": "White",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/white-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "alt": "white-exterior-80x80 (1)",
+                      "width": "80",
+                      "height": "80"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "White"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "f4764f8a-2bdb-46be-93ba-93405ce7c167",
+                "url": "/Data/Elements/Swatches/Swatch/Terratone",
                 "name": "Terratone",
                 "displayName": "Terratone",
                 "fields": {
@@ -190,146 +808,116 @@ const defaultData = {
                   },
                   "swatchImage": {
                     "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/terratone-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/terratone-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
                       "alt": "terratone-exterior-80x80 (1)",
                       "width": "80",
                       "height": "80"
                     }
                   },
                   "swatchName": {
-                    "value": "Black"
+                    "value": "Terratone"
                   }
                 },
                 "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
                 "templateName": "Swatch"
               },
               {
-                "id": "45ceaae4-e0b0-4fe9-9333-a5747253e691",
-                "url": "/Data/Elements/Swatches/Swatch/Exterior/White",
-                "name": "White",
-                "displayName": "White",
-                "fields": {
-                  "swatchDescription": {
-                    "value": "<br class=\"t-last-br\" />"
-                  },
-                  "swatchImage": {
-                    "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/white-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
-                      "alt": "white-exterior-80x80 (1)",
-                      "width": "80",
-                      "height": "80"
-                    }
-                  },
-                  "swatchName": {
-                    "value": "Black"
-                  }
-                },
-                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
-                "templateName": "Swatch"
-              },
-              {
-                "id": "cffe85ac-854b-440c-9af2-2518e7bbf572",
-                "url": "/Data/Elements/Swatches/Swatch/Exterior/Blue",
-                "name": "Blue",
-                "displayName": "Blue",
-                "fields": {
-                  "swatchDescription": {
-                    "value": "<br class=\"t-last-br\" />"
-                  },
-                  "swatchImage": {
-                    "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/white-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
-                      "alt": "white-exterior-80x80 (1)",
-                      "width": "80",
-                      "height": "80"
-                    }
-                  },
-                  "swatchName": {
-                    "value": "Black"
-                  }
-                },
-                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
-                "templateName": "Swatch"
-              },
-              {
-                "id": "def0e334-9ee4-4b0a-8658-752d3038554a",
-                "url": "/Data/Elements/Swatches/Swatch/Exterior/Orange",
-                "name": "Orange",
-                "displayName": "Orange",
+                "id": "a564fcb1-4b07-4cd6-8e24-c43d21a63a5b",
+                "url": "/Data/Elements/Swatches/Swatch/Sandstone",
+                "name": "Sandstone",
+                "displayName": "Sandstone",
                 "fields": {
                   "swatchDescription": {
                     "value": ""
                   },
                   "swatchImage": {
                     "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/terratone-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
-                      "alt": "terratone-exterior-80x80 (1)",
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/sandtone-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "sandtone-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Sandstone"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "fc8a2adf-8bab-439a-9959-465f21b030de",
+                "url": "/Data/Elements/Swatches/Swatch/Dark-Bronze",
+                "name": "Dark Bronze",
+                "displayName": "Dark Bronze",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/dark-bronze-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "dark-bronze-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "White"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "39a4fc7a-dd5f-4a80-882e-2be6e06ecd0e",
+                "url": "/Data/Elements/Swatches/Swatch/Cocoa-Bean",
+                "name": "Cocoa Bean",
+                "displayName": "Cocoa Bean",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "cocoa-bean-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Cocoa Bean"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "56c5510d-b7ce-4df4-a78e-3643f6a1238a",
+                "url": "/Data/Elements/Swatches/Swatch/Black",
+                "name": "Black",
+                "displayName": "Black",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "alt": "black-exterior-80x80 (1)",
                       "width": "80",
                       "height": "80"
                     }
                   },
                   "swatchName": {
-                    "value": "Orange"
+                    "value": "Black"
                   }
                 },
                 "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
                 "templateName": "Swatch"
               }
-            ]
-          },
-          "templateId": "c7e82176-d156-410f-b728-d4c465148578",
-          "templateName": "Swatch Collection"
-        },
-        "priceLevel": {
-          "id": "c207ef8a-d2b0-4339-9382-da76c0b754a1",
-          "url": "http://localhost/sitecore/login/sitecore/system/Settings/Feature/EnterpriseWeb/Enums/Price-Range-Icons/2",
-          "name": "2",
-          "displayName": "2",
-          "fields": {
-            "Value": {
-              "value": "2"
-            }
-          },
-          "templateId": "d2923fee-da4e-49be-830c-e27764dfa269",
-          "templateName": "Enum"
-        },
-        "productDescription": {
-          "value": "<p>Our oversized sliding glass doors are engineered for smooth and easy operation, giving you design freedom with the performance and innovation you expect from Andersen.</p>\n<ul>\n    <li>Straight stacking or pocketing sliding doors for a perfectly unobstructed view</li>\n    <li>Modern and traditional design</li>\n    <li>Sized for openings up to 50' wide and 10' tall with sliding glass panels up to 60\" wide</li>\n</ul>\n<br class=\"t-last-br\" />"
-        },
-        "productId": {
-          "value": "Product ID 123"
-        },
-        "productName": {
-          "value": "Product Name"
-        },
-        "productSeries": {
-          "id": "b6715dbb-cbdf-409e-b1f1-5a11cf03055f",
-          "url": "/Data/Product/Series-Folder/Series1",
-          "name": "Series1",
-          "displayName": "Series1",
-          "fields": {
-            "seriesDescription": {
-              "value": "body copy"
-            },
-            "seriesImage": {
-              "value": {}
-            },
-            "seriesSubtitle": {
-              "value": "Series Subtitle"
-            },
-            "seriesTitle": {
-              "value": "Series Title"
-            }
-          },
-          "templateId": "a9278813-cfb4-475e-b618-b447475adc18",
-          "templateName": "Series"
-        },
-        "exteriorSwatchCollection": {
-          "id": "9155f94b-820b-4971-9338-88ab00c64e11",
-          "url": "/Data/Elements/Swatches/Collection/Entry-Doors-Exterior",
-          "name": "Entry Doors Exterior",
-          "displayName": "Entry Doors Exterior",
-          "fields": {
+            ],
             "swatchCollectionDescription": {
               "value": ""
             },
@@ -337,149 +925,232 @@ const defaultData = {
               "value": ""
             },
             "swatchCollectionName": {
-              "value": "Big Doors Exterior"
-            },
+              "value": "Doors Exterior"
+            }
+          },
+          "templateId": "c7e82176-d156-410f-b728-d4c465148578",
+          "templateName": "Swatch Collection"
+        },
+        "interiorWoodFinishes": {
+          "id": "3049d83b-170f-43f9-b0cd-96078025c25c",
+          "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Global-Swatches/Collection/Doors/Doors-Interior",
+          "name": "Doors Interior",
+          "displayName": "Doors Interior",
+          "fields": {
             "swatches": [
               {
-                "id": "b60f6a67-ca34-4535-96a4-8f1c64199bc9",
-                "url": "/Data/Elements/Swatches/Swatch/Interior/Red",
-                "name": "Red",
-                "displayName": "Red",
-                "fields": {
-                  "swatchDescription": {
-                    "value": "#ffffff"
-                  },
-                  "swatchImage": {
-                    "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
-                      "alt": "cocoa-bean-exterior-color-swatch",
-                      "width": "77",
-                      "height": "77"
-                    }
-                  },
-                  "swatchName": {
-                    "value": "Red"
-                  }
-                },
-                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
-                "templateName": "Swatch"
-              },
-              {
-                "id": "b60f6a67-ca34-4535-96a4-8f1c64199bc9",
-                "url": "/Data/Elements/Swatches/Swatch/Interior/Red",
-                "name": "Red",
-                "displayName": "Red",
-                "fields": {
-                  "swatchDescription": {
-                    "value": "#ffffff"
-                  },
-                  "swatchImage": {
-                    "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
-                      "alt": "cocoa-bean-exterior-color-swatch",
-                      "width": "77",
-                      "height": "77"
-                    }
-                  },
-                  "swatchName": {
-                    "value": "Red"
-                  }
-                },
-                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
-                "templateName": "Swatch"
-              },
-              {
-                "id": "b60f6a67-ca34-4535-96a4-8f1c64199bc9",
-                "url": "/Data/Elements/Swatches/Swatch/Interior/Red",
-                "name": "Red",
-                "displayName": "Red",
-                "fields": {
-                  "swatchDescription": {
-                    "value": "#ffffff"
-                  },
-                  "swatchImage": {
-                    "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
-                      "alt": "cocoa-bean-exterior-color-swatch",
-                      "width": "77",
-                      "height": "77"
-                    }
-                  },
-                  "swatchName": {
-                    "value": "Red"
-                  }
-                },
-                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
-                "templateName": "Swatch"
-              },
-              {
-                "id": "741493bb-2f08-4497-981f-b66c69eeead2",
-                "url": "/Data/Elements/Swatches/Swatch/Interior/Blue",
-                "name": "Blue",
-                "displayName": "Blue",
+                "id": "92934436-7d09-4463-a661-7dd082712dd8",
+                "url": "/Data/Elements/Swatches/Swatch/White",
+                "name": "White",
+                "displayName": "White",
                 "fields": {
                   "swatchDescription": {
                     "value": ""
                   },
                   "swatchImage": {
                     "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/dark-bronze-exterior-color-swatch.png?h=77&iar=0&w=77",
-                      "alt": "dark-bronze-exterior-color-swatch",
-                      "width": "77",
-                      "height": "77"
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/white-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "alt": "white-exterior-80x80 (1)",
+                      "width": "80",
+                      "height": "80"
                     }
                   },
                   "swatchName": {
-                    "value": "Blue"
+                    "value": "White"
                   }
                 },
                 "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
                 "templateName": "Swatch"
               },
               {
-                "id": "d42fb18b-74fb-4fc6-b9a4-7c175d3337bd",
-                "url": "/Data/Elements/Swatches/Swatch/Interior/Green",
-                "name": "Green",
-                "displayName": "Green",
+                "id": "f4764f8a-2bdb-46be-93ba-93405ce7c167",
+                "url": "/Data/Elements/Swatches/Swatch/Terratone",
+                "name": "Terratone",
+                "displayName": "Terratone",
                 "fields": {
                   "swatchDescription": {
-                    "value": "#ffffff"
+                    "value": ""
                   },
                   "swatchImage": {
                     "value": {
-                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/terratone-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
+                      "alt": "terratone-exterior-80x80 (1)",
+                      "width": "80",
+                      "height": "80"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Terratone"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "a564fcb1-4b07-4cd6-8e24-c43d21a63a5b",
+                "url": "/Data/Elements/Swatches/Swatch/Sandstone",
+                "name": "Sandstone",
+                "displayName": "Sandstone",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/sandtone-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "sandtone-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Sandstone"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "fc8a2adf-8bab-439a-9959-465f21b030de",
+                "url": "/Data/Elements/Swatches/Swatch/Dark-Bronze",
+                "name": "Dark Bronze",
+                "displayName": "Dark Bronze",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/dark-bronze-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "dark-bronze-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "White"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "39a4fc7a-dd5f-4a80-882e-2be6e06ecd0e",
+                "url": "/Data/Elements/Swatches/Swatch/Cocoa-Bean",
+                "name": "Cocoa Bean",
+                "displayName": "Cocoa Bean",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/cocoa-bean-exterior-color-swatch.png?h=77&iar=0&w=77",
+                      "alt": "cocoa-bean-exterior-color-swatch",
+                      "width": "77",
+                      "height": "77"
+                    }
+                  },
+                  "swatchName": {
+                    "value": "Cocoa Bean"
+                  }
+                },
+                "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
+                "templateName": "Swatch"
+              },
+              {
+                "id": "56c5510d-b7ce-4df4-a78e-3643f6a1238a",
+                "url": "/Data/Elements/Swatches/Swatch/Black",
+                "name": "Black",
+                "displayName": "Black",
+                "fields": {
+                  "swatchDescription": {
+                    "value": ""
+                  },
+                  "swatchImage": {
+                    "value": {
+                      "src": "https://edge.sitecorecloud.io/andersencorporation-m9n8s20s/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80",
                       "alt": "black-exterior-80x80 (1)",
                       "width": "80",
                       "height": "80"
                     }
                   },
                   "swatchName": {
-                    "value": "Green"
+                    "value": "Black"
                   }
                 },
                 "templateId": "863dcc2e-cca5-4236-b10f-8b4872e1c47c",
                 "templateName": "Swatch"
               }
-            ]
+            ],
+            "swatchCollectionDescription": {
+              "value": ""
+            },
+            "swatchCollectionFooterCopy": {
+              "value": ""
+            },
+            "swatchCollectionName": {
+              "value": "Doors Exterior"
+            }
           },
           "templateId": "c7e82176-d156-410f-b728-d4c465148578",
           "templateName": "Swatch Collection"
         },
-        "componentSpacing": null,
-        "sectionId": {
+        "glassOptions": [
+          {
+            "id": "af72d2ac-22d5-48ca-830e-354d185d13ab",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Glasses/Low-E4-Sun",
+            "name": "Low-E4 Sun",
+            "displayName": "Low-E4 Sun",
+            "fields": {
+              "glassDescription": {
+                "value": ""
+              },
+              "glassType": {
+                "value": "Low-E4® Sun"
+              }
+            },
+            "templateId": "20a35317-0fce-494d-be56-12a83b094b92",
+            "templateName": "Glass"
+          },
+          {
+            "id": "f1c209fc-0d8b-4dc3-8a17-006a119f711e",
+            "url": "http://localhost/AndersenCorporation/AndersenWindows/Global/Products/Glasses/Triple-Pane",
+            "name": "Triple-Pane",
+            "displayName": "Triple-Pane",
+            "fields": {
+              "glassDescription": {
+                "value": ""
+              },
+              "glassType": {
+                "value": "Triple-Pane"
+              }
+            },
+            "templateId": "20a35317-0fce-494d-be56-12a83b094b92",
+            "templateName": "Glass"
+          }
+        ],
+        "additionalOptions": {
           "value": ""
         },
-        "eventName": {
+        "keyFeatures": {
           "value": ""
         },
-        "eventType": {
+        "sizing": {
           "value": ""
         },
-        "eventZone": {
+        "ventilation": {
           "value": ""
-        }
+        },
+        "closers": {
+          "value": ""
+        },
+        "colors": null,
+        "handleSetFinishes": null,
+        "installMethod": [],
+        "availableShapes": null
       },
-      "templateId": "afe4a298-0fb4-4d78-a699-e96b98ce94de",
+      "templateId": "15b220e7-b36d-4c65-8f33-aa8b635449d4",
       "templateName": "Product"
     },
     "eyebrowLevel": {

@@ -3,11 +3,13 @@ import { FunctionComponent } from 'react';
 import { SvgIcon } from 'src/helpers/SvgIcon';
 import { useState } from 'react';
 import { Field } from '@sitecore-jss/sitecore-jss-nextjs';
+import { BodyCopy } from 'src/helpers/BodyCopy';
 
 export interface FacetSearchProps {
   controller: HeadlessFacetSearch;
   facetSearchState: FacetSearchState;
   searchLabel: Field<string>;
+  noFacetResultsBody: Field<string>;
   facetSearchClasses?: {
     [property: string]: string;
   };
@@ -19,6 +21,29 @@ export const FacetSearch: FunctionComponent<FacetSearchProps> = (props) => {
   const updateSearch = (text: string) => {
     props.controller.updateText(text);
     props.controller.search();
+  };
+
+  const facetSearchResult = (): JSX.Element | JSX.Element[] => {
+    if (props.facetSearchState?.values.length > 0) {
+      return props.facetSearchState?.values?.map((facetSearchValue) => (
+        <li key={facetSearchValue.rawValue} className={facetSearchClasses?.resultListItem}>
+          <button
+            onClick={() => {
+              props.controller.select(facetSearchValue);
+            }}
+          >
+            {facetSearchValue.displayValue} ({facetSearchValue.count})
+          </button>
+        </li>
+      ));
+    } else {
+      return (
+        <BodyCopy
+          classes="text-theme-body text-body mx-xxs"
+          fields={{ body: props.noFacetResultsBody }}
+        />
+      );
+    }
   };
 
   return (
@@ -40,20 +65,9 @@ export const FacetSearch: FunctionComponent<FacetSearchProps> = (props) => {
             onInput={(e) => updateSearch(e.currentTarget.value)}
             className={facetSearchClasses?.searchInput}
           />
-          {props.facetSearchState.query !== '' && props.facetSearchState?.values.length > 0 && (
-            <ul className="mt-xxs list-none rounded border border-gray ">
-              {props.facetSearchState?.values?.map((facetSearchValue) => (
-                <li key={facetSearchValue.rawValue} className={facetSearchClasses?.resultListItem}>
-                  <button
-                    onClick={() => {
-                      props.controller.select(facetSearchValue);
-                    }}
-                  >
-                    {facetSearchValue.displayValue} ({facetSearchValue.count})
-                  </button>
-                </li>
-              ))}
-            </ul>
+
+          {props.facetSearchState.query !== '' && (
+            <ul className="mt-xxs list-none  rounded border border-gray">{facetSearchResult()}</ul>
           )}
         </>
       )}

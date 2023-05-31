@@ -10,7 +10,7 @@ exports[`renders correctly 1`] = `
   >
     <div
       class="favorite-product absolute right-0 top-0 inline h-0 w-0 cursor-pointer border-t-0 border-l-0 border-r-[60px] border-b-[60px] border-solid border-[transparent_#e3e3e3_transparent_transparent] transition-[border-color]  duration-500 ease-[ease]"
-      data-product-id="Product ID 123"
+      data-product-id="1001"
     >
       <span
         class="absolute -right-[51px] top-[11px]"
@@ -61,21 +61,6 @@ exports[`renders correctly 1`] = `
         <h5>
           5.0
         </h5>
-      </div>
-      <div
-        class="border-l border-secondary px-xxs leading-none flex [&>*:nth-child(2)]:text-gray"
-      >
-        <span
-          class="text-xs font-heavy"
-        >
-          $$
-        </span>
-        <span
-          class="text-xs font-heavy"
-          ttag="span"
-        >
-          $$$
-        </span>
       </div>
     </div>
   </div>
@@ -184,7 +169,7 @@ exports[`renders correctly 1`] = `
                 style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
               />
               <img
-                alt="white-exterior-80x80 (1)"
+                alt="dark-bronze-exterior-color-swatch"
                 data-nimg="responsive"
                 decoding="async"
                 src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"

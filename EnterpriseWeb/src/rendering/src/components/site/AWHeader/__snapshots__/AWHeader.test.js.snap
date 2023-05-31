@@ -13,7 +13,75 @@ exports[`renders correctly 1`] = `
     >
       <ul
         class="z-50 flex items-center"
-      />
+      >
+        <li
+          class="px-5 last-of-type:pr-0 hover:underline"
+        >
+          <a
+            class="flex items-center text-xxs flex-row-reverse items-center hidden"
+            href="/"
+            role="link"
+            tabindex="0"
+          >
+            My Favorites {undefined}
+            <span
+              class="mr-xxs"
+            />
+          </a>
+        </li>
+        <li
+          class="px-5 last-of-type:pr-0 hover:underline"
+        >
+          <a
+            class="flex items-center text-xxs flex-row-reverse items-center"
+            href="/"
+            role="link"
+            tabindex="0"
+          >
+            Item Link 
+          </a>
+        </li>
+        <li
+          class="px-5 last-of-type:pr-0 hover:underline"
+        >
+          <a
+            class="flex items-center text-xxs flex-row-reverse items-center"
+            href="/"
+            role="link"
+            tabindex="0"
+          >
+            Item Link 
+          </a>
+        </li>
+        <li
+          class="px-5 last-of-type:pr-0 hover:underline"
+        >
+          <a
+            class="flex items-center text-xxs flex-row-reverse items-center"
+            href="/"
+            role="link"
+            tabindex="0"
+          >
+            Item Link 
+          </a>
+        </li>
+        <span>
+          |
+        </span>
+        <li
+          class="px-5 last-of-type:pr-0 hover:underline"
+        >
+          <a
+            class="text-xxs font-heavy capitalize"
+            href="tel:1-800-426-4261"
+            role="link"
+            tabindex="0"
+            target=""
+          >
+            1-800-426-4261
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
   <nav
@@ -69,56 +137,64 @@ exports[`renders correctly 1`] = `
         </a>
       </div>
       <div
-        class="ml-s min-w-[197px] max-ml:hidden"
-      >
-        <a
-          href="/"
-        >
-          <div
-            class="relative hidden md:block aspect-video    aspect-auto max-w-[197px]"
-          >
-            <span
-              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
-            >
-              <span
-                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 14.122533748701974% 0px 0px 0px;"
-              />
-              <img
-                alt="Andersen Windows Logo"
-                data-nimg="responsive"
-                decoding="async"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-              />
-              <noscript />
-            </span>
-          </div>
-          <div
-            class="relative w-full md:hidden aspect-auto max-w-[197px]"
-          >
-            <span
-              style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
-            >
-              <span
-                style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 14.122533748701974% 0px 0px 0px;"
-              />
-              <img
-                alt="Andersen Windows Logo"
-                data-nimg="responsive"
-                decoding="async"
-                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
-              />
-              <noscript />
-            </span>
-          </div>
-        </a>
-      </div>
-      <div
         class="mr-[10px] flex w-[86%] items-center justify-end "
       >
         <ul
           class="z-20 flex h-[65px] max-w-[1239px] items-center bg-white pl-[3.5%]"
+        >
+          <li
+            class="mx-[15px] my-[10px] flex flex-[1_auto] justify-end self-auto bg-white capitalize"
+          >
+            <span
+              class="cursor-pointer text-xxs font-heavy"
+            >
+              Windows & Doors
+            </span>
+          </li>
+          <li
+            class="mx-[15px] my-[10px] flex flex-[1_auto] justify-end self-auto bg-white capitalize"
+          >
+            <span
+              class="cursor-pointer text-xxs font-heavy"
+            >
+              Design Ideas
+            </span>
+          </li>
+          <li
+            class="mx-[15px] my-[10px] flex flex-[1_auto] justify-end self-auto bg-white capitalize"
+          >
+            <span
+              class="cursor-pointer text-xxs font-heavy"
+            >
+              Parts & Support
+            </span>
+          </li>
+          <li
+            class="mx-[15px] my-[10px] flex flex-[1_auto] justify-end self-auto bg-white capitalize"
+          >
+            <span
+              class="cursor-pointer text-xxs font-heavy"
+            >
+              For Pros
+            </span>
+          </li>
+          <li
+            class="mx-[15px] my-[10px] flex flex-[1_auto] justify-end self-auto bg-white capitalize"
+          >
+            <div
+              class="mb-0 mb-s flex items-start md:flex-row md:items-center"
+            >
+              <button
+                class="flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray"
+              >
+                Request a quote
+                 
+              </button>
+            </div>
+          </li>
+        </ul>
+        <ul
+          class="flex flex-row"
         />
         <div
           class="z-[9999] mr-0 flex h-l w-l cursor-pointer items-center justify-center rounded-[50%] bg-light-gray transition-[fill] duration-[0.2s] ease-[cubic-bezier(0,0,0.58,1)] bg-light-gray"
@@ -134,7 +210,7 @@ exports[`renders correctly 1`] = `
     >
       <div
         class="absolute right-0 h-auto min-w-[50%] bg-white transition-[height] duration-[0.15s] ease-[cubic-bezier(0,0,0.58,1)]"
-        style="width: 0px;"
+        style="width: 20px;"
       />
     </div>
   </nav>

@@ -1,0 +1,1497 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<section
+  data-component="general/productcarousel"
+  id="id1695242607"
+>
+  <div
+    class="my-8 lg:mx-auto md:max-w-screen-lg theme-white"
+  >
+    <div
+      class="section-grid grid grid-cols-2 md:grid-cols-12 px-m gap-s md:gap-s "
+    >
+      <div
+        class="grid-cols-12 col-span-12 relative mt-4 product-carousel"
+      >
+        <div>
+          <div
+            class="items-top font-sans  text-theme-text text-sm-m md:text-m font-bold mb-s"
+          >
+            <h2>
+              Headline text 1
+            </h2>
+            
+          </div>
+          <div
+            class="text-theme-body text-body mb-s"
+          >
+            <div
+              class="body-copy"
+            >
+              <div>
+                Body Copy
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="slick-slider center slick-initialized"
+          dir="ltr"
+        >
+          <div
+            class="slick-list"
+            style="padding: 0px 100px;"
+          >
+            <div
+              class="slick-track"
+              style="width: -720px; opacity: 1; transform: translate3d(-100px, 0px, 0px);"
+            >
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-center slick-cloned"
+                data-index="-6"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px]"
+                    >
+                      <a
+                        href="/mirza/test"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/mirza/test"
+                      >
+                        Casement-Window
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="-5"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-2
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 2
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="-4"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-3
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 3
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="-3"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-4
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 4
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-cloned"
+                data-index="-2"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-5
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 5
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-cloned"
+                data-index="-1"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-6
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 6
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-center slick-current"
+                data-index="0"
+                style="outline: none;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px]"
+                    >
+                      <a
+                        href="/mirza/test"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/mirza/test"
+                      >
+                        Casement-Window
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active"
+                data-index="1"
+                style="outline: none;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-2
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 2
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active"
+                data-index="2"
+                style="outline: none;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-3
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 3
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="3"
+                style="outline: none;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-4
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 4
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="4"
+                style="outline: none;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-5
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 5
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="5"
+                style="outline: none;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-6
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 6
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-center slick-cloned"
+                data-index="6"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px]"
+                    >
+                      <a
+                        href="/mirza/test"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/mirza/test"
+                      >
+                        Casement-Window
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 1
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="7"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-2
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 2
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="8"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-3
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 3
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="9"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-4
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 4
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="10"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-5
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 5
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="11"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="product-slide-img-wrapper md:h-[370px] md:w-[210px] opacity-70"
+                    >
+                      <a
+                        href="/"
+                      >
+                        <div
+                          class="relative hidden md:block aspect-video    h-full w-full cursor-pointer"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                        <div
+                          class="relative w-full md:hidden"
+                        >
+                          <span
+                            style="box-sizing: border-box; display: block; overflow: hidden; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative;"
+                          >
+                            <span
+                              style="box-sizing: border-box; display: block; background: none; opacity: 1; border: 0px; margin: 0px; padding: 100% 0px 0px 0px;"
+                            />
+                            <img
+                              alt="Casement-Window-900x900"
+                              data-nimg="responsive"
+                              decoding="async"
+                              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                              style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover; object-position: center;"
+                            />
+                            <noscript />
+                          </span>
+                        </div>
+                      </a>
+                    </div>
+                    <div
+                      class="text-center"
+                    >
+                      <a
+                        class="md:text-md text-sm font-semibold uppercase hover:underline"
+                        href="/"
+                      >
+                        Casement-Window-6
+                      </a>
+                      <p
+                        class="mt-2 text-sm"
+                      >
+                        Product copy 6
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ul
+            class="slick-dots static"
+            style="display: block;"
+          >
+            <li
+              class="slick-active"
+            >
+              <button>
+                1
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                2
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                3
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                4
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                5
+              </button>
+            </li>
+            <li
+              class=""
+            >
+              <button>
+                6
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="flex justify-between items-center absolute top-[45%] sm:left-20 pl-4.5 md:pl-0 md:left-[26%] lg:left-[35%]"
+        >
+          <button
+            class="button w-11 h-11 flex items-center justify-center rounded-full border-2 border-[#C4BFB6] bg-white cursor-pointer text-[#001722] transition hover:bg-[#001722] hover:text-white hover:border-[#001722]"
+          >
+            <span />
+          </button>
+        </div>
+        <div
+          class="flex justify-between items-center absolute top-[45%] sm:right-20 pr-4.5 md:pr-0 md:right-[26%] lg:right-[35%]"
+        >
+          <button
+            class="button w-11 h-11 flex items-center justify-center rounded-full border-2 border-[#C4BFB6] bg-white cursor-pointer text-[#001722] transition hover:bg-[#001722] hover:text-white hover:border-[#001722]"
+          >
+            <span />
+          </button>
+        </div>
+        <div
+          class="w-full flex justify-center mt-8"
+        >
+          <div>
+            <a
+              class="space-between relative flex w-full grow items-center py-3 pr-l font-sans text-xs font-heavy leading-6 text-secondary hover:underline hover:decoration-black hover:underline-offset-8 id url name displayName fields templateId templateName"
+              href="/Generic-Card-Page"
+              role="link"
+              tabindex="0"
+              target=""
+              title=""
+            >
+              Call to action
+              <span
+                class="absolute right-0 flex h-10 w-10 items-center justify-center rounded-full border-4 border-primary hover:bg-primary hover:text-white"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -17,14 +17,7 @@ import { DefaultEditFrameButton, EditFrame } from 'src/helpers/EditFrame';
 export type XupCardCollectionProps =
   Feature.EnterpriseWeb.Components.Listing.XupCardCollection.XupCardContainer;
 
-type XupDisplayStyle = 'grid' | 'horizontal-scroll';
-
-const ColumnSpans: { [cardsInRow: number]: string } = {
-  1: 'md:col-span-12',
-  2: 'md:col-span-6',
-  3: 'md:col-span-4',
-  4: 'md:col-span-3',
-};
+export type XupDisplayStyle = 'grid' | 'horizontal-scroll';
 
 const XupCardCollection = (props: XupCardCollectionProps): JSX.Element => {
   const { currentScreenWidth } = useCurrentScreenType();
@@ -34,29 +27,6 @@ const XupCardCollection = (props: XupCardCollectionProps): JSX.Element => {
   const mobileDisplayStyle = getEnum<XupDisplayStyle>(props.fields.mobileDisplayStyle) || 'grid';
 
   const maxCardsPerRow: number = parseInt(getEnum<string>(props.fields.cardsPerRow) || '3');
-
-  let currentRow = 1; // currentRow will be used for grid display for dynamic column span calculation
-
-  const getLayoutClasses = (totalCards: number, currentIndex: number): string => {
-    const totalRows = Math.ceil(totalCards / maxCardsPerRow);
-
-    //If total cards are less than max cards per row
-    if (totalCards <= maxCardsPerRow) return ColumnSpans[totalCards];
-    //If all rows have equal cards
-    else if (totalCards % maxCardsPerRow === 0) return ColumnSpans[maxCardsPerRow];
-    else {
-      // If row is filled with max cards than increase current row
-      if (currentIndex > 0 && currentIndex % maxCardsPerRow === 0) currentRow++;
-
-      // If current row is last row
-      if (currentRow === totalRows) {
-        const startCol = (12 / maxCardsPerRow) * (currentIndex % maxCardsPerRow) + 1;
-        return `${ColumnSpans[maxCardsPerRow]} md:col-start-${startCol}`;
-      } else {
-        return ColumnSpans[maxCardsPerRow];
-      }
-    }
-  };
 
   const sliderSettings = {
     dots: false,
@@ -95,7 +65,7 @@ const XupCardCollection = (props: XupCardCollectionProps): JSX.Element => {
         return (
           <GridDisplay
             rendering={props.rendering}
-            getLayoutClasses={getLayoutClasses}
+            maxCardsPerRow={maxCardsPerRow}
             favoriteProducts={props.favoriteProducts}
           />
         );
