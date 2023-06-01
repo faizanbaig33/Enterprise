@@ -552,7 +552,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           {/* Submit section */}
           <div className={themeData.classes.submitWrapper}>
             {isShowResults && (
-              <button type='button' className={themeData.classes.prevButton} onClick={() => props.previousStep()}>
+              <button type='button' className={themeData.classes.prevButton} onClick={() => {
+                props.previousStep();
+                setIsShowResults(false);
+              }}>
                 <FiArrowLeft size={16} />
                 <span className='ml-2'>{fields?.PreviousButtonText?.value}</span>
               </button>
