@@ -44,6 +44,8 @@ const defaultData = {
     StepThreeTitle: {
         value: 'Part Three: Enter Size Information'
     },
+    urlStacking: '',
+    urlPocketking: '',
     componentSpacing: null,
     sectionId: {
         value: ''

@@ -35,7 +35,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
 
   const [stepWizard, setStepWizard] = useState(null);
-  const [data, setData] = useState({});
+  const [formData, setData] = useState({});
   const [activeStep, setActiveStep] = useState(0);
   const [isComplete, setIsComplete] = useState(false)
 
@@ -44,7 +44,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
   };
 
   const assignUser = (val: any) => {
-    console.log("parent receive user callback");
+    // console.log("parent receive user callback");
     console.log(val);
     setData((data) => ({
       ...data,
@@ -56,6 +56,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
     console.log("step change");
     console.log(e);
     setActiveStep(e.activeStep - 1);
+    setIsComplete(false)
   };
 
   const handleComplete = () => {
@@ -133,8 +134,8 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
         <div className='mt-5'>
           <StepWizard instance={assignStepWizard} onStepChange={handleStepChange}>
             <StepConfigurationOption fields={props.fields} userCallback={assignUser} />
-            <StepPanelStyle data={data} fields={props.fields} userCallback={assignUser} />
-            <StepESeriesSizingCalculator fields={props.fields} completeCallback={handleComplete} />
+            <StepPanelStyle data={formData} fields={props.fields} userCallback={assignUser} />
+            <StepESeriesSizingCalculator formData={formData} fields={props.fields} completeCallback={handleComplete} />
           </StepWizard>
         </div>
       </div>

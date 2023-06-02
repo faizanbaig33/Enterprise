@@ -35,7 +35,8 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
       setError(null)
       props.nextStep()
       props.userCallback({
-        selectedConfigurationOption: selectedOption
+        selectedConfigurationOption: selectedOption,
+        downloadLink: selectedOption === 'stacking' ? fields?.urlStacking : fields?.urlPocketking
       })
     }
   }

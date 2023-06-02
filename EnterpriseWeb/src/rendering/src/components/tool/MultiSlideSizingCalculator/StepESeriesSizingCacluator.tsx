@@ -26,7 +26,7 @@ type CalcForm = {
 
 export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
-  const { fields } = props;
+  const { fields, formData } = props;
   const isEE = useExperienceEditor();
 
   //Modal settings
@@ -606,6 +606,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                       </thead>
                       <tbody>
                         <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Configuration</td>
+                          <td className={themeData.classes.tdColumnCenter}>{formData?.selectedConfigurationOption}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Panel Style</td>
+                          <td className={themeData.classes.tdColumnCenter}>{formData?.selectedPanelStyle}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Calculate Using Known</td>
                           <td className={themeData.classes.tdColumnCenter}>{calcUsingText}</td>
                         </tr>
@@ -693,6 +701,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </div>
               </div>
             </div>
+          </div>
+          <div className='flex items-center justify-between p-4 border border-black mt-5'>
+            <div className='font-bold text-[20px]'>Preparing for installation?</div>
+            <a href={formData?.downloadLink} className={themeData.classes.submitButton}>
+              Download site prep guide
+            </a>
           </div>
         </div>
       )}
