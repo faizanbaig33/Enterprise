@@ -11,48 +11,103 @@ import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.th
 import { SvgIcon } from 'src/helpers/SvgIcon';
 import { RichTextWrapper } from 'src/helpers/RichTextWrapper';
 import { useExperienceEditor } from 'lib/utils';
+import * as AWNumberUtil from 'src/lib/utils/aw-number-utils'
 
 type CalcForm = {
   calcUsing: string; //known_size
   width: string; //ew
+  widthInches: string;
+  widthFraction: string;
   height: string; //eh
-  shimSpace: string; //ss
-  sealantGap: string; //sg
-  casingSize: string; //casing_size
-  casingSizeCustom: string; //ccs
-  sillNosing: string; //sill_nosing
-  sillNosingCustom: string; //csns
+  heightInches: string;
+  heightFraction: string;
+  stackingDirection: string,
+  sillOption: string,
+  panelNumber: string,
+  panelStackingLocation: string,
 };
+
+const MAX_WIDTH_ARRAY = [
+    ["stacking", "thermally", "1-Way Left", 350.5],
+    ["stacking", "thermally", "1-Way Right", 350.5],
+    ["stacking", "thermally", "2-Way", 522.375],
+    ["stacking", "thermally", "Double Active", 351.25],
+    ["stacking", "nonThermally", "1-Way Left", 488.5],
+    ["stacking", "nonThermally", "1-Way Right", 488.5],
+    ["stacking", "nonThermally", "2-Way", 522.375],
+    ["stacking", "nonThermally", "Double Active", 489],
+    ["pocketing", "thermally", "1-Way Left", 420.625],
+    ["pocketing", "thermally", "1-Way Right", 420.625],
+    ["pocketing", "thermally", "2-Way", 522.375],
+    ["pocketing", "nonThermally", "1-Way Left", 536],
+    ["pocketing", "nonThermally", "1-Way Right", 536],
+    ["pocketing", "nonThermally", "2-Way", 522.375]
+  ]
 
 export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
   const { fields, formData } = props;
   const isEE = useExperienceEditor();
 
+  const pluginName = 'awMultislideSizingCalculator';
+
+  const panelStyle = formData?.selectedPanelStyle
+  const configuration = formData?.selectedConfigurationOption
+  const lockStileOffset = 2.25;
+  const interlockPairOffset = 0.924;
+  const interlockStileOffset = 1.674;
+
   //Modal settings
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLightboxVisible, setIsLightboxVisible] = useState(false);
 
   //Calculator values
-  const [casingDimensionWidth, setCasingDimensionWidth] = useState<string>();
-  const [casingDimensionHeight, setCasingDimensionHeight] = useState<string>();
-  const [overallUnitSizeWidth, setOverallUnitSizeWidth] = useState<string>();
-  const [overallUnitSizeHeight, setOverallUnitSizeHeight] = useState<string>();
-  const [roughOpeningWidth, setRoughOpeningWidth] = useState<string>();
-  const [roughOpeningHeight, setRoughOpeningHeight] = useState<string>();
-  const [masonryOpeningWidth, setMasonryOpeningWidth] = useState<string>();
-  const [masonryOpeningHeight, setMasonryOpeningHeight] = useState<string>();
+  // const [casingDimensionWidth, setCasingDimensionWidth] = useState<string>();
+  // const [casingDimensionHeight, setCasingDimensionHeight] = useState<string>();
+  // const [overallUnitSizeWidth, setOverallUnitSizeWidth] = useState<string>();
+  // const [overallUnitSizeHeight, setOverallUnitSizeHeight] = useState<string>();
+  // const [masonryOpeningWidth, setMasonryOpeningWidth] = useState<string>();
+  // const [masonryOpeningHeight, setMasonryOpeningHeight] = useState<string>();
 
-  //Options selected values
-  const [calcUsingText, setCalcUsingText] = useState<string>('Overall Unit Size');
-  const [widthText, setWidthText] = useState<string>();
-  const [heightText, setHeightText] = useState<string>();
-  const [shimSpaceText, setShimSpaceText] = useState<string>();
-  const [sealantGapText, setSealantGapText] = useState<string>();
-  const [casingSizeText, setCasingSizeText] = useState<string>('None');
-  const [casingSizeCustomText, setCasingSizeCustomText] = useState<string>();
-  const [sillNosingText, setSillNosingText] = useState<string>('No Sill Nosing');
-  const [sillNosingCustomText, setSillNosingCustomText] = useState<string>();
+  // Submit and update shared variables
+  const [interlocks, setInterlocks] = useState("");
+  const [widthStates, setWidthStates] = useState({
+    msgMin: '',
+    msgMax: '',
+    ruleMin: '',
+    ruleMax: '',
+    dimension: 0,
+  })
+  const [heightStates, setHeightStates] = useState({
+    msgMin: '',
+    msgMax: '',
+    ruleMin: '',
+    ruleMax: '',
+    dimension: 0,
+  })
+  const [jambWidth, setJambWidth] = useState(0)
+  const [lockStileEmbedment, setLockStileEmbedment] = useState(0)
+  const [backStileEmbedment, setBackStileEmbedment] = useState(0)
+  const [backStileOffset, setBackStileOffset] = useState(0)
+  const [pocketOffset, setPocketOffset] = useState(0)
+  const [biPartPairOffset, setBiPartPairOffset] = useState(0)    
+  const [pocketCount, setPocketCount] = useState(0)
+  const [minPanelNumber, setMinPanelNumber] = useState(0)
+  const [maxPanelNumber, setMaxPanelNumber] = useState(0)
+
+  const [jambDepth, setJambDepth] = useState<string>('');
+  const [panelHeight, setPanelHeight] = useState<string>('')
+  const [panelWidth, setPanelWidth] = useState<string>('')
+  const [pocketDepth, setPocketDepth] = useState<string>('')
+  const [pocketWidth, setPocketWidth] = useState<string>('')
+  const [roughOpeningHeightSubfloor, setRoughOpeningHeightSubfloor] = useState<string>('')
+  const [roughOpeningHeightRecess, setRoughOpeningHeightRecess] = useState<string>('')
+  const [roughOpeningWidth, setRoughOpeningWidth] = useState<string>('')
+  const [roughOpeningHeight, setRoughOpeningHeight] = useState<string>('');
+  const [roughOpeningPocketWidth, setRoughOpeningPocketWidth] = useState<string>('')
+  const [sillDepth, setSillDepth] = useState<string>('')
+  const [unitHeight, setUnitHeight] = useState<string>('')
+  const [unitWidth, setUnitWidth] = useState<string>('')
 
   const [isShowResults, setIsShowResults] = useState<boolean>(false);
 
@@ -60,63 +115,81 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     register,
     handleSubmit,
     resetField,
+    getValues,
     formState: { errors },
   } = useForm<CalcForm>({
     mode: 'onChange',
     defaultValues: {
-      calcUsing: '2',
-      shimSpace: '0.25',
-      sealantGap: '0.25',
-      casingSize: '0',
+      calcUsing: 'rough_opening',
       width: '',
+      widthInches: '0',
+      widthFraction: '0',
       height: '',
-      casingSizeCustom: '',
-      sillNosing: '2',
-      sillNosingCustom: '',
+      heightInches: '0',
+      heightFraction: '0',
+      stackingDirection: '1-Way Left',
+      sillOption: 'Standard On-Floor Drainage',
+      panelNumber: '4',
+      panelStackingLocation: 'Interior',
     },
   });
 
-  // Used to enable/disable the custom text fields
-  const [casingSizeWatch, setCasingSizeWatch] = useState<string>('0');
-  const [sillNosingWatch, setSillNosingWatch] = useState<string>('2');
-
   const clearCalculations = () => {
-    setCasingDimensionWidth('-');
-    setCasingDimensionHeight('-');
-    setMasonryOpeningHeight('-');
-    setMasonryOpeningWidth('-');
-    setOverallUnitSizeHeight('-');
-    setOverallUnitSizeWidth('-');
+    setJambDepth('-');
+    setPanelHeight('-');
+    setPanelWidth('-');
+    setPocketDepth('-');
+    setPocketWidth('-');
     setRoughOpeningHeight('-');
     setRoughOpeningWidth('-');
+    setRoughOpeningHeightSubfloor('-');
+    setRoughOpeningHeightRecess('-');
+    setSillDepth('-');
+    setUnitWidth('-');
+    setUnitHeight('-');
   };
 
   const handleCalcUsingChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const calcUsingText = event.target[event.target.selectedIndex].innerHTML;
 
     clearCalculations();
-    setCalcUsingText(calcUsingText);
   };
 
-  const handleCasingSizeChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const profiledCasingValue = event.target.value;
-    const casingSizeText = event.target[event.target.selectedIndex].innerHTML;
+  const onFieldChanged = () => {
+    // updateForm();
+  }
 
-    clearCalculations();
-    resetField('casingSizeCustom');
-    setCasingSizeWatch(profiledCasingValue);
-    setCasingSizeText(casingSizeText);
-  };
+  const onDimensionFieldChange = (e: any, type: any) => {
+    if (type === 'width') {
+      const feet = e.target.name === 'width' ? e.target.value : getValues('width').trim();
+      const inches = e.target.name === 'widthInches' ? e.target.value : getValues('widthInches');
+      const fraction = e.target.name === 'widthFraction' ? e.target.value : getValues('widthFraction');
 
-  const handleSillNosingChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const sillNosingValue = event.target.value;
-    const sillNosingText = event.target[event.target.selectedIndex].innerHTML;
+      if (feet.length > 0 || inches !== '0' || fraction !== '0') {
+        const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
+  
+        setWidthStates({
+          ...widthStates,
+          dimension: length
+        })
+      }
+    } else if (type === 'height') {
+      const feet = e.target.name === 'height' ? e.target.value : getValues('height').trim();
+      const inches = e.target.name === 'heightInches' ? e.target.value : getValues('heightInches');
+      const fraction = e.target.name === 'heightFraction' ? e.target.value : getValues('heightFraction');
+        
+      if (feet.length > 0 || inches !== '0' || fraction !== '0') {
+        const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
 
-    clearCalculations();
-    resetField('sillNosingCustom');
-    setSillNosingWatch(sillNosingValue);
-    setSillNosingText(sillNosingText);
-  };
+        setHeightStates({
+          ...heightStates,
+          dimension: length
+        })
+      }
+    }
+    // Call the onFieldChanged incase the it fired before us and missed the updated value
+    onFieldChanged();
+  } 
 
   const openModal = (index: number) => {
     setIsLightboxVisible(true);
@@ -133,145 +206,756 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   const resetForm = () => {
     //Clear results table
-    setCasingDimensionWidth('-');
-    setCasingDimensionHeight('-');
-    setMasonryOpeningHeight('-');
-    setMasonryOpeningWidth('-');
-    setOverallUnitSizeHeight('-');
-    setOverallUnitSizeWidth('-');
+    setJambDepth('-');
+    setPanelHeight('-');
+    setPanelWidth('-');
+    setPocketDepth('-');
+    setPocketWidth('-');
     setRoughOpeningHeight('-');
     setRoughOpeningWidth('-');
-
-    //Clear options selected table
-    setCalcUsingText('Overall Unit Size');
-    setWidthText('-');
-    setHeightText('-');
-    setShimSpaceText('-');
-    setSealantGapText('-');
-    setCasingSizeText('None');
-    setCasingSizeCustomText('-');
-    setSillNosingText('No Sill Nosing');
-    setSillNosingCustomText('-');
+    setRoughOpeningHeightSubfloor('-');
+    setRoughOpeningHeightRecess('-');
+    setSillDepth('-');
+    setUnitWidth('-');
+    setUnitHeight('-');
 
     // Reset form fields
     resetField('calcUsing');
+    resetField('stackingDirection');
+    resetField('sillOption');
+    resetField('panelNumber');
+    resetField('panelStackingLocation');
     resetField('width');
+    resetField('widthInches');
+    resetField('widthFraction');
     resetField('height');
-    resetField('shimSpace');
-    resetField('sealantGap');
-    resetField('casingSize');
-    resetField('casingSizeCustom');
-    resetField('sillNosing');
-    resetField('sillNosingCustom');
+    resetField('widthInches');
+    resetField('widthFraction');
   };
+
+  const funcSetInterlocks = (unitHeight: any) => {
+    if (unitHeight > 119.375) {
+        return 'heavy_duty';
+    } else {
+        return 'standard';
+    }
+  }
+
+  const calculateMinWidth = (stackingDirection: any, configuration: any, numberPanels: any, calculateUsing: any, pocketWidth: any) => {
+    var minRailLength = 0;
+    // Minimum width resulting in a minimum panel rail length of 20.154” (this is the corresponding rail length from the 48” x 36” 2 panel limiting size)
+    var minWidth = 47.875;
+
+    while (minRailLength < 20.153) {
+        minWidth += .125;                
+        minRailLength = calculateRailLength(stackingDirection, configuration, minWidth, numberPanels);  
+    }
+
+    //rough_opening_pocket
+    //if (calculateUsing === 'rough_opening_pocket') {                
+    //    var pocketWidth = (configuration === 'pocketing') ? minRailLength + interlockStileOffset + pocketOffset + 0.375 : 0;
+
+    //    minWidth = minWidth - pocketWidth;
+    //}
+
+    return minWidth;
+  }
+
+  const calculatePanelHeightFromUnitHeight = (unitHeight: any, panelStyle: any, sillOptions: any) => {
+      if (panelStyle === 'thermally') {
+          if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {
+              return AWNumberUtil.truncate(unitHeight - 3.066, 3);
+          } else if (sillOptions === 'Tile Track') {
+              return AWNumberUtil.truncate(unitHeight - 2.613, 3);
+          } else if (sillOptions === 'Low Profile') {
+              return AWNumberUtil.truncate(unitHeight - 2.181, 3);
+          }
+      } else { // nonThermally
+          if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {
+              return AWNumberUtil.truncate(unitHeight - 2.908, 3);
+          } else if (sillOptions === 'Tile Track') {
+              return AWNumberUtil.truncate(unitHeight - 2.455, 3);
+          } else if (sillOptions === 'Low Profile') {
+              return AWNumberUtil.truncate(unitHeight - 2.023, 3);
+          }
+      }
+  }
+
+  const calculateRailLength = (stackingDirection: any, configuration: any, unitWidth: any, numberPanels: any) => {
+      var railLength = 0;
+
+      if (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') {
+          if (configuration === 'stacking') {
+              railLength = (unitWidth - (2 * jambWidth) + lockStileEmbedment + backStileEmbedment - lockStileOffset - backStileOffset - (interlockPairOffset * (numberPanels - 1))) / numberPanels;
+          } else { // pocketing
+              railLength = (unitWidth - jambWidth + lockStileEmbedment - pocketOffset - lockStileOffset - (interlockPairOffset * numberPanels)) / (numberPanels + 1);
+          }
+      } else if (stackingDirection === 'Double Active' && configuration === 'stacking') {
+          railLength = (unitWidth - (2 * jambWidth) + 2 * lockStileEmbedment - 2 * lockStileOffset - (interlockPairOffset * (numberPanels - 1))) / numberPanels;
+      } else { //2-Way
+          if (configuration === 'stacking') {
+              railLength = (unitWidth - (2 * jambWidth) + 2 * backStileEmbedment - 2 * backStileOffset - biPartPairOffset - (interlockPairOffset * (numberPanels - 2))) / numberPanels;
+          } else { // pocketing                    
+              railLength = (unitWidth - biPartPairOffset - (interlockPairOffset * numberPanels) - 2 * pocketOffset) / (numberPanels + 2);
+          }
+      }            
+
+      return AWNumberUtil.truncate(railLength, 3);
+  }
+
+  // Unit Height => Rough Opening Height
+  const calculateRoughOpeningHeightFromUnitHeight = (unitHeight: any) => {            
+      return unitHeight + 0.625;            
+  }
+          
+  // Unit Width => Rough Opening Width
+  const calculateRoughOpeningWidthFromUnitWidth = (unitWidth: any) => {            
+      return parseFloat(unitWidth) + 0.75;
+  }
+
+  // Rough Opening Height => Unit Height
+  const calculateUnitHeightFromRoughOpeningHeight = (roughOpeningHeight: any) => {            
+      return parseFloat(roughOpeningHeight) - 0.625;
+  }
+
+  // Rough Opening Width => Unit Width
+  const calculateUnitWidthFromRoughOpeningWidth = (roughOpeningWidth: any) => {            
+      return parseFloat(roughOpeningWidth) - 0.75;
+  }
+
+  const calculateJambWidth = (panelStyle: any, stackingDirection: any, configuration: any) => {
+      var jambWidth_temp = 0;
+
+      if (!(stackingDirection === '2-Way' && configuration === 'pocketing')) {
+          if (panelStyle === 'nonThermally') {
+            jambWidth_temp = 1.81;
+          } else {
+            jambWidth_temp = 1.968;
+          }
+      }
+
+      return jambWidth_temp;
+  }
+
+  const calculateLockStileEmbedment = (stackingDirection: any) => {
+      var lockStileEmbedment = 0;
+      if (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') {
+          lockStileEmbedment = 0.53;
+      } else if (stackingDirection === 'Double Active') {
+          lockStileEmbedment = 0.593;
+      }
+      
+      return lockStileEmbedment;
+  }
+
+  const calculateBackStileEmbedment = (panelStyle: any, stackingDirection: any, configuration: any) => {
+      var backStileEmbedment = 0;
+      if (stackingDirection != 'Double Active' && configuration === 'stacking') {
+          if (panelStyle === 'nonThermally') {
+              backStileEmbedment = 1.137;
+          } else {
+              backStileEmbedment = 1.186;
+          }
+      }
+      
+      return backStileEmbedment;
+  }
+
+  const calculateBackStileOffset = (panelStyle: any, stackingDirection: any, configuration: any) => {
+      var backStileOffset = 0;
+      if (stackingDirection != 'Double Active' && configuration === 'stacking') {
+          if (panelStyle === 'nonThermally') {
+              backStileOffset = 2.25;
+          } else {
+              backStileOffset = 2.299;
+          }
+      }
+      
+      return backStileOffset
+  }
+
+  const calculateDaylightPocketWidth = (daylightRailLength: any, interlockStileOffset: any, pocketOffset: any) => {
+      return daylightRailLength + interlockStileOffset + pocketOffset + 0.375;
+  }
+
+  const calculateDaylightRailLength = (inputWidth: any, stackingDirection: any, lockStileOffset: any, lockStileEmbedment: any, jambWidth: any, numberPanels: any, interlockPairOffset: any, biPartPairOffset: any) => {
+      switch (stackingDirection) {
+          case "1-Way Left":
+          case "1-Way Right":
+              if (numberPanels === 1) {
+                  return inputWidth + 0.125 - lockStileOffset + lockStileEmbedment - jambWidth - 0.375;
+              } else {
+                  return (inputWidth + 0.125 - (numberPanels - 1) * interlockPairOffset - lockStileOffset + lockStileEmbedment - jambWidth - 0.375) / numberPanels;
+              }
+          case "2-Way":
+              if (numberPanels === 2) {
+                  return (inputWidth - biPartPairOffset + 0.25) / 2;
+              } else {
+                  return (inputWidth - (numberPanels - 2) * interlockPairOffset - biPartPairOffset + 0.25) / numberPanels;
+              }
+      }
+      return null;
+  }
+
+  const calculatePocketCount = (configuration: any, stackingDirection: any) => {            
+      var pocketCount = 0;
+
+      if (configuration === 'pocketing') {
+          if (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') {
+              pocketCount = 1;
+          } else if (stackingDirection = '2-Way') {
+              pocketCount = 2;
+          }
+      }
+      
+      return pocketCount;
+  }
+
+  const calculatePocketOffset = (interlockStileOffset: any, stackingDirection: any, configuration: any, numberPanels: any, interlocks: any, panelStyle: any) => {            
+      var pocketOffset = 0;
+
+      if (configuration === 'pocketing') {                
+          if (interlocks === 'Standard On-Floor Drainage') { 
+              pocketOffset = interlockStileOffset + 2.192;
+          } else { // interlocks === heavy_duty                    
+              if ((stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') && numberPanels <= 2) { 
+                  pocketOffset = interlockStileOffset + 2.192;
+              } else if (stackingDirection === '2-Way' && numberPanels <= 4) {
+                  pocketOffset = interlockStileOffset + 2.192;
+              } else if (panelStyle === 'nonThermally' && (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') && numberPanels > 2) {
+                  pocketOffset = interlockStileOffset + 2.192 + (numberPanels - 1) * 0.786
+              } else if (panelStyle === 'nonThermally' && stackingDirection === '2-Way' && numberPanels > 4) { 
+                  pocketOffset = interlockStileOffset + 2.192 + ((numberPanels / 2) - 1) * 0.786
+              } else if (panelStyle === 'thermally' && (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') && numberPanels > 2) { 
+                  pocketOffset = interlockStileOffset + 2.192 + (numberPanels - 2) * 0.786
+              } else if (panelStyle === 'thermally' && stackingDirection === '2-Way' && numberPanels > 4) { 
+                  pocketOffset = interlockStileOffset + 2.192 + ((numberPanels / 2) - 2) * 0.786
+              }
+          }
+      }            
+      
+      return pocketOffset;
+  }
+
+  const calculateBiPartPairOffset = (stackingDirection: any) => {            
+      var biPartPairOffset = 0;
+      if (stackingDirection === '2-Way') {
+          biPartPairOffset = 4.825;
+      }
+
+      return biPartPairOffset;
+  }
+
+  const calculateTrackCount = (stackingDirection: any, configuration: any, numberPanels: any) => {
+      var trackCount = 0;
+
+      if ((stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') && configuration === 'pocketing' && numberPanels === 1) {
+          trackCount = 2;
+      } else if ((stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right' || stackingDirection === 'Double Active') && numberPanels > 1) {
+          trackCount = numberPanels;
+      } else if (stackingDirection === '2-Way' && configuration === 'pocketing' && numberPanels === 2) {
+          trackCount = 2;
+      } else if (stackingDirection === '2-Way' && numberPanels > 2) {
+          trackCount = numberPanels / 2;
+      }
+
+      return trackCount;
+  }
+
+  const calculateFrameDepth = (stackingDirection: any, configuration: any, numberPanels: any) => {
+      var trackCount = calculateTrackCount(stackingDirection, configuration, numberPanels);
+
+      return AWNumberUtil.truncate(trackCount * 1.75, 3);
+  }
+
+  const calculateIntermediatePanelWidth = (stackingDirection: any, configuration: any, numberPanels: any, railLength: any) => {
+      var intermediatePanelWidth = 0;
+
+      if ((stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') && configuration === 'pocketing' && numberPanels >= 2) {
+          intermediatePanelWidth = railLength + interlockStileOffset + interlockStileOffset;
+      } else if ((stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right' || stackingDirection === 'Double Active') && configuration === 'stacking' && numberPanels >= 3) {
+          intermediatePanelWidth = railLength + interlockStileOffset + interlockStileOffset;
+      } else if (stackingDirection === '2-Way' && configuration === 'pocketing' && numberPanels >= 4) {
+          intermediatePanelWidth = railLength + interlockStileOffset + interlockStileOffset;
+      } else if (stackingDirection === '2-Way' && configuration === 'stacking' && numberPanels >= 6) {
+          intermediatePanelWidth = railLength + interlockStileOffset + interlockStileOffset;
+      }
+                  
+      return AWNumberUtil.truncate(intermediatePanelWidth, 3);
+  }
+
+  const calculateLeadPanelWidth = (railLength: any, lockStileOffset: any, interlockStileOffset: any) => {
+      return AWNumberUtil.truncate(railLength + lockStileOffset + interlockStileOffset, 3);
+  }
+
+  const calculatePocketDepth = (stackingDirection: any, configuration: any, numberPanels: any, frameDepth: any, interlocks: any) => {
+      var pocketDepth = 0;
+
+      if (configuration === 'pocketing') {
+          if (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') {
+              if (numberPanels === 1 && interlocks === 'standard') {
+                  pocketDepth = frameDepth + 0.625;
+              } else if (numberPanels === 1 && interlocks === 'heavy_duty') {
+                  pocketDepth = frameDepth + 0.875;
+              } else if (numberPanels > 1 && interlocks === 'standard') {
+                  pocketDepth = frameDepth + 2.125;
+              } else if (numberPanels > 1 && interlocks === 'heavy_duty') {
+                  pocketDepth = frameDepth + 2.375;
+              }
+          } else if (stackingDirection === '2-Way') {
+              if (numberPanels === 2 && interlocks === 'standard') {
+                  pocketDepth = frameDepth + 0.625;
+              } else if (numberPanels === 2 && interlocks === 'heavy_duty') {
+                  pocketDepth = frameDepth + 0.875;
+              } else if (numberPanels > 2 && interlocks === 'standard') {
+                  pocketDepth = frameDepth + 2.125;
+              } else if (numberPanels > 2 && interlocks === 'heavy_duty') {
+                  pocketDepth = frameDepth + 2.375;
+              }
+          }
+      }             
+      
+      return pocketDepth;
+  }
+
+  const calculateMaxPanelWidth = (railLength: any, stackingDirection: any, configuration: any, numberPanels: any) => {
+      // Return the max value of the following widths
+      var leadPanelWidth = calculateLeadPanelWidth(railLength, lockStileOffset, interlockStileOffset);
+      var intermediatePanelWidth = calculateIntermediatePanelWidth(stackingDirection, configuration, numberPanels, railLength);
+      var stationaryPanelWidth = (stackingDirection != 'Double Active' && configuration === 'stacking') ? AWNumberUtil.truncate(railLength + backStileOffset + interlockStileOffset, 3) : 0;
+      var exteriorPanelWidth = stackingDirection === 'Double Active' ? AWNumberUtil.truncate(railLength + lockStileOffset + interlockStileOffset, 3) : 0;
+
+      var maxPanelWidthArray = [leadPanelWidth, intermediatePanelWidth, stationaryPanelWidth, exteriorPanelWidth];
+      return AWNumberUtil.truncate(Math.max.apply(Math, maxPanelWidthArray), 3);
+  }      
+
+  const getMinHeight = (panelStyle: any, sillOptions: any) => {            
+      var minPanelHeight = 32.934;
+
+      if (panelStyle === 'thermally') {
+          if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {                    
+              return roundNumber(minPanelHeight + 3.066);
+          } else if (sillOptions === 'Tile Track') {                    
+              return roundNumber(minPanelHeight + 2.613);
+          } else if (sillOptions === 'Low Profile') {                    
+              return roundNumber(minPanelHeight + 2.181);
+          }
+      } else { // nonThermally
+          if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {
+              return roundNumber(minPanelHeight + 2.908);
+          } else if (sillOptions === 'Tile Track') {
+              return roundNumber(minPanelHeight + 2.455);
+          } else if (sillOptions === 'Low Profile') {
+              return roundNumber(minPanelHeight + 2.023);
+          }
+      }
+  }
+
+  const maxPanelAreaExceeded = (maxPanelWidth: any, panelHeight: any, panelStyle: any) => {
+      var panelPerformanceMax = panelStyle === 'thermally' ? 50 : 60;
+      return !(((maxPanelWidth * panelHeight) / 144 <= panelPerformanceMax) && maxPanelWidth <= 72);
+  }
+
+  const roundNumber = (number: any) => {
+      if (!isNaN(number)) {
+          return Number(number.toFixed(3));
+      } else {
+          return number.toFixed(3);
+      }
+  }
+
+  const convertToFeetInchesAndFraction = (number: any, roundingDirection: any) => {
+      var whole = Math.floor(number);
+
+      var feet = Math.floor(whole / 12);
+      var inches = whole % 12;
+      var fraction = AWNumberUtil.decimalToEigth(number, { roundingDirection: roundingDirection });
+
+      // Handle overflow if we rounded up
+      if (fraction === '1') {
+          inches += 1;
+          fraction = '0';
+
+          if (inches === 12) {
+              feet += 1;
+              inches = 0;
+          }
+      }
+
+      var formatted = '';
+
+      if (feet > 0) {
+          formatted += String(feet) + "'";
+      }
+
+      if (inches > 0) {
+          formatted += ' ' + String(inches);
+      }
+      if (fraction && fraction !== '0') { // Only add it if we have a value and it isn't 0
+          formatted += ' ' + fraction;
+      }
+      if (inches > 0 || (fraction && fraction !== '0')) { // Add the inch marker if we added inches or fraction
+          formatted += '"';
+      }
+
+      return formatted;
+  }
+
+  const formatNumber = (number: any) => {
+      if (!isNaN(+number)) {
+          var rounded = AWNumberUtil.roundToEigth(number, AWNumberUtil.roundingDirections.closest);
+          console.log(AWNumberUtil.roundingDirections.closest, rounded)
+          var mm = rounded * 25.4;
+          var formatted = convertToFeetInchesAndFraction(rounded, AWNumberUtil.roundingDirections.closest);
+          return formatted + "<br>" + ' (' + String(mm.toFixed(3)) + 'mm)';
+      } else {
+          return String(number);
+      }
+  }
+
+  const widthMaxes = MAX_WIDTH_ARRAY.map(o => {
+    var obj = {
+      configuration: o[0],
+      panelStyle: o[1],
+      stackingDirection: o[2],
+      maxUnitWidth: o[3],
+    };
+    return obj
+  })
 
   const onSubmit = (data: CalcForm) => {
     const jsonData = JSON.stringify(data, null, 2);
     const jsonObj = JSON.parse(jsonData);
 
-    // Options selected
-    setWidthText(jsonObj.width);
-    setHeightText(jsonObj.height);
-    setShimSpaceText(jsonObj.shimSpace);
-    setSealantGapText(jsonObj.sealantGap);
-    setCasingSizeCustomText(jsonObj.casingSizeCustom);
-    setSillNosingCustomText(jsonObj.sillNosingCustom);
-
     // Calculations - Copied from legacy solution
-    const known_size = Number(jsonObj.calcUsing);
-    const sill_nosing = Number(jsonObj.sillNosing);
-    const casing_size = Number(jsonObj.casingSize);
+    const calcUsing = jsonObj.calcUsing;
+    const sillOption = jsonObj.sillOption;
+    const width = parseFloat(jsonObj.width);
+    const widthInches = parseFloat(jsonObj.widthInches);
+    const widthFraction = parseFloat(jsonObj.widthFraction);
+    const height = parseFloat(jsonObj.height);
+    const heightInches = parseFloat(jsonObj.heightInches);
+    const heightFraction = parseFloat(jsonObj.heightFraction);
+    const numberPanels = parseInt(jsonObj.panelNumber);
+    const stackingDirection = jsonObj.stackingDirection;
 
-    const ew = Number(jsonObj.width);
-    const eh = Number(jsonObj.height);
-    let ss = Number(jsonObj.shimSpace) * 2;
-    let sg = Number(jsonObj.sealantGap) * 2;
-    let csns = Number(jsonObj.sillNosingCustom);
-    const ccs = Number(jsonObj.casingSizeCustom);
-    const sno = Number(jsonObj.sillNosingCustom) * -1;
+    let jambDepth_temp = 0;
+    let panelHeight_temp = 0;
+    let panelWidth_temp = 0;
+    let pocketDepth_temp = 0;
+    let pocketWidth_temp = 0;            
+    let roughOpeningHeightSubfloor_temp = 0;
+    let roughOpeningHeightRecess_temp;            
+    let roughOpeningPocketWidth_temp = 0;
+    let roughOpeningWidth_temp = 0;            
+    let sillDepth_temp = 0;
+    let unitWidth_temp = 0;
+    let unitHeight_temp = 0;
 
-    const cs = casing_size < 99 ? casing_size : ccs;
-    const sh = -1.125;
+    const thicknessFinishedFloor = 0
 
-    let csw = 0;
-    let csh = 0;
-    let mw = 0;
-    let mh = 0;
-    let uw = 0;
-    let uh = 0;
+    // Update Interlocks
+    let interlocks_temp = funcSetInterlocks(unitHeight_temp);
+    setInterlocks(interlocks_temp);
 
-    if (sill_nosing > 1 && sill_nosing < 3) {
-      csh = cs;
-    } else if (sill_nosing > 3 && sill_nosing < 5) {
-      csh = cs - sh;
-    } else if (sill_nosing > 5 && sill_nosing < 7) {
-      csh = cs * 2;
+    // Set variables used in calculations
+    const jambWidth_temp = calculateJambWidth(panelStyle, stackingDirection, configuration);
+    const lockStileEmbedment_temp = calculateLockStileEmbedment(stackingDirection);
+    const pocketOffset_temp = calculatePocketOffset(interlockStileOffset, stackingDirection, configuration, numberPanels, interlocks_temp, panelStyle);
+    const biPartPairOffset_temp = calculateBiPartPairOffset(stackingDirection);
+
+    setJambWidth(calculateJambWidth(panelStyle, stackingDirection, configuration));
+    setLockStileEmbedment(calculateLockStileEmbedment(stackingDirection));
+    setPocketOffset(calculatePocketOffset(interlockStileOffset, stackingDirection, configuration, numberPanels, interlocks_temp, panelStyle));
+    setBiPartPairOffset(calculateBiPartPairOffset(stackingDirection));
+    setBackStileEmbedment(calculateBackStileEmbedment(panelStyle, stackingDirection, configuration));
+    setBackStileOffset(calculateBackStileOffset(panelStyle, stackingDirection, configuration));
+    setPocketCount(calculatePocketCount(configuration, stackingDirection));
+
+    switch (calcUsing) {
+      case 'Rough Opening':
+          roughOpeningWidth_temp = width;                    
+
+          // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
+          if (sillOption === 'Standard On-Floor Drainage' || sillOption === 'None') {                        
+            roughOpeningHeightRecess_temp = height + 1.5 - thicknessFinishedFloor;
+            roughOpeningHeightSubfloor_temp = height;
+          } else if (sillOption === 'Tile Track') {                        
+            roughOpeningHeightRecess_temp = height + 1.0 - thicknessFinishedFloor;
+            roughOpeningHeightSubfloor_temp = height;
+          } else if (sillOption === 'Low Profile') {                        
+            roughOpeningHeightRecess_temp = 'N/A';
+            roughOpeningHeightSubfloor_temp = height;
+          }                    
+
+          unitHeight_temp = calculateUnitHeightFromRoughOpeningHeight(height);
+          unitWidth_temp = calculateUnitWidthFromRoughOpeningWidth(width);
+
+          break;
+      case 'Rough Opening Without Pocket (Daylight Width)':
+          // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
+          if (sillOption === 'Standard On-Floor Drainage' || sillOption === 'None') {
+            roughOpeningHeightRecess_temp = height + 1.5 - thicknessFinishedFloor;
+              roughOpeningHeightSubfloor_temp = height;
+          } else if (sillOption === 'Tile Track') {
+              roughOpeningHeightRecess_temp = height + 1.0 - thicknessFinishedFloor;
+              roughOpeningHeightSubfloor_temp = height;
+          } else if (sillOption === 'Low Profile') {
+              roughOpeningHeightRecess_temp = 'N/A';
+              roughOpeningHeightSubfloor_temp = height;
+          }
+
+          var daylightRailLength = calculateDaylightRailLength(width, stackingDirection, lockStileOffset, lockStileEmbedment_temp, jambWidth_temp, numberPanels, interlockPairOffset, biPartPairOffset_temp);
+          var leadPanelWidth = calculateLeadPanelWidth(daylightRailLength, lockStileOffset, interlockStileOffset);
+          var daylightPocketWidth = calculateDaylightPocketWidth(daylightRailLength, interlockStileOffset, pocketOffset_temp);
+          var intermediatePanelWidth = calculateIntermediatePanelWidth(stackingDirection, configuration, numberPanels, daylightRailLength);
+
+          switch (stackingDirection) {
+              case "1-Way Left":
+              case "1-Way Right":
+                  if (numberPanels === 1) {
+                      unitWidth_temp = jambWidth_temp - lockStileEmbedment_temp + leadPanelWidth - 2.424 + daylightPocketWidth - 0.375;
+                  } else {
+                      unitWidth_temp = jambWidth_temp - lockStileEmbedment_temp + leadPanelWidth + ((numberPanels - 1) * intermediatePanelWidth) - (numberPanels * 2.424) + daylightPocketWidth - 0.375;
+                  }
+                  break;
+              case "2-Way":
+                  if (numberPanels === 2) {
+                      unitWidth_temp = (2 * daylightPocketWidth) + leadPanelWidth - 2.424 + 0.325 - 0.75;
+                  } else {
+                      unitWidth_temp = (2 * daylightPocketWidth) + ((numberPanels - 2) * intermediatePanelWidth) - (numberPanels * 2.424) + 0.325 - 0.75;
+                  }
+                  break;
+          }
+
+          roughOpeningWidth_temp = calculateRoughOpeningWidthFromUnitWidth(unitWidth_temp);
+          unitHeight_temp = calculateUnitHeightFromRoughOpeningHeight(height);
+
+          break;
+      case 'Unit Dimensions':                    
+          unitWidth_temp = width;
+          unitHeight_temp = height;
+          
+          roughOpeningWidth_temp = calculateRoughOpeningWidthFromUnitWidth(unitWidth_temp);
+          const roughOpeningHeight_temp = calculateRoughOpeningHeightFromUnitHeight(unitHeight_temp);
+          setRoughOpeningHeight(roughOpeningHeight_temp);
+                                      
+          // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
+          if (sillOption === 'Standard On-Floor Drainage' || sillOption === 'None') {                        
+              roughOpeningHeightRecess_temp = roughOpeningHeight_temp + 1.5 - thicknessFinishedFloor;
+              roughOpeningHeightSubfloor_temp = roughOpeningHeight_temp;
+          } else if (sillOption === 'Tile Track') {                        
+              roughOpeningHeightRecess_temp = roughOpeningHeight_temp + 1.0 - thicknessFinishedFloor;
+              roughOpeningHeightSubfloor_temp = roughOpeningHeight_temp;
+          } else if (sillOption === 'Low Profile') {                        
+              roughOpeningHeightRecess_temp = 'N/A';
+              roughOpeningHeightSubfloor_temp = roughOpeningHeight_temp;
+          }
+          break;
+    }
+
+    //RailLength
+    const railLength = calcUsing === 'Rough Opening Without Pocket (Daylight Width)' ?
+      calculateDaylightRailLength(width, stackingDirection, lockStileOffset, lockStileEmbedment_temp, jambWidth_temp, numberPanels, interlockPairOffset, biPartPairOffset_temp) :
+      calculateRailLength(stackingDirection, configuration, unitWidth_temp, numberPanels);
+
+    // Use max panel width value
+    panelWidth_temp = calculateMaxPanelWidth(railLength, stackingDirection, configuration, numberPanels);
+
+    // Panel Height
+    panelHeight_temp = calculatePanelHeightFromUnitHeight(unitHeight_temp, panelStyle, sillOption);
+
+    // Jamb Depth (same as frame depth on the spreadsheet)
+    jambDepth_temp = calculateFrameDepth(stackingDirection, configuration, numberPanels);
+    sillDepth_temp = jambDepth_temp;
+
+    // Pocket Width
+    pocketWidth_temp = (configuration === 'pocketing') ? railLength + interlockStileOffset + pocketOffset_temp + 0.375 : 0;
+
+    // BMC TODO
+    roughOpeningPocketWidth_temp = roughOpeningWidth_temp - pocketWidth_temp;
+
+    // Pocket Depth
+    pocketDepth_temp = calculatePocketDepth(stackingDirection, configuration, numberPanels, jambDepth_temp, interlocks_temp);            
+
+    const maxPanelWidth = calculateMaxPanelWidth(railLength, stackingDirection, configuration, numberPanels);    
+
+    if (maxPanelAreaExceeded(maxPanelWidth, panelHeight_temp, panelStyle)) {
+      // $maxPanelAreaError.show();
     } else {
-      csns = csns * -1;
-      csh = cs - csns;
+      // $maxPanelAreaError.hide();
+
+      // Results
+      setJambDepth(formatNumber(jambDepth_temp));
+      setPanelHeight(formatNumber(panelHeight_temp));
+      setPanelWidth(formatNumber(panelWidth_temp));
+      setPocketDepth(formatNumber(pocketDepth_temp));
+      setPocketWidth(formatNumber(pocketWidth_temp));
+      setRoughOpeningHeightSubfloor(formatNumber(roughOpeningHeightSubfloor_temp));
+      setRoughOpeningHeightRecess(formatNumber(roughOpeningHeightRecess_temp));
+      setRoughOpeningWidth(formatNumber(roughOpeningWidth_temp));
+      setRoughOpeningPocketWidth(formatNumber(roughOpeningPocketWidth_temp));
+      setSillDepth(formatNumber(sillDepth_temp));
+      setUnitHeight(formatNumber(unitHeight_temp));
+      setUnitWidth(formatNumber(unitWidth_temp));
+
+      console.log(roughOpeningWidth_temp, formatNumber(roughOpeningWidth_temp))
+      console.log(jambDepth_temp, panelHeight_temp, panelWidth_temp, pocketDepth_temp, pocketWidth_temp, roughOpeningHeightSubfloor_temp, roughOpeningHeightRecess_temp, roughOpeningWidth_temp, roughOpeningPocketWidth_temp, sillDepth_temp, unitHeight_temp, unitWidth_temp)
     }
 
-    if (known_size > 1 && known_size < 3) {
-      uw = ew;
-      uh = eh;
-    } else if (known_size > 3 && known_size < 5) {
-      uw = ew - ss;
-      uh = eh - ss;
-    } else if (known_size > 5 && known_size < 7) {
-      uw = ew - cs * 2;
-      uh = eh - csh;
-    } else if (known_size > 7 && known_size < 9) {
-      uw = ew - cs * 2 - sg;
-      uh = eh - csh - sg;
-    }
-
-    csw = cs * 2;
-    csw = csw * -1;
-    csh = csh * -1;
-
-    const cw = uw - csw;
-    const ch = uh - csh;
-
-    setCasingDimensionWidth(cw.toString());
-    setCasingDimensionHeight(ch.toString());
-
-    if (casing_size < 0.001) {
-      setCasingDimensionWidth('-');
-      if (sill_nosing > 1 && sill_nosing < 3) {
-        setCasingDimensionHeight('-');
-      } else if (sill_nosing > 5 && sill_nosing < 7) {
-        setCasingDimensionHeight('-');
-      }
-    }
-
-    ss = ss * -1;
-    const rw = uw - ss;
-    const rh = uh - ss;
-
-    setOverallUnitSizeWidth(uw.toString());
-    setOverallUnitSizeHeight(uh.toString());
-    setRoughOpeningWidth(rw.toString());
-    setRoughOpeningHeight(rh.toString());
-
-    sg = sg * -1;
-    mw = cw - sg;
-    setMasonryOpeningWidth(mw.toString());
-
-    if (casing_size < 0.001) {
-      if (sill_nosing > 7) {
-        mh = uh - sg - sno;
-      } else {
-        mh = ch - sg;
-      }
-    } else {
-      mh = ch - sg;
-    }
-    setMasonryOpeningHeight(mh.toString());
     setIsShowResults(true);
     
     props.lastStep();
     props.completeCallback();
   };
+
+  const updateForm = () => {
+    setIsShowResults(false);
+
+    const calculateUsing = getValues('calcUsing');
+    const width = getValues('width');
+    const height = getValues('height');
+    const numberPanels = parseInt(getValues('panelNumber'));
+    const sillOptions = getValues('sillOption');
+    const stackingDirection = getValues('stackingDirection');
+    let interlocks_temp;
+
+    // Update Interlocks	            
+    if (calculateUsing == 'Rough Opening' || calculateUsing == 'Rough Opening Without Pocket (Daylight Width)') {
+      interlocks_temp = funcSetInterlocks(calculateUnitHeightFromRoughOpeningHeight(height));
+    } else { // unit_dimensions
+      interlocks_temp = funcSetInterlocks(height);
+    }
+    setInterlocks(interlocks_temp)
+
+    // Set variables used in calculations
+    setJambWidth(calculateJambWidth(panelStyle, stackingDirection, configuration));
+    setLockStileEmbedment(calculateLockStileEmbedment(stackingDirection));
+    setBackStileEmbedment(calculateBackStileEmbedment(panelStyle, stackingDirection, configuration));
+    setBackStileOffset(calculateBackStileOffset(panelStyle, stackingDirection, configuration));
+    setPocketOffset(calculatePocketOffset(interlockStileOffset, stackingDirection, configuration, numberPanels, interlocks_temp, panelStyle));
+    setBiPartPairOffset(calculateBiPartPairOffset(stackingDirection));
+    setPocketCount(calculatePocketCount(configuration, stackingDirection));
+
+
+    //////////////////////////////
+    ///// Min/Max Height
+    //////////////////////////////            
+    let minHeight_temp = getMinHeight(panelStyle, sillOptions);            
+    let maxHeight_temp = panelStyle === 'thermal' ? 119.375 : 143.375;
+
+    switch (calculateUsing) {
+        case 'Rough Opening':
+        case 'Rough Opening Without Pocket (Daylight Width)':
+          minHeight_temp = calculateRoughOpeningHeightFromUnitHeight(minHeight_temp);
+          maxHeight_temp = calculateRoughOpeningHeightFromUnitHeight(maxHeight_temp);
+          break;
+        case 'Unit Dimensions':
+            // min/max are defined in unit dimensions
+          break;
+    }
+
+    const minFormattedHeight = convertToFeetInchesAndFraction(minHeight_temp, AWNumberUtil.roundingDirections.up);
+    const maxFormattedHeight = convertToFeetInchesAndFraction(maxHeight_temp, AWNumberUtil.roundingDirections.down);
+
+    setHeightStates({
+      ...heightStates,
+      ruleMax: roundNumber(maxHeight_temp),
+      ruleMin: roundNumber(minHeight_temp),
+      msgMax: 'Please enter a value less than or equal to ' + minFormattedHeight + '.',
+      msgMin: 'Please enter a value greater than or equal to ' + maxFormattedHeight + '.'
+    })
+
+    console.log('Please enter a value less than or equal to ' + minFormattedHeight + '.')
+    console.log('Please enter a value less than or equal to ' + minFormattedHeight + '.')
+
+    // Update the validator message on the page
+    if (height.length > 0) {
+        // formValidator.element(height);
+    }
+
+
+    //////////////////////////////
+    ///// Min/Max Width
+    //////////////////////////////             
+    let minWidth_temp = calculateMinWidth(stackingDirection, configuration, numberPanels, calculateUsing, '');
+  
+    // Get the Max Width from the array
+    const maxWidthRow = widthMaxes.filter((element: any) => 
+      element.configuration === configuration && element.panelStyle === panelStyle && element.stackingDirection === stackingDirection
+    );
+  
+    let maxWidth_temp = maxWidthRow[0].maxUnitWidth;
+
+    switch (calculateUsing) {
+        case 'Rough Opening':
+        case 'Rough Opening Without Pocket (Daylight Width)':
+          minWidth_temp = calculateRoughOpeningWidthFromUnitWidth(minWidth_temp);
+          maxWidth_temp = calculateRoughOpeningWidthFromUnitWidth(maxWidth_temp);
+            break;
+        case 'Unit Dimensions':
+            // min/max are defined in unit dimensions
+            break;
+    }
+
+    const minFormattedWidth = convertToFeetInchesAndFraction(minWidth_temp, AWNumberUtil.roundingDirections.up);
+    const maxFormattedWidth = convertToFeetInchesAndFraction(maxWidth_temp, AWNumberUtil.roundingDirections.down);
+
+    setWidthStates({
+      ...widthStates,
+      ruleMax: roundNumber(maxWidth_temp),
+      ruleMin: roundNumber(minWidth_temp),
+      msgMax: 'Please enter a value less than or equal to ' + maxFormattedWidth + '.',
+      msgMin: 'Please enter a value greater than or equal to ' + minFormattedWidth + '.'
+    })
+
+    // const widthValid = width.length > 0 ? this.$validator.element(this.formFields.$width) : false;
+    const widthValid = width.length > 0;
+
+    ////////////////////////////////////////
+    ///// Update number of panels dropdown
+    //////////////////////////////////////// 
+    let minPanelNumber_temp
+    let maxPanelNumber_temp
+    if (widthValid) {
+        const minPanelValue = pocketCount > 0 ? 1 : 2;
+        minPanelNumber_temp = stackingDirection === '2-Way' ? minPanelValue * 2 : minPanelValue;
+
+        const maxPanelValue = stackingDirection === '2-Way' ? 2 : 1;
+        minPanelNumber_temp = panelStyle === 'thermally' ? maxPanelValue * 5 : maxPanelValue * 7;
+
+        let i = minPanelNumber_temp;
+        const numberPanelData = [];
+        let railLength = calculateRailLength(stackingDirection, configuration, width, i);
+        maxPanelNumber_temp = calculateMaxPanelWidth(railLength, stackingDirection, configuration, i);
+
+        // Only show number of panels with a maxPanelWidth <= than 72
+        while (maxPanelNumber_temp > 72) {
+            i = stackingDirection == '2-Way' ? i += 2 : i += 1;
+
+            railLength = calculateRailLength(stackingDirection, configuration, width, i);
+            maxPanelNumber_temp = calculateMaxPanelWidth(railLength, stackingDirection, configuration, i);
+        }
+
+        
+        // Add the smallest number of panels where maxPanelWidth is less than 72
+        numberPanelData.push(i);
+
+        // Now add the rest of the options up to the max panel number
+        while (i < maxPanelNumber_temp) {
+            if (stackingDirection == '2-Way') {
+                numberPanelData.push(i + 2);
+            } else {
+                numberPanelData.push(i + 1);
+            }
+
+            i = stackingDirection == '2-Way' ? i += 2 : i += 1;
+        }
+
+        setMinPanelNumber(minPanelNumber_temp)
+        setMaxPanelNumber(maxPanelNumber_temp)
+    }          
+  }
 
   if (!fields) {
     return <></>;
@@ -293,32 +977,84 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               {...register('calcUsing')}
               onChange={handleCalcUsingChange}
             >
-              <option value="2">Overall Unit Size</option>
-              <option value="4">Rough Opening</option>
-              <option value="6">Casing Size</option>
-              <option value="8">Masonry Opening</option>
+              {configuration === 'stacking' && (
+                <>
+                <option value="Rough Opening" selected>Rough Opening</option>
+                <option value="Unit Dimensions">Unit Dimensions</option>
+                </>
+              )}
+              {configuration === 'pocketing' && (
+                <>
+                <option value="Rough Opening" selected>Rough Opening</option>
+                <option value="Rough Opening Without Pocket (Daylight Width)">Rough Opening Without Pocket (Daylight Width)</option>
+                <option value="Unit Dimensions">Unit Dimensions</option>
+                </>
+              )}
             </select>
           </div>
           <div className={themeData.classes.columnSpan1}>
             <label className={themeData.classes.labelClass} htmlFor="width">
               Width (in inches)*
             </label>
-            <input
-              type="text"
-              placeholder="Width"
-              maxLength={25}
-              onInput={clearCalculations}
-              className={`${
-                errors.width ? themeData.classes.errorInvalid : themeData.classes.errorValid
-              }`}
-              {...register('width', {
-                required: 'This field is required.',
-                pattern: {
-                  value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
-                  message: 'Width is not valid.',
-                },
-              })}
-            ></input>
+            <div className='grid grid-cols-5 gap-4'>
+              <div className='col-span-3'>
+                <input
+                  type="text"
+                  placeholder="Width"
+                  maxLength={25}
+                  onInput={clearCalculations}
+                  className={`${
+                    errors.width ? themeData.classes.errorInvalid : themeData.classes.errorValid
+                  }`}
+                  {...register('width', {
+                    required: 'This field is required.',
+                    pattern: {
+                      value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
+                      message: 'Width is not valid.',
+                    },
+                  })}
+                  // onChange={(e) => onDimensionFieldChange(e, 'width')}
+                ></input>
+              </div>
+              <div>
+                <select
+                  className={themeData.classes.selectColumnSpan1}
+                  {...register('widthInches')}
+                  name='widthInches'
+                  // onChange={(e) => onDimensionFieldChange(e, 'width')}
+                >
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                </select>
+              </div>
+              <div>
+                <select
+                  className={themeData.classes.selectColumnSpan1}
+                  {...register('widthFraction')}
+                  name='widthFraction'
+                  // onChange={(e) => onDimensionFieldChange(e, 'width')}
+                >
+                  <option value="0" selected>0</option>
+                  <option value="0.125">1 / 8</option>
+                  <option value="0.25">1 / 4</option>
+                  <option value="0.375">3 / 8</option>
+                  <option value="0.5">1 / 2</option>
+                  <option value="0.625">5 / 8</option>
+                  <option value="0.75">3 / 4</option>
+                  <option value="0.875">7 / 8</option>
+                </select>
+              </div>
+            </div>
             {errors.width && <div className="text-body text-error">{errors.width.message}</div>}
             <label className={themeData.classes.labelClass} htmlFor="width">
               <span className={themeData.classes.helpText}>For help, refer to our</span>
@@ -350,203 +1086,148 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             <label className={themeData.classes.labelClass} htmlFor="height">
               Height (in inches)*
             </label>
-            <input
-              type="text"
-              placeholder="Height"
-              maxLength={25}
-              onInput={clearCalculations}
-              className={`${
-                errors.height ? themeData.classes.errorInvalid : themeData.classes.errorValid
-              }`}
-              {...register('height', {
-                required: 'This field is required.',
-                pattern: {
-                  value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
-                  message: 'Height is not valid.',
-                },
-              })}
-            ></input>
+            <div className='grid grid-cols-5 gap-4'>
+              <div className='col-span-3'>
+                <input
+                  type="text"
+                  placeholder="Height"
+                  maxLength={25}
+                  onInput={clearCalculations}
+                  className={`${
+                    errors.height ? themeData.classes.errorInvalid : themeData.classes.errorValid
+                  }`}
+                  {...register('height', {
+                    required: 'This field is required.',
+                    pattern: {
+                      value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
+                      message: 'Height is not valid.',
+                    },
+                  })}
+                  // onChange={(e) => onDimensionFieldChange(e, 'height')}
+                ></input>
+              </div>
+              <div>
+                <select
+                  className={themeData.classes.selectColumnSpan1}
+                  {...register('heightInches')}
+                  name='heightInches'
+                  // onChange={(e) => onDimensionFieldChange(e, 'height')}
+                >
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                </select>
+              </div>
+              <div>
+                <select
+                  className={themeData.classes.selectColumnSpan1}
+                  {...register('heightFraction')}
+                  name='heightFraction'
+                  // onChange={(e) => onDimensionFieldChange(e, 'height')}
+                >
+                  <option value="0" selected>0</option>
+                  <option value="0.125">1 / 8</option>
+                  <option value="0.25">1 / 4</option>
+                  <option value="0.375">3 / 8</option>
+                  <option value="0.5">1 / 2</option>
+                  <option value="0.625">5 / 8</option>
+                  <option value="0.75">3 / 4</option>
+                  <option value="0.875">7 / 8</option>
+                </select>
+              </div>
+            </div>
             {errors.height && <div className="text-body text-error">{errors.height.message}</div>}
           </div>
           <div className={themeData.classes.columnSpan1}>
-            <label className={themeData.classes.labelClass} htmlFor="shimSpace">
-              Shim Space (in inches)*
-            </label>
-            <input
-              type="text"
-              placeholder="Shim Space"
-              maxLength={25}
-              onInput={clearCalculations}
-              className={`${
-                errors.shimSpace ? themeData.classes.errorInvalid : themeData.classes.errorValid
-              }`}
-              {...register('shimSpace', {
-                required: 'This field is required.',
-                pattern: {
-                  value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
-                  message: 'Shim Space is not valid.',
-                },
-              })}
-            ></input>
-            {errors.shimSpace && (
-              <div className="text-body text-error">{errors.shimSpace.message}</div>
-            )}
-          </div>
-          <div className={themeData.classes.columnSpan1}>
-            <label className={themeData.classes.labelClass} htmlFor="sealantGap">
-              Sealant Gap (in inches)*
-            </label>
-            <input
-              type="text"
-              placeholder="Sealant Gap"
-              maxLength={25}
-              onInput={clearCalculations}
-              className={`${
-                errors.sealantGap ? themeData.classes.errorInvalid : themeData.classes.errorValid
-              }`}
-              {...register('sealantGap', {
-                required: 'This field is required.',
-                pattern: {
-                  value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
-                  message: 'Sealant Gap is not valid.',
-                },
-              })}
-            ></input>
-            {errors.sealantGap && (
-              <div className="text-body text-error">{errors.sealantGap.message}</div>
-            )}
-          </div>
-          <div className={themeData.classes.columnSpan1}>
-            <label className={themeData.classes.labelClass} htmlFor="casingSize">
-              Profiled Casing
+            <label className={themeData.classes.labelClass} htmlFor="stackingDirection">
+              Stacking Direction*
             </label>
             <select
               className={themeData.classes.selectColumnSpan1}
-              id="casingSize"
-              {...register('casingSize')}
-              onChange={handleCasingSizeChange}
+              {...register('stackingDirection')}
+              // onChange={updateForm}
             >
-              <option value="0">None</option>
-              <option value="1.625">A753</option>
-              <option value="1.625">A754</option>
-              <option value="3.125">A755</option>
-              <option value="3.125">A756</option>
-              <option value="5.125">A758</option>
-              <option value="3.125">A75B</option>
-              <option value="100">Custom</option>
-            </select>
-            <label className={themeData.classes.labelClass} htmlFor="casingSize">
-              <span className={themeData.classes.helpText}>Show me</span>
-              <button
-                className={themeData.classes.modalLinkButton}
-                type="button"
-                onClick={() => {
-                  openModal(1);
-                }}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter') openModal(1);
-                }}
-              >
-                {props.fields?.casingProfilesLinkText?.value}
-              </button>
-            </label>
-            {currentImageIndex === 1 && isLightboxVisible && (
-              <ModalWrapper size="fluid" handleClose={() => setIsLightboxVisible(false)}>
-                <div className="px-ml pb-ml pt-s">
-                  <img
-                    src={props.fields?.casingProfilesImage?.value.src ?? ''}
-                    alt={props.fields?.casingProfilesImage?.value.alt}
-                  />
-                </div>
-              </ModalWrapper>
-            )}
-          </div>
-          <div className={themeData.classes.columnSpan1}>
-            <label
-              className={classNames(
-                themeData.classes.labelClass,
-                casingSizeWatch === '100' ? '' : 'text-dark-gray'
+              {configuration === 'stacking' && (
+                <>
+                <option value="1-Way Left" selected>1-Way Left</option>
+                <option value="1-Way Right">1-Way Right</option>
+                <option value="2-Way">2-Way</option>
+                <option value="Double Active">Double Active</option>
+                </>
               )}
-              htmlFor="casingSizeCustom"
-            >
-              Casing Size <span hidden={casingSizeWatch === '100' ? false : true}>*</span>
-            </label>
-            <input
-              type="text"
-              placeholder="Casing Size"
-              maxLength={25}
-              disabled={casingSizeWatch === '100' ? false : true}
-              onInput={clearCalculations}
-              className={`${
-                errors.casingSizeCustom
-                  ? themeData.classes.errorInvalid
-                  : themeData.classes.errorValid
-              }`}
-              {...register('casingSizeCustom', {
-                required: {
-                  value: casingSizeWatch === '100' ? true : false,
-                  message: 'Casing Size is required.',
-                },
-                pattern: {
-                  value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
-                  message: 'Casing Size is not valid.',
-                },
-              })}
-            ></input>
-            {errors.casingSizeCustom && (
-              <div className="text-body text-error">{errors.casingSizeCustom.message}</div>
+              {configuration === 'pocketing' && (
+                <>
+                <option value="1-Way Left" selected>1-Way Left</option>
+                <option value="1-Way Right">1-Way Right</option>
+                <option value="2-Way">2-Way</option>
+                </>
+              )}
+            </select>
+            {errors.stackingDirection && (
+              <div className="text-body text-error">{errors.stackingDirection.message}</div>
             )}
           </div>
           <div className={themeData.classes.columnSpan1}>
-            <label className={themeData.classes.labelClass} htmlFor="sillNosing">
-              Sill Nosing
+            <label className={themeData.classes.labelClass} htmlFor="sillOption">
+              Sill Options*
             </label>
             <select
               className={themeData.classes.selectColumnSpan1}
-              id="sillNosing"
-              {...register('sillNosing')}
-              onChange={handleSillNosingChange}
+              {...register('sillOption')}
+              // onChange={updateForm}
             >
-              <option value="2">No Sill Nosing</option>
-              <option value="4">A751 or A752</option>
-              <option value="6">Casing 4 Sides</option>
-              <option value="8">Custom Sill Nosing</option>
+              <option value="Standard On-Floor Drainage" selected>Standard On-Floor Drainage</option>
+              <option value="Tile Track">Tile Track</option>
+              <option value="Low Profile">Low Profile</option>
+              <option value="None">None</option>
             </select>
+            {errors.sillOption && (
+              <div className="text-body text-error">{errors.sillOption.message}</div>
+            )}
           </div>
           <div className={themeData.classes.columnSpan1}>
-            <label
-              className={classNames(
-                themeData.classes.labelClass,
-                sillNosingWatch === '8' ? '' : 'text-dark-gray'
-              )}
-              htmlFor="sillNosingCustom"
-            >
-              Sill Nosing Size <span hidden={sillNosingWatch === '8' ? false : true}>*</span>
+            <label className={themeData.classes.labelClass} htmlFor="panelNumber">
+              # Of Panels*
             </label>
-            <input
-              type="text"
-              placeholder="Sill Nosing Size"
-              maxLength={25}
-              disabled={sillNosingWatch === '8' ? false : true}
-              onInput={clearCalculations}
-              className={`${
-                errors.sillNosingCustom
-                  ? themeData.classes.errorInvalid
-                  : themeData.classes.errorValid
-              }`}
-              {...register('sillNosingCustom', {
-                required: {
-                  value: sillNosingWatch === '8' ? true : false,
-                  message: 'Sill Nosing Size is required.',
-                },
-                pattern: {
-                  value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
-                  message: 'Sill Nosing Size is not valid.',
-                },
-              })}
-            ></input>
-            {errors.sillNosingCustom && (
-              <div className="text-body text-error">{errors.sillNosingCustom.message}</div>
+            <select
+              className={themeData.classes.selectColumnSpan1}
+              {...register('panelNumber')}
+              // onChange={updateForm}
+            >
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4" selected>4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            {errors.panelNumber && (
+              <div className="text-body text-error">{errors.panelNumber.message}</div>
+            )}
+          </div>
+          <div className={themeData.classes.columnSpan1}>
+            <label className={themeData.classes.labelClass} htmlFor="panelStackingLocation">
+              Panel Stacking Location*
+            </label>
+            <select
+              className={themeData.classes.selectColumnSpan1}
+              {...register('panelStackingLocation')}
+              // onChange={updateForm}
+            >
+              <option value="Interior" selected>Interior</option>
+              <option value="Exterior">Exterior</option>
+            </select>
+            {errors.panelStackingLocation && (
+              <div className="text-body text-error">{errors.panelStackingLocation.message}</div>
             )}
           </div>
           {/* Submit section */}
@@ -607,47 +1288,27 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                       <tbody>
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Configuration</td>
-                          <td className={themeData.classes.tdColumnCenter}>{formData?.selectedConfigurationOption}</td>
+                          <td className={themeData.classes.tdColumnCenter}>{formData?.selectedConfigurationOption || '-'}</td>
+                        </tr>
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Stacking Direction</td>
+                          <td className={themeData.classes.tdColumnCenter}>{getValues('stackingDirection') || '-'}</td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Panel Style</td>
-                          <td className={themeData.classes.tdColumnCenter}>{formData?.selectedPanelStyle}</td>
+                          <td className={themeData.classes.tdColumnCenter}>{formData?.selectedPanelStyle || '-'}</td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Calculate Using Known</td>
-                          <td className={themeData.classes.tdColumnCenter}>{calcUsingText}</td>
+                          <td className={themeData.classes.tdColumn}>Panel Stacking Location</td>
+                          <td className={themeData.classes.tdColumnCenter}>{getValues('panelStackingLocation' || '-')}</td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Width</td>
-                          <td className={themeData.classes.tdColumnCenter}>{widthText}</td>
+                          <td className={themeData.classes.tdColumn}># Of Pannels</td>
+                          <td className={themeData.classes.tdColumnCenter}>{getValues('panelNumber') || '-'}</td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Height</td>
-                          <td className={themeData.classes.tdColumnCenter}>{heightText}</td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Shim Space (in inches)</td>
-                          <td className={themeData.classes.tdColumnCenter}>{shimSpaceText}</td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Sealant Gap (in inches)</td>
-                          <td className={themeData.classes.tdColumnCenter}>{sealantGapText}</td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Profiled Casing</td>
-                          <td className={themeData.classes.tdColumnCenter}>{casingSizeText}</td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Casing Size</td>
-                          <td className={themeData.classes.tdColumnCenter}>{casingSizeCustomText}</td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Sill Nosing</td>
-                          <td className={themeData.classes.tdColumnCenter}>{sillNosingText}</td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Sill Nosing Size</td>
-                          <td className={themeData.classes.tdColumnCenter}>{sillNosingCustomText}</td>
+                          <td className={themeData.classes.tdColumn}>Sill Options</td>
+                          <td className={themeData.classes.tdColumnCenter}>{getValues('sillOption') || '-'}</td>
                         </tr>
                       </tbody>
                     </table>
@@ -676,24 +1337,74 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                       </thead>
                       <tbody>
                         <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Overall Unit Size</td>
-                          <td className={themeData.classes.tdColumnCenter}>{overallUnitSizeWidth}</td>
-                          <td className={themeData.classes.tdColumnCenter}>{overallUnitSizeHeight}</td>
+                          <td className={themeData.classes.tdColumn}>Rough Opening (from top of finished floor)</td>
+                          <td className={themeData.classes.tdColumn}>
+                            <div dangerouslySetInnerHTML={{__html: roughOpeningWidth}} />
+                          </td>
+                          <td className={themeData.classes.tdColumn}>
+                            <div dangerouslySetInnerHTML={{__html: configuration === 'stacking' ? roughOpeningHeightSubfloor : roughOpeningHeightRecess}} />
+                          </td>
+                        </tr>
+                        {configuration === 'pocketing' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <td className={themeData.classes.tdColumn}>Rough Opening (not including pocket)</td>
+                            <td className={themeData.classes.tdColumn}>
+                              <div dangerouslySetInnerHTML={{__html: roughOpeningPocketWidth}} />
+                            </td>
+                            <td className={themeData.classes.tdColumn}>
+                              -
+                            </td>
+                          </tr>
+                        )}
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Unit Size</td>
+                          <td className={themeData.classes.tdColumn}>
+                            <div dangerouslySetInnerHTML={{__html: unitWidth}} />
+                          </td>
+                          <td className={themeData.classes.tdColumn}>
+                            <div dangerouslySetInnerHTML={{__html: unitHeight}} />
+                          </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Rough Opening</td>
-                          <td className={themeData.classes.tdColumnCenter}>{roughOpeningWidth}</td>
-                          <td className={themeData.classes.tdColumnCenter}>{roughOpeningHeight}</td>
+                          <td className={themeData.classes.tdColumn}>Panel Size</td>
+                          <td className={themeData.classes.tdColumn}>
+                            <div dangerouslySetInnerHTML={{__html: panelWidth}} />
+                          </td>
+                          <td className={themeData.classes.tdColumn}>
+                            <div dangerouslySetInnerHTML={{__html: panelHeight}} />
+                          </td>
+                        </tr>
+                        {configuration === 'pocketing' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <td className={themeData.classes.tdColumn}>Pocket Width</td>
+                            <td className={themeData.classes.tdColumn}>
+                              <div dangerouslySetInnerHTML={{__html: pocketWidth}} />
+                            </td>
+                            <td className={themeData.classes.tdColumn}>{'-'}</td>
+                          </tr>
+                        )}
+                        {configuration === 'pocketing' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <td className={themeData.classes.tdColumn}>Pocket Depth</td>
+                            <td className={themeData.classes.tdColumn}>
+                              <div dangerouslySetInnerHTML={{__html: pocketDepth}} />
+                            </td>
+                            <td className={themeData.classes.tdColumn}>{'-'}</td>
+                          </tr>
+                        )}
+                        <tr className={themeData.classes.tableRow}>
+                          <td className={themeData.classes.tdColumn}>Jamb Depth</td>
+                          <td className={themeData.classes.tdColumn}>
+                            <div dangerouslySetInnerHTML={{__html: jambDepth}} />
+                          </td>
+                          <td className={themeData.classes.tdColumn}>{'-'}</td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Casing Dimensions</td>
-                          <td className={themeData.classes.tdColumnCenter}>{casingDimensionWidth}</td>
-                          <td className={themeData.classes.tdColumnCenter}>{casingDimensionHeight}</td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Masonry Opening</td>
-                          <td className={themeData.classes.tdColumnCenter}>{masonryOpeningWidth}</td>
-                          <td className={themeData.classes.tdColumnCenter}>{masonryOpeningHeight}</td>
+                          <td className={themeData.classes.tdColumn}>Sill Depth</td>
+                          <td className={themeData.classes.tdColumn}>
+                            <div dangerouslySetInnerHTML={{__html: sillDepth}} />
+                          </td>
+                          <td className={themeData.classes.tdColumn}>{'-'}</td>
                         </tr>
                       </tbody>
                     </table>
