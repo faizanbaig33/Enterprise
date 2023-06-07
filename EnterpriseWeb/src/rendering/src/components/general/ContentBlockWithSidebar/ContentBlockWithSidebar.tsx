@@ -18,8 +18,8 @@ const ContentBlockWithSidebar = (props: ContentBlockWithSidebarProps) => {
   return (
     <Component variant="lg" gap=" " dataComponent="general/contentblockwithsidebar" {...props}>
       <div className={themeData.classes.leftColumnClass}>
-        <Headline defaultTag="h2" {...props} />
-        <BodyCopy {...props} />
+        <Headline defaultTag="h2" {...props} classes={themeData.classes.headline} />
+        <BodyCopy {...props} classes={themeData.classes.bodyClass} />
       </div>
 
       <div className={themeData.classes.rightColumnClass}>
