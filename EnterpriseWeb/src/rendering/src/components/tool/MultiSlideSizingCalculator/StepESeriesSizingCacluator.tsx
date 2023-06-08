@@ -21,10 +21,12 @@ type CalcForm = {
   height: string; //eh
   heightInches: string;
   heightFraction: string;
-  stackingDirection: string,
-  sillOption: string,
-  panelNumber: string,
-  panelStackingLocation: string,
+  stackingDirection: string;
+  sillOption: string;
+  panelNumber: string;
+  panelStackingLocation: string;
+  thicknessFinishedFloorInches: string;
+  thicknessFinishedFloorFraction: string
 };
 
 const MAX_WIDTH_ARRAY = [
@@ -72,19 +74,43 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   // Submit and update shared variables
   const [interlocks, setInterlocks] = useState("");
   const [widthStates, setWidthStates] = useState({
-    msgMin: '',
-    msgMax: '',
+    feet: 0,
+    inches: 0,
+    fraction: 0,
+    msg: '',
     ruleMin: '',
     ruleMax: '',
     dimension: 0,
   })
   const [heightStates, setHeightStates] = useState({
-    msgMin: '',
-    msgMax: '',
+    feet: 0,
+    inches: 0,
+    fraction: 0,
+    msg: '',
     ruleMin: '',
     ruleMax: '',
     dimension: 0,
   })
+  
+  const [msgWidth, setMsgWidth] = useState('')
+  const [msgHeight, setMsgHeight] = useState('')
+
+  const [formState, setFormState] = useState({
+    calcUsing: '',
+    width: '',
+    widthInches: '',
+    widthFraction: '',
+    height: '',
+    heightInches: '',
+    heightFraction: '',
+    stackingDirection: '',
+    sillOption: '',
+    panelNumber: '',
+    panelStackingLocation: '',
+    thicknessFinishedFloorInches: '',
+    thicknessFinishedFloorFraction: '',
+  })
+
   const [jambWidth, setJambWidth] = useState(0)
   const [lockStileEmbedment, setLockStileEmbedment] = useState(0)
   const [backStileEmbedment, setBackStileEmbedment] = useState(0)
@@ -94,6 +120,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [pocketCount, setPocketCount] = useState(0)
   const [minPanelNumber, setMinPanelNumber] = useState(0)
   const [maxPanelNumber, setMaxPanelNumber] = useState(0)
+  const [numberPanels, setNumberPanels] = useState([1, 2, 3, 4, 5, 6])
 
   const [jambDepth, setJambDepth] = useState<string>('');
   const [panelHeight, setPanelHeight] = useState<string>('')
@@ -103,7 +130,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [roughOpeningHeightSubfloor, setRoughOpeningHeightSubfloor] = useState<string>('')
   const [roughOpeningHeightRecess, setRoughOpeningHeightRecess] = useState<string>('')
   const [roughOpeningWidth, setRoughOpeningWidth] = useState<string>('')
-  const [roughOpeningHeight, setRoughOpeningHeight] = useState<string>('');
+  // const [roughOpeningHeight, setRoughOpeningHeight] = useState<string>('');
   const [roughOpeningPocketWidth, setRoughOpeningPocketWidth] = useState<string>('')
   const [sillDepth, setSillDepth] = useState<string>('')
   const [unitHeight, setUnitHeight] = useState<string>('')
@@ -120,7 +147,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   } = useForm<CalcForm>({
     mode: 'onChange',
     defaultValues: {
-      calcUsing: 'rough_opening',
+      calcUsing: 'Rough Opening',
       width: '',
       widthInches: '0',
       widthFraction: '0',
@@ -131,6 +158,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       sillOption: 'Standard On-Floor Drainage',
       panelNumber: '4',
       panelStackingLocation: 'Interior',
+      thicknessFinishedFloorInches: '0',
+      thicknessFinishedFloorFraction: '0'
     },
   });
 
@@ -140,7 +169,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setPanelWidth('-');
     setPocketDepth('-');
     setPocketWidth('-');
-    setRoughOpeningHeight('-');
+    // setRoughOpeningHeight('-');
     setRoughOpeningWidth('-');
     setRoughOpeningHeightSubfloor('-');
     setRoughOpeningHeightRecess('-');
@@ -148,48 +177,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setUnitWidth('-');
     setUnitHeight('-');
   };
-
-  const handleCalcUsingChange = (event: ChangeEvent<HTMLSelectElement>) => {
-    const calcUsingText = event.target[event.target.selectedIndex].innerHTML;
-
-    clearCalculations();
-  };
-
-  const onFieldChanged = () => {
-    // updateForm();
-  }
-
-  const onDimensionFieldChange = (e: any, type: any) => {
-    if (type === 'width') {
-      const feet = e.target.name === 'width' ? e.target.value : getValues('width').trim();
-      const inches = e.target.name === 'widthInches' ? e.target.value : getValues('widthInches');
-      const fraction = e.target.name === 'widthFraction' ? e.target.value : getValues('widthFraction');
-
-      if (feet.length > 0 || inches !== '0' || fraction !== '0') {
-        const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
-  
-        setWidthStates({
-          ...widthStates,
-          dimension: length
-        })
-      }
-    } else if (type === 'height') {
-      const feet = e.target.name === 'height' ? e.target.value : getValues('height').trim();
-      const inches = e.target.name === 'heightInches' ? e.target.value : getValues('heightInches');
-      const fraction = e.target.name === 'heightFraction' ? e.target.value : getValues('heightFraction');
-        
-      if (feet.length > 0 || inches !== '0' || fraction !== '0') {
-        const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
-
-        setHeightStates({
-          ...heightStates,
-          dimension: length
-        })
-      }
-    }
-    // Call the onFieldChanged incase the it fired before us and missed the updated value
-    onFieldChanged();
-  } 
 
   const openModal = (index: number) => {
     setIsLightboxVisible(true);
@@ -211,7 +198,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setPanelWidth('-');
     setPocketDepth('-');
     setPocketWidth('-');
-    setRoughOpeningHeight('-');
+    // setRoughOpeningHeight('-');
     setRoughOpeningWidth('-');
     setRoughOpeningHeightSubfloor('-');
     setRoughOpeningHeightRecess('-');
@@ -241,18 +228,18 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     }
   }
 
-  const calculateMinWidth = (stackingDirection: any, configuration: any, numberPanels: any, calculateUsing: any, pocketWidth: any) => {
-    var minRailLength = 0;
+  const calculateMinWidth = (stackingDirection: any, configuration: any, numberPanels: any, calcUsing: any, pocketWidth: any) => {
+    let minRailLength = 0;
     // Minimum width resulting in a minimum panel rail length of 20.154” (this is the corresponding rail length from the 48” x 36” 2 panel limiting size)
-    var minWidth = 47.875;
+    let minWidth = 47.875;
 
     while (minRailLength < 20.153) {
-        minWidth += .125;                
+        minWidth += 0.125;                
         minRailLength = calculateRailLength(stackingDirection, configuration, minWidth, numberPanels);  
     }
 
     //rough_opening_pocket
-    //if (calculateUsing === 'rough_opening_pocket') {                
+    //if (calcUsing === 'rough_opening_pocket') {                
     //    var pocketWidth = (configuration === 'pocketing') ? minRailLength + interlockStileOffset + pocketOffset + 0.375 : 0;
 
     //    minWidth = minWidth - pocketWidth;
@@ -305,7 +292,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   // Unit Height => Rough Opening Height
   const calculateRoughOpeningHeightFromUnitHeight = (unitHeight: any) => {            
-      return unitHeight + 0.625;            
+      return parseFloat(unitHeight) + 0.625;            
   }
           
   // Unit Width => Rough Opening Width
@@ -324,7 +311,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   }
 
   const calculateJambWidth = (panelStyle: any, stackingDirection: any, configuration: any) => {
-      var jambWidth_temp = 0;
+      let jambWidth_temp = 0;
 
       if (!(stackingDirection === '2-Way' && configuration === 'pocketing')) {
           if (panelStyle === 'nonThermally') {
@@ -415,7 +402,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       var pocketOffset = 0;
 
       if (configuration === 'pocketing') {                
-          if (interlocks === 'Standard On-Floor Drainage') { 
+          if (interlocks === 'standard') { 
               pocketOffset = interlockStileOffset + 2.192;
           } else { // interlocks === heavy_duty                    
               if ((stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') && numberPanels <= 2) { 
@@ -438,7 +425,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   }
 
   const calculateBiPartPairOffset = (stackingDirection: any) => {            
-      var biPartPairOffset = 0;
+      let biPartPairOffset = 0;
       if (stackingDirection === '2-Way') {
           biPartPairOffset = 4.825;
       }
@@ -447,7 +434,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   }
 
   const calculateTrackCount = (stackingDirection: any, configuration: any, numberPanels: any) => {
-      var trackCount = 0;
+      let trackCount = 0;
 
       if ((stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') && configuration === 'pocketing' && numberPanels === 1) {
           trackCount = 2;
@@ -552,12 +539,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   }
 
   const maxPanelAreaExceeded = (maxPanelWidth: any, panelHeight: any, panelStyle: any) => {
-      var panelPerformanceMax = panelStyle === 'thermally' ? 50 : 60;
-      return !(((maxPanelWidth * panelHeight) / 144 <= panelPerformanceMax) && maxPanelWidth <= 72);
+      const panelPerformanceMax = panelStyle === 'thermally' ? 50 : 60;
+      return !(((parseFloat(maxPanelWidth) * parseFloat(panelHeight)) / 144 <= panelPerformanceMax) && parseFloat(maxPanelWidth) <= 72);
   }
 
   const roundNumber = (number: any) => {
-      if (!isNaN(number)) {
+      if (!isNaN(+number)) {
           return Number(number.toFixed(3));
       } else {
           return number.toFixed(3);
@@ -565,11 +552,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   }
 
   const convertToFeetInchesAndFraction = (number: any, roundingDirection: any) => {
-      var whole = Math.floor(number);
+      const whole = Math.floor(number);
 
-      var feet = Math.floor(whole / 12);
-      var inches = whole % 12;
-      var fraction = AWNumberUtil.decimalToEigth(number, { roundingDirection: roundingDirection });
+      let feet = Math.floor(whole / 12);
+      let inches = whole % 12;
+      let fraction = AWNumberUtil.decimalToEigth(number, { roundingDirection: roundingDirection });
 
       // Handle overflow if we rounded up
       if (fraction === '1') {
@@ -582,7 +569,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           }
       }
 
-      var formatted = '';
+      let formatted = '';
 
       if (feet > 0) {
           formatted += String(feet) + "'";
@@ -603,10 +590,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   const formatNumber = (number: any) => {
       if (!isNaN(+number)) {
-          var rounded = AWNumberUtil.roundToEigth(number, AWNumberUtil.roundingDirections.closest);
-          console.log(AWNumberUtil.roundingDirections.closest, rounded)
-          var mm = rounded * 25.4;
-          var formatted = convertToFeetInchesAndFraction(rounded, AWNumberUtil.roundingDirections.closest);
+          const rounded = AWNumberUtil.roundToEigth(number, AWNumberUtil.roundingDirections.closest);
+          // console.log(AWNumberUtil.roundingDirections.closest, rounded)
+          const mm = rounded * 25.4;
+          const formatted = convertToFeetInchesAndFraction(rounded, AWNumberUtil.roundingDirections.closest);
           return formatted + "<br>" + ' (' + String(mm.toFixed(3)) + 'mm)';
       } else {
           return String(number);
@@ -624,20 +611,191 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   })
 
   const onSubmit = (data: CalcForm) => {
+    if (msgWidth !== '' || msgHeight !== '') {
+      setIsShowResults(false)
+      return;
+    }
+  
     const jsonData = JSON.stringify(data, null, 2);
     const jsonObj = JSON.parse(jsonData);
 
-    // Calculations - Copied from legacy solution
     const calcUsing = jsonObj.calcUsing;
-    const sillOption = jsonObj.sillOption;
-    const width = parseFloat(jsonObj.width);
-    const widthInches = parseFloat(jsonObj.widthInches);
-    const widthFraction = parseFloat(jsonObj.widthFraction);
-    const height = parseFloat(jsonObj.height);
-    const heightInches = parseFloat(jsonObj.heightInches);
-    const heightFraction = parseFloat(jsonObj.heightFraction);
-    const numberPanels = parseInt(jsonObj.panelNumber);
+    const width = widthStates.dimension;
+    const height = heightStates.dimension;            
+    const numberPanels = parseInt(jsonObj.panelNumber);            
+    const sillOptions = jsonObj.sillOption;            
     const stackingDirection = jsonObj.stackingDirection;
+    const thicknessFinishedFloor = parseFloat(jsonObj.thicknessFinishedFloorInches) + parseFloat(jsonObj.thicknessFinishedFloorFraction);
+
+    // Width, Height validation
+    // let msgHeight = ''
+    // if (height > 0) {
+    //   if (configuration === 'stacking') {
+    //     if (panelStyle === 'thermally') {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (height > 120) {
+    //           msgHeight = `Please enter a value less than or equal to 10'.`
+    //         } else if (height < 3.25) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/4".`
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (height > 119.375) {
+    //           msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`
+    //         } else if (height < 35.625) {
+    //           msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`
+    //         }
+    //       }
+    //     } else {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (height > 144) {
+    //           msgHeight = `Please enter a value less than or equal to  12.`
+    //         } else if (height < 24.125) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8.`
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (height > 132.375) {
+    //           msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`
+    //         } else if (height < 35.5) {
+    //           msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`
+    //         }
+    //       }
+    //     }
+    //   } else if (configuration === 'pocketing') {
+    //     if (panelStyle === 'thermally') {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (height > 120) {
+    //           msgHeight = `Please enter a value less than or equal to 10'.`
+    //         } else if (height < 3.25) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/4".`
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (height > 119.375) {
+    //           msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`
+    //         } else if (height < 35.625) {
+    //           msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`
+    //         }
+    //       }
+    //     } else {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (height > 144) {
+    //           msgHeight = `Please enter a value less than or equal to  to 12'.`
+    //         } else if (height < 36.125) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8".`
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //         if (height > 144) {
+    //           msgHeight = `Please enter a value less than or equal to  to 12'.`
+    //         } else if (height < 36.125) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8".`
+    //         }
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (height > 132.375) {
+    //           msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`
+    //         } else if (height < 35.5) {
+    //           msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    // let msgWidth = '';
+    // if (width > 0) {
+    //   if (configuration === 'stacking') {
+    //     if (panelStyle === 'thermally') {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (width > 351.25) {
+    //           msgWidth = `Please enter a value less than or equal to 29' 3 1/4".`
+    //         } else if (width < 69.75) {
+    //           msgWidth = `Please enter a value greater than or equal to 5' 9 7/8".`
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (width > 369.625) {
+    //           msgWidth = `Please enter a value less than or equal to 29' 2 1/2".`
+    //         } else if (width <= 69) {
+    //           msgWidth = `Please enter a value greater than or equal to 5' 9 1/8".`
+    //         }
+    //       }
+    //     } else {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (width > 489.25) {
+    //           msgWidth = `Please enter a value less than or equal to 40' 9 1/4".`
+    //         } else if (width < 69.625) {
+    //           msgWidth = `Please enter a value greater than or equal to 5' 9 5/8".`
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (width > 488.5) {
+    //           msgWidth = `Please enter a value less than or equal to 40' 8 1/2".`
+    //         } else if (width < 153.125) {
+    //           msgWidth = `Please enter a value greater than or equal to 12' 9 1/8".`
+    //         }
+    //       }
+    //     }
+    //   } else if (configuration === 'pocketing') {
+    //     if (panelStyle === 'thermally') {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (width > 421.375) {
+    //           msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`
+    //         } else if (width < 3.25) {
+    //           msgWidth = `Please enter a value greater than or equal to 15".`
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //         if (width > 421.375) {
+    //           msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`
+    //         } else if (width < 136.25) {
+    //           msgWidth = `Please enter a value greater than or equal to 11' 3 1/2".`
+    //         }
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (width > 420.625) {
+    //           msgWidth = `Please enter a value less than or equal to 35' 5/8".`
+    //         } else if (width < 135.5) {
+    //           msgWidth = `Please enter a value greater than or equal to 2' 11 5/8".`
+    //         }
+    //       }
+    //     } else {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (width > 536.75) {
+    //           msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`
+    //         } else if (width < 180.625) {
+    //           msgWidth = `Please enter a value greater than or equal to 15' 5/8".`
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //         if (width > 536.75) {
+    //           msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`
+    //         } else if (width < 180.625) {
+    //           msgWidth = `Please enter a value greater than or equal to 15' 5/8".`
+    //         }
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (width > 536) {
+    //           msgWidth = `Please enter a value less than or equal to  to 44' 8".`
+    //         } else if (width < 155.875) {
+    //           msgWidth = `Please enter a value greater than or equal to 14' 11 7/8".`
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
+
+    // if (msgWidth !== '' || msgHeight !== '') {
+    //   setWidthStates({
+    //     ...widthStates,
+    //     msg: msgWidth
+    //   })
+    //   setHeightStates({
+    //     ...heightStates,
+    //     msg: msgHeight
+    //   })
+    //   setIsShowResults(false)
+    //   return;
+    // }
 
     let jambDepth_temp = 0;
     let panelHeight_temp = 0;
@@ -651,8 +809,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     let sillDepth_temp = 0;
     let unitWidth_temp = 0;
     let unitHeight_temp = 0;
-
-    const thicknessFinishedFloor = 0
 
     // Update Interlocks
     let interlocks_temp = funcSetInterlocks(unitHeight_temp);
@@ -677,13 +833,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           roughOpeningWidth_temp = width;                    
 
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
-          if (sillOption === 'Standard On-Floor Drainage' || sillOption === 'None') {                        
+          if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {                        
             roughOpeningHeightRecess_temp = height + 1.5 - thicknessFinishedFloor;
             roughOpeningHeightSubfloor_temp = height;
-          } else if (sillOption === 'Tile Track') {                        
+          } else if (sillOptions === 'Tile Track') {                        
             roughOpeningHeightRecess_temp = height + 1.0 - thicknessFinishedFloor;
             roughOpeningHeightSubfloor_temp = height;
-          } else if (sillOption === 'Low Profile') {                        
+          } else if (sillOptions === 'Low Profile') {                        
             roughOpeningHeightRecess_temp = 'N/A';
             roughOpeningHeightSubfloor_temp = height;
           }                    
@@ -694,13 +850,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           break;
       case 'Rough Opening Without Pocket (Daylight Width)':
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
-          if (sillOption === 'Standard On-Floor Drainage' || sillOption === 'None') {
+          if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {
             roughOpeningHeightRecess_temp = height + 1.5 - thicknessFinishedFloor;
               roughOpeningHeightSubfloor_temp = height;
-          } else if (sillOption === 'Tile Track') {
+          } else if (sillOptions === 'Tile Track') {
               roughOpeningHeightRecess_temp = height + 1.0 - thicknessFinishedFloor;
               roughOpeningHeightSubfloor_temp = height;
-          } else if (sillOption === 'Low Profile') {
+          } else if (sillOptions === 'Low Profile') {
               roughOpeningHeightRecess_temp = 'N/A';
               roughOpeningHeightSubfloor_temp = height;
           }
@@ -737,17 +893,17 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           unitHeight_temp = height;
           
           roughOpeningWidth_temp = calculateRoughOpeningWidthFromUnitWidth(unitWidth_temp);
-          const roughOpeningHeight_temp = calculateRoughOpeningHeightFromUnitHeight(unitHeight_temp);
-          setRoughOpeningHeight(roughOpeningHeight_temp);
+          const roughOpeningHeight_temp: any = calculateRoughOpeningHeightFromUnitHeight(unitHeight_temp);
+          // setRoughOpeningHeight(roughOpeningHeight_temp);
                                       
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
-          if (sillOption === 'Standard On-Floor Drainage' || sillOption === 'None') {                        
+          if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {                        
               roughOpeningHeightRecess_temp = roughOpeningHeight_temp + 1.5 - thicknessFinishedFloor;
               roughOpeningHeightSubfloor_temp = roughOpeningHeight_temp;
-          } else if (sillOption === 'Tile Track') {                        
+          } else if (sillOptions === 'Tile Track') {                        
               roughOpeningHeightRecess_temp = roughOpeningHeight_temp + 1.0 - thicknessFinishedFloor;
               roughOpeningHeightSubfloor_temp = roughOpeningHeight_temp;
-          } else if (sillOption === 'Low Profile') {                        
+          } else if (sillOptions === 'Low Profile') {                        
               roughOpeningHeightRecess_temp = 'N/A';
               roughOpeningHeightSubfloor_temp = roughOpeningHeight_temp;
           }
@@ -763,7 +919,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     panelWidth_temp = calculateMaxPanelWidth(railLength, stackingDirection, configuration, numberPanels);
 
     // Panel Height
-    panelHeight_temp = calculatePanelHeightFromUnitHeight(unitHeight_temp, panelStyle, sillOption);
+    panelHeight_temp = calculatePanelHeightFromUnitHeight(unitHeight_temp, panelStyle, sillOptions);
 
     // Jamb Depth (same as frame depth on the spreadsheet)
     jambDepth_temp = calculateFrameDepth(stackingDirection, configuration, numberPanels);
@@ -781,10 +937,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     const maxPanelWidth = calculateMaxPanelWidth(railLength, stackingDirection, configuration, numberPanels);    
 
     if (maxPanelAreaExceeded(maxPanelWidth, panelHeight_temp, panelStyle)) {
-      // $maxPanelAreaError.show();
+      
     } else {
-      // $maxPanelAreaError.hide();
-
       // Results
       setJambDepth(formatNumber(jambDepth_temp));
       setPanelHeight(formatNumber(panelHeight_temp));
@@ -798,9 +952,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       setSillDepth(formatNumber(sillDepth_temp));
       setUnitHeight(formatNumber(unitHeight_temp));
       setUnitWidth(formatNumber(unitWidth_temp));
-
-      console.log(roughOpeningWidth_temp, formatNumber(roughOpeningWidth_temp))
-      console.log(jambDepth_temp, panelHeight_temp, panelWidth_temp, pocketDepth_temp, pocketWidth_temp, roughOpeningHeightSubfloor_temp, roughOpeningHeightRecess_temp, roughOpeningWidth_temp, roughOpeningPocketWidth_temp, sillDepth_temp, unitHeight_temp, unitWidth_temp)
     }
 
     setIsShowResults(true);
@@ -809,19 +960,234 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     props.completeCallback();
   };
 
-  const updateForm = () => {
+  const onDimensionFieldChange = (e: any, type: any) => {
+    if (type === 'width') {
+      const feet = e.target.name === 'width' ? e.target.value : getValues('width').trim();
+      const inches = e.target.name === 'widthInches' ? e.target.value : getValues('widthInches');
+      const fraction = e.target.name === 'widthFraction' ? e.target.value : getValues('widthFraction');
+    
+      if (parseFloat(feet) > 0 || parseFloat(inches) !== 0 || parseFloat(fraction) !== 0) {
+        const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
+        const states = {
+          feet: parseFloat(feet),
+          inches: parseFloat(inches),
+          fraction: parseFloat(fraction),
+          dimension: length
+        }
+
+        setWidthStates({
+          ...widthStates,
+          ...states
+        })
+
+        updateForm(e, states);
+      }
+    } else if (type === 'height') {
+      const feet = e.target.name === 'height' ? e.target.value : getValues('height').trim();
+      const inches = e.target.name === 'heightInches' ? e.target.value : getValues('heightInches');
+      const fraction = e.target.name === 'heightFraction' ? e.target.value : getValues('heightFraction');
+        
+      if (parseFloat(feet) || inches !== '0' || fraction !== '0') {
+        const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
+        const states = {
+          feet: parseFloat(feet),
+          inches: parseFloat(inches),
+          fraction: parseFloat(fraction),
+          dimension: length
+        }
+
+        setHeightStates({
+          ...heightStates,
+          ...states
+        })
+
+        updateForm(e, states);
+      }
+    }
+  } 
+
+  const updateForm = (e?: any, dimensionStates?: any) => {
     setIsShowResults(false);
+    setMsgWidth('');
+    setMsgHeight('');
 
-    const calculateUsing = getValues('calcUsing');
-    const width = getValues('width');
-    const height = getValues('height');
-    const numberPanels = parseInt(getValues('panelNumber'));
-    const sillOptions = getValues('sillOption');
-    const stackingDirection = getValues('stackingDirection');
-    let interlocks_temp;
+    if (e?.target?.name !== 'width' && e?.target?.name !== 'height') {
+      setFormState({...formState, [e.target.name]: e.target.value })
+    }
 
-    // Update Interlocks	            
-    if (calculateUsing == 'Rough Opening' || calculateUsing == 'Rough Opening Without Pocket (Daylight Width)') {
+    const height = e?.target?.name && e?.target?.name?.includes('height') ? dimensionStates?.dimension : heightStates.dimension;       
+    const width = e?.target?.name && e?.target?.name?.includes('width') ? dimensionStates.dimension : widthStates.dimension;
+    const calcUsing = e?.target?.name === 'calcUsing' ? e?.target?.value : getValues('calcUsing');
+    const numberPanels = e?.target?.name === 'panelNumber' ? e?.target?.value : parseInt(getValues('panelNumber'));
+    const sillOptions = e?.target?.name === 'sillOption' ? e?.target?.value : getValues('sillOption');
+    const stackingDirection = e?.target?.name === 'stackingDirection' ? e?.target?.value : getValues('stackingDirection');
+
+    // Width, Height validation
+    let msgHeight = ''
+    if (height > 0) {
+      if (configuration === 'stacking') {
+        if (panelStyle === 'thermally') {
+          if (calcUsing === 'Rough Opening') {
+            if (height > 120) {
+              msgHeight = `Please enter a value less than or equal to 10'.`
+            } else if (height < 36.25) {
+              msgHeight = `Please enter a value greater than or equal to 3' 1/4".`
+            }
+          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+
+          } else if (calcUsing === 'Unit Dimensions') {
+            if (height > 119.375) {
+              msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`
+            } else if (height < 35.625) {
+              msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`
+            }
+          }
+        } else {
+          if (calcUsing === 'Rough Opening') {
+            if (height > 144) {
+              msgHeight = `Please enter a value less than or equal to  12.`
+            } else if (height < 24.125) {
+              msgHeight = `Please enter a value greater than or equal to 3' 1/8.`
+            }
+          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+          } else if (calcUsing === 'Unit Dimensions') {
+            if (height > 132.375) {
+              msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`
+            } else if (height < 35.5) {
+              msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`
+            }
+          }
+        }
+      } else if (configuration === 'pocketing') {
+        if (panelStyle === 'thermally') {
+          if (calcUsing === 'Rough Opening') {
+            if (height > 120) {
+              msgHeight = `Please enter a value less than or equal to 10'.`
+            } else if (height < 36.25) {
+              msgHeight = `Please enter a value greater than or equal to 3' 1/4".`
+            }
+          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+
+          } else if (calcUsing === 'Unit Dimensions') {
+            if (height > 119.375) {
+              msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`
+            } else if (height < 35.625) {
+              msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`
+            }
+          }
+        } else {
+          if (calcUsing === 'Rough Opening') {
+            if (height > 144) {
+              msgHeight = `Please enter a value less than or equal to  to 12'.`
+            } else if (height < 36.125) {
+              msgHeight = `Please enter a value greater than or equal to 3' 1/8".`
+            }
+          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+            if (height > 144) {
+              msgHeight = `Please enter a value less than or equal to  to 12'.`
+            } else if (height < 36.125) {
+              msgHeight = `Please enter a value greater than or equal to 3' 1/8".`
+            }
+          } else if (calcUsing === 'Unit Dimensions') {
+            if (height > 132.375) {
+              msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`
+            } else if (height < 35.5) {
+              msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`
+            }
+          }
+        }
+      }
+    }
+
+    let msgWidth = '';
+    if (width > 0) {
+      if (configuration === 'stacking') {
+        if (panelStyle === 'thermally') {
+          if (calcUsing === 'Rough Opening') {
+            if (width > 351.25) {
+              msgWidth = `Please enter a value less than or equal to 29' 3 1/4".`
+            } else if (width < 69.75) {
+              msgWidth = `Please enter a value greater than or equal to 5' 9 7/8".`
+            }
+          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+
+          } else if (calcUsing === 'Unit Dimensions') {
+            if (width > 369.625) {
+              msgWidth = `Please enter a value less than or equal to 29' 2 1/2".`
+            } else if (width <= 69) {
+              msgWidth = `Please enter a value greater than or equal to 5' 9 1/8".`
+            }
+          }
+        } else {
+          if (calcUsing === 'Rough Opening') {
+            if (width > 489.25) {
+              msgWidth = `Please enter a value less than or equal to 40' 9 1/4".`
+            } else if (width < 69.625) {
+              msgWidth = `Please enter a value greater than or equal to 5' 9 5/8".`
+            }
+          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+          } else if (calcUsing === 'Unit Dimensions') {
+            if (width > 488.5) {
+              msgWidth = `Please enter a value less than or equal to 40' 8 1/2".`
+            } else if (width < 153.125) {
+              msgWidth = `Please enter a value greater than or equal to 12' 9 1/8".`
+            }
+          }
+        }
+      } else if (configuration === 'pocketing') {
+        if (panelStyle === 'thermally') {
+          if (calcUsing === 'Rough Opening') {
+            if (width > 421.375) {
+              msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`
+            } else if (width < 3.25) {
+              msgWidth = `Please enter a value greater than or equal to 15".`
+            }
+          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+            if (width > 421.375) {
+              msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`
+            } else if (width < 136.25) {
+              msgWidth = `Please enter a value greater than or equal to 11' 3 1/2".`
+            }
+          } else if (calcUsing === 'Unit Dimensions') {
+            if (width > 420.625) {
+              msgWidth = `Please enter a value less than or equal to 35' 5/8".`
+            } else if (width < 135.5) {
+              msgWidth = `Please enter a value greater than or equal to 2' 11 5/8".`
+            }
+          }
+        } else {
+          if (calcUsing === 'Rough Opening') {
+            if (width > 536.75) {
+              msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`
+            } else if (width < 180.625) {
+              msgWidth = `Please enter a value greater than or equal to 15' 5/8".`
+            }
+          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+            if (width > 536.75) {
+              msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`
+            } else if (width < 180.625) {
+              msgWidth = `Please enter a value greater than or equal to 15' 5/8".`
+            }
+          } else if (calcUsing === 'Unit Dimensions') {
+            if (width > 536) {
+              msgWidth = `Please enter a value less than or equal to  to 44' 8".`
+            } else if (width < 155.875) {
+              msgWidth = `Please enter a value greater than or equal to 14' 11 7/8".`
+            }
+          }
+        }
+      }
+    }
+
+    if (msgWidth !== '' || msgHeight !== '') {
+      setMsgWidth(msgWidth)
+      setMsgHeight(msgHeight)
+      setIsShowResults(false)
+    }
+  
+    // Update Interlocks	    
+    let interlocks_temp;        
+    if (calcUsing == 'Rough Opening' || calcUsing == 'Rough Opening Without Pocket (Daylight Width)') {
       interlocks_temp = funcSetInterlocks(calculateUnitHeightFromRoughOpeningHeight(height));
     } else { // unit_dimensions
       interlocks_temp = funcSetInterlocks(height);
@@ -835,125 +1201,115 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setBackStileOffset(calculateBackStileOffset(panelStyle, stackingDirection, configuration));
     setPocketOffset(calculatePocketOffset(interlockStileOffset, stackingDirection, configuration, numberPanels, interlocks_temp, panelStyle));
     setBiPartPairOffset(calculateBiPartPairOffset(stackingDirection));
-    setPocketCount(calculatePocketCount(configuration, stackingDirection));
-
 
     //////////////////////////////
     ///// Min/Max Height
     //////////////////////////////            
-    let minHeight_temp = getMinHeight(panelStyle, sillOptions);            
-    let maxHeight_temp = panelStyle === 'thermal' ? 119.375 : 143.375;
+    // let minHeight_temp = getMinHeight(panelStyle, sillOptions);            
+    // let maxHeight_temp = panelStyle === 'thermally' ? 119.375 : 143.375;
 
-    switch (calculateUsing) {
-        case 'Rough Opening':
-        case 'Rough Opening Without Pocket (Daylight Width)':
-          minHeight_temp = calculateRoughOpeningHeightFromUnitHeight(minHeight_temp);
-          maxHeight_temp = calculateRoughOpeningHeightFromUnitHeight(maxHeight_temp);
-          break;
-        case 'Unit Dimensions':
-            // min/max are defined in unit dimensions
-          break;
-    }
+    // switch (calcUsing) {
+    //     case 'Rough Opening':
+    //     case 'Rough Opening Without Pocket (Daylight Width)':
+    //       minHeight_temp = calculateRoughOpeningHeightFromUnitHeight(minHeight_temp);
+    //       maxHeight_temp = calculateRoughOpeningHeightFromUnitHeight(maxHeight_temp);
+    //       break;
+    //     case 'Unit Dimensions':
+    //         // min/max are defined in unit dimensions
+    //       break;
+    // }
 
-    const minFormattedHeight = convertToFeetInchesAndFraction(minHeight_temp, AWNumberUtil.roundingDirections.up);
-    const maxFormattedHeight = convertToFeetInchesAndFraction(maxHeight_temp, AWNumberUtil.roundingDirections.down);
+    // const minFormattedHeight = convertToFeetInchesAndFraction(minHeight_temp, AWNumberUtil.roundingDirections.up);
+    // const maxFormattedHeight = convertToFeetInchesAndFraction(maxHeight_temp, AWNumberUtil.roundingDirections.down);
 
-    setHeightStates({
-      ...heightStates,
-      ruleMax: roundNumber(maxHeight_temp),
-      ruleMin: roundNumber(minHeight_temp),
-      msgMax: 'Please enter a value less than or equal to ' + minFormattedHeight + '.',
-      msgMin: 'Please enter a value greater than or equal to ' + maxFormattedHeight + '.'
-    })
-
-    console.log('Please enter a value less than or equal to ' + minFormattedHeight + '.')
-    console.log('Please enter a value less than or equal to ' + minFormattedHeight + '.')
+    // setHeightStates({
+    //   ...heightStates,
+    //   ruleMax: roundNumber(maxHeight_temp),
+    //   ruleMin: roundNumber(minHeight_temp),
+    //   msgMax: 'Please enter a value less than or equal to ' + minFormattedHeight + '.',
+    //   msgMin: 'Please enter a value greater than or equal to ' + maxFormattedHeight + '.'
+    // })
 
     // Update the validator message on the page
-    if (height.length > 0) {
-        // formValidator.element(height);
-    }
-
+    
 
     //////////////////////////////
     ///// Min/Max Width
     //////////////////////////////             
-    let minWidth_temp = calculateMinWidth(stackingDirection, configuration, numberPanels, calculateUsing, '');
+    // let minWidth_temp = calculateMinWidth(stackingDirection, configuration, numberPanels, calcUsing, '');
   
-    // Get the Max Width from the array
-    const maxWidthRow = widthMaxes.filter((element: any) => 
-      element.configuration === configuration && element.panelStyle === panelStyle && element.stackingDirection === stackingDirection
-    );
+    // // Get the Max Width from the array
+    // const maxWidthRow = widthMaxes.filter((element: any) => 
+    //   element.configuration === configuration && element.panelStyle === panelStyle && element.stackingDirection === stackingDirection
+    // );
   
-    let maxWidth_temp = maxWidthRow[0].maxUnitWidth;
+    // let maxWidth_temp = maxWidthRow[0].maxUnitWidth;
 
-    switch (calculateUsing) {
-        case 'Rough Opening':
-        case 'Rough Opening Without Pocket (Daylight Width)':
-          minWidth_temp = calculateRoughOpeningWidthFromUnitWidth(minWidth_temp);
-          maxWidth_temp = calculateRoughOpeningWidthFromUnitWidth(maxWidth_temp);
-            break;
-        case 'Unit Dimensions':
-            // min/max are defined in unit dimensions
-            break;
-    }
+    // switch (calcUsing) {
+    //     case 'Rough Opening':
+    //     case 'Rough Opening Without Pocket (Daylight Width)':
+    //       minWidth_temp = calculateRoughOpeningWidthFromUnitWidth(minWidth_temp);
+    //       maxWidth_temp = calculateRoughOpeningWidthFromUnitWidth(maxWidth_temp);
+    //         break;
+    //     case 'Unit Dimensions':
+    //         // min/max are defined in unit dimensions
+    //         break;
+    // }
 
-    const minFormattedWidth = convertToFeetInchesAndFraction(minWidth_temp, AWNumberUtil.roundingDirections.up);
-    const maxFormattedWidth = convertToFeetInchesAndFraction(maxWidth_temp, AWNumberUtil.roundingDirections.down);
+    // const minFormattedWidth = convertToFeetInchesAndFraction(minWidth_temp, AWNumberUtil.roundingDirections.up);
+    // const maxFormattedWidth = convertToFeetInchesAndFraction(maxWidth_temp, AWNumberUtil.roundingDirections.down);
 
-    setWidthStates({
-      ...widthStates,
-      ruleMax: roundNumber(maxWidth_temp),
-      ruleMin: roundNumber(minWidth_temp),
-      msgMax: 'Please enter a value less than or equal to ' + maxFormattedWidth + '.',
-      msgMin: 'Please enter a value greater than or equal to ' + minFormattedWidth + '.'
-    })
-
-    // const widthValid = width.length > 0 ? this.$validator.element(this.formFields.$width) : false;
-    const widthValid = width.length > 0;
+    // setWidthStates({
+    //   ...widthStates,
+    //   ruleMax: roundNumber(maxWidth_temp),
+    //   ruleMin: roundNumber(minWidth_temp),
+    //   msgMax: 'Please enter a value less than or equal to ' + maxFormattedWidth + '.',
+    //   msgMin: 'Please enter a value greater than or equal to ' + minFormattedWidth + '.'
+    // })
 
     ////////////////////////////////////////
     ///// Update number of panels dropdown
     //////////////////////////////////////// 
-    let minPanelNumber_temp
-    let maxPanelNumber_temp
-    if (widthValid) {
-        const minPanelValue = pocketCount > 0 ? 1 : 2;
-        minPanelNumber_temp = stackingDirection === '2-Way' ? minPanelValue * 2 : minPanelValue;
+    let minPanelNumber_temp;
+    let maxPanelNumber_temp;
+    const pocketCount = calculatePocketCount(configuration, stackingDirection);
+    setPocketCount(pocketCount);
+    if (msgWidth === '') {
+      const minPanelValue = pocketCount > 0 ? 1 : 2;
+      minPanelNumber_temp = stackingDirection === '2-Way' ? minPanelValue * 2 : minPanelValue;
 
-        const maxPanelValue = stackingDirection === '2-Way' ? 2 : 1;
-        minPanelNumber_temp = panelStyle === 'thermally' ? maxPanelValue * 5 : maxPanelValue * 7;
+      const maxPanelValue = stackingDirection === '2-Way' ? 2 : 1;
+      maxPanelNumber_temp = panelStyle === 'thermally' ? maxPanelValue * 5 : maxPanelValue * 7;
 
-        let i = minPanelNumber_temp;
-        const numberPanelData = [];
-        let railLength = calculateRailLength(stackingDirection, configuration, width, i);
-        maxPanelNumber_temp = calculateMaxPanelWidth(railLength, stackingDirection, configuration, i);
+      let i = minPanelNumber_temp;
+      const numberPanelData: any = [];
+      let railLength = calculateRailLength(stackingDirection, configuration, width, i);
+      let maxPanelWidth = calculateMaxPanelWidth(railLength, stackingDirection, configuration, i);
+ 
+      // Only show number of panels with a maxPanelWidth <= than 72
+      while (maxPanelWidth > 72) {
+          i = stackingDirection === '2-Way' ? i += 2 : i += 1;
 
-        // Only show number of panels with a maxPanelWidth <= than 72
-        while (maxPanelNumber_temp > 72) {
-            i = stackingDirection == '2-Way' ? i += 2 : i += 1;
+          railLength = calculateRailLength(stackingDirection, configuration, width, i);
+          maxPanelWidth = calculateMaxPanelWidth(railLength, stackingDirection, configuration, i);
+      }
 
-            railLength = calculateRailLength(stackingDirection, configuration, width, i);
-            maxPanelNumber_temp = calculateMaxPanelWidth(railLength, stackingDirection, configuration, i);
-        }
+      
+      // Add the smallest number of panels where maxPanelWidth is less than 72
+      numberPanelData.push(i);
 
-        
-        // Add the smallest number of panels where maxPanelWidth is less than 72
-        numberPanelData.push(i);
+      // Now add the rest of the options up to the max panel number
+      while (i < maxPanelNumber_temp) {
+          if (stackingDirection === '2-Way') {
+              numberPanelData.push(i + 2);
+          } else {
+              numberPanelData.push(i + 1);
+          }
 
-        // Now add the rest of the options up to the max panel number
-        while (i < maxPanelNumber_temp) {
-            if (stackingDirection == '2-Way') {
-                numberPanelData.push(i + 2);
-            } else {
-                numberPanelData.push(i + 1);
-            }
+          i = stackingDirection == '2-Way' ? i += 2 : i += 1;
+      }
 
-            i = stackingDirection == '2-Way' ? i += 2 : i += 1;
-        }
-
-        setMinPanelNumber(minPanelNumber_temp)
-        setMaxPanelNumber(maxPanelNumber_temp)
+      setNumberPanels(numberPanelData)
     }          
   }
 
@@ -975,7 +1331,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             <select
               className={themeData.classes.selectColumnSpan2}
               {...register('calcUsing')}
-              onChange={handleCalcUsingChange}
+              name='calcUsing'
+              onChange={updateForm}
             >
               {configuration === 'stacking' && (
                 <>
@@ -1004,7 +1361,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   maxLength={25}
                   onInput={clearCalculations}
                   className={`${
-                    errors.width ? themeData.classes.errorInvalid : themeData.classes.errorValid
+                    (errors.width || msgWidth) ? themeData.classes.errorInvalid : themeData.classes.errorValid
                   }`}
                   {...register('width', {
                     required: 'This field is required.',
@@ -1013,15 +1370,16 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                       message: 'Width is not valid.',
                     },
                   })}
-                  // onChange={(e) => onDimensionFieldChange(e, 'width')}
+                  name='width'
+                  onChange={(e) => onDimensionFieldChange(e, 'width')}
                 ></input>
               </div>
               <div>
                 <select
-                  className={themeData.classes.selectColumnSpan1}
+                  className={msgWidth ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('widthInches')}
                   name='widthInches'
-                  // onChange={(e) => onDimensionFieldChange(e, 'width')}
+                  onChange={(e) => onDimensionFieldChange(e, 'width')}
                 >
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
@@ -1039,10 +1397,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               </div>
               <div>
                 <select
-                  className={themeData.classes.selectColumnSpan1}
+                  className={msgWidth ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('widthFraction')}
                   name='widthFraction'
-                  // onChange={(e) => onDimensionFieldChange(e, 'width')}
+                  onChange={(e) => onDimensionFieldChange(e, 'width')}
                 >
                   <option value="0" selected>0</option>
                   <option value="0.125">1 / 8</option>
@@ -1055,7 +1413,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </select>
               </div>
             </div>
-            {errors.width && <div className="text-body text-error">{errors.width.message}</div>}
+            {msgWidth && <div className="text-body text-error">{msgWidth}</div>}
             <label className={themeData.classes.labelClass} htmlFor="width">
               <span className={themeData.classes.helpText}>For help, refer to our</span>
               <button
@@ -1094,7 +1452,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   maxLength={25}
                   onInput={clearCalculations}
                   className={`${
-                    errors.height ? themeData.classes.errorInvalid : themeData.classes.errorValid
+                    (errors.height || msgHeight) ? themeData.classes.errorInvalid : themeData.classes.errorValid
                   }`}
                   {...register('height', {
                     required: 'This field is required.',
@@ -1103,15 +1461,16 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                       message: 'Height is not valid.',
                     },
                   })}
-                  // onChange={(e) => onDimensionFieldChange(e, 'height')}
+                  name='height'
+                  onChange={(e) => onDimensionFieldChange(e, 'height')}
                 ></input>
               </div>
               <div>
                 <select
-                  className={themeData.classes.selectColumnSpan1}
+                  className={msgHeight ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('heightInches')}
                   name='heightInches'
-                  // onChange={(e) => onDimensionFieldChange(e, 'height')}
+                  onChange={(e) => onDimensionFieldChange(e, 'height')}
                 >
                   <option value="0" selected>0</option>
                   <option value="1">1</option>
@@ -1129,10 +1488,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               </div>
               <div>
                 <select
-                  className={themeData.classes.selectColumnSpan1}
+                  className={msgHeight ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('heightFraction')}
                   name='heightFraction'
-                  // onChange={(e) => onDimensionFieldChange(e, 'height')}
+                  onChange={(e) => onDimensionFieldChange(e, 'height')}
                 >
                   <option value="0" selected>0</option>
                   <option value="0.125">1 / 8</option>
@@ -1145,7 +1504,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </select>
               </div>
             </div>
-            {errors.height && <div className="text-body text-error">{errors.height.message}</div>}
+            {msgHeight && <div className="text-body text-error">{msgHeight}</div>}
           </div>
           <div className={themeData.classes.columnSpan1}>
             <label className={themeData.classes.labelClass} htmlFor="stackingDirection">
@@ -1154,7 +1513,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             <select
               className={themeData.classes.selectColumnSpan1}
               {...register('stackingDirection')}
-              // onChange={updateForm}
+              name='stackingDirection'
+              onChange={updateForm}
             >
               {configuration === 'stacking' && (
                 <>
@@ -1183,7 +1543,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             <select
               className={themeData.classes.selectColumnSpan1}
               {...register('sillOption')}
-              // onChange={updateForm}
+              name='sillOption'
+              onChange={updateForm}
             >
               <option value="Standard On-Floor Drainage" selected>Standard On-Floor Drainage</option>
               <option value="Tile Track">Tile Track</option>
@@ -1201,35 +1562,81 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             <select
               className={themeData.classes.selectColumnSpan1}
               {...register('panelNumber')}
-              // onChange={updateForm}
+              name='panelNumber'
+              onChange={updateForm}
             >
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4" selected>4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
+              {numberPanels.map(numberPanel => (
+                <option key={numberPanel} value={numberPanel}>{numberPanel}</option>
+              ))}
             </select>
             {errors.panelNumber && (
               <div className="text-body text-error">{errors.panelNumber.message}</div>
             )}
           </div>
-          <div className={themeData.classes.columnSpan1}>
-            <label className={themeData.classes.labelClass} htmlFor="panelStackingLocation">
-              Panel Stacking Location*
-            </label>
-            <select
-              className={themeData.classes.selectColumnSpan1}
-              {...register('panelStackingLocation')}
-              // onChange={updateForm}
-            >
-              <option value="Interior" selected>Interior</option>
-              <option value="Exterior">Exterior</option>
-            </select>
-            {errors.panelStackingLocation && (
-              <div className="text-body text-error">{errors.panelStackingLocation.message}</div>
-            )}
-          </div>
+          <div></div>
+          {configuration === 'stacking' && (
+            <div className={themeData.classes.columnSpan1}>
+              <label className={themeData.classes.labelClass} htmlFor="panelStackingLocation">
+                Panel Stacking Location*
+              </label>
+              <select
+                className={themeData.classes.selectColumnSpan1}
+                {...register('panelStackingLocation')}
+                name='panelStackingLocation'
+                onChange={updateForm}
+              >
+                <option value="Interior" selected>Interior</option>
+                <option value="Exterior">Exterior</option>
+              </select>
+              {errors.panelStackingLocation && (
+                <div className="text-body text-error">{errors.panelStackingLocation.message}</div>
+              )}
+            </div>
+          )}
+          {(formState.sillOption === 'Tile Track') && (
+            <div className={themeData.classes.columnSpan1}>
+              <label className={themeData.classes.labelClass} htmlFor="thicknessFinishedFloor">
+                Thickness Of Finished Floor (In Inches)*
+              </label>
+              <div className='grid grid-cols-4 gap-4'>
+                <select
+                  className={themeData.classes.selectColumnSpan1}
+                  {...register('thicknessFinishedFloorInches')}
+                  name='thicknessFinishedFloorInches'
+                  onChange={updateForm}
+                  // onChange={(e) => onDimensionFieldChange(e, 'height')}
+                >
+                  <option value="0" selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                </select>
+                <select
+                  className={themeData.classes.selectColumnSpan1}
+                  {...register('thicknessFinishedFloorFraction')}
+                  name='thicknessFinishedFloorFraction'
+                  onChange={updateForm}
+                >
+                  <option value="0" selected>0</option>
+                  <option value="0.125">1 / 8</option>
+                  <option value="0.25">1 / 4</option>
+                  <option value="0.375">3 / 8</option>
+                  <option value="0.5">1 / 2</option>
+                  <option value="0.625">5 / 8</option>
+                  <option value="0.75">3 / 4</option>
+                  <option value="0.875">7 / 8</option>
+                </select>
+              </div>
+            </div>
+          )}
           {/* Submit section */}
           <div className={themeData.classes.submitWrapper}>
             {isShowResults && (
@@ -1306,10 +1713,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                           <td className={themeData.classes.tdColumn}># Of Pannels</td>
                           <td className={themeData.classes.tdColumnCenter}>{getValues('panelNumber') || '-'}</td>
                         </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Sill Options</td>
-                          <td className={themeData.classes.tdColumnCenter}>{getValues('sillOption') || '-'}</td>
-                        </tr>
+                        {formState.sillOption !== 'Tile Track' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <td className={themeData.classes.tdColumn}>Sill Options</td>
+                            <td className={themeData.classes.tdColumnCenter}>{getValues('sillOption') || '-'}</td>
+                          </tr>
+                        )}
                       </tbody>
                     </table>
                   </div>
@@ -1342,9 +1751,20 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                             <div dangerouslySetInnerHTML={{__html: roughOpeningWidth}} />
                           </td>
                           <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{__html: configuration === 'stacking' ? roughOpeningHeightSubfloor : roughOpeningHeightRecess}} />
+                            <div dangerouslySetInnerHTML={{__html: roughOpeningHeightSubfloor}} />
                           </td>
                         </tr>
+                        {formState.sillOption === 'Tile Track' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <th className={themeData.classes.tdColumn}>Rough Opening (including recess in floor with flush sill application)</th>
+                            <td className={themeData.classes.tdColumn}>
+                              <div dangerouslySetInnerHTML={{__html: roughOpeningWidth}} />
+                            </td>
+                            <td className={themeData.classes.tdColumn}>
+                              <div dangerouslySetInnerHTML={{__html: roughOpeningHeightRecess}} />
+                            </td>
+                          </tr>
+                        )}
                         {configuration === 'pocketing' && (
                           <tr className={themeData.classes.tableRow}>
                             <td className={themeData.classes.tdColumn}>Rough Opening (not including pocket)</td>
