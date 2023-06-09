@@ -218,6 +218,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     resetField('height');
     resetField('widthInches');
     resetField('widthFraction');
+    setIsShowResults(false);
   };
 
   const funcSetInterlocks = (unitHeight: any) => {
@@ -1106,31 +1107,31 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           if (calcUsing === 'Rough Opening') {
             if (width > 351.25) {
               msgWidth = `Please enter a value less than or equal to 29' 3 1/4".`
-            } else if (width < 69.75) {
-              msgWidth = `Please enter a value greater than or equal to 5' 9 7/8".`
+            } else if (width < 91) {
+              msgWidth = `Please enter a value greater than or equal to 7' 7".`
             }
           } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
 
           } else if (calcUsing === 'Unit Dimensions') {
-            if (width > 369.625) {
+            if (width > 350.5) {
               msgWidth = `Please enter a value less than or equal to 29' 2 1/2".`
-            } else if (width <= 69) {
-              msgWidth = `Please enter a value greater than or equal to 5' 9 1/8".`
+            } else if (width < 90.25) {
+              msgWidth = `Please enter a value greater than or equal to 7' 6 1/4".`
             }
           }
         } else {
           if (calcUsing === 'Rough Opening') {
             if (width > 489.25) {
               msgWidth = `Please enter a value less than or equal to 40' 9 1/4".`
-            } else if (width < 69.625) {
-              msgWidth = `Please enter a value greater than or equal to 5' 9 5/8".`
+            } else if (width < 90.25) {
+              msgWidth = `Please enter a value greater than or equal to 7' 6 1/4".`
             }
           } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
           } else if (calcUsing === 'Unit Dimensions') {
             if (width > 488.5) {
               msgWidth = `Please enter a value less than or equal to 40' 8 1/2".`
-            } else if (width < 153.125) {
-              msgWidth = `Please enter a value greater than or equal to 12' 9 1/8".`
+            } else if (width < 89.875) {
+              msgWidth = `Please enter a value greater than or equal to 7' 5 7/8".`
             }
           }
         }
@@ -1139,40 +1140,40 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           if (calcUsing === 'Rough Opening') {
             if (width > 421.375) {
               msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`
-            } else if (width < 3.25) {
-              msgWidth = `Please enter a value greater than or equal to 15".`
+            } else if (width < 112.875) {
+              msgWidth = `Please enter a value greater than or equal to 9' 4 7/8"`
             }
           } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
             if (width > 421.375) {
               msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`
-            } else if (width < 136.25) {
-              msgWidth = `Please enter a value greater than or equal to 11' 3 1/2".`
+            } else if (width < 112.875) {
+              msgWidth = `Please enter a value greater than or equal to 9' 4 7/8".`
             }
           } else if (calcUsing === 'Unit Dimensions') {
             if (width > 420.625) {
               msgWidth = `Please enter a value less than or equal to 35' 5/8".`
-            } else if (width < 135.5) {
-              msgWidth = `Please enter a value greater than or equal to 2' 11 5/8".`
+            } else if (width < 112.875) {
+              msgWidth = `Please enter a value greater than or equal to  9' 4 7/8".`
             }
           }
         } else {
           if (calcUsing === 'Rough Opening') {
             if (width > 536.75) {
               msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`
-            } else if (width < 180.625) {
-              msgWidth = `Please enter a value greater than or equal to 15' 5/8".`
+            } else if (width < 112.625) {
+              msgWidth = `Please enter a value greater than or equal to 9' 4 5/8".`
             }
           } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
             if (width > 536.75) {
               msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`
-            } else if (width < 180.625) {
-              msgWidth = `Please enter a value greater than or equal to 15' 5/8".`
+            } else if (width < 112.625) {
+              msgWidth = `Please enter a value greater than or equal to 9' 4 5/8".`
             }
           } else if (calcUsing === 'Unit Dimensions') {
             if (width > 536) {
               msgWidth = `Please enter a value less than or equal to  to 44' 8".`
-            } else if (width < 155.875) {
-              msgWidth = `Please enter a value greater than or equal to 14' 11 7/8".`
+            } else if (width < 111.875) {
+              msgWidth = `Please enter a value greater than or equal to 9' 3 7/8".`
             }
           }
         }
@@ -1819,13 +1820,15 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                           </td>
                           <td className={themeData.classes.tdColumn}>{'-'}</td>
                         </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Sill Depth</td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{__html: sillDepth}} />
-                          </td>
-                          <td className={themeData.classes.tdColumn}>{'-'}</td>
-                        </tr>
+                        {formState.sillOption !== 'Tile Track' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <td className={themeData.classes.tdColumn}>Sill Depth</td>
+                            <td className={themeData.classes.tdColumn}>
+                              <div dangerouslySetInnerHTML={{__html: sillDepth}} />
+                            </td>
+                            <td className={themeData.classes.tdColumn}>{'-'}</td>
+                          </tr>
+                        )}
                       </tbody>
                     </table>
                   </div>
