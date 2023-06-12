@@ -49,7 +49,7 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         thRight: 'py-4 pr-4 text-center text-lg font-heavy',
       },
       stepperConnectorStyle: {
-        activeColor: '#f26924',
+        activeColor: '#f26924', 
         completedColor: '#dd7540',
         // disabledColor: '#f26924',
       },

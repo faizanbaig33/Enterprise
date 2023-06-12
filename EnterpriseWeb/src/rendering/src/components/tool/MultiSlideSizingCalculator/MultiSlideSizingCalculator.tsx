@@ -96,6 +96,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
           <Stepper
             activeStep={activeStep}
             connectorStyleConfig={themeData.stepperConnectorStyle}
+            connectorStateColors={true}
           >
             <Step
               label="Step 1" 
@@ -109,7 +110,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
             />
             <Step
               label="Step 3"
-              styleConfig={themeData.styleConfig}
+              styleConfig={themeData.stepperConnectorConfig}
               children={isComplete && <FiCheck size={16} />}
             />
           </Stepper>
