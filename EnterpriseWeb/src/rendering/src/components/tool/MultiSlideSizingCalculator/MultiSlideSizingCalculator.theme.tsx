@@ -48,12 +48,26 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         thCenter: 'py-4 text-center text-lg font-heavy',
         thRight: 'py-4 pr-4 text-center text-lg font-heavy',
       },
+      stepperConnectorStyle: {
+        activeColor: '#f26924',
+        completedColor: '#dd7540',
+        // disabledColor: '#f26924',
+      },
+      stepperConnectorConfig: {
+        activeBgColor: '#f26924',
+        // activeTextColor: '#001722',
+        completedBgColor: '#dd7540',
+        // completedTextColor: '#001722',
+        // // inactiveBgColor: '',
+        // inactiveTextColor: '#001722',
+        // fontWeight: '700'
+      }
     },
     rba: {
       classes: {
         /** Insert Theme classes here **/
       },
-    },
+    }
   }
 };
 /* Example of more advanced builder */

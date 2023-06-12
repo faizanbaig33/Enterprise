@@ -64,23 +64,6 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
     setIsComplete(true)
   };
 
-  // stepper props
-  const connectorStyles: any = {
-    activeColor: '#fff',
-    completedColor: '#fff',
-    disabledColor: '#f26924',
-  }
-
-  const styleConfig: any = {
-    activeBgColor: '#f26924',
-    activeTextColor: '#001722',
-    completedBgColor: '#f26924',
-    completedTextColor: '#001722',
-    // inactiveBgColor: '',
-    inactiveTextColor: '#001722',
-    fontWeight: '700'
-  }
-
   return (
     <Component variant="lg" dataComponent="tool/multislidesizingcalculator" {...props}>
       <div className="col-span-12">
@@ -112,21 +95,21 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
         <div className={themeData.classes.formStep}>
           <Stepper
             activeStep={activeStep}
-            connectorStyleConfig={connectorStyles}
+            connectorStyleConfig={themeData.stepperConnectorStyle}
           >
             <Step
               label="Step 1" 
-              styleConfig={styleConfig} 
+              styleConfig={themeData.stepperConnectorConfig} 
               children={activeStep !== 0 && <FiCheck size={16} />}
             />
             <Step 
               label="Step 2"
-              styleConfig={styleConfig}
+              styleConfig={themeData.stepperConnectorConfig}
               children={activeStep === 2 && <FiCheck size={16} />}
             />
             <Step
               label="Step 3"
-              styleConfig={styleConfig}
+              styleConfig={themeData.styleConfig}
               children={isComplete && <FiCheck size={16} />}
             />
           </Stepper>

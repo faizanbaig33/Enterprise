@@ -1333,17 +1333,18 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               className={themeData.classes.selectColumnSpan2}
               {...register('calcUsing')}
               name='calcUsing'
+              value='Rough Opening'
               onChange={updateForm}
             >
               {configuration === 'stacking' && (
                 <>
-                <option value="Rough Opening" selected>Rough Opening</option>
+                <option value="Rough Opening">Rough Opening</option>
                 <option value="Unit Dimensions">Unit Dimensions</option>
                 </>
               )}
               {configuration === 'pocketing' && (
                 <>
-                <option value="Rough Opening" selected>Rough Opening</option>
+                <option value="Rough Opening">Rough Opening</option>
                 <option value="Rough Opening Without Pocket (Daylight Width)">Rough Opening Without Pocket (Daylight Width)</option>
                 <option value="Unit Dimensions">Unit Dimensions</option>
                 </>
@@ -1380,9 +1381,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={msgWidth ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('widthInches')}
                   name='widthInches'
+                  value='0'
                   onChange={(e) => onDimensionFieldChange(e, 'width')}
                 >
-                  <option value="0" selected>0</option>
+                  <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -1401,9 +1403,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={msgWidth ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('widthFraction')}
                   name='widthFraction'
+                  value='0'
                   onChange={(e) => onDimensionFieldChange(e, 'width')}
                 >
-                  <option value="0" selected>0</option>
+                  <option value="0">0</option>
                   <option value="0.125">1 / 8</option>
                   <option value="0.25">1 / 4</option>
                   <option value="0.375">3 / 8</option>
@@ -1471,9 +1474,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={msgHeight ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('heightInches')}
                   name='heightInches'
+                  value='0'
                   onChange={(e) => onDimensionFieldChange(e, 'height')}
                 >
-                  <option value="0" selected>0</option>
+                  <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -1492,9 +1496,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={msgHeight ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('heightFraction')}
                   name='heightFraction'
+                  value='0'
                   onChange={(e) => onDimensionFieldChange(e, 'height')}
                 >
-                  <option value="0" selected>0</option>
+                  <option value="0">0</option>
                   <option value="0.125">1 / 8</option>
                   <option value="0.25">1 / 4</option>
                   <option value="0.375">3 / 8</option>
@@ -1515,11 +1520,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               className={themeData.classes.selectColumnSpan1}
               {...register('stackingDirection')}
               name='stackingDirection'
+              value='1-Way Left'
               onChange={updateForm}
             >
               {configuration === 'stacking' && (
                 <>
-                <option value="1-Way Left" selected>1-Way Left</option>
+                <option value="1-Way Left">1-Way Left</option>
                 <option value="1-Way Right">1-Way Right</option>
                 <option value="2-Way">2-Way</option>
                 <option value="Double Active">Double Active</option>
@@ -1527,7 +1533,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               )}
               {configuration === 'pocketing' && (
                 <>
-                <option value="1-Way Left" selected>1-Way Left</option>
+                <option value="1-Way Left">1-Way Left</option>
                 <option value="1-Way Right">1-Way Right</option>
                 <option value="2-Way">2-Way</option>
                 </>
@@ -1545,9 +1551,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               className={themeData.classes.selectColumnSpan1}
               {...register('sillOption')}
               name='sillOption'
+              value='Standard On-Floor Drainage'
               onChange={updateForm}
             >
-              <option value="Standard On-Floor Drainage" selected>Standard On-Floor Drainage</option>
+              <option value="Standard On-Floor Drainage">Standard On-Floor Drainage</option>
               <option value="Tile Track">Tile Track</option>
               <option value="Low Profile">Low Profile</option>
               <option value="None">None</option>
@@ -1584,9 +1591,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 className={themeData.classes.selectColumnSpan1}
                 {...register('panelStackingLocation')}
                 name='panelStackingLocation'
+                value='Interior'
                 onChange={updateForm}
               >
-                <option value="Interior" selected>Interior</option>
+                <option value="Interior">Interior</option>
                 <option value="Exterior">Exterior</option>
               </select>
               {errors.panelStackingLocation && (
@@ -1604,10 +1612,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={themeData.classes.selectColumnSpan1}
                   {...register('thicknessFinishedFloorInches')}
                   name='thicknessFinishedFloorInches'
+                  value='0'
                   onChange={updateForm}
                   // onChange={(e) => onDimensionFieldChange(e, 'height')}
                 >
-                  <option value="0" selected>0</option>
+                  <option value="0">0</option>
                   <option value="1">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -1624,9 +1633,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={themeData.classes.selectColumnSpan1}
                   {...register('thicknessFinishedFloorFraction')}
                   name='thicknessFinishedFloorFraction'
+                  value='0'
                   onChange={updateForm}
                 >
-                  <option value="0" selected>0</option>
+                  <option value="0">0</option>
                   <option value="0.125">1 / 8</option>
                   <option value="0.25">1 / 4</option>
                   <option value="0.375">3 / 8</option>
