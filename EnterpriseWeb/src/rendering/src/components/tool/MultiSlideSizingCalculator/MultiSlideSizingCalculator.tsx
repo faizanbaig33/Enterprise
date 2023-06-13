@@ -95,22 +95,22 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
         <div className={themeData.classes.formStep}>
           <Stepper
             activeStep={activeStep}
-            connectorStyleConfig={themeData.stepperConnectorStyle}
-            connectorStateColors={true}
+            // connectorStyleConfig={themeData.stepperConnectorStyle}
+            // connectorStateColors={true}
           >
             <Step
               label="Step 1" 
-              styleConfig={themeData.stepperConnectorConfig} 
+              // styleConfig={themeData.stepperConnectorConfig} 
               children={activeStep !== 0 && <FiCheck size={16} />}
             />
             <Step 
               label="Step 2"
-              styleConfig={themeData.stepperConnectorConfig}
+              // styleConfig={themeData.stepperConnectorConfig}
               children={activeStep === 2 && <FiCheck size={16} />}
             />
             <Step
               label="Step 3"
-              styleConfig={themeData.stepperConnectorConfig}
+              // styleConfig={themeData.stepperConnectorConfig}
               children={isComplete && <FiCheck size={16} />}
             />
           </Stepper>

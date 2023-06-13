@@ -1333,7 +1333,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               className={themeData.classes.selectColumnSpan2}
               {...register('calcUsing')}
               name='calcUsing'
-              value='Rough Opening'
+              defaultValue='Rough Opening'
               onChange={updateForm}
             >
               {configuration === 'stacking' && (
@@ -1381,7 +1381,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={msgWidth ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('widthInches')}
                   name='widthInches'
-                  value='0'
+                  defaultValue='0'
                   onChange={(e) => onDimensionFieldChange(e, 'width')}
                 >
                   <option value="0">0</option>
@@ -1403,7 +1403,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={msgWidth ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('widthFraction')}
                   name='widthFraction'
-                  value='0'
+                  defaultValue='0'
                   onChange={(e) => onDimensionFieldChange(e, 'width')}
                 >
                   <option value="0">0</option>
@@ -1474,7 +1474,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={msgHeight ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('heightInches')}
                   name='heightInches'
-                  value='0'
+                  defaultValue='0'
                   onChange={(e) => onDimensionFieldChange(e, 'height')}
                 >
                   <option value="0">0</option>
@@ -1496,7 +1496,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={msgHeight ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1}
                   {...register('heightFraction')}
                   name='heightFraction'
-                  value='0'
+                  defaultValue='0'
                   onChange={(e) => onDimensionFieldChange(e, 'height')}
                 >
                   <option value="0">0</option>
@@ -1520,7 +1520,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               className={themeData.classes.selectColumnSpan1}
               {...register('stackingDirection')}
               name='stackingDirection'
-              value='1-Way Left'
+              defaultValue='1-Way Left'
               onChange={updateForm}
             >
               {configuration === 'stacking' && (
@@ -1551,7 +1551,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               className={themeData.classes.selectColumnSpan1}
               {...register('sillOption')}
               name='sillOption'
-              value='Standard On-Floor Drainage'
+              defaultValue='Standard On-Floor Drainage'
               onChange={updateForm}
             >
               <option value="Standard On-Floor Drainage">Standard On-Floor Drainage</option>
@@ -1591,7 +1591,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 className={themeData.classes.selectColumnSpan1}
                 {...register('panelStackingLocation')}
                 name='panelStackingLocation'
-                value='Interior'
+                defaultValue='Interior'
                 onChange={updateForm}
               >
                 <option value="Interior">Interior</option>
@@ -1612,7 +1612,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={themeData.classes.selectColumnSpan1}
                   {...register('thicknessFinishedFloorInches')}
                   name='thicknessFinishedFloorInches'
-                  value='0'
+                  defaultValue='0'
                   onChange={updateForm}
                   // onChange={(e) => onDimensionFieldChange(e, 'height')}
                 >
@@ -1633,7 +1633,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   className={themeData.classes.selectColumnSpan1}
                   {...register('thicknessFinishedFloorFraction')}
                   name='thicknessFinishedFloorFraction'
-                  value='0'
+                  defaultValue='0'
                   onChange={updateForm}
                 >
                   <option value="0">0</option>
