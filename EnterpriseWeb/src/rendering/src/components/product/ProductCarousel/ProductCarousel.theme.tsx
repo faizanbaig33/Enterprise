@@ -16,9 +16,9 @@ export const ProductCarouselTheme: ThemeFile = {
         'text-theme-text font-sans text-sm-s md:text-s mt-s md:mt-0 mb-xxs font-bold',
       exploreButtonClass: 'w-full flex justify-center mt-8',
       arrowPrevButtonWrapperClass:
-        'flex justify-between items-center absolute top-[45%] left-0 pl-4.5 md:pl-0 md:left-[26%] ml:left-[32%] lg:left-[36%]',
+        'flex justify-between items-center absolute top-[45%] left-0 pl-4.5 md:pl-0 md:left-[26%] mml:left-[32%] lg:left-[36%]',
       arrowNextButtonWrapperClass:
-        'flex justify-between items-center absolute top-[45%] right-0 pr-4.5 md:pr-0 md:right-[26%] ml:right-[32%] lg:right-[36%]',
+        'flex justify-between items-center absolute top-[45%] right-0 pr-4.5 md:pr-0 md:right-[26%] mml:right-[32%] lg:right-[36%]',
       arrowButtonClass:
         'button w-11 h-11 flex items-center justify-center rounded-full border-2 border-[#C4BFB6] bg-white cursor-pointer text-[#001722] transition hover:bg-[#001722] hover:text-white hover:border-[#001722]',
     },
@@ -37,9 +37,9 @@ export const ProductCarouselTheme: ThemeFile = {
         'text-theme-text font-sans text-sm-s md:text-s mt-s md:mt-0 mb-xxs font-bold',
       exploreButtonClass: 'w-full flex justify-center mt-8',
       arrowPrevButtonWrapperClass:
-        'flex justify-between items-center absolute top-[40%] left-0 px-2.5 md:pl-0 md:left-[23%] ml:left-[32%] lg:left-[33%]',
+        'flex justify-between items-center absolute top-[40%] left-0 px-2.5 md:pl-0 md:left-[23%] mml:left-[32%] lg:left-[33%]',
       arrowNextButtonWrapperClass:
-        'flex justify-between items-center absolute top-[40%] right-0 px-2.5 md:pr-0 md:right-[23%] ml:right-[32%] lg:right-[33%]',
+        'flex justify-between items-center absolute top-[40%] right-0 px-2.5 md:pr-0 md:right-[23%] mml:right-[32%] lg:right-[33%]',
       arrowButtonClass:
         'button w-11 h-11 flex items-center justify-center rounded-full border-2 border-[#C4BFB6] bg-white cursor-pointer text-[#001722] transition hover:bg-[#001722] hover:text-white hover:border-[#001722]',
     },

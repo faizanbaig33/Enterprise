@@ -22,7 +22,8 @@ module.exports = {
     screens: {
       xl: '1488px', // 1440 + 48 padding
       lg: '1248px', // 1200 + 48 padding
-      ml: '1024px', // 960 + 48 padding
+      mml: '1024px', // 960 + 48 padding
+      ml: '1008px', // 960 + 48 padding
       md: '672px',
       sm: '375px',
     },
