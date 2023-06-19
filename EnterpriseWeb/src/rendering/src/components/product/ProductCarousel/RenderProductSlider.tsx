@@ -37,7 +37,7 @@ export const RenderSlider = ({
           <div key={idx}>
             <div
               className={clsx({
-                'product-slide-img-wrapper md:h-[370px] md:w-[210px]': true,
+                'product-slide-img-wrapper w-[210px] md:h-[370px]': true,
                 'opacity-70': idx !== currentSlideIndex,
               })}
             >
