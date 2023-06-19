@@ -50,14 +50,16 @@ export const RenderSlider = ({
                 </a>
               </Link>
             </div>
-            <div className="text-center">
-              <Link href={item.fields.cta1Link.value.href}>
-                <a className="md:text-md text-sm font-semibold uppercase hover:underline">
-                  {item.fields.productName.value}
-                </a>
-              </Link>
-              <p className="mt-2 text-sm">{item.fields.productBodyCopy.value}</p>
-            </div>
+            {idx === currentSlideIndex && (
+              <div className="text-center">
+                <Link href={item.fields.cta1Link.value.href}>
+                  <a className="font-futura-pt text-[18px] font-bold uppercase leading-7 text-black hover:underline">
+                    {item.fields.productName.value}
+                  </a>
+                </Link>
+                <p className="mt-2 text-sm">{item.fields.productBodyCopy.value}</p>
+              </div>
+            )}
           </div>
         ))}
       </SliderWrapper>

@@ -3,6 +3,9 @@
 module.exports = {
   extend: {
     name: 'base',
+    fontFamily: {
+      'futura-pt': 'Futura-pt'
+    },
     colors: {
       'theme-bg': 'var(--theme-bg)',
       'theme-btn-bg-hover': 'var(--theme-btn-bg-hover)',
@@ -19,7 +22,7 @@ module.exports = {
     screens: {
       xl: '1488px', // 1440 + 48 padding
       lg: '1248px', // 1200 + 48 padding
-      ml: '1008px', // 960 + 48 padding
+      ml: '1024px', // 960 + 48 padding
       md: '672px',
       sm: '375px',
     },

@@ -38,7 +38,8 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
           'relative col-span-1 my-s mb-s flex w-full md:col-span-2 md:my-xs md:flex-row md:items-center md:space-x-4',
         submitButton:
           'mr-m flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text text-black hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray',
-        prevButton: 'mr-m flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-gray bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text text-black hover:bg-gray hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray',
+        prevButton:
+          'mr-m flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-gray bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text text-black hover:bg-gray hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray',
         tableHead:
           'border-b border-neutral-700 bg-neutral-800 text-neutral-50 dark:border-neutral-600 dark:bg-neutral-700',
         tableRow: 'border-b dark:border-neutral-500',
@@ -49,7 +50,7 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         thRight: 'py-4 pr-4 text-center text-lg font-heavy',
       },
       stepperConnectorStyle: {
-        activeColor: '#f26924', 
+        activeColor: '#f26924',
         completedColor: '#dd7540',
         // disabledColor: '#f26924',
       },
@@ -61,14 +62,14 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         // // inactiveBgColor: '',
         // inactiveTextColor: '#001722',
         // fontWeight: '700'
-      }
+      },
     },
     rba: {
       classes: {
         /** Insert Theme classes here **/
       },
-    }
-  }
+    },
+  };
 };
 /* Example of more advanced builder */
 /*

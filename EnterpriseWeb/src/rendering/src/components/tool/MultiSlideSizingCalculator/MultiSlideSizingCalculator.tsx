@@ -13,10 +13,8 @@ import { Component } from 'src/helpers/Component';
 import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 import { StepConfigurationOption } from './StepConfigurationOption';
 import { StepPanelStyle } from './StepPanelStyle';
-import { StepESeriesSizingCalculator } from './StepESeriesSizingCacluator';
+import { StepESeriesSizingCalculator } from './StepESeriesSizingCalculator';
 // import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
-
-
 
 /*
 import classNames from 'classnames';
@@ -37,7 +35,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
   const [stepWizard, setStepWizard] = useState(null);
   const [formData, setData] = useState({});
   const [activeStep, setActiveStep] = useState(0);
-  const [isComplete, setIsComplete] = useState(false)
+  const [isComplete, setIsComplete] = useState(false);
 
   const assignStepWizard = (instance: any) => {
     setStepWizard(instance);
@@ -48,20 +46,20 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
     console.log(val);
     setData((data) => ({
       ...data,
-      ...val
+      ...val,
     }));
   };
 
   const handleStepChange = (e: any) => {
-    console.log("step change");
+    console.log('step change');
     console.log(e);
     setActiveStep(e.activeStep - 1);
-    setIsComplete(false)
+    setIsComplete(false);
   };
 
   const handleComplete = () => {
     // alert("You r done. TQ");
-    setIsComplete(true)
+    setIsComplete(true);
   };
 
   return (
@@ -70,22 +68,32 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
         <div className={themeData.classes.title}>MultiSlide Door Sizing Calculator</div>
         <div className={themeData.classes.descriptionWrapper}>
           <div className={themeData.classes.description}>
-            <p>Sizing up a door of this nature is no small task. At Andersen, we know every detail is important which is why we've created a sizing calculator to guide you on how to properly design, specify, and prepare your opening for this door. We know having as much information up front as possible lends to a more successful installation and experience.</p>
+            <p>
+              Sizing up a door of this nature is no small task. At Andersen, we know every detail is
+              important which is why we've created a sizing calculator to guide you on how to
+              properly design, specify, and prepare your opening for this door. We know having as
+              much information up front as possible lends to a more successful installation and
+              experience.
+            </p>
             <br />
-            <p>Begin by selecting the options you're interested in, then click the calcuate button. Not sure what you're looking for? Visit the Folding Patio Door page for more information.</p>
+            <p>
+              Begin by selecting the options you're interested in, then click the calcuate button.
+              Not sure what you're looking for? Visit the Folding Patio Door page for more
+              information.
+            </p>
             <br />
             <p>All fields required.</p>
           </div>
           <div className={themeData.classes.help}>
             <div className={themeData.classes.helpContent}>
-              <p className='font-bold text-[16px]'>Need help?</p>
+              <p className="text-[16px] font-bold">Need help?</p>
               <p>Contact Architectural Services at</p>
-              <p className='text-[#f26924] text-[14px] font-semibold'>1-800-299-9029</p>
+              <p className="text-[14px] font-semibold text-[#f26924]">1-800-299-9029</p>
               <p>M-F 8 AM - 6 AM CST</p>
-              <p className='flex items-center'>
+              <p className="flex items-center">
                 <span>or</span>
-                <span className='text-[#f26924] flex items-center ml-1'>
-                  <span className='mr-1'>email us</span>
+                <span className="ml-1 flex items-center text-[#f26924]">
+                  <span className="mr-1">email us</span>
                   <FiMail size={12} />
                 </span>
               </p>
@@ -99,11 +107,11 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
             // connectorStateColors={true}
           >
             <Step
-              label="Step 1" 
-              // styleConfig={themeData.stepperConnectorConfig} 
+              label="Step 1"
+              // styleConfig={themeData.stepperConnectorConfig}
               children={activeStep !== 0 && <FiCheck size={16} />}
             />
-            <Step 
+            <Step
               label="Step 2"
               // styleConfig={themeData.stepperConnectorConfig}
               children={activeStep === 2 && <FiCheck size={16} />}
@@ -115,11 +123,15 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
             />
           </Stepper>
         </div>
-        <div className='mt-5'>
+        <div className="mt-5">
           <StepWizard instance={assignStepWizard} onStepChange={handleStepChange}>
             <StepConfigurationOption fields={props.fields} userCallback={assignUser} />
             <StepPanelStyle data={formData} fields={props.fields} userCallback={assignUser} />
-            <StepESeriesSizingCalculator formData={formData} fields={props.fields} completeCallback={handleComplete} />
+            <StepESeriesSizingCalculator
+              formData={formData}
+              fields={props.fields}
+              completeCallback={handleComplete}
+            />
           </StepWizard>
         </div>
       </div>

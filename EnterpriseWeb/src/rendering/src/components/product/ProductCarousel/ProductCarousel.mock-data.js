@@ -98,7 +98,7 @@ const defaultData ={
             "fields": {
                 "carouselSlideImage": {
                     "value": {
-                        "src": "https://preview.local.andersenwindows.com/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Casement-Window-900x900.jpg?h=900&iar=0&w=900&hash=D3C3EBFCC690245B543528AABEA7C1DD",
+                        "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
                         "alt": "Casement-Window-900x900",
                         "width": "900",
                         "height": "900"
@@ -164,7 +164,7 @@ const defaultData ={
             "fields": {
                 "carouselSlideImage": {
                     "value": {
-                        "src": "https://preview.local.andersenwindows.com/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Casement-Window-900x900.jpg?h=900&iar=0&w=900&hash=D3C3EBFCC690245B543528AABEA7C1DD",
+                        "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
                         "alt": "Casement-Window-900x900",
                         "width": "900",
                         "height": "900"
@@ -230,7 +230,7 @@ const defaultData ={
             "fields": {
                 "carouselSlideImage": {
                     "value": {
-                        "src": "https://preview.local.andersenwindows.com/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Casement-Window-900x900.jpg?h=900&iar=0&w=900&hash=D3C3EBFCC690245B543528AABEA7C1DD",
+                        "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
                         "alt": "Casement-Window-900x900",
                         "width": "900",
                         "height": "900"
@@ -296,7 +296,7 @@ const defaultData ={
             "fields": {
                 "carouselSlideImage": {
                     "value": {
-                        "src": "https://preview.local.andersenwindows.com/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Casement-Window-900x900.jpg?h=900&iar=0&w=900&hash=D3C3EBFCC690245B543528AABEA7C1DD",
+                        "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
                         "alt": "Casement-Window-900x900",
                         "width": "900",
                         "height": "900"
@@ -362,7 +362,7 @@ const defaultData ={
             "fields": {
                 "carouselSlideImage": {
                     "value": {
-                        "src": "https://preview.local.andersenwindows.com/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Casement-Window-900x900.jpg?h=900&iar=0&w=900&hash=D3C3EBFCC690245B543528AABEA7C1DD",
+                        "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
                         "alt": "Casement-Window-900x900",
                         "width": "900",
                         "height": "900"
@@ -428,7 +428,7 @@ const defaultData ={
             "fields": {
                 "carouselSlideImage": {
                     "value": {
-                        "src": "https://preview.local.andersenwindows.com/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Casement-Window-900x900.jpg?h=900&iar=0&w=900&hash=D3C3EBFCC690245B543528AABEA7C1DD",
+                        "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
                         "alt": "Casement-Window-900x900",
                         "width": "900",
                         "height": "900"
