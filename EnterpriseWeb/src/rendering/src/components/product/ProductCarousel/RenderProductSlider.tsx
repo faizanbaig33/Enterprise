@@ -63,21 +63,25 @@ export const RenderSlider = ({
           </div>
         ))}
       </SliderWrapper>
-      <div className={themeData.classes.arrowPrevButtonWrapperClass}>
-        <button
-          className={themeData.classes.arrowButtonClass}
-          onClick={() => ref?.current?.slickPrev()}
-        >
-          <SvgIcon icon="arrow-left" size="lg" />
-        </button>
-      </div>
-      <div className={themeData.classes.arrowNextButtonWrapperClass}>
-        <button
-          className={themeData.classes.arrowButtonClass}
-          onClick={() => ref?.current?.slickNext()}
-        >
-          <SvgIcon icon="arrow-right" size="lg" />
-        </button>
+      <div className="absolute top-[44%] flex w-full justify-center">
+        <div className={themeData.classes.arrowButtonGroupClass}>
+          <div className={themeData.classes.arrowPrevButtonWrapperClass}>
+            <button
+              className={themeData.classes.arrowButtonClass}
+              onClick={() => ref?.current?.slickPrev()}
+            >
+              <SvgIcon icon="arrow-left" size="lg" />
+            </button>
+          </div>
+          <div className={themeData.classes.arrowNextButtonWrapperClass}>
+            <button
+              className={themeData.classes.arrowButtonClass}
+              onClick={() => ref?.current?.slickNext()}
+            >
+              <SvgIcon icon="arrow-right" size="lg" />
+            </button>
+          </div>
+        </div>
       </div>
     </>
   );

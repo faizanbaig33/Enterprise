@@ -71,7 +71,7 @@ const ProductCarousel = (props: ProductCarouselProps) => {
   };
 
   return (
-    <Component variant="lg" gap="" dataComponent="general/productcarousel" {...props}>
+    <Component variant="full" gap="" dataComponent="general/productcarousel" {...props}>
       <div className={themeData.classes.columnClass}>
         <div>
           <Headline defaultTag="h2" {...props} />
