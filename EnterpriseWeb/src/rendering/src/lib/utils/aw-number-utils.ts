@@ -55,7 +55,7 @@ export const decimalToEigth = (number: any, options: any) => {
     return differenceA - differenceB;
   });
 
-  return sorted[0].fraction;
+  return sorted[0]?.fraction;
 };
 
 export const roundToEigth = (number: any, options: any) => {

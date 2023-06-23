@@ -1,7 +1,7 @@
 // Lib
 import { ThemeFile } from 'lib/context/ThemeContext';
 
-export const MultiGlideSizingCalculatorTheme = (): ThemeFile => {
+export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
   return {
     aw: {
       classes: {
@@ -71,3 +71,26 @@ export const MultiGlideSizingCalculatorTheme = (): ThemeFile => {
     },
   };
 };
+/* Example of more advanced builder */
+/*
+import classNames from 'classnames';
+const getDynamicStyles = (theme: ThemeName): string => {
+  return classNames('text-xl', theme === 'aw' ? 'color-orange' : 'color-green');
+};
+export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
+  return {
+    aw: {
+      classes: {
+        // Insert Theme classes here  - sample function call
+        headline: classNames(getDynamicStyles('aw')),
+      },
+    },
+    rba: {
+      classes: {
+        // Insert Theme classes here  - sample function call
+        headline: classNames(getDynamicStyles('rba')),
+      },
+    },
+  };
+};
+*/

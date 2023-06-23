@@ -1,9 +1,9 @@
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 import { useTheme } from 'lib/context/ThemeContext';
-import { MultiGlideSizingCalculatorTheme } from './MultiGlideSizingCalculator.theme';
+import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 
-export const MultiGlideSizingCalculatorActionButtons = (props: any) => {
-  const { themeData } = useTheme(MultiGlideSizingCalculatorTheme());
+export const MultiSlideSizingCalculatorActionButtons = (props: any) => {
+  const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
   const { fields } = props;
 
   const handleBack = () => {

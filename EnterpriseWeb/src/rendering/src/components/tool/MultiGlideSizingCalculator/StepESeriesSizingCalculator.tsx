@@ -6,10 +6,11 @@ import React, { useState } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 
 import ModalWrapper from 'src/helpers/ModalWrapper/ModalWrapper';
-import { MultiGlideSizingCalculatorTheme } from './MultiGlideSizingCalculator.theme';
+import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 import { SvgIcon } from 'src/helpers/SvgIcon';
 import { RichTextWrapper } from 'src/helpers/RichTextWrapper';
 import { useExperienceEditor } from 'lib/utils';
+import { OPTIONS, MIN_MAX_WIDTHS } from './constant';
 import * as AWNumberUtil from 'src/lib/utils/aw-number-utils';
 
 type CalcForm = {
@@ -31,77 +32,8 @@ type CalcForm = {
   thicknessFinishedFloorFraction: string;
 };
 
-const MIN_MAX_WIDTHS = [
-  ['one_direction', 'pocketing', 'contemporary_cap', 1, 32.375, 64.375],
-  ['one_direction', 'pocketing', 'contemporary_cap', 2, 58.25, 121.625],
-  ['one_direction', 'pocketing', 'contemporary_cap', 3, 84, 178.875],
-  ['one_direction', 'pocketing', 'contemporary_cap', 4, 109.875, 235.875],
-  ['one_direction', 'pocketing', 'contemporary_cap', 5, 135.625, 293.375],
-  ['one_direction', 'pocketing', 'contemporary_cap', 6, 161.5, 350.625],
-  ['one_direction', 'pocketing', 'contemporary_ccp', 1, 32.375, 64.375],
-  ['one_direction', 'pocketing', 'contemporary_ccp', 2, 58.25, 121.625],
-  ['one_direction', 'pocketing', 'contemporary_ccp', 3, 84, 178.875],
-  ['one_direction', 'pocketing', 'contemporary_ccp', 4, 109.875, 235.875],
-  ['one_direction', 'pocketing', 'contemporary_ccp', 5, 135.625, 293.375],
-  ['one_direction', 'pocketing', 'contemporary_ccp', 6, 161.5, 350.625],
-  ['one_direction', 'pocketing', 'traditional', 1, 32.375, 64.375],
-  ['one_direction', 'pocketing', 'traditional', 2, 56.125, 120],
-  ['one_direction', 'pocketing', 'traditional', 3, 79.75, 175.625],
-  ['one_direction', 'pocketing', 'traditional', 4, 103.375, 231.25],
-  ['one_direction', 'pocketing', 'traditional', 5, 127, 286.875],
-  ['one_direction', 'pocketing', 'traditional', 6, 150.75, 342.625],
-  ['one_direction', 'stacking', 'contemporary_cap', 2, 58.125, 121.5],
-  ['one_direction', 'stacking', 'contemporary_cap', 3, 83.875, 178.75],
-  ['one_direction', 'stacking', 'contemporary_cap', 4, 109.75, 236],
-  ['one_direction', 'stacking', 'contemporary_cap', 5, 135.5, 293.25],
-  ['one_direction', 'stacking', 'contemporary_cap', 6, 161.375, 350.5],
-  ['one_direction', 'stacking', 'contemporary_ccp', 2, 58.125, 121.5],
-  ['one_direction', 'stacking', 'contemporary_ccp', 3, 83.875, 178.75],
-  ['one_direction', 'stacking', 'contemporary_ccp', 4, 109.75, 236],
-  ['one_direction', 'stacking', 'contemporary_ccp', 5, 135.5, 293.25],
-  ['one_direction', 'stacking', 'contemporary_ccp', 6, 161.375, 350.5],
-  ['one_direction', 'stacking', 'traditional', 2, 56, 119.875],
-  ['one_direction', 'stacking', 'traditional', 3, 79.625, 175.5],
-  ['one_direction', 'stacking', 'traditional', 4, 103.25, 231.125],
-  ['one_direction', 'stacking', 'traditional', 5, 126.875, 286.75],
-  ['one_direction', 'stacking', 'traditional', 6, 150.625, 342.5],
-  ['two_direction', 'pocketing', 'contemporary_cap', 2, 60.25, 124.125],
-  ['two_direction', 'pocketing', 'contemporary_cap', 4, 111.875, 238.625],
-  ['two_direction', 'pocketing', 'contemporary_cap', 6, 163.5, 353.125],
-  ['two_direction', 'pocketing', 'contemporary_cap', 8, 215.125, 467.625],
-  ['two_direction', 'pocketing', 'contemporary_cap', 10, 266.75, 490.125],
-  ['two_direction', 'pocketing', 'contemporary_cap', 12, 318.375, 503.875],
-  ['two_direction', 'pocketing', 'contemporary_ccp', 2, 60.25, 124.125],
-  ['two_direction', 'pocketing', 'contemporary_ccp', 4, 111.875, 238.625],
-  ['two_direction', 'pocketing', 'contemporary_ccp', 6, 163.5, 353.125],
-  ['two_direction', 'pocketing', 'contemporary_ccp', 8, 215.125, 467.625],
-  ['two_direction', 'pocketing', 'contemporary_ccp', 10, 266.75, 490.125],
-  ['two_direction', 'pocketing', 'contemporary_ccp', 12, 318.375, 503.875],
-  ['two_direction', 'pocketing', 'traditional', 2, 60.25, 124.125],
-  ['two_direction', 'pocketing', 'traditional', 4, 107.625, 235.5],
-  ['two_direction', 'pocketing', 'traditional', 6, 154.875, 346.75],
-  ['two_direction', 'pocketing', 'traditional', 8, 202.25, 458.125],
-  ['two_direction', 'pocketing', 'traditional', 10, 249.5, 488],
-  ['two_direction', 'pocketing', 'traditional', 12, 249.5, 501.5],
-  ['two_direction', 'stacking', 'contemporary_cap', 4, 112.625, 239.375],
-  ['two_direction', 'stacking', 'contemporary_cap', 6, 164.25, 353.875],
-  ['two_direction', 'stacking', 'contemporary_cap', 8, 215.875, 468.375],
-  ['two_direction', 'stacking', 'contemporary_cap', 10, 267.5, 582.875],
-  ['two_direction', 'stacking', 'contemporary_cap', 12, 319.125, 599],
-  ['two_direction', 'stacking', 'contemporary_ccp', 4, 112.625, 239.375],
-  ['two_direction', 'stacking', 'contemporary_ccp', 6, 164.25, 353.875],
-  ['two_direction', 'stacking', 'contemporary_ccp', 8, 215.875, 468.375],
-  ['two_direction', 'stacking', 'contemporary_ccp', 10, 267.5, 582.875],
-  ['two_direction', 'stacking', 'contemporary_ccp', 12, 319.125, 599],
-  ['two_direction', 'stacking', 'traditional', 4, 108.375, 236.25],
-  ['two_direction', 'stacking', 'traditional', 6, 155.625, 347.5],
-  ['two_direction', 'stacking', 'traditional', 8, 203, 458.875],
-  ['two_direction', 'stacking', 'traditional', 10, 250.25, 570.125],
-  ['two_direction', 'stacking', 'traditional', 12, 297.625, 599],
-];
-
 export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
-  const { themeData } = useTheme(MultiGlideSizingCalculatorTheme());
+  const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
   const { fields, formData } = props;
   const isEE = useExperienceEditor();
 
@@ -112,24 +44,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLightboxVisible, setIsLightboxVisible] = useState(false);
 
-  //Calculator values
-  // const [casingDimensionWidth, setCasingDimensionWidth] = useState<string>();
-  // const [casingDimensionHeight, setCasingDimensionHeight] = useState<string>();
-  // const [overallUnitSizeWidth, setOverallUnitSizeWidth] = useState<string>();
-  // const [overallUnitSizeHeight, setOverallUnitSizeHeight] = useState<string>();
-  // const [masonryOpeningWidth, setMasonryOpeningWidth] = useState<string>();
-  // const [masonryOpeningHeight, setMasonryOpeningHeight] = useState<string>();
-
   // Submit and update shared variables
   const [widthStates, setWidthStates] = useState({
     feet: 0,
     inches: 0,
     fraction: 0,
     msg: '',
-    ruleMin: 0,
-    ruleMax: 0,
-    msgMin: '',
-    msgMax: '',
     dimension: 0,
   });
   const [heightStates, setHeightStates] = useState({
@@ -137,10 +57,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     inches: 0,
     fraction: 0,
     msg: '',
-    ruleMin: 0,
-    ruleMax: 0,
-    msgMin: '',
-    msgMax: '',
     dimension: 0,
   });
 
@@ -148,35 +64,28 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [msgHeight, setMsgHeight] = useState('');
 
   const [formState, setFormState] = useState({
-    calculateUsing: '',
+    calculateUsing: 'rough_opening',
     width: '',
-    widthInches: '',
-    widthFraction: '',
+    widthInches: '0',
+    widthFraction: '0',
     height: '',
-    heightInches: '',
-    heightFraction: '',
-    stackingDirection: '',
-    sillOption: '',
-    sillRamp: '',
-    insectScreen: '',
-    screenConfiguration: '',
-    panelNumber: '',
-    panelStackingLocation: '',
+    heightInches: '0',
+    heightFraction: '0',
+    stackingDirection: 'one_direction',
+    sillOption: 'onfloor_drainage',
+    sillRamp: 'none',
+    insectScreen: 'none',
+    screenConfiguration: 'single',
+    panelNumber: '4',
+    panelStackingLocation: 'interior',
     thicknessFinishedFloor: '',
-    thicknessFinishedFloorInches: '',
-    thicknessFinishedFloorFraction: '',
+    thicknessFinishedFloorInches: '0',
+    thicknessFinishedFloorFraction: '0',
   });
 
   const [clearOpeningHeight, setClearOpeningHeight] = useState<string>('');
   const [clearOpeningWidth, setClearOpeningWidth] = useState<string>('');
-  // const [jambWidth, setJambWidth] = useState(0);
-  // const [lockStileEmbedment, setLockStileEmbedment] = useState();
-  // const [backStileEmbedment, setBackStileEmbedment] = useState();
-  // const [backStileOffset, setBackStileOffset] = useState();
-  // const [pocketOffset, setPocketOffset] = useState();
-  // const [biPartPairOffset, setBiPartPairOffset] = useState();
-  // const [pocketCount, setPocketCount] = useState();
-  const [numberPanels, setNumberPanels] = useState([1, 2, 3, 4, 5, 6]);
+  const [numberPanelList, setNumberPanelList] = useState([1, 2, 3, 4, 5, 6]);
   const [jambDepth, setJambDepth] = useState<string>('');
   const [panelHeight, setPanelHeight] = useState<string>('');
   const [panelWidth, setPanelWidth] = useState<string>('');
@@ -290,24 +199,26 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const calculateInsectScreenWidth = (
     configuration: string,
     stackingDirection: string,
-    unitWidth: number,
-    roughOpeningPocketWidth: number
+    unitWidth: any,
+    roughOpeningPocketWidth: any
   ) => {
     let screenUnitSizeWidth = 0;
+    const unitWidthNum = parseFloat(unitWidth);
+    const roughOpeningPocketWidthNum = parseInt(roughOpeningPocketWidth);
 
     // Screen Unit Width
-    if (configuration == 'stacking') {
-      if (stackingDirection == 'one_direction') {
-        screenUnitSizeWidth = unitWidth + 1.517 + 2.265;
-      } else if (stackingDirection == 'two_direction') {
-        screenUnitSizeWidth = unitWidth + 2.265 + 2.265;
+    if (configuration === 'stacking') {
+      if (stackingDirection === 'one_direction') {
+        screenUnitSizeWidth = unitWidthNum + 1.517 + 2.265;
+      } else if (stackingDirection === 'two_direction') {
+        screenUnitSizeWidth = unitWidthNum + 2.265 + 2.265;
       }
     } else {
       // Pocketing
-      if (stackingDirection == 'one_direction') {
-        screenUnitSizeWidth = roughOpeningPocketWidth + 0.844 + 2.255;
-      } else if (stackingDirection == 'two_direction') {
-        screenUnitSizeWidth = roughOpeningPocketWidth + 2.255 + 2.255;
+      if (stackingDirection === 'one_direction') {
+        screenUnitSizeWidth = roughOpeningPocketWidthNum + 0.844 + 2.255;
+      } else if (stackingDirection === 'two_direction') {
+        screenUnitSizeWidth = roughOpeningPocketWidthNum + 2.255 + 2.255;
       }
     }
 
@@ -317,22 +228,23 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const calculateUnitDimensions = () => {
     const {
       calculateUsing,
-      width,
-      height,
       panelNumber: numberPanels,
       sillOption: sillOptions,
       stackingDirection,
       thicknessFinishedFloor,
     } = formState;
-    let clearOpeningWidth: any;
-    let clearOpeningHeight: any;
-    let roughOpeningHeight: any;
-    let roughOpeningHeightSubfloor: any;
-    let roughOpeningHeightRecess: any;
-    let roughOpeningPocketWidth: any;
-    let roughOpeningWidth: any;
-    let unitWidth: any;
-    let unitHeight: any;
+    const { dimension: width }: any = widthStates;
+    const { dimension: height }: any = heightStates;
+
+    let clearOpeningWidth: any = 0;
+    let clearOpeningHeight: any = 0;
+    let roughOpeningHeight: any = 0;
+    let roughOpeningHeightSubfloor: any = 0;
+    let roughOpeningHeightRecess: any = 0;
+    let roughOpeningPocketWidth: any = 0;
+    let roughOpeningWidth: any = 0;
+    let unitWidth: any = 0;
+    let unitHeight: any = 0;
 
     // Panel Overlap
     const panelOverlap: any = calculatePanelOverlap(panelStyle);
@@ -340,16 +252,16 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     // The excel document uses Unit Height for the Height input, but different values for the Width input:
     // Pocketing -> Rough Opening w/o Pocket
     // Stacking  -> Unit
-    if (configuration == 'pocketing') {
+    if (configuration === 'pocketing') {
       switch (calculateUsing) {
         case 'rough_opening':
-          roughOpeningWidth = width;
+          roughOpeningWidth = parseFloat(width);
 
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
-          if (sillOptions == 'flush') {
+          if (sillOptions === 'flush') {
             roughOpeningHeight = parseFloat(height) + 1.5 - parseFloat(thicknessFinishedFloor);
-            roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = height;
+            roughOpeningHeightRecess = parseFloat(roughOpeningHeight);
+            roughOpeningHeightSubfloor = parseFloat(height);
           } else {
             roughOpeningHeight = height;
             roughOpeningHeightRecess = 'N/A';
@@ -378,17 +290,17 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
           break;
         case 'rough_opening_pocket':
-          roughOpeningPocketWidth = width;
+          roughOpeningPocketWidth = parseFloat(width);
 
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
-          if (sillOptions == 'flush') {
+          if (sillOptions === 'flush') {
             roughOpeningHeight = parseFloat(height) + 1.5 - parseFloat(thicknessFinishedFloor);
             roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = height;
+            roughOpeningHeightSubfloor = parseFloat(height);
           } else {
-            roughOpeningHeight = height;
+            roughOpeningHeight = parseFloat(height);
             roughOpeningHeightRecess = 'N/A';
-            roughOpeningHeightSubfloor = height;
+            roughOpeningHeightSubfloor = parseFloat(height);
           }
 
           roughOpeningWidth = pocketing_calculateRoughOpeningWidthFromRoughOpeningPocketWidth(
@@ -413,8 +325,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
           break;
         case 'clear_opening':
-          clearOpeningWidth = width;
-          clearOpeningHeight = height;
+          clearOpeningWidth = parseFloat(width);
+          clearOpeningHeight = parseFloat(height);
 
           roughOpeningPocketWidth = calculateInputWidthFromClearOpeningWidth(
             clearOpeningWidth,
@@ -436,7 +348,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           roughOpeningHeight = calculateRoughOpeningHeightFromUnitHeight(unitHeight, sillOptions);
 
           // Rough Opening Height
-          if (sillOptions == 'flush') {
+          if (sillOptions === 'flush') {
             roughOpeningHeightRecess = roughOpeningHeight;
             roughOpeningHeightSubfloor = roughOpeningHeight - 1.5 + thicknessFinishedFloor;
           } else {
@@ -446,14 +358,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
           break;
         case 'unit_dimensions':
-          unitWidth = width;
-          unitHeight = height;
+          unitWidth = parseFloat(width);
+          unitHeight = parseFloat(height);
 
           roughOpeningWidth = calculateRoughOpeningWidthFromUnitWidth(unitWidth);
           roughOpeningHeight = calculateRoughOpeningHeightFromUnitHeight(unitHeight, sillOptions);
 
           // Rough Opening Height
-          if (sillOptions == 'flush') {
+          if (sillOptions === 'flush') {
             roughOpeningHeightRecess = roughOpeningHeight;
             roughOpeningHeightSubfloor = roughOpeningHeight - 1.5 + thicknessFinishedFloor;
           } else {
@@ -486,17 +398,17 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
       switch (calculateUsing) {
         case 'rough_opening':
-          roughOpeningWidth = width;
+          roughOpeningWidth = parseFloat(width);
 
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
-          if (sillOptions == 'flush') {
+          if (sillOptions === 'flush') {
             roughOpeningHeight = parseFloat(height) + 1.5 - parseFloat(thicknessFinishedFloor);
             roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = height;
+            roughOpeningHeightSubfloor = parseFloat(height);
           } else {
-            roughOpeningHeight = height;
+            roughOpeningHeight = parseFloat(height);
             roughOpeningHeightRecess = 'N/A';
-            roughOpeningHeightSubfloor = height;
+            roughOpeningHeightSubfloor = parseFloat(height);
           }
 
           unitWidth = calculateUnitWidthFromRoughOpeningWidth(roughOpeningWidth);
@@ -514,8 +426,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
           break;
         case 'clear_opening':
-          clearOpeningWidth = width;
-          clearOpeningHeight = height;
+          clearOpeningWidth = parseFloat(width);
+          clearOpeningHeight = parseFloat(height);
 
           unitWidth = calculateInputWidthFromClearOpeningWidth(
             clearOpeningWidth,
@@ -531,7 +443,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           roughOpeningHeight = calculateRoughOpeningHeightFromUnitHeight(unitHeight, sillOptions);
 
           // Rough Opening Height
-          if (sillOptions == 'flush') {
+          if (sillOptions === 'flush') {
             roughOpeningHeightRecess = roughOpeningHeight;
             roughOpeningHeightSubfloor = roughOpeningHeight - 1.5 + thicknessFinishedFloor;
           } else {
@@ -541,14 +453,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
           break;
         case 'unit_dimensions':
-          unitWidth = width;
-          unitHeight = height;
+          unitWidth = parseFloat(width);
+          unitHeight = parseFloat(height);
 
           roughOpeningWidth = calculateRoughOpeningWidthFromUnitWidth(unitWidth);
           roughOpeningHeight = calculateRoughOpeningHeightFromUnitHeight(unitHeight, sillOptions);
 
           // Rough Opening Height
-          if (sillOptions == 'flush') {
+          if (sillOptions === 'flush') {
             roughOpeningHeightRecess = roughOpeningHeight;
             roughOpeningHeightSubfloor = roughOpeningHeight - 1.5 + thicknessFinishedFloor;
           } else {
@@ -593,7 +505,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     roughOpeningHeight: number,
     sillOptions: string
   ) => {
-    if (sillOptions == 'flush') {
+    if (sillOptions === 'flush') {
       return roughOpeningHeight - 0.75;
     } else {
       // onfloor_drainage
@@ -608,7 +520,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   // Unit Height => Rough Opening Height
   const calculateRoughOpeningHeightFromUnitHeight = (unitHeight: number, sillOptions: string) => {
-    if (sillOptions == 'flush') {
+    if (sillOptions === 'flush') {
       return unitHeight + 0.75;
     } else {
       // onfloor_drainage
@@ -623,7 +535,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     numberPanels: any,
     panelOverlap: number
   ) => {
-    if (stackingDirection == 'one_direction') {
+    if (stackingDirection === 'one_direction') {
       return (
         (roughOpeningPocketWidth +
           (4.375 - panelOverlap * (numberPanels - 1)) / numberPanels -
@@ -648,7 +560,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     numberPanels: any,
     panelOverlap: number
   ) => {
-    if (stackingDirection == 'one_direction') {
+    if (stackingDirection === 'one_direction') {
       return (
         roughOpeningWidth * (1 + 1 / numberPanels) -
         (4.375 - panelOverlap * (numberPanels - 1)) / numberPanels +
@@ -678,12 +590,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   };
 
   // Unit Height => Clear Opening Height
-  const calculateClearOpeningHeightFromUnitHeight = (unitHeight: number, sillOptions: string) => {
+  const calculateClearOpeningHeightFromUnitHeight = (unitHeight: any, sillOptions: string) => {
     if (isOnFloorDrainage(sillOptions)) {
-      return unitHeight - 3.363;
+      return parseFloat(unitHeight) - 3.363;
     } else {
       // flush
-      return unitHeight - 3.863;
+      return parseFloat(unitHeight) - 3.863;
     }
   };
 
@@ -691,66 +603,80 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   // Pocketing -> Rough Opening with out Pocket Width => Clear Opening Width
   // Stacking  -> Unit Width => Clear Opening Width
   const calculateClearOpeningWidthFromInputWidth = (
-    inputWidth: number,
+    inputWidth: any,
     configuration: string,
     stackingDirection: string,
     numberPanels: any,
-    panelOverlap: number,
+    panelOverlap: any,
     panelStyle: string
   ) => {
-    if (configuration == 'stacking') {
-      if (stackingDirection == 'one_direction') {
-        if (panelStyle == 'contemporary_ccp') {
+    if (configuration === 'stacking') {
+      if (stackingDirection === 'one_direction') {
+        if (panelStyle === 'contemporary_ccp') {
           return (
-            inputWidth -
-            (inputWidth - 4.25 + panelOverlap * (numberPanels - 1)) / numberPanels -
+            parseFloat(inputWidth) -
+            (parseFloat(inputWidth) -
+              4.25 +
+              parseFloat(panelOverlap) * (parseFloat(numberPanels) - 1)) /
+              parseFloat(numberPanels) -
             5.805
           );
         } else {
           // contemporary_cap or traditional
           return (
-            inputWidth -
-            (inputWidth - 4.25 + panelOverlap * (numberPanels - 1)) / numberPanels -
+            parseFloat(inputWidth) -
+            (parseFloat(inputWidth) -
+              4.25 +
+              parseFloat(panelOverlap) * (parseFloat(numberPanels) - 1)) /
+              parseFloat(numberPanels) -
             4.788
           );
         }
       } else {
         // two_direction
-        if (panelStyle == 'contemporary_ccp') {
+        if (panelStyle === 'contemporary_ccp') {
           return (
-            inputWidth -
-            2 * ((inputWidth - 4.974 + panelOverlap * (numberPanels - 2)) / numberPanels) -
+            parseFloat(inputWidth) -
+            2 *
+              ((parseFloat(inputWidth) -
+                4.974 +
+                parseFloat(panelOverlap) * (parseFloat(numberPanels) - 2)) /
+                parseFloat(numberPanels)) -
             6.539
           );
         } else {
           // contemporary_cap or traditional
           return (
-            inputWidth -
-            2 * ((inputWidth - 4.974 + panelOverlap * (numberPanels - 2)) / numberPanels) -
+            parseFloat(inputWidth) -
+            2 *
+              ((parseFloat(inputWidth) -
+                4.974 +
+                parseFloat(panelOverlap) * (parseFloat(numberPanels) - 2)) /
+                parseFloat(numberPanels)) -
             5.522
           );
         }
       }
     } else {
       // pocketing
-      if (stackingDirection == 'one_direction') {
-        if (panelStyle == 'contemporary_ccp') {
-          return inputWidth - 5.476;
+      if (stackingDirection === 'one_direction') {
+        if (panelStyle === 'contemporary_ccp') {
+          return parseFloat(inputWidth) - 5.476;
         } else {
           // contemporary_cap or traditional
-          return inputWidth - 5.187;
+          return parseFloat(inputWidth) - 5.187;
         }
       } else {
         // two_direction
         if (numberPanels === 2) {
-          return inputWidth - 5.772;
+          return parseFloat(inputWidth) - 5.772;
         } else {
           // more than two
-          if (panelStyle == 'contemporary_ccp') {
-            return inputWidth - 5.432;
+          if (panelStyle === 'contemporary_ccp') {
+            return parseFloat(inputWidth) - 5.432;
           } else {
             // contemporary_cap or traditional
-            return inputWidth - 5.171;
+            return parseFloat(inputWidth) - 5.171;
           }
         }
       }
@@ -761,70 +687,74 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   // Pocketing -> Clear Opening Width => Rough Opening with out Pocket Width
   // Stacking  -> Clear Opening Width => Unit Width
   const calculateInputWidthFromClearOpeningWidth = (
-    clearOpeningWidth: number,
+    clearOpeningWidth: any,
     configuration: string,
     stackingDirection: string,
     numberPanels: any,
-    panelOverlap: number,
+    panelOverlap: any,
     panelStyle: string
   ) => {
-    if (configuration == 'stacking') {
-      if (stackingDirection == 'one_direction') {
-        if (panelStyle == 'contemporary_ccp') {
+    const clearOpeningWidthNum = parseFloat(clearOpeningWidth);
+    const numberPanelsNum = parseInt(numberPanels);
+    const panelOverlapNum = parseFloat(panelOverlap);
+
+    if (configuration === 'stacking') {
+      if (stackingDirection === 'one_direction') {
+        if (panelStyle === 'contemporary_ccp') {
           return (
-            ((clearOpeningWidth + 5.805) * numberPanels -
+            ((clearOpeningWidthNum + 5.805) * numberPanelsNum -
               4.25 +
-              panelOverlap * (numberPanels - 1)) /
-            (numberPanels - 1)
+              panelOverlapNum * (numberPanelsNum - 1)) /
+            (numberPanelsNum - 1)
           );
         } else {
           // contemporary_cap or traditional
           return (
-            ((clearOpeningWidth + 4.788) * numberPanels -
+            ((clearOpeningWidthNum + 4.788) * numberPanelsNum -
               4.25 +
-              panelOverlap * (numberPanels - 1)) /
-            (numberPanels - 1)
+              panelOverlapNum * (numberPanelsNum - 1)) /
+            (numberPanelsNum - 1)
           );
         }
       } else {
         // two_direction
-        if (panelStyle == 'contemporary_ccp') {
+        if (panelStyle === 'contemporary_ccp') {
           return (
-            ((clearOpeningWidth + 6.539) * numberPanels -
+            ((clearOpeningWidthNum + 6.539) * numberPanelsNum -
               9.948 +
-              2 * panelOverlap * (numberPanels - 2)) /
-            (numberPanels - 2)
+              2 * panelOverlapNum * (numberPanelsNum - 2)) /
+            (numberPanelsNum - 2)
           );
         } else {
           // contemporary_cap or traditional
           return (
-            ((clearOpeningWidth + 5.522) * numberPanels -
+            ((clearOpeningWidthNum + 5.522) * numberPanelsNum -
               9.948 +
-              2 * panelOverlap * (numberPanels - 2)) /
-            (numberPanels - 2)
+              2 * panelOverlapNum * (numberPanelsNum - 2)) /
+            (numberPanelsNum - 2)
           );
         }
       }
     } else {
       // pocketing
-      if (stackingDirection == 'one_direction') {
-        if (panelStyle == 'contemporary_ccp') {
-          return clearOpeningWidth + 5.476;
+      if (stackingDirection === 'one_direction') {
+        if (panelStyle === 'contemporary_ccp') {
+          return clearOpeningWidthNum + 5.476;
         } else {
           // contemporary_cap or traditional
-          return clearOpeningWidth + 5.187;
+          return clearOpeningWidthNum + 5.187;
         }
       } else {
         // two_direction
-        if (numberPanels === 2) {
-          return clearOpeningWidth + 5.772;
+        if (numberPanelsNum === 2) {
+          return clearOpeningWidthNum + 5.772;
         } else {
           // more than two
-          if (panelStyle == 'contemporary_ccp') {
-            return clearOpeningWidth + 5.432;
+          if (panelStyle === 'contemporary_ccp') {
+            return clearOpeningWidthNum + 5.432;
           } else {
             // contemporary_cap or traditional
-            return clearOpeningWidth + 5.171;
+            return clearOpeningWidthNum + 5.171;
           }
         }
       }
@@ -835,28 +765,35 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   // Pocketing -> Rough Opening with out Pocket Width => Panel Width
   // Stacking  -> Unit Width => Panel Width
   const calculatePanelWidth = (
-    inputWidth: number,
+    inputWidth: any,
     configuration: string,
     stackingDirection: string,
-    numberPanels: number,
-    panelOverlap: number
+    numberPanels: any,
+    panelOverlap: any
   ) => {
+    const inputWidthNum = parseFloat(inputWidth);
+    const numberPanelsNum = parseInt(numberPanels);
+    const panelOverlapNum = parseFloat(panelOverlap);
     let panelWidth;
 
-    if (configuration == 'stacking') {
-      if (stackingDirection == 'one_direction') {
-        panelWidth = (inputWidth - 4.25 + panelOverlap * (numberPanels - 1)) / numberPanels;
+    if (configuration === 'stacking') {
+      if (stackingDirection === 'one_direction') {
+        panelWidth =
+          (inputWidthNum - 4.25 + panelOverlapNum * (numberPanelsNum - 1)) / numberPanelsNum;
       } else {
         // two_direction
-        panelWidth = (inputWidth - 4.974 + panelOverlap * (numberPanels - 2)) / numberPanels;
+        panelWidth =
+          (inputWidthNum - 4.974 + panelOverlapNum * (numberPanelsNum - 2)) / numberPanelsNum;
       }
     } else {
       // pocketing
-      if (stackingDirection == 'one_direction') {
-        panelWidth = (inputWidth - 4.375 + panelOverlap * (numberPanels - 1)) / numberPanels;
+      if (stackingDirection === 'one_direction') {
+        panelWidth =
+          (inputWidthNum - 4.375 + panelOverlapNum * (numberPanelsNum - 1)) / numberPanelsNum;
       } else {
         // two_direction
-        panelWidth = (inputWidth - 4.224 + panelOverlap * (numberPanels - 2)) / numberPanels;
+        panelWidth =
+          (inputWidthNum - 4.224 + panelOverlapNum * (numberPanelsNum - 2)) / numberPanelsNum;
       }
     }
     return AWNumberUtil.truncate(panelWidth, 3);
@@ -864,11 +801,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   // Panel Overlap
   const calculatePanelOverlap = (panelStyle: string) => {
-    if (panelStyle == 'traditional') {
+    if (panelStyle === 'traditional') {
       return 4.345;
-    } else if (panelStyle == 'contemporary_cap') {
+    } else if (panelStyle === 'contemporary_cap') {
       return 2.75;
-    } else if (panelStyle == 'contemporary_ccp') {
+    } else if (panelStyle === 'contemporary_ccp') {
       return 2.187;
     } else {
       return 0;
@@ -941,11 +878,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   // };
 
   // const formatPanelGroup = (panelStyle: string) => {
-  //   if (panelStyle == 'traditional') {
+  //   if (panelStyle === 'traditional') {
   //     return 'Traditional Aluminum-Clad Wood';
-  //   } else if (panelStyle == 'contemporary_cap') {
+  //   } else if (panelStyle === 'contemporary_cap') {
   //     return 'Contemporary Aluminum';
-  //   } else if (panelStyle == 'contemporary_ccp') {
+  //   } else if (panelStyle === 'contemporary_ccp') {
   //     return 'Contemporary Aluminum-Clad Wood';
   //   }
   // };
@@ -966,7 +903,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     // const calculateUsing = jsonObj.calculateUsing;
     // const width = widthStates.dimension;
     // const height = heightStates.dimension;
-    const insectScreens = jsonObj.insectScreens;
+    const insectScreens = jsonObj.insectScreen;
     const numberPanels = parseInt(jsonObj.panelNumber);
     // const panelStackingLocation = jsonObj.panelStackingLocation;
     // const screenConfiguration = jsonObj.screenConfiguration;
@@ -1004,6 +941,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     const panelOverlap = calculatePanelOverlap(panelStyle);
 
     const unitDimensions = calculateUnitDimensions();
+
     const unitWidth = unitDimensions.unitWidth;
     const unitHeight = unitDimensions.unitHeight;
     const roughOpeningWidth = unitDimensions.roughOpeningWidth;
@@ -1015,43 +953,43 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     const clearOpeningHeight: any = unitDimensions.clearOpeningHeight;
 
     // Calculate Jamb Depth
-    if (stackingDirection == 'one_direction') {
-      if (insectScreens == 'none') {
+    if (stackingDirection === 'one_direction') {
+      if (insectScreens === 'none') {
         jambDepth = numberPanels * 2.5 + 0.389;
-      } else if (insectScreens == 'single') {
+      } else if (insectScreens === 'single') {
         jambDepth = (numberPanels + 1) * 2.5 + 0.389;
-      } else if (insectScreens == 'multi') {
-        if (configuration == 'pocketing') {
+      } else if (insectScreens === 'multi') {
+        if (configuration === 'pocketing') {
           jambDepth = numberPanels * 2 * 2.5 + 0.389;
         } else {
           jambDepth = (numberPanels * 2 - 1) * 2.5 + 0.389;
         }
-      } else if (insectScreens == 'retractable') {
+      } else if (insectScreens === 'retractable') {
         jambDepth = numberPanels * 2.5 + 0.389 + 3.5;
       }
     } else {
       // two_direction
-      if (insectScreens == 'none') {
+      if (insectScreens === 'none') {
         jambDepth = (numberPanels / 2) * 2.5 + 0.389;
-      } else if (insectScreens == 'single') {
-        if (configuration == 'pocketing') {
+      } else if (insectScreens === 'single') {
+        if (configuration === 'pocketing') {
           jambDepth = (numberPanels / 2 + 1) * 2.5 + 0.389;
         } else {
           jambDepth = '-'; // No calulation provided
         }
-      } else if (insectScreens == 'multi') {
-        if (configuration == 'pocketing') {
+      } else if (insectScreens === 'multi') {
+        if (configuration === 'pocketing') {
           jambDepth = numberPanels * 2.5 + 0.389;
         } else {
           jambDepth = (numberPanels - 1) * 2.5 + 0.389;
         }
-      } else if (insectScreens == 'retractable') {
+      } else if (insectScreens === 'retractable') {
         jambDepth = (numberPanels / 2) * 2.5 + 0.389 + 3.5;
       }
     }
 
     // Calculate Sill Depth
-    if (sillOptions == 'flush') {
+    if (sillOptions === 'flush') {
       sillDepth = 'N/A';
     } else {
       //onfloor_drainage
@@ -1072,7 +1010,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     }
 
     // Panel Dimensions
-    if (configuration == 'pocketing') {
+    if (configuration === 'pocketing') {
       panelWidth = calculatePanelWidth(
         parseFloat(roughOpeningPocketWidth),
         configuration,
@@ -1090,7 +1028,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         panelOverlap
       );
     }
-    if (sillOptions == 'flush') {
+    if (sillOptions === 'flush') {
       panelHeight = AWNumberUtil.truncate(parseFloat(unitHeight) - 3.644, 3);
     } else {
       // onfloor_drainage
@@ -1098,7 +1036,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     }
 
     // Rough Pocket Width
-    if (configuration == 'pocketing') {
+    if (configuration === 'pocketing') {
       roughPocketWidth = panelWidth + 4.125;
     } else {
       // Stacking
@@ -1106,39 +1044,39 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     }
 
     // Pocket Width
-    if (configuration == 'pocketing') {
+    if (configuration === 'pocketing') {
       pocketWidth = panelWidth + 5.5;
     } else {
       pocketWidth = 'N/A';
     }
 
     // Pocket Depth
-    if (configuration == 'pocketing') {
-      if (stackingDirection == 'one_direction') {
-        if (insectScreens == 'none') {
-          if (numberPanels == 1) {
+    if (configuration === 'pocketing') {
+      if (stackingDirection === 'one_direction') {
+        if (insectScreens === 'none') {
+          if (numberPanels === 1) {
             pocketDepth = (numberPanels + 1) * 2.5 + 1.938;
           } else {
             // numberPanels > 1
             pocketDepth = numberPanels * 2.5 + 1.938;
           }
-        } else if (insectScreens == 'single') {
+        } else if (insectScreens === 'single') {
           pocketDepth = (numberPanels + 1) * 2.5 + 1.938;
-        } else if (insectScreens == 'multi') {
+        } else if (insectScreens === 'multi') {
           pocketDepth = numberPanels * 2 * 2.5 + 1.938;
         }
       } else {
         // two_direction
-        if (insectScreens == 'none') {
-          if (numberPanels == 2) {
+        if (insectScreens === 'none') {
+          if (numberPanels === 2) {
             pocketDepth = numberPanels * 2.5 + 1.938;
           } else {
             // numberPanels > 2
             pocketDepth = (numberPanels / 2) * 2.5 + 1.938;
           }
-        } else if (insectScreens == 'single') {
+        } else if (insectScreens === 'single') {
           pocketDepth = (numberPanels / 2 + 1) * 2.5 + 1.938;
-        } else if (insectScreens == 'multi') {
+        } else if (insectScreens === 'multi') {
           pocketDepth = numberPanels * 2.5 + 1.938;
         }
       }
@@ -1156,30 +1094,30 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     );
 
     // Screen Unit Height
-    if (insectScreens == 'retractable') {
+    if (insectScreens === 'retractable') {
       if (sillOptions === 'onfloor_drainage_raised_threshold') {
         screenUnitSizeHeight = unitHeight + 0.81;
-      } else if (sillOptions == 'onfloor_drainage') {
-        if (sillRamps == 'interior' || sillRamps == 'both') {
+      } else if (sillOptions === 'onfloor_drainage') {
+        if (sillRamps === 'interior' || sillRamps === 'both') {
           screenUnitSizeHeight = unitHeight + 0.81;
-        } else if (sillRamps == 'none' || sillRamps == 'exterior') {
+        } else if (sillRamps === 'none' || sillRamps === 'exterior') {
           screenUnitSizeHeight = unitHeight + 0.81 + 0.973;
         }
       } else {
         // Flush
-        if (sillRamps == 'none') {
+        if (sillRamps === 'none') {
           screenUnitSizeHeight = unitHeight + 0.81 + 0.473;
         }
       }
     }
 
     // Screen Rough Opening Width
-    if (insectScreens == 'retractable') {
+    if (insectScreens === 'retractable') {
       screenRoughOpeningWidth = screenUnitSizeWidth + 0.5 + 0.5;
     }
 
     // Screen Rough Opening Height
-    if (insectScreens == 'retractable') {
+    if (insectScreens === 'retractable') {
       screenRoughOpeningHeight = screenUnitSizeHeight + 0.5;
     }
 
@@ -1296,188 +1234,194 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     const stackingDirection =
       e?.target?.name === 'stackingDirection' ? e?.target?.value : getValues('stackingDirection');
 
-    // Min/Max Height
-    let minHeight = isOnFloorDrainage(sillOptions) ? 47.5 : 48;
-    let maxHeight = isOnFloorDrainage(sillOptions) ? 119.5 : 120;
+    if (height > 0) {
+      // Min/Max Height
+      let minHeight = isOnFloorDrainage(sillOptions) ? 47.5 : 48;
+      let maxHeight = isOnFloorDrainage(sillOptions) ? 119.5 : 120;
 
-    switch (calculateUsing) {
-      case 'rough_opening':
-      case 'rough_opening_pocket':
-        minHeight = calculateRoughOpeningHeightFromUnitHeight(minHeight, sillOptions);
-        maxHeight = calculateRoughOpeningHeightFromUnitHeight(maxHeight, sillOptions);
-        break;
-      case 'clear_opening':
-        minHeight = calculateClearOpeningHeightFromUnitHeight(minHeight, sillOptions);
-        maxHeight = calculateClearOpeningHeightFromUnitHeight(maxHeight, sillOptions);
-        break;
-      case 'unit_dimensions':
-        // min/max are defined in unit dimensions
-        break;
-    }
-
-    const minFormatted = convertToFeetInchesAndFraction(
-      minHeight,
-      AWNumberUtil.roundingDirections.up
-    );
-    const maxFormatted = convertToFeetInchesAndFraction(
-      maxHeight,
-      AWNumberUtil.roundingDirections.down
-    );
-
-    const minMessage = 'Please enter a value greater than or equal to ' + minFormatted + '.';
-    const maxMessage = 'Please enter a value less than or equal to ' + maxFormatted + '.';
-
-    if (height < minHeight) {
-      msgHeight = minMessage;
-    }
-    if (height > maxHeight) {
-      msgHeight = maxMessage;
-    }
-
-    setHeightStates({
-      ...heightStates,
-      ruleMax: roundNumber(minHeight),
-      ruleMin: roundNumber(maxHeight),
-      msg: msgHeight,
-    });
-
-    // const heightValid = height.length > 0 ? this.$validator.element(height) : false;
-
-    // Min/Max Width
-    const minMaxRows = minMaxes.filter((element) => {
-      return (
-        element.stackingDirection == stackingDirection &&
-        element.configuration == configuration &&
-        element.panelStyle == panelStyle
-      );
-    });
-
-    let minWidth: any;
-    let maxWidth: any;
-    if (minMaxRows.length > 0) {
       switch (calculateUsing) {
         case 'rough_opening':
-          const minWidthRow_ro = minMaxRows.reduce(
-            function (total, currentValue) {
-              return total.minWidthRoughOpening < currentValue.minWidthRoughOpening
-                ? total
-                : currentValue;
-            },
-            { minWidthRoughOpening: Number.MAX_VALUE }
-          );
-          const maxWidthRow_ro = minMaxRows.reduce(
-            function (total, currentValue) {
-              return total.maxWidthRoughOpening > currentValue.maxWidthRoughOpening
-                ? total
-                : currentValue;
-            },
-            { maxWidthRoughOpening: Number.MIN_VALUE }
-          );
-
-          minWidth = minWidthRow_ro.minWidthRoughOpening;
-          maxWidth = maxWidthRow_ro.maxWidthRoughOpening;
-          break;
         case 'rough_opening_pocket':
-          const minWidthRow_rop = minMaxRows.reduce(
-            function (total, currentValue) {
-              return total.minWidthRoughOpeningWithOutPocket <
-                currentValue.minWidthRoughOpeningWithOutPocket
-                ? total
-                : currentValue;
-            },
-            { minWidthRoughOpeningWithOutPocket: Number.MAX_VALUE }
-          );
-          const maxWidthRow_rop = minMaxRows.reduce(
-            function (total, currentValue) {
-              return total.maxWidthRoughOpeningWithOutPocket >
-                currentValue.maxWidthRoughOpeningWithOutPocket
-                ? total
-                : currentValue;
-            },
-            { maxWidthRoughOpeningWithOutPocket: Number.MIN_VALUE }
-          );
-
-          minWidth = minWidthRow_rop.minWidthRoughOpeningWithOutPocket;
-          maxWidth = maxWidthRow_rop.maxWidthRoughOpeningWithOutPocket;
+          minHeight = calculateRoughOpeningHeightFromUnitHeight(minHeight, sillOptions);
+          maxHeight = calculateRoughOpeningHeightFromUnitHeight(maxHeight, sillOptions);
           break;
         case 'clear_opening':
-          const minWidthRow_co = minMaxRows.reduce(
-            function (total, currentValue) {
-              return total.minWidthClearOpening < currentValue.minWidthClearOpening
-                ? total
-                : currentValue;
-            },
-            { minWidthClearOpening: Number.MAX_VALUE }
-          );
-          const maxWidthRow_co = minMaxRows.reduce(
-            function (total, currentValue) {
-              return total.maxWidthClearOpening > currentValue.maxWidthClearOpening
-                ? total
-                : currentValue;
-            },
-            { maxWidthClearOpening: Number.MIN_VALUE }
-          );
-
-          minWidth = minWidthRow_co.minWidthClearOpening;
-          maxWidth = maxWidthRow_co.maxWidthClearOpening;
+          minHeight = calculateClearOpeningHeightFromUnitHeight(minHeight, sillOptions);
+          maxHeight = calculateClearOpeningHeightFromUnitHeight(maxHeight, sillOptions);
           break;
         case 'unit_dimensions':
-          const minWidthRow = minMaxRows.reduce(
-            function (total, currentValue) {
-              return total.minWidthUnitDimensions < currentValue.minWidthUnitDimensions
-                ? total
-                : currentValue;
-            },
-            { minWidthUnitDimensions: Number.MAX_VALUE }
-          );
-          const maxWidthRow = minMaxRows.reduce(
-            function (total, currentValue) {
-              return total.maxWidthUnitDimensions > currentValue.maxWidthUnitDimensions
-                ? total
-                : currentValue;
-            },
-            { maxWidthUnitDimensions: Number.MIN_VALUE }
-          );
-
-          minWidth = minWidthRow.minWidthUnitDimensions;
-          maxWidth = maxWidthRow.maxWidthUnitDimensions;
+          // min/max are defined in unit dimensions
           break;
       }
 
       const minFormatted = convertToFeetInchesAndFraction(
-        minWidth,
+        minHeight,
         AWNumberUtil.roundingDirections.up
       );
       const maxFormatted = convertToFeetInchesAndFraction(
-        maxWidth,
+        maxHeight,
         AWNumberUtil.roundingDirections.down
       );
 
       const minMessage = 'Please enter a value greater than or equal to ' + minFormatted + '.';
       const maxMessage = 'Please enter a value less than or equal to ' + maxFormatted + '.';
 
-      if (width < minWidth) {
-        msgWidth = minMessage;
-      } else if (width > maxWidth) {
-        msgWidth = maxMessage;
+      if (height < minHeight) {
+        msgHeight = minMessage;
+      }
+      if (height > maxHeight) {
+        msgHeight = maxMessage;
       }
 
-      setWidthStates({
-        ...widthStates,
-        ruleMax: roundNumber(minWidth),
-        ruleMin: roundNumber(maxWidth),
-        msgMin: minMessage,
-        msgMax: maxMessage,
+      // setHeightStates({
+      //   ...heightStates,
+      //   ruleMax: roundNumber(minHeight),
+      //   ruleMin: roundNumber(maxHeight),
+      //   msg: msgHeight,
+      // });
+    } else {
+      msgHeight = '';
+    }
+
+    if (width > 0) {
+      // Min/Max Width
+      const minMaxRows = minMaxes.filter((element) => {
+        return (
+          element.stackingDirection === stackingDirection &&
+          element.configuration === configuration &&
+          element.panelStyle === panelStyle
+        );
       });
+
+      let minWidth: any;
+      let maxWidth: any;
+      if (minMaxRows.length > 0) {
+        switch (calculateUsing) {
+          case 'rough_opening':
+            const minWidthRow_ro = minMaxRows.reduce(
+              function (total, currentValue) {
+                return total.minWidthRoughOpening < currentValue.minWidthRoughOpening
+                  ? total
+                  : currentValue;
+              },
+              { minWidthRoughOpening: Number.MAX_VALUE }
+            );
+            const maxWidthRow_ro = minMaxRows.reduce(
+              function (total, currentValue) {
+                return total.maxWidthRoughOpening > currentValue.maxWidthRoughOpening
+                  ? total
+                  : currentValue;
+              },
+              { maxWidthRoughOpening: Number.MIN_VALUE }
+            );
+
+            minWidth = minWidthRow_ro.minWidthRoughOpening;
+            maxWidth = maxWidthRow_ro.maxWidthRoughOpening;
+            break;
+          case 'rough_opening_pocket':
+            const minWidthRow_rop = minMaxRows.reduce(
+              function (total, currentValue) {
+                return total.minWidthRoughOpeningWithOutPocket <
+                  currentValue.minWidthRoughOpeningWithOutPocket
+                  ? total
+                  : currentValue;
+              },
+              { minWidthRoughOpeningWithOutPocket: Number.MAX_VALUE }
+            );
+            const maxWidthRow_rop = minMaxRows.reduce(
+              function (total, currentValue) {
+                return total.maxWidthRoughOpeningWithOutPocket >
+                  currentValue.maxWidthRoughOpeningWithOutPocket
+                  ? total
+                  : currentValue;
+              },
+              { maxWidthRoughOpeningWithOutPocket: Number.MIN_VALUE }
+            );
+
+            minWidth = minWidthRow_rop.minWidthRoughOpeningWithOutPocket;
+            maxWidth = maxWidthRow_rop.maxWidthRoughOpeningWithOutPocket;
+            break;
+          case 'clear_opening':
+            const minWidthRow_co = minMaxRows.reduce(
+              function (total, currentValue) {
+                return total.minWidthClearOpening < currentValue.minWidthClearOpening
+                  ? total
+                  : currentValue;
+              },
+              { minWidthClearOpening: Number.MAX_VALUE }
+            );
+            const maxWidthRow_co = minMaxRows.reduce(
+              function (total, currentValue) {
+                return total.maxWidthClearOpening > currentValue.maxWidthClearOpening
+                  ? total
+                  : currentValue;
+              },
+              { maxWidthClearOpening: Number.MIN_VALUE }
+            );
+
+            minWidth = minWidthRow_co.minWidthClearOpening;
+            maxWidth = maxWidthRow_co.maxWidthClearOpening;
+            break;
+          case 'unit_dimensions':
+            const minWidthRow = minMaxRows.reduce(
+              function (total, currentValue) {
+                return total.minWidthUnitDimensions < currentValue.minWidthUnitDimensions
+                  ? total
+                  : currentValue;
+              },
+              { minWidthUnitDimensions: Number.MAX_VALUE }
+            );
+            const maxWidthRow = minMaxRows.reduce(
+              function (total, currentValue) {
+                return total.maxWidthUnitDimensions > currentValue.maxWidthUnitDimensions
+                  ? total
+                  : currentValue;
+              },
+              { maxWidthUnitDimensions: Number.MIN_VALUE }
+            );
+
+            minWidth = minWidthRow.minWidthUnitDimensions;
+            maxWidth = maxWidthRow.maxWidthUnitDimensions;
+            break;
+        }
+
+        const minFormatted = convertToFeetInchesAndFraction(
+          minWidth,
+          AWNumberUtil.roundingDirections.up
+        );
+        const maxFormatted = convertToFeetInchesAndFraction(
+          maxWidth,
+          AWNumberUtil.roundingDirections.down
+        );
+
+        const minMessage = 'Please enter a value greater than or equal to ' + minFormatted + '.';
+        const maxMessage = 'Please enter a value less than or equal to ' + maxFormatted + '.';
+
+        if (width < minWidth) {
+          msgWidth = minMessage;
+        } else if (width > maxWidth) {
+          msgWidth = maxMessage;
+        }
+
+        // setWidthStates({
+        //   ...widthStates,
+        //   ruleMax: roundNumber(minWidth),
+        //   ruleMin: roundNumber(maxWidth),
+        //   msgMin: minMessage,
+        //   msgMax: maxMessage,
+        // });
+      } else {
+        msgWidth = '';
+        // setWidthStates({
+        //   ...widthStates,
+        //   ruleMax: roundNumber(minWidth),
+        //   ruleMin: roundNumber(maxWidth),
+        //   msgMin: '',
+        //   msgMax: '',
+        // });
+      }
     } else {
       msgWidth = '';
-      setWidthStates({
-        ...widthStates,
-        ruleMax: roundNumber(minWidth),
-        ruleMin: roundNumber(maxWidth),
-        msgMin: '',
-        msgMax: '',
-      });
     }
 
     if (msgWidth !== '' || msgHeight !== '') {
@@ -1493,9 +1437,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     // Default to all valid options for our combination
     let numberPanelRows = minMaxes.filter((element) => {
       return (
-        element.stackingDirection == stackingDirection &&
-        element.configuration == configuration &&
-        element.panelStyle == panelStyle
+        element.stackingDirection === stackingDirection &&
+        element.configuration === configuration &&
+        element.panelStyle === panelStyle
       );
     });
 
@@ -1545,16 +1489,16 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     // Convert to an object so we can populate the dropdown
     const numberPanelOptions = numberPanelRows.reduce(function (result, element) {
       if (
-        element.stackingDirection == stackingDirection &&
-        element.configuration == configuration &&
-        element.panelStyle == panelStyle
+        element.stackingDirection === stackingDirection &&
+        element.configuration === configuration &&
+        element.panelStyle === panelStyle
       ) {
         result[element.numberOfPanels] = element.numberOfPanels;
       }
       return result;
     }, {});
 
-    setNumberPanels(numberPanelOptions);
+    // setNumberPanelList(numberPanelOptions);
   };
 
   const minMaxes = MIN_MAX_WIDTHS.map((o: any) => {
@@ -1567,7 +1511,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       numberOfPanels: o[3],
     };
 
-    if (obj.configuration == 'stacking') {
+    if (obj.configuration === 'stacking') {
       // min/max are defined in unit dimensions
       obj.minWidthUnitDimensions = o[4];
       obj.maxWidthUnitDimensions = o[5];
@@ -1914,7 +1858,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               name="panelNumber"
               onChange={updateForm}
             >
-              {numberPanels.map((numberPanel) => (
+              {numberPanelList.map((numberPanel) => (
                 <option key={numberPanel} value={numberPanel}>
                   {numberPanel}
                 </option>
@@ -2123,13 +2067,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Stacking Direction</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {getValues('stackingDirection') || '-'}
+                            {OPTIONS.stackingDirection[getValues('stackingDirection')] || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Panel Style</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {formData?.selectedPanelStyle || '-'}
+                            {OPTIONS.panelStyles[formData?.selectedPanelStyle] || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
@@ -2147,26 +2091,27 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Sill Options</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {getValues('sillOption') || '-'}
+                            {OPTIONS.sillOptions[getValues('sillOption')] || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Sill Ramps</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {getValues('sillRamp') || '-'}
+                            {OPTIONS.sillRamps[getValues('sillRamp')] || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Insect Screens</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {getValues('insectScreen') || '-'}
+                            {OPTIONS.insectScreens[getValues('sillRamp')] || '-'}
                           </td>
                         </tr>
                         {formState.insectScreen === 'retractable' && (
                           <tr className={themeData.classes.tableRow}>
                             <td className={themeData.classes.tdColumn}>Screen Configuration</td>
                             <td className={themeData.classes.tdColumnCenter}>
-                              {getValues('screenConfiguration') || '-'}
+                              {OPTIONS.screenConfigurations[getValues('screenConfiguration')] ||
+                                '-'}
                             </td>
                           </tr>
                         )}
@@ -2309,24 +2254,32 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                             <td className={themeData.classes.tdColumn}>{'-'}</td>
                           </tr>
                         )}
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Screen Rough Opening</td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: screenRoughOpeningWidth }} />
-                          </td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: screenRoughOpeningHeight }} />
-                          </td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Screen Unit Size</td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: screenUnitSizeWidth }} />
-                          </td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: screenUnitSizeHeight }} />
-                          </td>
-                        </tr>
+                        {formState.insectScreen === 'retractable' && (
+                          <>
+                            <tr className={themeData.classes.tableRow}>
+                              <td className={themeData.classes.tdColumn}>Screen Rough Opening</td>
+                              <td className={themeData.classes.tdColumn}>
+                                <div
+                                  dangerouslySetInnerHTML={{ __html: screenRoughOpeningWidth }}
+                                />
+                              </td>
+                              <td className={themeData.classes.tdColumn}>
+                                <div
+                                  dangerouslySetInnerHTML={{ __html: screenRoughOpeningHeight }}
+                                />
+                              </td>
+                            </tr>
+                            <tr className={themeData.classes.tableRow}>
+                              <td className={themeData.classes.tdColumn}>Screen Unit Size</td>
+                              <td className={themeData.classes.tdColumn}>
+                                <div dangerouslySetInnerHTML={{ __html: screenUnitSizeWidth }} />
+                              </td>
+                              <td className={themeData.classes.tdColumn}>
+                                <div dangerouslySetInnerHTML={{ __html: screenUnitSizeHeight }} />
+                              </td>
+                            </tr>
+                          </>
+                        )}
                       </tbody>
                     </table>
                   </div>

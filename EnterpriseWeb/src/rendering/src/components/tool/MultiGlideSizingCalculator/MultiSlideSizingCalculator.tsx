@@ -10,16 +10,16 @@ import { withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
 
 // Components
 import { Component } from 'src/helpers/Component';
-import { MultiGlideSizingCalculatorTheme } from './MultiGlideSizingCalculator.theme';
+import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 import { StepConfigurationOption } from './StepConfigurationOption';
 import { StepPanelStyle } from './StepPanelStyle';
 import { StepESeriesSizingCalculator } from './StepESeriesSizingCalculator';
 
-export type MultiGlideSizingCalculatorProps =
+export type MultiSlideSizingCalculatorProps =
   Feature.EnterpriseWeb.Components.Tool.MultiGlideSizingCalculatorProps;
 
-const MultiGlideSizingCalculator = (props: MultiGlideSizingCalculatorProps): JSX.Element => {
-  const { themeData } = useTheme(MultiGlideSizingCalculatorTheme());
+const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX.Element => {
+  const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
 
   const [stepWizard, setStepWizard] = useState(null);
   const [formData, setData] = useState({});
@@ -54,22 +54,20 @@ const MultiGlideSizingCalculator = (props: MultiGlideSizingCalculatorProps): JSX
   return (
     <Component variant="lg" dataComponent="tool/multiglidesizingcalculator" {...props}>
       <div className="col-span-12">
-        <div className={themeData.classes.title}>
-          MultiGlide<sup className="text-[10px]">TM</sup> Door Sizing Calculator
-        </div>
+        <div className={themeData.classes.title}>MultiSlide Door Sizing Calculator</div>
         <div className={themeData.classes.descriptionWrapper}>
           <div className={themeData.classes.description}>
             <p>
               Sizing up a door of this nature is no small task. At Andersen, we know every detail is
-              important which is why we have created a sizing calculator to guide you on how to
+              important which is why we've created a sizing calculator to guide you on how to
               properly design, specify, and prepare your opening for this door. We know having as
               much information up front as possible lends to a more successful installation and
               experience.
             </p>
             <br />
             <p>
-              Begin by selecting the options you are interested in, then click the calcuate button.
-              Not sure what you are looking for? Visit the Folding Patio Door page for more
+              Begin by selecting the options you're interested in, then click the calcuate button.
+              Not sure what you're looking for? Visit the Folding Patio Door page for more
               information.
             </p>
             <br />
@@ -97,24 +95,9 @@ const MultiGlideSizingCalculator = (props: MultiGlideSizingCalculatorProps): JSX
             // connectorStyleConfig={themeData.stepperConnectorStyle}
             // connectorStateColors={true}
           >
-            <Step
-              label="Step 1"
-              // styleConfig={themeData.stepperConnectorConfig}
-            >
-              {activeStep !== 0 && <FiCheck size={16} />}
-            </Step>
-            <Step
-              label="Step 2"
-              // styleConfig={themeData.stepperConnectorConfig}
-            >
-              {activeStep === 2 && <FiCheck size={16} />}
-            </Step>
-            <Step
-              label="Step 3"
-              // styleConfig={themeData.stepperConnectorConfig}
-            >
-              {isComplete && <FiCheck size={16} />}
-            </Step>
+            <Step label="Step 1">{activeStep !== 0 && <FiCheck size={16} />}</Step>
+            <Step label="Step 2">{activeStep === 2 && <FiCheck size={16} />}</Step>
+            <Step label="Step 3">{isComplete && <FiCheck size={16} />}</Step>
           </Stepper>
         </div>
         <div className="mt-5">
@@ -133,4 +116,4 @@ const MultiGlideSizingCalculator = (props: MultiGlideSizingCalculatorProps): JSX
   );
 };
 
-export default withDatasourceCheck()<MultiGlideSizingCalculatorProps>(MultiGlideSizingCalculator);
+export default withDatasourceCheck()<MultiSlideSizingCalculatorProps>(MultiGlideSizingCalculator);

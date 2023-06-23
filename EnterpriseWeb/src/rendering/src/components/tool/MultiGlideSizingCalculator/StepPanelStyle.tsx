@@ -1,23 +1,28 @@
 import { useState } from 'react';
-import { useTheme } from 'lib/context/ThemeContext';
-import { MultiGlideSizingCalculatorTheme } from './MultiGlideSizingCalculator.theme';
-import { MultiGlideSizingCalculatorActionButtons } from './ActionButtons';
+// import { useTheme } from 'lib/context/ThemeContext';
+// import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
+import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
+import ImageWrapper from 'src/helpers/Media/ImageWrapper';
+import clsx from 'clsx';
 
 export const StepPanelStyle = (props: any): JSX.Element => {
-  const { themeData } = useTheme(MultiGlideSizingCalculatorTheme());
+  // const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
   const { fields } = props;
 
   const OPTIONS = [
     {
-      text: fields?.TileButtonTextOne?.value,
+      text: fields?.PanelStyleText1?.value,
+      image: fields?.PanelStyleImage1?.value,
       name: 'contemporary_cap',
     },
     {
-      text: fields?.TileButtonTextTwo?.value,
+      text: fields?.PanelStyleText2?.value,
+      image: fields?.PanelStyleImage2?.value,
       name: 'contemporary_ccp',
     },
     {
-      text: fields?.TileButtonTextThree?.value,
+      text: fields?.PanelStyleText3?.value,
+      image: fields?.PanelStyleImage3?.value,
       name: 'traditional',
     },
   ];
@@ -46,7 +51,12 @@ export const StepPanelStyle = (props: any): JSX.Element => {
       <div className="mt-5 flex flex-col md:flex-row md:space-x-5">
         {OPTIONS.map((item, idx) => (
           <div
-            className="m-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold"
+            className={clsx({
+              'm-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold':
+                true,
+              'border-[#b9b9b9] bg-[#f7f7f7]': selectedOption === item.name,
+              'border-[#e3e3e3]': selectedOption !== item.name,
+            })}
             key={idx}
           >
             <label
@@ -63,13 +73,14 @@ export const StepPanelStyle = (props: any): JSX.Element => {
                 onChange={handleChangeRadioInput}
               />
               <span className="ml-2.5">{item.text}</span>
+              <ImageWrapper image={item?.image} additionalDesktopClasses="mt-4" />
             </label>
           </div>
         ))}
       </div>
       {error && <div className="font-semibold text-red-500">{error}</div>}
       <div className="mt-5">
-        <MultiGlideSizingCalculatorActionButtons {...props} nextStep={handleClickNext} />
+        <MultiSlideSizingCalculatorActionButtons {...props} nextStep={handleClickNext} />
       </div>
     </div>
   );
