@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import clsx from 'clsx';
 import { useTheme } from 'lib/context/ThemeContext';
-import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
-import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
+import { MultiGlideSizingCalculatorTheme } from './MultiGlideSizingCalculator.theme';
+import { MultiGlideSizingCalculatorActionButtons } from './ActionButtons';
 import ImageWrapper from 'src/helpers/Media/ImageWrapper';
 
 export const StepConfigurationOption = (props: any): JSX.Element => {
@@ -19,7 +19,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
     },
   ];
 
-  const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
+  const { themeData } = useTheme(MultiGlideSizingCalculatorTheme());
 
   const [selectedOption, setSelectedOption] = useState(OPTIONS[0].title);
   const [error, setError] = useState<any>(null);
@@ -76,7 +76,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
       </div>
       {error && <div className="font-semibold text-red-500">{error}</div>}
       <div className="mt-5">
-        <MultiSlideSizingCalculatorActionButtons {...props} nextStep={handleClickNext} />
+        <MultiGlideSizingCalculatorActionButtons {...props} nextStep={handleClickNext} />
       </div>
     </div>
   );

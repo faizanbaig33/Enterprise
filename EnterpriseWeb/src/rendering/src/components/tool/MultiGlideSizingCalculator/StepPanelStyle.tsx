@@ -1,20 +1,24 @@
 import { useState } from 'react';
 import { useTheme } from 'lib/context/ThemeContext';
-import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
-import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
+import { MultiGlideSizingCalculatorTheme } from './MultiGlideSizingCalculator.theme';
+import { MultiGlideSizingCalculatorActionButtons } from './ActionButtons';
 
 export const StepPanelStyle = (props: any): JSX.Element => {
-  const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
+  const { themeData } = useTheme(MultiGlideSizingCalculatorTheme());
   const { fields } = props;
 
   const OPTIONS = [
     {
       text: fields?.TileButtonTextOne?.value,
-      name: 'thermally',
+      name: 'contemporary_cap',
     },
     {
       text: fields?.TileButtonTextTwo?.value,
-      name: 'nonThermally',
+      name: 'contemporary_ccp',
+    },
+    {
+      text: fields?.TileButtonTextThree?.value,
+      name: 'traditional',
     },
   ];
 
@@ -65,7 +69,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
       </div>
       {error && <div className="font-semibold text-red-500">{error}</div>}
       <div className="mt-5">
-        <MultiSlideSizingCalculatorActionButtons {...props} nextStep={handleClickNext} />
+        <MultiGlideSizingCalculatorActionButtons {...props} nextStep={handleClickNext} />
       </div>
     </div>
   );

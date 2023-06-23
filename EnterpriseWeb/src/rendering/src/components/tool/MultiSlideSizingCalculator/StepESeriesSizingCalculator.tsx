@@ -786,15 +786,15 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     }
   };
 
-  const widthMaxes = MAX_WIDTH_ARRAY.map((o) => {
-    const obj = {
-      configuration: o[0],
-      panelStyle: o[1],
-      stackingDirection: o[2],
-      maxUnitWidth: o[3],
-    };
-    return obj;
-  });
+  // const widthMaxes = MAX_WIDTH_ARRAY.map((o) => {
+  //   const obj = {
+  //     configuration: o[0],
+  //     panelStyle: o[1],
+  //     stackingDirection: o[2],
+  //     maxUnitWidth: o[3],
+  //   };
+  //   return obj;
+  // });
 
   const onSubmit = (data: CalcForm) => {
     if (msgWidth !== '' || msgHeight !== '') {
@@ -1067,7 +1067,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           roughOpeningHeightSubfloor_temp = height;
         }
 
-        var daylightRailLength = calculateDaylightRailLength(
+        const daylightRailLength = calculateDaylightRailLength(
           width,
           stackingDirection,
           lockStileOffset,
@@ -1077,17 +1077,17 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           interlockPairOffset,
           biPartPairOffset_temp
         );
-        var leadPanelWidth = calculateLeadPanelWidth(
+        const leadPanelWidth = calculateLeadPanelWidth(
           daylightRailLength,
           lockStileOffset,
           interlockStileOffset
         );
-        var daylightPocketWidth = calculateDaylightPocketWidth(
+        const daylightPocketWidth = calculateDaylightPocketWidth(
           daylightRailLength,
           interlockStileOffset,
           pocketOffset_temp
         );
-        var intermediatePanelWidth = calculateIntermediatePanelWidth(
+        const intermediatePanelWidth = calculateIntermediatePanelWidth(
           stackingDirection,
           configuration,
           numberPanels,
