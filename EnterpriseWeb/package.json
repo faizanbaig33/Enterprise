@@ -29,6 +29,8 @@
   "devDependencies": {
     "@commitlint/cli": "^13.1.0",
     "@types/inquirer": "^9.0.3",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
     "commitlint-config-jira": "^1.5.1",
     "commitlint-plugin-jira-rules": "^1.5.1",
     "husky": "^7.0.1",
@@ -38,6 +40,10 @@
     "all": "^0.0.0",
     "axios": "^0.27.2",
     "eslint": "^8.29.0",
-    "react-hook-form": "^7.44.2"
+    "print-js": "^1.6.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.44.2",
+    "react-to-print": "^2.14.13"
   }
 }

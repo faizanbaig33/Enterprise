@@ -2,16 +2,19 @@
 import { useTheme } from 'lib/context/ThemeContext';
 
 import { useForm } from 'react-hook-form';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
+import ReactToPrint from 'react-to-print';
 
 import ModalWrapper from 'src/helpers/ModalWrapper/ModalWrapper';
+import CalculatorResult from './CalculatorResult';
 import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 import { SvgIcon } from 'src/helpers/SvgIcon';
 import { RichTextWrapper } from 'src/helpers/RichTextWrapper';
 import { useExperienceEditor } from 'lib/utils';
 import { OPTIONS, MIN_MAX_WIDTHS } from './constant';
 import * as AWNumberUtil from 'src/lib/utils/aw-number-utils';
+import clsx from 'clsx';
 
 type CalcForm = {
   calculateUsing: string; //known_size
@@ -36,6 +39,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
   const { fields, formData } = props;
   const isEE = useExperienceEditor();
+
+  const table1Ref = useRef<HTMLDivElement>(null);
 
   const panelStyle = formData?.selectedPanelStyle;
   const configuration = formData?.selectedConfigurationOption;
@@ -2001,6 +2006,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 type="button"
                 className={themeData.classes.prevButton}
                 onClick={() => {
+                  console.log('preview');
                   props.previousStep();
                   setIsShowResults(false);
                 }}
@@ -2030,24 +2036,41 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <h1>Results:</h1>
             </div>
             <div className="mb-s hidden items-end pr-2 md:relative md:block">
-              <button
-                type="button"
-                className={themeData.classes.printButton}
-                onClick={printResults}
-              >
-                <span className="mr-xxs text-darkprimary">
-                  <SvgIcon icon="print" />
-                </span>
-                Print
-              </button>
+              <ReactToPrint
+                trigger={() => {
+                  return (
+                    <button type="button" className={themeData.classes.printButton}>
+                      <span className="mr-xxs text-darkprimary">
+                        <SvgIcon icon="print" />
+                      </span>
+                      Print
+                    </button>
+                  );
+                }}
+                content={() => {
+                  return table1Ref.current;
+                }}
+                documentTitle="E-Series Sizing Calculator Results"
+                onBeforeGetContent={() => console.log('onBeforeGetContent')}
+                onBeforePrint={() => console.log('onBeforePrint')}
+                onAfterPrint={() => console.log('onAfterPrint')}
+                removeAfterPrint
+              />
             </div>
           </div>
-          <div className={themeData.classes.resultsOutputWrapper} id="resultsOutput">
-            <div className={themeData.classes.columnSpan1}>
+          <div
+            className={clsx({
+              [themeData.classes.resultsOutputWrapper]: true,
+            })}
+            id="resultsOutput"
+          >
+            <div className={(themeData.classes.columnSpan1, 'print:mx-5')} ref={table1Ref}>
               <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                 <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                   <div className="overflow-hidden">
-                    <div className="hidden print:block">E-Series Sizing Calculator Results</div>
+                    <div className="hidden print:mb-5 print:block">
+                      E-Series Sizing Calculator Results
+                    </div>
                     {/* Options Selected Table */}
                     <table className="min-w-full font-sans text-sm font-light">
                       <thead className={themeData.classes.tableHead}>
@@ -2128,163 +2151,60 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   </div>
                 </div>
               </div>
+              <div className="hidden print:block">
+                <CalculatorResult
+                  data={{
+                    formState,
+                    configuration,
+                    clearOpeningWidth,
+                    clearOpeningHeight,
+                    roughOpeningWidth,
+                    roughOpeningHeightSubfloor,
+                    roughOpeningHeightRecess,
+                    roughOpeningPocketWidth,
+                    unitWidth,
+                    unitHeight,
+                    panelWidth,
+                    panelHeight,
+                    roughPocketWidth,
+                    pocketWidth,
+                    pocketDepth,
+                    jambDepth,
+                    sillDepth,
+                    screenRoughOpeningWidth,
+                    screenRoughOpeningHeight,
+                    screenUnitSizeWidth,
+                    screenUnitSizeHeight,
+                  }}
+                />
+              </div>
             </div>
             <div className={themeData.classes.columnSpan1}>
-              <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-                  <div className="overflow-hidden">
-                    {/* Calculated Dimensions Table */}
-                    <table className="min-w-full font-sans text-sm font-light ">
-                      <thead className={themeData.classes.tableHead}>
-                        <tr>
-                          <th scope="col" className={themeData.classes.thLeft}>
-                            Calculated Dimensions
-                          </th>
-                          <th scope="col" className={themeData.classes.thCenter}>
-                            Width
-                          </th>
-                          <th scope="col" className={themeData.classes.thRight}>
-                            Height
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Clear Opening</td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: clearOpeningWidth }} />
-                          </td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: clearOpeningHeight }} />
-                          </td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>
-                            Rough Opening (from top of finished floor)
-                          </td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />
-                          </td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: roughOpeningHeightSubfloor }} />
-                          </td>
-                        </tr>
-                        {formState.sillOption === 'flush' && (
-                          <tr className={themeData.classes.tableRow}>
-                            <th className={themeData.classes.tdColumn}>
-                              Rough Opening (including recess in floor with flush sill application)
-                            </th>
-                            <td className={themeData.classes.tdColumn}>
-                              <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />
-                            </td>
-                            <td className={themeData.classes.tdColumn}>
-                              <div dangerouslySetInnerHTML={{ __html: roughOpeningHeightRecess }} />
-                            </td>
-                          </tr>
-                        )}
-                        {configuration === 'pocketing' && (
-                          <tr className={themeData.classes.tableRow}>
-                            <td className={themeData.classes.tdColumn}>
-                              Rough Opening (not including pocket)
-                            </td>
-                            <td className={themeData.classes.tdColumn}>
-                              <div dangerouslySetInnerHTML={{ __html: roughOpeningPocketWidth }} />
-                            </td>
-                            <td className={themeData.classes.tdColumn}>-</td>
-                          </tr>
-                        )}
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Unit Size</td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: unitWidth }} />
-                          </td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: unitHeight }} />
-                          </td>
-                        </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Panel Size</td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: panelWidth }} />
-                          </td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: panelHeight }} />
-                          </td>
-                        </tr>
-                        {configuration === 'pocketing' && (
-                          <tr className={themeData.classes.tableRow}>
-                            <td className={themeData.classes.tdColumn}>Rough Pocket Width</td>
-                            <td className={themeData.classes.tdColumn}>
-                              <div dangerouslySetInnerHTML={{ __html: roughPocketWidth }} />
-                            </td>
-                            <td className={themeData.classes.tdColumn}>{'-'}</td>
-                          </tr>
-                        )}
-                        {configuration === 'pocketing' && (
-                          <tr className={themeData.classes.tableRow}>
-                            <td className={themeData.classes.tdColumn}>Pocket Width</td>
-                            <td className={themeData.classes.tdColumn}>
-                              <div dangerouslySetInnerHTML={{ __html: pocketWidth }} />
-                            </td>
-                            <td className={themeData.classes.tdColumn}>{'-'}</td>
-                          </tr>
-                        )}
-                        {configuration === 'pocketing' && (
-                          <tr className={themeData.classes.tableRow}>
-                            <td className={themeData.classes.tdColumn}>Pocket Depth</td>
-                            <td className={themeData.classes.tdColumn}>
-                              <div dangerouslySetInnerHTML={{ __html: pocketDepth }} />
-                            </td>
-                            <td className={themeData.classes.tdColumn}>{'-'}</td>
-                          </tr>
-                        )}
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Jamb Depth</td>
-                          <td className={themeData.classes.tdColumn}>
-                            <div dangerouslySetInnerHTML={{ __html: jambDepth }} />
-                          </td>
-                          <td className={themeData.classes.tdColumn}>{'-'}</td>
-                        </tr>
-                        {formState.sillOption !== 'flush' && (
-                          <tr className={themeData.classes.tableRow}>
-                            <td className={themeData.classes.tdColumn}>Sill Depth</td>
-                            <td className={themeData.classes.tdColumn}>
-                              <div dangerouslySetInnerHTML={{ __html: sillDepth }} />
-                            </td>
-                            <td className={themeData.classes.tdColumn}>{'-'}</td>
-                          </tr>
-                        )}
-                        {formState.insectScreen === 'retractable' && (
-                          <>
-                            <tr className={themeData.classes.tableRow}>
-                              <td className={themeData.classes.tdColumn}>Screen Rough Opening</td>
-                              <td className={themeData.classes.tdColumn}>
-                                <div
-                                  dangerouslySetInnerHTML={{ __html: screenRoughOpeningWidth }}
-                                />
-                              </td>
-                              <td className={themeData.classes.tdColumn}>
-                                <div
-                                  dangerouslySetInnerHTML={{ __html: screenRoughOpeningHeight }}
-                                />
-                              </td>
-                            </tr>
-                            <tr className={themeData.classes.tableRow}>
-                              <td className={themeData.classes.tdColumn}>Screen Unit Size</td>
-                              <td className={themeData.classes.tdColumn}>
-                                <div dangerouslySetInnerHTML={{ __html: screenUnitSizeWidth }} />
-                              </td>
-                              <td className={themeData.classes.tdColumn}>
-                                <div dangerouslySetInnerHTML={{ __html: screenUnitSizeHeight }} />
-                              </td>
-                            </tr>
-                          </>
-                        )}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
+              <CalculatorResult
+                data={{
+                  formState,
+                  configuration,
+                  clearOpeningWidth,
+                  clearOpeningHeight,
+                  roughOpeningWidth,
+                  roughOpeningHeightSubfloor,
+                  roughOpeningHeightRecess,
+                  roughOpeningPocketWidth,
+                  unitWidth,
+                  unitHeight,
+                  panelWidth,
+                  panelHeight,
+                  roughPocketWidth,
+                  pocketWidth,
+                  pocketDepth,
+                  jambDepth,
+                  sillDepth,
+                  screenRoughOpeningWidth,
+                  screenRoughOpeningHeight,
+                  screenUnitSizeWidth,
+                  screenUnitSizeHeight,
+                }}
+              />
             </div>
           </div>
           <div className="mt-5 flex items-center justify-between border border-black p-4">
