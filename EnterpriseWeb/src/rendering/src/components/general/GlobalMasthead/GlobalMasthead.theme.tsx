@@ -10,7 +10,7 @@ export const GlobalMastheadTheme: ThemeFile = {
       headLogo: 'flex items-center',
       menuIcon: 'md:hidden mr-5',
       anchorWrapper:
-        'mt-4 flex flex-col-reverse md:flex-row items-start md:items-center justify-between w-full transition ease-in-out delay-150',
+        'md:mt-10 flex flex-col-reverse md:flex-row items-start md:items-center justify-between w-full transition ease-in-out delay-150',
       socialIconsWrapper: 'mt-4 md:mt-0',
       iconWrapper: 'flex items-center space-x-4',
       socialIcon: '',

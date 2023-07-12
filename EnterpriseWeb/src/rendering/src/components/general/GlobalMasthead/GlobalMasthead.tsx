@@ -9,15 +9,18 @@ import { GlobalMastheadTheme } from './GlobalMasthead.theme';
 import { useMemo, useState, useEffect } from 'react';
 import Link from 'next/link';
 import ImageWrapper from 'src/helpers/Media/ImageWrapper';
-import SocialIcons from './SocialIcons';
 import { FiArrowRight } from 'react-icons/fi';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 import { useCurrentScreenType } from 'lib/utils/get-screen-type';
+import { SvgIcon } from 'src/helpers/SvgIcon';
+import { LinkWrapper } from 'src/helpers/LinkWrapper';
+import { getEnum, useExperienceEditor } from 'lib/utils';
 
 export type GlobalMastheadProps = Feature.EnterpriseWeb.Components.General.GlobalMasthead;
 const GlobalMasthead = (props: GlobalMastheadProps) => {
   const { themeData } = useTheme(GlobalMastheadTheme);
   const { screenType } = useCurrentScreenType();
+  const isEE = useExperienceEditor();
 
   const isDesktop = screenType !== 'sm' ? true : false;
 
@@ -43,7 +46,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
     <Component variant="full" dataComponent="general/globalmasthead" {...props}>
       <div
         className={classNames(
-          'theme-black fixed top-0 left-0 right-0 col-span-12 flex place-items-center justify-center',
+          'theme-black sticky top-0 left-0 right-0 col-span-12 flex place-items-center justify-center',
           `bg-${backgroundColor}`
         )}
       >
@@ -74,7 +77,26 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
           </div>
           {isShow && (
             <div className={themeData.classes.anchorWrapper}>
-              <SocialIcons icons={props.fields.socialIcons} textColor={textColor} />
+              <div className={themeData.classes.socialIconsWrapper}>
+                <div className={themeData.classes.iconWrapper}>
+                  {props.fields.socialIcons.map((menu: any, index: number) => {
+                    return (
+                      menu.fields?.navItemLink.value &&
+                      getEnum(menu.fields?.navItemIcon) && (
+                        <div key={index} className="mr-xxs mt-xxxs">
+                          {isEE ? (
+                            <SvgIcon icon={getEnum(menu.fields?.navItemIcon)} />
+                          ) : (
+                            <LinkWrapper field={menu.fields?.navItemLink}>
+                              <SvgIcon icon={getEnum(menu.fields?.navItemIcon)} />
+                            </LinkWrapper>
+                          )}
+                        </div>
+                      )
+                    );
+                  })}
+                </div>
+              </div>
               <div className={themeData.classes.anchors}>
                 {props.fields.children.map((link: any) => (
                   <Link href={link.fields.cta1Link.value.href} key={link.id} passHref>
