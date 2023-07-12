@@ -6,15 +6,15 @@ const defaultData = {
   fields: {
     "desktopLogo": {
       "value": {
-          "src": "/-/media/Default-Website/sc_logo.png?h=51&iar=0&w=204&hash=CED9B2E93A4AD3B9C277645D81FEA1D8",
-          "alt": "",
+          "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
+          "alt": "Casement-Window-900x900",
           "width": "204",
           "height": "51"
       }
   },
   "mobileLogo": {
       "value": {
-          "src": "/-/media/Feature/EnterpriseWeb/Components/General/blogtags.png?h=132&iar=0&w=532&hash=9BFB4DFCF284C2667CF4E91F96C1CEDF",
+          "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
           "alt": "blog tags",
           "width": "532",
           "height": "132"

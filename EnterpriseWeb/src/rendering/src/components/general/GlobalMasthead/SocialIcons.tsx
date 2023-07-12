@@ -7,7 +7,7 @@ const SocialIcons = ({ icons, textColor }: any) => {
     <div className={themeData.classes.socialIconsWrapper}>
       <div className={themeData.classes.iconWrapper}>
         {icons.map((icon: any) => (
-          <a href={icon?.fields?.svgCode?.url} target="_blank" key={icon.id} rel="noreferrer">
+          <a href={icon?.url} target="_blank" key={icon.id} rel="noreferrer">
             <div dangerouslySetInnerHTML={{ __html: icon?.fields?.svgCode?.value }} />
           </a>
         ))}

@@ -48,18 +48,21 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
         )}
       >
         <div className={themeData.classes.headWrapper}>
-          <div className={(themeData.classes.headLogoWrapper, `text-${textColor}`)}>
+          <div className={classNames(themeData.classes.headLogoWrapper, `text-${textColor}`)}>
             <div onClick={() => setIsShow(!isShow)} className={themeData.classes.menuIcon}>
               {!isShow ? <IoIosArrowDropdown size={36} /> : <IoIosArrowDropup size={36} />}
             </div>
             <div className={themeData.classes.headLogo}>
-              <Link href={props.fields.linkLogo.value.href}>
+              <Link href={props.fields.linkLogo.value.href} passHref>
                 <a>
-                  {props.fields.desktopLogo ? (
-                    <ImageWrapper
-                      image={LogoImage}
-                      additionalDesktopClasses="h-full w-full cursor-pointer"
-                    />
+                  {LogoImage ? (
+                    <div className={`h-[50px] w-[300px] object-cover`}>
+                      <ImageWrapper
+                        image={props.fields.desktopLogo}
+                        mobileImage={props.fields.mobileLogo}
+                        additionalDesktopClasses="h-full w-full cursor-pointer"
+                      />
+                    </div>
                   ) : (
                     <span className={themeData.classes.headline}>
                       {props.fields.headlineText.value}
@@ -76,7 +79,9 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
                 {props.fields.children.map((link: any) => (
                   <Link href={link.fields.cta1Link.value.href} key={link.id} passHref>
                     <a>
-                      <span className={(themeData.classes.linkTitle, `text-${textColor}`)}>
+                      <span
+                        className={classNames(themeData.classes.linkTitle, `text-${textColor}`)}
+                      >
                         {link.fields.cta1Link.value.text}
                       </span>
                     </a>

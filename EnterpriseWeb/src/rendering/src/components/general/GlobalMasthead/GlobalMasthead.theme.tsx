@@ -7,7 +7,7 @@ export const GlobalMastheadTheme: ThemeFile = {
       headline: 'text-white text-sm-m ml:text-m  font-heavy',
       headWrapper: 'w-[1200px] flex flex-col md:items-center md:justify-center py-4 px-5',
       headLogoWrapper: 'flex items-center justify-start md:justify-center',
-      headLogo: 'tracking-widest flex items-center',
+      headLogo: 'flex items-center',
       menuIcon: 'md:hidden mr-5',
       anchorWrapper:
         'mt-4 flex flex-col-reverse md:flex-row items-start md:items-center justify-between w-full transition ease-in-out delay-150',
@@ -22,7 +22,8 @@ export const GlobalMastheadTheme: ThemeFile = {
     classes: {
       headline: 'text-white text-sm-m ml:text-m  font-heavy',
       headWrapper: 'w-[1200px] flex flex-col md:items-center md:justify-center py-4 px-5',
-      headLogo: 'tracking-widest flex items-center',
+      headLogoWrapper: 'flex items-center justify-start md:justify-center',
+      headLogo: 'flex items-center',
       menuIcon: 'md:hidden mr-5',
       anchorWrapper:
         'mt-4 flex flex-col md:flex-row items-start md:items-center justify-between w-full transition ease-in-out delay-150',
