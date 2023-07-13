@@ -4,12 +4,10 @@ import { useTheme } from 'lib/context/ThemeContext';
 import { withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
 // Components
 import classNames from 'classnames';
-import { Component } from 'src/helpers/Component';
 import { GlobalMastheadTheme } from './GlobalMasthead.theme';
 import { useMemo, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import ImageWrapper from 'src/helpers/Media/ImageWrapper';
-import SocialIcons from './SocialIcons';
 import { FiArrowRight } from 'react-icons/fi';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 import { useCurrentScreenType } from 'lib/utils/get-screen-type';
@@ -99,9 +97,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
               {props.fields.children.map((link: any) => (
                 <Link href={link.fields.cta1Link.value.href} key={link.id} passHref>
                   <a>
-                    <span
-                      className={classNames(themeData.classes.linkTitle, `text-${textColor}`)}
-                    >
+                    <span className={classNames(themeData.classes.linkTitle, `text-${textColor}`)}>
                       {link.fields.cta1Link.value.text}
                     </span>
                   </a>
