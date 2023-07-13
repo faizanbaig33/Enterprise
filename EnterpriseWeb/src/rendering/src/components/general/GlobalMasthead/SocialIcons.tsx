@@ -1,7 +1,7 @@
 import { useTheme } from 'lib/context/ThemeContext';
 import { GlobalMastheadTheme } from './GlobalMasthead.theme';
 
-const SocialIcons = ({ icons, textColor }: any) => {
+const SocialIcons = ({ icons }: any) => {
   const { themeData } = useTheme(GlobalMastheadTheme);
   return (
     <div className={themeData.classes.socialIconsWrapper}>
