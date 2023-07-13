@@ -74,8 +74,8 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
           <div className={themeData.classes.headLogo}>
             <Link href={props.fields.linkLogo.value.href} passHref>
               <a>
-                {LogoImage ? (
-                  <div className={`h-[50px] w-[300px] object-cover`}>
+                {LogoImage.value?.src ? (
+                  <div className={`h-[30px] w-[300px] object-cover`}>
                     <ImageWrapper
                       image={props.fields.desktopLogo}
                       mobileImage={props.fields.mobileLogo}
