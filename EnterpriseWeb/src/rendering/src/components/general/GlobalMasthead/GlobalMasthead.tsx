@@ -12,6 +12,7 @@ import { FiArrowRight } from 'react-icons/fi';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 import { useCurrentScreenType } from 'lib/utils/get-screen-type';
 import clsx from 'clsx';
+import SocialIcons from './SocialIcons';
 
 export type GlobalMastheadProps = Feature.EnterpriseWeb.Components.General.GlobalMasthead;
 const GlobalMasthead = (props: GlobalMastheadProps) => {
