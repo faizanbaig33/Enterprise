@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import clsx from 'clsx';
-// import { useTheme } from 'lib/context/ThemeContext';
-// import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
 import ImageWrapper from 'src/helpers/Media/ImageWrapper';
 
 export const StepConfigurationOption = (props: any): JSX.Element => {
-  const { fields } = props;
+  const { fields, activeStep } = props;
 
   const OPTIONS = [
     {
@@ -18,8 +16,6 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
       image: fields?.StepOneButtonImage2,
     },
   ];
-
-  // const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
 
   const [selectedOption, setSelectedOption] = useState(OPTIONS[0].title);
   const [error, setError] = useState<any>(null);
@@ -33,7 +29,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
       setError('Select an option');
     } else {
       setError(null);
-      props.nextStep();
+      props.onStepChange(activeStep + 1);
       props.userCallback({
         selectedConfigurationOption: selectedOption,
         downloadLink: selectedOption === 'stacking' ? fields?.urlStacking : fields?.urlPocketking,

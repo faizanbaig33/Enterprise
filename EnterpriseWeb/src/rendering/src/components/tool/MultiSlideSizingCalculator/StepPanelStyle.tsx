@@ -1,11 +1,8 @@
 import { useState } from 'react';
-import { useTheme } from 'lib/context/ThemeContext';
-import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
 
 export const StepPanelStyle = (props: any): JSX.Element => {
-  const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
-  const { fields } = props;
+  const { fields, activeStep } = props;
 
   const OPTIONS = [
     {
@@ -30,7 +27,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
       setError('Select an option');
     } else {
       setError(null);
-      props.nextStep();
+      props.onStepChange(activeStep + 1);
       props.userCallback({
         selectedPanelStyle: selectedOption,
       });

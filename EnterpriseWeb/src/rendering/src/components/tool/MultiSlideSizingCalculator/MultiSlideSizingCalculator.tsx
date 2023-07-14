@@ -1,12 +1,11 @@
-import { Stepper, Step } from 'react-form-stepper';
-import StepWizard from 'react-step-wizard';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { FiCheck, FiMail } from 'react-icons/fi';
 
 // Global
 import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
 import { useTheme } from 'lib/context/ThemeContext';
 import { withDatasourceCheck } from '@sitecore-jss/sitecore-jss-nextjs';
+import Slider from 'react-slick';
 
 // Components
 import { Component } from 'src/helpers/Component';
@@ -14,17 +13,10 @@ import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.th
 import { StepConfigurationOption } from './StepConfigurationOption';
 import { StepPanelStyle } from './StepPanelStyle';
 import { StepESeriesSizingCalculator } from './StepESeriesSizingCalculator';
-// import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
+import Stepper from '../MultiGlideSizingCalculator/Stepper';
+import { ProgressBar } from '../MultiGlideSizingCalculator/ProgressBar';
 
-/*
-import classNames from 'classnames';
-
-import { useForm } from 'react-hook-form';
-import React, { ChangeEvent, useState } from 'react';
-import ModalWrapper from 'src/helpers/ModalWrapper/ModalWrapper';
-import { SvgIcon } from 'src/helpers/SvgIcon';
-import { RichTextWrapper } from 'src/helpers/RichTextWrapper';
-import { useExperienceEditor } from 'lib/utils'; */
+export const MAX_STEPS = 2;
 
 export type MultiSlideSizingCalculatorProps =
   Feature.EnterpriseWeb.Components.Tool.MultiSlideSizingCalculatorProps;
@@ -32,16 +24,21 @@ export type MultiSlideSizingCalculatorProps =
 const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX.Element => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
 
-  const [stepWizard, setStepWizard] = useState(null);
+  const slider = useRef<Slider>(null);
+
+  const sliderSettings = {
+    dots: false,
+    infinite: false,
+    touchMove: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   const [formData, setData] = useState({});
   const [activeStep, setActiveStep] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
 
-  const assignStepWizard = (instance: any) => {
-    setStepWizard(instance);
-  };
-
-  const assignUser = (val: any) => {
+  const assignFormData = (val: any) => {
     // console.log("parent receive user callback");
     console.log(val);
     setData((data) => ({
@@ -50,11 +47,12 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
     }));
   };
 
-  const handleStepChange = (e: any) => {
-    console.log('step change');
-    console.log(e);
-    setActiveStep(e.activeStep - 1);
-    setIsComplete(false);
+  const handleStepChange = (step: number) => {
+    if (step <= MAX_STEPS) {
+      slider?.current?.slickGoTo(step);
+      setActiveStep(step);
+      setIsComplete(false);
+    }
   };
 
   const handleComplete = () => {
@@ -101,38 +99,46 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
           </div>
         </div>
         <div className={themeData.classes.formStep}>
-          <Stepper
-            activeStep={activeStep}
-            // connectorStyleConfig={themeData.stepperConnectorStyle}
-            // connectorStateColors={true}
-          >
-            <Step
-              label="Step 1"
-              // styleConfig={themeData.stepperConnectorConfig}
-              children={activeStep !== 0 && <FiCheck size={16} />}
+          <div className="hidden md:block">
+            <Stepper
+              isComplete={isComplete}
+              activeStep={activeStep}
+              onStepChange={setActiveStep}
+              sliderRef={slider}
             />
-            <Step
-              label="Step 2"
-              // styleConfig={themeData.stepperConnectorConfig}
-              children={activeStep === 2 && <FiCheck size={16} />}
+          </div>
+          <div className="md:hidden">
+            <ProgressBar
+              activeStep={activeStep + 1}
+              steps={MAX_STEPS + 1}
+              percent={(Number(activeStep + 1) / (MAX_STEPS + 1)) * 100}
+              isComplete={isComplete}
             />
-            <Step
-              label="Step 3"
-              // styleConfig={themeData.stepperConnectorConfig}
-              children={isComplete && <FiCheck size={16} />}
-            />
-          </Stepper>
+          </div>
         </div>
         <div className="mt-5">
-          <StepWizard instance={assignStepWizard} onStepChange={handleStepChange}>
-            <StepConfigurationOption fields={props.fields} userCallback={assignUser} />
-            <StepPanelStyle data={formData} fields={props.fields} userCallback={assignUser} />
+          <Slider ref={slider} {...sliderSettings} swipeToSlide={false}>
+            <StepConfigurationOption
+              fields={props.fields}
+              activeStep={activeStep}
+              onStepChange={handleStepChange}
+              userCallback={assignFormData}
+            />
+            <StepPanelStyle
+              data={formData}
+              fields={props.fields}
+              activeStep={activeStep}
+              onStepChange={handleStepChange}
+              userCallback={assignFormData}
+            />
             <StepESeriesSizingCalculator
               formData={formData}
+              activeStep={activeStep}
               fields={props.fields}
+              previousStep={() => handleStepChange(activeStep - 1)}
               completeCallback={handleComplete}
             />
-          </StepWizard>
+          </Slider>
         </div>
       </div>
     </Component>

@@ -1232,7 +1232,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
     setIsShowResults(true);
 
-    props.lastStep();
     props.completeCallback();
   };
 
@@ -1677,7 +1676,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <div>
                 <select
                   className={
-                    msgWidth ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1
+                    errors.width || msgWidth
+                      ? themeData.classes.errorInvalid
+                      : themeData.classes.selectColumnSpan1
                   }
                   {...register('widthInches')}
                   name="widthInches"
@@ -1701,7 +1702,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <div>
                 <select
                   className={
-                    msgWidth ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1
+                    errors.width || msgWidth
+                      ? themeData.classes.errorInvalid
+                      : themeData.classes.selectColumnSpan1
                   }
                   {...register('widthFraction')}
                   name="widthFraction"
@@ -1776,7 +1779,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <div>
                 <select
                   className={
-                    msgHeight ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1
+                    errors.height || msgHeight
+                      ? themeData.classes.errorInvalid
+                      : themeData.classes.selectColumnSpan1
                   }
                   {...register('heightInches')}
                   name="heightInches"
@@ -1800,7 +1805,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <div>
                 <select
                   className={
-                    msgHeight ? themeData.classes.errorInvalid : themeData.classes.selectColumnSpan1
+                    errors.height || msgHeight
+                      ? themeData.classes.errorInvalid
+                      : themeData.classes.selectColumnSpan1
                   }
                   {...register('heightFraction')}
                   name="heightFraction"
@@ -2117,7 +2124,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               />
             </div>
           </div>
-          <div className="mt-5 flex items-center justify-between border border-black p-4">
+          <div className="mt-5 flex flex-col items-center justify-between border border-black p-4 md:flex-row">
             <div className="text-[20px] font-bold">Preparing for installation?</div>
             <a href={formData?.downloadLink} className={themeData.classes.submitButton}>
               Download site prep guide

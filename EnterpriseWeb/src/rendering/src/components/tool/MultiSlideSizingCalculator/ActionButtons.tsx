@@ -1,13 +1,14 @@
 import { FiArrowRight, FiArrowLeft } from 'react-icons/fi';
 import { useTheme } from 'lib/context/ThemeContext';
 import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
+import { MAX_STEPS } from './MultiSlideSizingCalculator';
 
 export const MultiSlideSizingCalculatorActionButtons = (props: any) => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
-  const { fields } = props;
+  const { fields, activeStep } = props;
 
   const handleBack = () => {
-    props.previousStep();
+    props.onStepChange(activeStep - 1);
   };
 
   const handleNext = () => {
@@ -20,7 +21,7 @@ export const MultiSlideSizingCalculatorActionButtons = (props: any) => {
 
   return (
     <div className="flex items-center space-x-3">
-      {props.currentStep > 1 && (
+      {activeStep > 0 && (
         <div>
           <button className={themeData.classes.prevButton} onClick={handleBack}>
             <FiArrowLeft size={16} />
@@ -29,13 +30,13 @@ export const MultiSlideSizingCalculatorActionButtons = (props: any) => {
         </div>
       )}
       <div>
-        {props.currentStep < props.totalSteps && (
+        {activeStep < MAX_STEPS && (
           <button className={themeData.classes.submitButton} onClick={handleNext}>
             <span className="mr-2">{fields?.NextButtonNext?.value}</span>
             <FiArrowRight size={16} />
           </button>
         )}
-        {props.currentStep === props.totalSteps && (
+        {activeStep === MAX_STEPS && (
           <button type="button" className={themeData.classes.submitButton} onClick={handleFinish}>
             {fields?.CalculateButtonText?.value}
           </button>
