@@ -32,7 +32,10 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
       props.onStepChange(activeStep + 1);
       props.userCallback({
         selectedConfigurationOption: selectedOption,
-        downloadLink: selectedOption === 'stacking' ? fields?.urlStacking : fields?.urlPocketking,
+        downloadLink:
+          selectedOption === 'stacking'
+            ? fields?.StackingDownLoadLink?.value
+            : fields?.PocketingDownLoadLink?.value,
       });
     }
   };
@@ -44,7 +47,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
         {OPTIONS.map((item, idx) => (
           <div
             className={clsx({
-              'm-5 mb-4 flex items-center rounded-[5px] border p-5': true,
+              'my-5 mb-4 flex items-center rounded-[5px] border p-5': true,
               'border-[#b9b9b9] bg-[#f7f7f7]': selectedOption === item.title,
               'border-[#e3e3e3]': selectedOption !== item.title,
             })}
@@ -52,20 +55,21 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
           >
             <label
               htmlFor={`step-one-radio-${idx}`}
-              className="text-md text-gray-900 dark:text-gray-300 ml-2 text-center font-bold uppercase"
+              className="text-md text-gray-900 dark:text-gray-300 ml-2 flex w-full flex-row-reverse items-start text-center font-bold uppercase md:flex-col"
             >
-              <input
-                id={`step-one-radio-${idx}`}
-                type="radio"
-                value={item.title}
-                name={item.title}
-                className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 h-4 w-4 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600"
-                checked={selectedOption === item.title}
-                onChange={handleChangeRadioInput}
-              />
-              <span className="ml-2">{item.title}</span>
+              <div className="flex items-center">
+                <input
+                  id={`step-one-radio-${idx}`}
+                  type="radio"
+                  value={item.title}
+                  name={item.title}
+                  className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 hidden h-4 w-4 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600 md:block"
+                  checked={selectedOption === item.title}
+                  onChange={handleChangeRadioInput}
+                />
+                <span className="ml-2">{item.title}</span>
+              </div>
               <ImageWrapper image={item.image} additionalDesktopClasses="mt-4" />
-              {/* <img src={item.image} alt={item.title} className='mt-4' /> */}
             </label>
           </div>
         ))}

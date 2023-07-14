@@ -3,6 +3,7 @@ import { useTheme } from 'lib/context/ThemeContext';
 import { useForm } from 'react-hook-form';
 import React, { useState, useRef } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
+import { IoMdDownload } from 'react-icons/io';
 import ReactToPrint from 'react-to-print';
 
 import ModalWrapper from 'src/helpers/ModalWrapper/ModalWrapper';
@@ -12,6 +13,9 @@ import { SvgIcon } from 'src/helpers/SvgIcon';
 import { RichTextWrapper } from 'src/helpers/RichTextWrapper';
 import { useExperienceEditor } from 'lib/utils';
 import * as AWNumberUtil from 'src/lib/utils/aw-number-utils';
+import classNames from 'classnames';
+import { useCurrentScreenType } from 'lib/utils/get-screen-type';
+import { LinkWrapper } from 'src/helpers/LinkWrapper';
 
 type CalcForm = {
   calcUsing: string; //known_size
@@ -50,9 +54,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
   const { fields, formData } = props;
   const isEE = useExperienceEditor();
+  const { screenType } = useCurrentScreenType();
   const table1Ref = useRef<HTMLDivElement>(null);
 
-  const pluginName = 'awMultislideSizingCalculator';
+  const isDesktop = screenType !== 'sm' ? true : false;
 
   const panelStyle = formData?.selectedPanelStyle;
   const configuration = formData?.selectedConfigurationOption;
@@ -217,8 +222,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     resetField('widthInches');
     resetField('widthFraction');
     resetField('height');
-    resetField('widthInches');
-    resetField('widthFraction');
+    resetField('heightInches');
+    resetField('heightFraction');
     setIsShowResults(false);
   };
 
@@ -1616,6 +1621,18 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   return (
     <div>
       <div className="font-bold">{fields?.StepThreeTitle?.value}</div>
+      <div className="mt-5 md:hidden">
+        <button
+          type="button"
+          onClick={resetForm}
+          className={classNames(themeData.classes.resetButton)}
+        >
+          <span>Reset calculator</span>
+          <span className="ml-xxs">
+            <SvgIcon icon="reset" />
+          </span>
+        </button>
+      </div>
       <form onSubmit={handleSubmit(onSubmit)} className="col-span-12 mt-5">
         <div className={themeData.classes.formWrapper}>
           <div className={themeData.classes.columnSpan2}>
@@ -1967,7 +1984,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           )}
           {/* Submit section */}
           <div className={themeData.classes.submitWrapper}>
-            {isShowResults && (
+            {((isDesktop && isShowResults) || !isDesktop) && (
               <button
                 type="button"
                 className={themeData.classes.prevButton}
@@ -1985,8 +2002,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 {fields?.CalculateButtonText?.value}
               </button>
             )}
-            <button type="button" onClick={resetForm} className={themeData.classes.resetButton}>
-              Reset calculator
+            <button
+              type="button"
+              onClick={resetForm}
+              className={classNames(themeData.classes.resetButton, 'ml-xs hidden md:flex')}
+            >
+              <span>Reset calculator</span>
               <span className="ml-xxs">
                 <SvgIcon icon="reset" />
               </span>
@@ -2125,10 +2146,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             </div>
           </div>
           <div className="mt-5 flex flex-col items-center justify-between border border-black p-4 md:flex-row">
-            <div className="text-[20px] font-bold">Preparing for installation?</div>
-            <a href={formData?.downloadLink} className={themeData.classes.submitButton}>
-              Download site prep guide
-            </a>
+            <div className="mb-4 text-[20px] font-bold md:mb-0">Preparing for installation?</div>
+            <LinkWrapper
+              target="_blank"
+              field={formData?.downloadLink}
+              className={themeData.classes.submitButton}
+            >
+              <IoMdDownload size={20} />
+            </LinkWrapper>
           </div>
         </div>
       )}

@@ -59,7 +59,8 @@ const CalculatorResult = (props: any): JSX.Element => {
               </tr>
               <tr className={themeData.classes.tableRow}>
                 <td className={themeData.classes.tdColumn}>
-                  Rough Opening (from top of finished floor)
+                  Rough Opening{' '}
+                  <span className="hidden lg:block">(from top of finished floor)</span>
                 </td>
                 <td className={themeData.classes.tdColumn}>
                   <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />
@@ -71,7 +72,10 @@ const CalculatorResult = (props: any): JSX.Element => {
               {formState.sillOption === 'flush' && (
                 <tr className={themeData.classes.tableRow}>
                   <th className={themeData.classes.tdColumn}>
-                    Rough Opening (including recess in floor with flush sill application)
+                    Rough Opening{' '}
+                    <span className="hidden lg:block">
+                      (including recess in floor with flush sill application)
+                    </span>
                   </th>
                   <td className={themeData.classes.tdColumn}>
                     <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />

@@ -20,15 +20,15 @@ export const MultiSlideSizingCalculatorActionButtons = (props: any) => {
   };
 
   return (
-    <div className="flex items-center space-x-3">
-      {activeStep > 0 && (
-        <div>
+    <div className="flex items-center justify-between md:justify-start">
+      <div>
+        {activeStep > 0 && (
           <button className={themeData.classes.prevButton} onClick={handleBack}>
             <FiArrowLeft size={16} />
             <span className="ml-2">{fields?.PreviousButtonText?.value}</span>
           </button>
-        </div>
-      )}
+        )}
+      </div>
       <div>
         {activeStep < MAX_STEPS && (
           <button className={themeData.classes.submitButton} onClick={handleNext}>

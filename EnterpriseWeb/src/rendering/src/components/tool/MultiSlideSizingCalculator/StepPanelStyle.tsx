@@ -39,7 +39,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
       <div className="mt-5 flex flex-col md:flex-row md:space-x-5">
         {OPTIONS.map((item, idx) => (
           <div
-            className="m-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold"
+            className="my-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold"
             key={idx}
           >
             <label

@@ -52,7 +52,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
         {OPTIONS.map((item, idx) => (
           <div
             className={clsx({
-              'm-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold':
+              'my-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold':
                 true,
               'border-[#b9b9b9] bg-[#f7f7f7]': selectedOption === item.name,
               'border-[#e3e3e3]': selectedOption !== item.name,

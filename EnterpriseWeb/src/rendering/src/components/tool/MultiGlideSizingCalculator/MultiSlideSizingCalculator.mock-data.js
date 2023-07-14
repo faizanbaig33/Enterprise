@@ -13,6 +13,30 @@ const defaultData = {
     PreviousButtonText: {
         value: 'Previous'
     },
+    "StackingDownLoadLink": {
+      "value":  {
+            "href": "/adam-test",
+            "text": "Download site prep guide",
+            "anchor": "",
+            "linktype": "internal",
+            "class": "",
+            "title": "",
+            "querystring": "",
+            "id": "{4B7278AA-53BC-4D61-AFB2-E95C9DF301CC}"
+      }
+    },
+    "PocketingDownLoadLink": {
+      "value":  {
+        "href": "/Image",
+        "text": "Download site prep guide",
+        "anchor": "",
+        "linktype": "internal",
+        "class": "",
+        "title": "",
+        "querystring": "",
+        "id": "{ACF73F44-AAB3-4100-BF3F-4D0BEEBBF023}"
+      }
+    },
     StepOneButtonImage2: {
         value: {
             src: '/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/pocketing.png?h=190&iar=0&w=225&hash=836DAE8177231209D95C49D15F9D16C2',

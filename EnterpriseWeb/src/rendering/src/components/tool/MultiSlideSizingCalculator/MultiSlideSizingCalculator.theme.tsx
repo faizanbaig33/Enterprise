@@ -11,7 +11,7 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         description: 'col-span-3 text-[12px] leading-5',
         help: '',
         helpContent: 'px-4 py-2 border-l-2 border-[#dbdada] text-[12px] leading-6',
-        formStep: 'mt-5 pt-2 bg-[#f3f3f3]',
+        formStep: 'mt-5',
         formWrapper: 'col-span-12 grid grid-cols-1 gap-x-6 gap-y-2 md:grid-cols-2 ml:gap-x-[116px]',
         labelClass: 'flex text-body font-regular',
         columnSpan1: 'relative col-span-1 mb-m md:mb-ml',
@@ -31,11 +31,11 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         printButton:
           'flex w-fit items-center whitespace-nowrap text-body leading-[22px] text-primary hover:underline',
         resetButton:
-          'ml-xs flex w-full items-center justify-end whitespace-nowrap font-sans text-text-link font-heavy text-theme-text hover:underline hover:decoration-secondary hover:underline-offset-8 disabled:border-gray disabled:text-gray md:ml-0 md:w-fit md:px-0',
+          'flex items-center justify-end whitespace-nowrap font-sans text-text-link font-heavy text-theme-text hover:underline hover:decoration-secondary hover:underline-offset-8 disabled:border-gray disabled:text-gray md:ml-0 md:w-fit md:px-0',
         resultsOutputWrapper:
           'col-span-12 grid grid-cols-1 gap-x-6 gap-y-2 md:grid-cols-2 ml:gap-x-[116px]',
         submitWrapper:
-          'relative col-span-1 my-s mb-s flex w-full md:col-span-2 md:my-xs md:flex-row md:items-center md:space-x-4',
+          'relative my-s mb-s flex justify-between md:justify-start w-full md:col-span-2 md:my-xs md:flex-row md:items-center md:space-x-4',
         submitButton:
           'mr-m flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text text-black hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray',
         prevButton:

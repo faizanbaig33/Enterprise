@@ -22,6 +22,30 @@ const defaultData = {
     CalculateButtonText: {
         value: 'Calculate'
     },
+    "StackingDownLoadLink": {
+      "value":  {
+            "href": "/adam-test",
+            "text": "Download site prep guide",
+            "anchor": "",
+            "linktype": "internal",
+            "class": "",
+            "title": "",
+            "querystring": "",
+            "id": "{4B7278AA-53BC-4D61-AFB2-E95C9DF301CC}"
+      }
+    },
+    "PocketingDownLoadLink": {
+      "value":  {
+        "href": "/Image",
+        "text": "Download site prep guide",
+        "anchor": "",
+        "linktype": "internal",
+        "class": "",
+        "title": "",
+        "querystring": "",
+        "id": "{ACF73F44-AAB3-4100-BF3F-4D0BEEBBF023}"
+      }
+    },
     StepOneButtonImage2: {
         value: {
             'src': '/-/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Hero-featured-Rba.png?h=309&iar=0&w=499&hash=688D19B9870907CD9ED509C7579B3CEE',
