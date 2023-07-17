@@ -12,17 +12,17 @@ export const StepPanelStyle = (props: any): JSX.Element => {
   const OPTIONS = [
     {
       text: fields?.PanelStyleText1?.value,
-      image: fields?.PanelStyleImage1?.value,
+      image: fields?.PanelStyleImage1,
       name: 'contemporary_cap',
     },
     {
       text: fields?.PanelStyleText2?.value,
-      image: fields?.PanelStyleImage2?.value,
+      image: fields?.PanelStyleImage2,
       name: 'contemporary_ccp',
     },
     {
       text: fields?.PanelStyleText3?.value,
-      image: fields?.PanelStyleImage3?.value,
+      image: fields?.PanelStyleImage3,
       name: 'traditional',
     },
   ];
@@ -47,13 +47,13 @@ export const StepPanelStyle = (props: any): JSX.Element => {
   };
   return (
     <div className="flex flex-col items-center md:items-start">
-      <div>
+      <div className="w-full">
         <div className="font-bold">{fields?.StepTwoTitle?.value}</div>
         <div className="mt-5 flex flex-col md:flex-row md:space-x-5">
           {OPTIONS.map((item, idx) => (
             <div
               className={clsx({
-                'my-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold':
+                'my-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold md:max-w-[280px]':
                   true,
                 'border-[#b9b9b9] bg-[#f7f7f7]': selectedOption === item.name,
                 'border-[#e3e3e3]': selectedOption !== item.name,
@@ -62,19 +62,25 @@ export const StepPanelStyle = (props: any): JSX.Element => {
             >
               <label
                 htmlFor={`step-two-radio-${idx}`}
-                className="text-gray-900 dark:text-gray-300 ml-2 cursor-pointer text-sm"
+                className="text-md text-gray-900 dark:text-gray-300 ml-2 flex w-full cursor-pointer flex-row items-start text-center font-bold uppercase md:h-full md:flex-col md:justify-between"
               >
-                <input
-                  id={`step-two-radio-${idx}`}
-                  type="radio"
-                  value={item.name}
-                  name={item.name}
-                  className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 h-6 w-6 text-[#b9b9b9] focus:ring-2 focus:ring-[#b9b9b9] dark:focus:ring-[#b9b9b9]"
-                  checked={selectedOption === item.name}
-                  onChange={handleChangeRadioInput}
+                <ImageWrapper
+                  image={item.image}
+                  additionalMobileClasses="w-20 h-20 mr-2 hidden"
+                  additionalDesktopClasses="mb-4 w-full"
                 />
-                <span className="ml-2.5">{item.text}</span>
-                <ImageWrapper image={item?.image} additionalDesktopClasses="mt-4" />
+                <div className="flex items-start justify-center md:items-center">
+                  <input
+                    id={`step-two-radio-${idx}`}
+                    type="radio"
+                    value={item.name}
+                    name={item.name}
+                    className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 h-6 w-6 text-[#b9b9b9] focus:ring-2 focus:ring-[#b9b9b9] dark:focus:ring-[#b9b9b9] md:hidden"
+                    checked={selectedOption === item.name}
+                    onChange={handleChangeRadioInput}
+                  />
+                  <span className="ml-2.5 md:ml-0">{item.text}</span>
+                </div>
               </label>
             </div>
           ))}

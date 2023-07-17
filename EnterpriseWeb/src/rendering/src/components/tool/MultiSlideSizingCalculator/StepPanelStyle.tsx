@@ -35,7 +35,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
   };
   return (
     <div className="flex flex-col items-center md:items-start">
-      <div>
+      <div className="w-full">
         <div className="font-bold">{fields?.StepTwoTitle?.value}</div>
         <div className="mt-5 flex flex-col md:flex-row md:space-x-5">
           {OPTIONS.map((item, idx) => (
