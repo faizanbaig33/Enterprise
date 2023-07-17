@@ -35,7 +35,7 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         resultsOutputWrapper:
           'col-span-12 grid grid-cols-1 gap-x-6 gap-y-2 md:grid-cols-2 ml:gap-x-[116px]',
         submitWrapper:
-          'relative col-span-1 my-s mb-s flex w-full md:col-span-2 md:my-xs md:flex-row md:items-center md:space-x-4',
+          'relative my-s mb-s flex justify-between md:justify-start w-full md:col-span-2 md:my-xs md:flex-row md:items-center md:space-x-4',
         submitButton:
           'mr-m flex w-fit items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text text-black hover:border-theme-btn-border-hover hover:bg-theme-btn-bg-hover hover:text-theme-btn-text-hover disabled:border-gray disabled:text-gray',
         prevButton:

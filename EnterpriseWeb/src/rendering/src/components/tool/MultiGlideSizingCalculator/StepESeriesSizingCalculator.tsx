@@ -1659,7 +1659,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               Width (in inches)*
             </label>
             <div className="grid grid-cols-5 gap-4">
-              <div className="col-span-3">
+              <div className="col-span-3 md:col-span-2 ml:col-span-3">
                 <input
                   type="text"
                   placeholder="Width"
@@ -1681,7 +1681,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   onChange={(e) => onDimensionFieldChange(e, 'width')}
                 ></input>
               </div>
-              <div>
+              <div className="md:min-w-[62px]">
                 <select
                   className={
                     errors.width || msgWidth
@@ -1707,7 +1707,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   <option value="11">11</option>
                 </select>
               </div>
-              <div>
+              <div className="md:min-w-[82px]">
                 <select
                   className={
                     errors.width || msgWidth
@@ -1762,7 +1762,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               Height (in inches)*
             </label>
             <div className="grid grid-cols-5 gap-4">
-              <div className="col-span-3">
+              <div className="col-span-3 md:col-span-2 ml:col-span-3">
                 <input
                   type="text"
                   placeholder="Height"
@@ -1784,7 +1784,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   onChange={(e) => onDimensionFieldChange(e, 'height')}
                 ></input>
               </div>
-              <div>
+              <div className="md:min-w-[62px]">
                 <select
                   className={
                     errors.height || msgHeight
@@ -1810,7 +1810,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   <option value="11">11</option>
                 </select>
               </div>
-              <div>
+              <div className="md:min-w-[82px]">
                 <select
                   className={
                     errors.height || msgHeight
