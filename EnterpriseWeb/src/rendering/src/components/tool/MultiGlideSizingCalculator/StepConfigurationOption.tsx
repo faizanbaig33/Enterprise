@@ -69,7 +69,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
                 />
                 <span className="ml-2">{item.title}</span>
               </div>
-              <ImageWrapper image={item.image} additionalDesktopClasses="mt-4" />
+              <ImageWrapper image={item.image} additionalDesktopClasses="mt-4 w-full" />
               {/* <img src={item.image} alt={item.title} className='mt-4' /> */}
             </label>
           </div>
