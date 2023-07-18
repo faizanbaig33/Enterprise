@@ -31,7 +31,7 @@ const LinkWrapper = ({
   ...props
 }: LinkWrapperProps): JSX.Element => {
   // Format field as LinkField for consistency
-  const asLinkField = !field.value ? { value: { ...field } } : (field as LinkField);
+  const asLinkField = !field?.value ? { value: { ...field } } : (field as LinkField);
   // Sitecore doesn't do tel: links correctly, it appends http to it.  Remove that.
   asLinkField.value.href = asLinkField.value.href?.replace('http://tel:', 'tel:');
 

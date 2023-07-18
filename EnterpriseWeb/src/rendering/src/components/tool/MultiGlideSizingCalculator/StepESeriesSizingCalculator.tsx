@@ -1653,6 +1653,21 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </>
               )}
             </select>
+            <div className="mt-1">
+              <button
+                type="button"
+                className={classNames(themeData.classes.measurementButton)}
+                onClick={() =>
+                  window.open(
+                    props.fields.MeasurementLink?.value?.href,
+                    '_blank',
+                    'noopener,noreferrer'
+                  )
+                }
+              >
+                Measurements explained
+              </button>
+            </div>
           </div>
           <div className={themeData.classes.columnSpan1}>
             <label className={themeData.classes.labelClass} htmlFor="width">

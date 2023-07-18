@@ -4,86 +4,89 @@ const defaultData = {
     componentName: 'MultiSlideSizingCalculator',
   },
   fields: {
-    TileButtonTextOne: {
-        value: 'Aluminum Thermal Improved'
+    "NextButtonNext": {
+      "value": "Next"
     },
-    TileButtonTextTwo: {
-        value: 'All Aluminum Non-Thermal Improved'
+    "PreviousButtonText": {
+        "value": "Previous"
     },
-    StepTwoTitle: {
-      value: 'Step Two: Select Panel Style'
-    },
-    NextButtonNext: {
-        value: 'Next'
-    },
-    PreviousButtonText: {
-        value: 'Previous'
-    },
-    CalculateButtonText: {
-        value: 'Calculate'
+    "CalculateButtonText": {
+        "value": "Calculate"
     },
     "StackingDownLoadLink": {
-      "value":  {
-            "href": "/adam-test",
-            "text": "Download site prep guide",
+        "value": {
+            "href": "/ProductPreviewCard",
+            "text": "download",
             "anchor": "",
             "linktype": "internal",
             "class": "",
             "title": "",
             "querystring": "",
-            "id": "{4B7278AA-53BC-4D61-AFB2-E95C9DF301CC}"
-      }
+            "id": "{83089413-DF4D-4C81-8352-DC66A13C9A35}"
+        }
     },
     "PocketingDownLoadLink": {
-      "value":  {
-        "href": "/Image",
-        "text": "Download site prep guide",
-        "anchor": "",
-        "linktype": "internal",
-        "class": "",
-        "title": "",
-        "querystring": "",
-        "id": "{ACF73F44-AAB3-4100-BF3F-4D0BEEBBF023}"
-      }
-    },
-    StepOneButtonImage2: {
-        value: {
-            'src': '/-/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Hero-featured-Rba.png?h=309&iar=0&w=499&hash=688D19B9870907CD9ED509C7579B3CEE',
-            'alt': 'Alt',
-            'width': '499',
-            'height': '309'
+        "value": {
+            "href": "/Image",
+            "text": "download doc",
+            "anchor": "",
+            "linktype": "internal",
+            "class": "",
+            "title": "",
+            "querystring": "",
+            "id": "{ACF73F44-AAB3-4100-BF3F-4D0BEEBBF023}"
         }
     },
-    StepOneButtonImage1: {
-        value: {
-            'src': '/-/media/Project/AndersenCorporation/RenewalByAndersen/RenewalByAndersen/Hero-featured-Rba.png?h=309&iar=0&w=499&hash=688D19B9870907CD9ED509C7579B3CEE',
-            'alt': 'Alt',
-            'width': '499',
-            'height': '309'
+    "StepOneButtonImage1": {
+        "value": {
+            "src": "/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/03061_1_thumb_300x300.jpg?h=300&iar=0&w=300&hash=6CCB0EDC2980486A7FE338BBDD552277",
+            "alt": "",
+            "width": "300",
+            "height": "300"
         }
     },
-    StepOneTitle: {
-        value: 'Step One: Select Configuration Option'
+    "StepOneButtonImage2": {
+        "value": {
+            "src": "/-/media/System/Simulator-Backgrounds/HD-TV.png?h=1556&iar=0&w=2276&hash=72991ECA38027BBD4103285987E7558A",
+            "alt": "HD TV",
+            "width": "2276",
+            "height": "1556"
+        }
     },
-    StepThreeTitle: {
-        value: 'Part Three: Enter Size Information'
+    "StepOneTitle": {
+        "value": "Step One: Select Configuration Option"
     },
-    urlStacking: '',
-    urlPocketking: '',
-    componentSpacing: null,
-    sectionId: {
-        value: ''
+    "StepTwoTitle": {
+        "value": "Step Two: Select Panel Style"
     },
-    eventName: {
-        value: ''
+    "TileButtonTextOne": {
+        "value": "Aluminum Thermally Improved"
     },
-    eventType: {
-        value: ''
+    "TileButtonTextTwo": {
+        "value": "All Aluminum Non-Thermally Improved"
     },
-    eventZone: {
-        value: ''
+    "StepThreeTitle": {
+        "value": "Step Three: Enter Size Information"
+    },
+    "MeasurementLink": {
+        "value": {
+            "href": ""
+        }
+    },
+    "componentSpacing": null,
+    "sectionId": {
+        "value": ""
+    },
+    "eventName": {
+        "value": ""
+    },
+    "eventType": {
+        "value": ""
+    },
+    "eventZone": {
+        "value": ""
     }
-},
+  },
 };
 
 export default defaultData;

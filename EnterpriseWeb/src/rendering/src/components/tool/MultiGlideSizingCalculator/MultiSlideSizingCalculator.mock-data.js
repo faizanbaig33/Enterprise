@@ -4,111 +4,110 @@ const defaultData = {
     componentName: 'MultiGlideSizingCalculator',
   },
   fields: {
-    CalculateButtonText: {
-        value: 'Calculate'
-    },
-    NextButtonNext: {
-        value: 'Next'
-    },
-    PreviousButtonText: {
-        value: 'Previous'
-    },
     "StackingDownLoadLink": {
-      "value":  {
-            "href": "/adam-test",
-            "text": "Download site prep guide",
+      "value": {
+          "href": "",
+          "linktype": "internal"
+      }
+    },
+    "PocketingDownLoadLink": {
+        "value": {
+            "href": "https://preview.local.andersenwindows.com/sitecore/media-library/Project/AndersenCorporation/AndersenWindows/shared/PDFs/performance-windows-altitudelimits--100series",
+            "text": "",
             "anchor": "",
             "linktype": "internal",
             "class": "",
             "title": "",
             "querystring": "",
-            "id": "{4B7278AA-53BC-4D61-AFB2-E95C9DF301CC}"
-      }
-    },
-    "PocketingDownLoadLink": {
-      "value":  {
-        "href": "/Image",
-        "text": "Download site prep guide",
-        "anchor": "",
-        "linktype": "internal",
-        "class": "",
-        "title": "",
-        "querystring": "",
-        "id": "{ACF73F44-AAB3-4100-BF3F-4D0BEEBBF023}"
-      }
-    },
-    StepOneButtonImage2: {
-        value: {
-            src: '/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/pocketing.png?h=190&iar=0&w=225&hash=836DAE8177231209D95C49D15F9D16C2',
-            alt: '',
-            width: '225',
-            height: '190'
+            "id": "{738EA026-B99D-447B-A333-A90ECCBF2409}"
         }
     },
-    StepOneTitle: {
-        value: 'Step One: Select Configuration Option'
+    "CalculateButtonText": {
+        "value": "Calculate"
     },
-    StepOneButtonImage1: {
-      value: {
-            src: '/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/stacking.png?h=190&iar=0&w=219&hash=F4CD810D53D0EAE58063568A99F52156',
-            alt: '',
-            width: '219',
-            height: '190'
+    "NextButtonNext": {
+        "value": "Next"
+    },
+    "PreviousButtonText": {
+        "value": "Previous"
+    },
+    "StepOneButtonImage2": {
+        "value": {
+            "src": "/-/media/System/Simulator-Backgrounds/HD-TV.png?h=1556&iar=0&w=2276&hash=72991ECA38027BBD4103285987E7558A",
+            "alt": "HD TV",
+            "width": "2276",
+            "height": "1556"
         }
     },
-    PanelStyleImage1: {
-        value: {
-            src: '/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80&hash=7F3DD8999200A86B4ECC6061C27330A9',
-            alt: 'black-exterior-80x80 (1)',
-            width: '80',
-            height: '80'
+    "StepOneButtonImage1": {
+        "value": {
+            "src": "/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/03061_1_thumb_300x300.jpg?h=300&iar=0&w=300&hash=6CCB0EDC2980486A7FE338BBDD552277",
+            "alt": "",
+            "width": "300",
+            "height": "300"
         }
     },
-    PanelStyleImage2: {
-        value: {
-            src: '/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/liftslide-door-407x270.jpg?h=270&iar=0&w=407&hash=B7A45AF1627A798E1BA68923F5B7C51E',
-            alt: 'liftslide-door-407x270',
-            width: '407',
-            height: '270'
+    "StepOneTitle": {
+        "value": "Step One: Select Configuration Option"
+    },
+    "PanelStyleText2": {
+        "value": "Contemporary Aluminum Clad Wood"
+    },
+    "PanelStyleText3": {
+        "value": "Traditional Aluminum Clad Wood"
+    },
+    "StepTwoTitle": {
+        "value": "Step Two: Select Panel Style"
+    },
+    "PanelStyleImage1": {
+        "value": {
+            "src": "/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/Swatches/black-exterior-80x80-(1).jpg?h=80&iar=0&w=80&hash=93D412FD3F3B0E6DB26732DDDB28E8B7",
+            "alt": "black-exterior-80x80 (1)",
+            "width": "80",
+            "height": "80"
         }
     },
-    PanelStyleImage3: {
-        value: {
-            src: '/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/03061_1_1200x1000.jpg?h=1000&iar=0&w=1200&hash=DED70AFA37B427656B986914EAE0511B',
-            alt: '',
-            width: '1200',
-            height: '1000'
+    "PanelStyleImage2": {
+        "value": {
+            "src": "/-/media/Feature/EnterpriseWeb/Components/General/TwoColumnHeadline.png?h=251&iar=0&w=427&hash=96DBED91AC139C95DBC93CEA8ABD7A5C",
+            "alt": "Two Column Headline",
+            "width": "427",
+            "height": "251"
         }
     },
-    PanelStyleText1: {
-        value: 'Contemporary Aluminum'
+    "PanelStyleImage3": {
+        "value": {
+            "src": "/-/media/Project/AndersenCorporation/AndersenWindows/AndersenWindows/03061_1_1200x1000.jpg?h=1000&iar=0&w=1200&hash=E92A4B0842B4555FD0A74F8804FEA132",
+            "alt": "",
+            "width": "1200",
+            "height": "1000"
+        }
     },
-    PanelStyleText2: {
-        value: 'Contemporary Aluminum Clad Wood'
+    "PanelStyleText1": {
+        "value": "Contemporary Aluminum"
     },
-    PanelStyleText3: {
-        value: 'Traditional Aluminum Clad Wood'
+    "StepThreeTitle": {
+        "value": "Step Three: Enter Size Information"
     },
-    StepTwoTitle: {
-        value: 'Step Two: Select Panel Style'
+    "MeasurentLink": {
+        "value": {
+            "href": ""
+        }
     },
-    StepThreeTitle: {
-        value: 'Step Three: Enter Size Information'
+    "componentSpacing": null,
+    "sectionId": {
+        "value": ""
     },
-    componentSpacing: null,
-    sectionId: {
-        value: ''
+    "eventName": {
+        "value": ""
     },
-    eventName: {
-        value: ''
+    "eventType": {
+        "value": ""
     },
-    eventType: {
-        'value': ''
-    },
-    eventZone: {
-        value: ''
+    "eventZone": {
+        "value": ""
     }
-},
+  },
 };
 
 export default defaultData;
