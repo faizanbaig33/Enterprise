@@ -135,6 +135,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
               formData={formData}
               activeStep={activeStep}
               fields={props.fields}
+              onStepChange={handleStepChange}
               previousStep={() => handleStepChange(activeStep - 1)}
               completeCallback={handleComplete}
             />

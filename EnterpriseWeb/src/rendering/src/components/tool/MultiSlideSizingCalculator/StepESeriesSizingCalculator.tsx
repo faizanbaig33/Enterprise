@@ -1,7 +1,7 @@
 import { useTheme } from 'lib/context/ThemeContext';
 
 import { useForm } from 'react-hook-form';
-import React, { useState, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { IoMdDownload } from 'react-icons/io';
 import ReactToPrint from 'react-to-print';
@@ -74,16 +74,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isLightboxVisible, setIsLightboxVisible] = useState(false);
 
-  //Calculator values
-  // const [casingDimensionWidth, setCasingDimensionWidth] = useState<string>();
-  // const [casingDimensionHeight, setCasingDimensionHeight] = useState<string>();
-  // const [overallUnitSizeWidth, setOverallUnitSizeWidth] = useState<string>();
-  // const [overallUnitSizeHeight, setOverallUnitSizeHeight] = useState<string>();
-  // const [masonryOpeningWidth, setMasonryOpeningWidth] = useState<string>();
-  // const [masonryOpeningHeight, setMasonryOpeningHeight] = useState<string>();
-
   // Submit and update shared variables
-  const [interlocks, setInterlocks] = useState('');
+  // const [interlocks, setInterlocks] = useState('');
   const [widthStates, setWidthStates] = useState({
     feet: 0,
     inches: 0,
@@ -128,9 +120,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [backStileOffset, setBackStileOffset] = useState(0);
   const [pocketOffset, setPocketOffset] = useState(0);
   const [biPartPairOffset, setBiPartPairOffset] = useState(0);
-  const [pocketCount, setPocketCount] = useState(0);
-  const [minPanelNumber, setMinPanelNumber] = useState(0);
-  const [maxPanelNumber, setMaxPanelNumber] = useState(0);
+  // const [pocketCount, setPocketCount] = useState(0);
+  // const [minPanelNumber, setMinPanelNumber] = useState(0);
+  // const [maxPanelNumber, setMaxPanelNumber] = useState(0);
   const [numberPanels, setNumberPanels] = useState([1, 2, 3, 4, 5, 6]);
 
   const [jambDepth, setJambDepth] = useState<string>('');
@@ -173,6 +165,16 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       thicknessFinishedFloorFraction: '0',
     },
   });
+
+  useEffect(() => {
+    if (errors.width && errors.width.type === 'required') {
+      setMsgWidth('This field is required');
+    }
+
+    if (errors.height && errors.height.type === 'required') {
+      setMsgHeight('This field is required');
+    }
+  }, [errors]);
 
   const clearCalculations = () => {
     setJambDepth('-');
@@ -223,6 +225,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     resetField('heightFraction');
     resetField('thicknessFinishedFloorInches');
     resetField('thicknessFinishedFloorFraction');
+
+    props.onStepChange(0);
     setIsShowResults(false);
   };
 
@@ -835,7 +839,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
     // Update Interlocks
     const interlocks_temp = funcSetInterlocks(unitHeight_temp);
-    setInterlocks(interlocks_temp);
+    // setInterlocks(interlocks_temp);
 
     // Set variables used in calculations
     const jambWidth_temp = calculateJambWidth(panelStyle, stackingDirection, configuration);
@@ -867,7 +871,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       calculateBackStileEmbedment(panelStyle, stackingDirection, configuration)
     );
     setBackStileOffset(calculateBackStileOffset(panelStyle, stackingDirection, configuration));
-    setPocketCount(calculatePocketCount(configuration, stackingDirection));
+    // setPocketCount(calculatePocketCount(configuration, stackingDirection));
 
     switch (calcUsing) {
       case 'Rough Opening':
@@ -1147,166 +1151,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     const stackingDirection =
       e?.target?.name === 'stackingDirection' ? e?.target?.value : getValues('stackingDirection');
 
-    // Width, Height validation
-    // let msgHeight = '';
-    // if (height > 0) {
-    //   if (configuration === 'stacking') {
-    //     if (panelStyle === 'thermally') {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (height > 120) {
-    //           msgHeight = `Please enter a value less than or equal to 10'.`;
-    //         } else if (height < 36.25) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/4".`;
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (height > 119.375) {
-    //           msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`;
-    //         } else if (height < 35.625) {
-    //           msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`;
-    //         }
-    //       }
-    //     } else {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (height > 144) {
-    //           msgHeight = `Please enter a value less than or equal to  12.`;
-    //         } else if (height < 24.125) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8.`;
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (height > 132.375) {
-    //           msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`;
-    //         } else if (height < 35.5) {
-    //           msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`;
-    //         }
-    //       }
-    //     }
-    //   } else if (configuration === 'pocketing') {
-    //     if (panelStyle === 'thermally') {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (height > 120) {
-    //           msgHeight = `Please enter a value less than or equal to 10'.`;
-    //         } else if (height < 36.25) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/4".`;
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (height > 119.375) {
-    //           msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`;
-    //         } else if (height < 35.625) {
-    //           msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`;
-    //         }
-    //       }
-    //     } else {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (height > 144) {
-    //           msgHeight = `Please enter a value less than or equal to  to 12'.`;
-    //         } else if (height < 36.125) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8".`;
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //         if (height > 144) {
-    //           msgHeight = `Please enter a value less than or equal to  to 12'.`;
-    //         } else if (height < 36.125) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8".`;
-    //         }
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (height > 132.375) {
-    //           msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`;
-    //         } else if (height < 35.5) {
-    //           msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-
-    // let msgWidth = '';
-    // if (width > 0) {
-    //   if (configuration === 'stacking') {
-    //     if (panelStyle === 'thermally') {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (width > 351.25) {
-    //           msgWidth = `Please enter a value less than or equal to 29' 3 1/4".`;
-    //         } else if (width < 91) {
-    //           msgWidth = `Please enter a value greater than or equal to 7' 7".`;
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (width > 350.5) {
-    //           msgWidth = `Please enter a value less than or equal to 29' 2 1/2".`;
-    //         } else if (width < 90.25) {
-    //           msgWidth = `Please enter a value greater than or equal to 7' 6 1/4".`;
-    //         }
-    //       }
-    //     } else {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (width > 489.25) {
-    //           msgWidth = `Please enter a value less than or equal to 40' 9 1/4".`;
-    //         } else if (width < 90.25) {
-    //           msgWidth = `Please enter a value greater than or equal to 7' 6 1/4".`;
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (width > 488.5) {
-    //           msgWidth = `Please enter a value less than or equal to 40' 8 1/2".`;
-    //         } else if (width < 89.875) {
-    //           msgWidth = `Please enter a value greater than or equal to 7' 5 7/8".`;
-    //         }
-    //       }
-    //     }
-    //   } else if (configuration === 'pocketing') {
-    //     if (panelStyle === 'thermally') {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (width > 421.375) {
-    //           msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`;
-    //         } else if (width < 112.875) {
-    //           msgWidth = `Please enter a value greater than or equal to 9' 4 7/8"`;
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //         if (width > 421.375) {
-    //           msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`;
-    //         } else if (width < 112.875) {
-    //           msgWidth = `Please enter a value greater than or equal to 9' 4 7/8".`;
-    //         }
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (width > 420.625) {
-    //           msgWidth = `Please enter a value less than or equal to 35' 5/8".`;
-    //         } else if (width < 112.875) {
-    //           msgWidth = `Please enter a value greater than or equal to  9' 4 7/8".`;
-    //         }
-    //       }
-    //     } else {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (width > 536.75) {
-    //           msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`;
-    //         } else if (width < 112.625) {
-    //           msgWidth = `Please enter a value greater than or equal to 9' 4 5/8".`;
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //         if (width > 536.75) {
-    //           msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`;
-    //         } else if (width < 112.625) {
-    //           msgWidth = `Please enter a value greater than or equal to 9' 4 5/8".`;
-    //         }
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (width > 536) {
-    //           msgWidth = `Please enter a value less than or equal to  to 44' 8".`;
-    //         } else if (width < 111.875) {
-    //           msgWidth = `Please enter a value greater than or equal to 9' 3 7/8".`;
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-
-    // if (msgWidth !== '' || msgHeight !== '') {
-    //   setMsgWidth(msgWidth);
-    //   setMsgHeight(msgHeight);
-    //   setIsShowResults(false);
-    // }
-
     // Update Interlocks
     let interlocks_temp;
     if (
@@ -1318,7 +1162,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       // unit_dimensions
       interlocks_temp = funcSetInterlocks(height);
     }
-    setInterlocks(interlocks_temp);
+    // setInterlocks(interlocks_temp);
 
     // Set variables used in calculations
     setJambWidth(calculateJambWidth(panelStyle, stackingDirection, configuration));
@@ -1372,14 +1216,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       if (height > maxHeight_temp) {
         msgHeightTemp = 'Please enter a value less than or equal to ' + maxFormattedHeight + '.';
       }
-
-      // setHeightStates({
-      //   ...heightStates,
-      //   ruleMax: roundNumber(maxHeight_temp),
-      //   ruleMin: roundNumber(minHeight_temp),
-      //   msgMax: 'Please enter a value less than or equal to ' + minFormattedHeight + '.',
-      //   msgMin: 'Please enter a value greater than or equal to ' + maxFormattedHeight + '.'
-      // })
     } else {
       msgHeightTemp = '';
     }
@@ -1430,8 +1266,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
       const minMessage = 'Please enter a value greater than or equal to ' + minFormattedWidth + '.';
       const maxMessage = 'Please enter a value less than or equal to ' + maxFormattedWidth + '.';
-      console.log(minMessage, maxMessage);
-      console.log(width, minWidth_temp, maxWidth_temp);
+
       if (width < minWidth_temp) {
         msgWidthTemp = minMessage;
       } else if (width > maxWidth_temp) {
@@ -1461,7 +1296,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     let minPanelNumber_temp;
     let maxPanelNumber_temp;
     const pocketCount = calculatePocketCount(configuration, stackingDirection);
-    setPocketCount(pocketCount);
+    // setPocketCount(pocketCount);
     if (msgWidth === '') {
       const minPanelValue = pocketCount > 0 ? 1 : 2;
       minPanelNumber_temp = stackingDirection === '2-Way' ? minPanelValue * 2 : minPanelValue;
@@ -1635,9 +1470,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </select>
               </div>
             </div>
-            {errors.width && errors.width.type === 'required' && (
+            {/* {errors.width && errors.width.type === 'required' && (
               <div className="text-body text-error">This field is required</div>
-            )}
+            )} */}
             {msgWidth && <div className="text-body text-error">{msgWidth}</div>}
             <label className={themeData.classes.labelClass} htmlFor="width">
               <button
@@ -1740,9 +1575,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </select>
               </div>
             </div>
-            {errors.height && errors.height.type === 'required' && (
+            {/* {errors.height && errors.height.type === 'required' && (
               <div className="text-body text-error">This field is required</div>
-            )}
+            )} */}
             {msgHeight && <div className="text-body text-error">{msgHeight}</div>}
           </div>
           <div className={themeData.classes.columnSpan1}>
