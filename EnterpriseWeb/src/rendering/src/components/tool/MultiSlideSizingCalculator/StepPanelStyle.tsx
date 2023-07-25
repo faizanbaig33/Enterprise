@@ -29,7 +29,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
       setError(null);
       props.onStepChange(activeStep + 1);
       props.userCallback({
-        selectedPanelStyle: selectedOption,
+        selectedPanelStyle: OPTIONS.find((item: any) => item.name === selectedOption),
       });
     }
   };

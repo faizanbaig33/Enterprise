@@ -8,16 +8,18 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
 
   const OPTIONS = [
     {
-      title: 'stacking',
+      title: 'Stacking',
+      value: 'stacking',
       image: fields?.StepOneButtonImage1,
     },
     {
-      title: 'pocketing',
+      title: 'Pocketing',
+      value: 'pocketing',
       image: fields?.StepOneButtonImage2,
     },
   ];
 
-  const [selectedOption, setSelectedOption] = useState(OPTIONS[0].title);
+  const [selectedOption, setSelectedOption] = useState(OPTIONS[0].value);
   const [error, setError] = useState<any>(null);
 
   const handleChangeRadioInput = (e: any) => {
@@ -31,7 +33,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
       setError(null);
       props.onStepChange(activeStep + 1);
       props.userCallback({
-        selectedConfigurationOption: selectedOption,
+        selectedConfigurationOption: OPTIONS.find((item: any) => item.value === selectedOption),
         downloadLink:
           selectedOption === 'stacking'
             ? fields?.StackingDownLoadLink?.value
@@ -49,8 +51,8 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
             <div
               className={clsx({
                 'my-5 mb-4 flex items-center rounded-[5px] border p-5': true,
-                'border-[#b9b9b9] bg-[#f7f7f7]': selectedOption === item.title,
-                'border-[#e3e3e3] bg-[#F8F6F4]': selectedOption !== item.title,
+                'border-[#b9b9b9] bg-[#f7f7f7]': selectedOption === item.value,
+                'border-[#e3e3e3] bg-[#F8F6F4]': selectedOption !== item.value,
               })}
               key={idx}
             >
@@ -67,10 +69,10 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
                   <input
                     id={`step-one-radio-${idx}`}
                     type="radio"
-                    value={item.title}
-                    name={item.title}
+                    value={item.value}
+                    name={item.value}
                     className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 hidden h-4 w-4 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-600"
-                    checked={selectedOption === item.title}
+                    checked={selectedOption === item.value}
                     onChange={handleChangeRadioInput}
                   />
                   <div>{item.title}</div>

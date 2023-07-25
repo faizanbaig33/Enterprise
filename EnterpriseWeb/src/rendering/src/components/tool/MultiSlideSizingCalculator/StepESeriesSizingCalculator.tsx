@@ -1,7 +1,7 @@
 import { useTheme } from 'lib/context/ThemeContext';
 
 import { useForm } from 'react-hook-form';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { IoMdDownload } from 'react-icons/io';
 import ReactToPrint from 'react-to-print';
@@ -59,8 +59,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   const isDesktop = screenType !== 'sm' ? true : false;
 
-  const panelStyle = formData?.selectedPanelStyle;
-  const configuration = formData?.selectedConfigurationOption;
+  const selectedPanelStyle = useMemo(() => formData?.selectedPanelStyle, [formData]);
+  const panelStyle = selectedPanelStyle?.name;
+  const selectedConfigurationOption = useMemo(
+    () => formData?.selectedConfigurationOption,
+    [formData]
+  );
+  const configuration = selectedConfigurationOption?.value;
   const lockStileOffset = 2.25;
   const interlockPairOffset = 0.924;
   const interlockStileOffset = 1.674;
@@ -189,14 +194,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setCurrentImageIndex(index);
   };
 
-  const printResults = () => {
-    const printContents = (document.getElementById('resultsOutput') as HTMLElement).innerHTML;
-    const originalContents = document.body.innerHTML;
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
-  };
-
   const resetForm = () => {
     //Clear results table
     setJambDepth('-');
@@ -224,6 +221,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     resetField('height');
     resetField('heightInches');
     resetField('heightFraction');
+    resetField('thicknessFinishedFloorInches');
+    resetField('thicknessFinishedFloorFraction');
     setIsShowResults(false);
   };
 
@@ -792,15 +791,15 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     }
   };
 
-  // const widthMaxes = MAX_WIDTH_ARRAY.map((o) => {
-  //   const obj = {
-  //     configuration: o[0],
-  //     panelStyle: o[1],
-  //     stackingDirection: o[2],
-  //     maxUnitWidth: o[3],
-  //   };
-  //   return obj;
-  // });
+  const widthMaxes = MAX_WIDTH_ARRAY.map((o) => {
+    const obj = {
+      configuration: o[0],
+      panelStyle: o[1],
+      stackingDirection: o[2],
+      maxUnitWidth: o[3],
+    };
+    return obj;
+  });
 
   const onSubmit = (data: CalcForm) => {
     if (msgWidth !== '' || msgHeight !== '') {
@@ -820,176 +819,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     const thicknessFinishedFloor =
       parseFloat(jsonObj.thicknessFinishedFloorInches) +
       parseFloat(jsonObj.thicknessFinishedFloorFraction);
-
-    // Width, Height validation
-    // let msgHeight = ''
-    // if (height > 0) {
-    //   if (configuration === 'stacking') {
-    //     if (panelStyle === 'thermally') {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (height > 120) {
-    //           msgHeight = `Please enter a value less than or equal to 10'.`
-    //         } else if (height < 3.25) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/4".`
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (height > 119.375) {
-    //           msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`
-    //         } else if (height < 35.625) {
-    //           msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`
-    //         }
-    //       }
-    //     } else {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (height > 144) {
-    //           msgHeight = `Please enter a value less than or equal to  12.`
-    //         } else if (height < 24.125) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8.`
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (height > 132.375) {
-    //           msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`
-    //         } else if (height < 35.5) {
-    //           msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`
-    //         }
-    //       }
-    //     }
-    //   } else if (configuration === 'pocketing') {
-    //     if (panelStyle === 'thermally') {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (height > 120) {
-    //           msgHeight = `Please enter a value less than or equal to 10'.`
-    //         } else if (height < 3.25) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/4".`
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (height > 119.375) {
-    //           msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`
-    //         } else if (height < 35.625) {
-    //           msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`
-    //         }
-    //       }
-    //     } else {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (height > 144) {
-    //           msgHeight = `Please enter a value less than or equal to  to 12'.`
-    //         } else if (height < 36.125) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8".`
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //         if (height > 144) {
-    //           msgHeight = `Please enter a value less than or equal to  to 12'.`
-    //         } else if (height < 36.125) {
-    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8".`
-    //         }
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (height > 132.375) {
-    //           msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`
-    //         } else if (height < 35.5) {
-    //           msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-
-    // let msgWidth = '';
-    // if (width > 0) {
-    //   if (configuration === 'stacking') {
-    //     if (panelStyle === 'thermally') {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (width > 351.25) {
-    //           msgWidth = `Please enter a value less than or equal to 29' 3 1/4".`
-    //         } else if (width < 69.75) {
-    //           msgWidth = `Please enter a value greater than or equal to 5' 9 7/8".`
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (width > 369.625) {
-    //           msgWidth = `Please enter a value less than or equal to 29' 2 1/2".`
-    //         } else if (width <= 69) {
-    //           msgWidth = `Please enter a value greater than or equal to 5' 9 1/8".`
-    //         }
-    //       }
-    //     } else {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (width > 489.25) {
-    //           msgWidth = `Please enter a value less than or equal to 40' 9 1/4".`
-    //         } else if (width < 69.625) {
-    //           msgWidth = `Please enter a value greater than or equal to 5' 9 5/8".`
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (width > 488.5) {
-    //           msgWidth = `Please enter a value less than or equal to 40' 8 1/2".`
-    //         } else if (width < 153.125) {
-    //           msgWidth = `Please enter a value greater than or equal to 12' 9 1/8".`
-    //         }
-    //       }
-    //     }
-    //   } else if (configuration === 'pocketing') {
-    //     if (panelStyle === 'thermally') {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (width > 421.375) {
-    //           msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`
-    //         } else if (width < 3.25) {
-    //           msgWidth = `Please enter a value greater than or equal to 15".`
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //         if (width > 421.375) {
-    //           msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`
-    //         } else if (width < 136.25) {
-    //           msgWidth = `Please enter a value greater than or equal to 11' 3 1/2".`
-    //         }
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (width > 420.625) {
-    //           msgWidth = `Please enter a value less than or equal to 35' 5/8".`
-    //         } else if (width < 135.5) {
-    //           msgWidth = `Please enter a value greater than or equal to 2' 11 5/8".`
-    //         }
-    //       }
-    //     } else {
-    //       if (calcUsing === 'Rough Opening') {
-    //         if (width > 536.75) {
-    //           msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`
-    //         } else if (width < 180.625) {
-    //           msgWidth = `Please enter a value greater than or equal to 15' 5/8".`
-    //         }
-    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-    //         if (width > 536.75) {
-    //           msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`
-    //         } else if (width < 180.625) {
-    //           msgWidth = `Please enter a value greater than or equal to 15' 5/8".`
-    //         }
-    //       } else if (calcUsing === 'Unit Dimensions') {
-    //         if (width > 536) {
-    //           msgWidth = `Please enter a value less than or equal to  to 44' 8".`
-    //         } else if (width < 155.875) {
-    //           msgWidth = `Please enter a value greater than or equal to 14' 11 7/8".`
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
-
-    // if (msgWidth !== '' || msgHeight !== '') {
-    //   setWidthStates({
-    //     ...widthStates,
-    //     msg: msgWidth
-    //   })
-    //   setHeightStates({
-    //     ...heightStates,
-    //     msg: msgHeight
-    //   })
-    //   setIsShowResults(false)
-    //   return;
-    // }
 
     let jambDepth_temp = 0;
     let panelHeight_temp = 0;
@@ -1293,6 +1122,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setMsgWidth('');
     setMsgHeight('');
 
+    let msgWidthTemp = '';
+    let msgHeightTemp = '';
+
     if (e?.target?.name !== 'width' && e?.target?.name !== 'height') {
       setFormState({ ...formState, [e.target.name]: e.target.value });
     }
@@ -1307,171 +1139,173 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         : widthStates.dimension;
     const calcUsing = e?.target?.name === 'calcUsing' ? e?.target?.value : getValues('calcUsing');
     const numberPanels =
-      e?.target?.name === 'panelNumber' ? e?.target?.value : parseInt(getValues('panelNumber'));
+      e?.target?.name === 'panelNumber'
+        ? parseInt(e?.target?.value)
+        : parseInt(getValues('panelNumber'));
     const sillOptions =
       e?.target?.name === 'sillOption' ? e?.target?.value : getValues('sillOption');
     const stackingDirection =
       e?.target?.name === 'stackingDirection' ? e?.target?.value : getValues('stackingDirection');
 
     // Width, Height validation
-    let msgHeight = '';
-    if (height > 0) {
-      if (configuration === 'stacking') {
-        if (panelStyle === 'thermally') {
-          if (calcUsing === 'Rough Opening') {
-            if (height > 120) {
-              msgHeight = `Please enter a value less than or equal to 10'.`;
-            } else if (height < 36.25) {
-              msgHeight = `Please enter a value greater than or equal to 3' 1/4".`;
-            }
-          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-          } else if (calcUsing === 'Unit Dimensions') {
-            if (height > 119.375) {
-              msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`;
-            } else if (height < 35.625) {
-              msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`;
-            }
-          }
-        } else {
-          if (calcUsing === 'Rough Opening') {
-            if (height > 144) {
-              msgHeight = `Please enter a value less than or equal to  12.`;
-            } else if (height < 24.125) {
-              msgHeight = `Please enter a value greater than or equal to 3' 1/8.`;
-            }
-          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-          } else if (calcUsing === 'Unit Dimensions') {
-            if (height > 132.375) {
-              msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`;
-            } else if (height < 35.5) {
-              msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`;
-            }
-          }
-        }
-      } else if (configuration === 'pocketing') {
-        if (panelStyle === 'thermally') {
-          if (calcUsing === 'Rough Opening') {
-            if (height > 120) {
-              msgHeight = `Please enter a value less than or equal to 10'.`;
-            } else if (height < 36.25) {
-              msgHeight = `Please enter a value greater than or equal to 3' 1/4".`;
-            }
-          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-          } else if (calcUsing === 'Unit Dimensions') {
-            if (height > 119.375) {
-              msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`;
-            } else if (height < 35.625) {
-              msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`;
-            }
-          }
-        } else {
-          if (calcUsing === 'Rough Opening') {
-            if (height > 144) {
-              msgHeight = `Please enter a value less than or equal to  to 12'.`;
-            } else if (height < 36.125) {
-              msgHeight = `Please enter a value greater than or equal to 3' 1/8".`;
-            }
-          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-            if (height > 144) {
-              msgHeight = `Please enter a value less than or equal to  to 12'.`;
-            } else if (height < 36.125) {
-              msgHeight = `Please enter a value greater than or equal to 3' 1/8".`;
-            }
-          } else if (calcUsing === 'Unit Dimensions') {
-            if (height > 132.375) {
-              msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`;
-            } else if (height < 35.5) {
-              msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`;
-            }
-          }
-        }
-      }
-    }
+    // let msgHeight = '';
+    // if (height > 0) {
+    //   if (configuration === 'stacking') {
+    //     if (panelStyle === 'thermally') {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (height > 120) {
+    //           msgHeight = `Please enter a value less than or equal to 10'.`;
+    //         } else if (height < 36.25) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/4".`;
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (height > 119.375) {
+    //           msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`;
+    //         } else if (height < 35.625) {
+    //           msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`;
+    //         }
+    //       }
+    //     } else {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (height > 144) {
+    //           msgHeight = `Please enter a value less than or equal to  12.`;
+    //         } else if (height < 24.125) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8.`;
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (height > 132.375) {
+    //           msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`;
+    //         } else if (height < 35.5) {
+    //           msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`;
+    //         }
+    //       }
+    //     }
+    //   } else if (configuration === 'pocketing') {
+    //     if (panelStyle === 'thermally') {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (height > 120) {
+    //           msgHeight = `Please enter a value less than or equal to 10'.`;
+    //         } else if (height < 36.25) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/4".`;
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (height > 119.375) {
+    //           msgHeight = `Please enter a value less than or equal to 9' 11 3/8".`;
+    //         } else if (height < 35.625) {
+    //           msgHeight = `Please enter a value greater than or equal to 2' 11 5/8".`;
+    //         }
+    //       }
+    //     } else {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (height > 144) {
+    //           msgHeight = `Please enter a value less than or equal to  to 12'.`;
+    //         } else if (height < 36.125) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8".`;
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //         if (height > 144) {
+    //           msgHeight = `Please enter a value less than or equal to  to 12'.`;
+    //         } else if (height < 36.125) {
+    //           msgHeight = `Please enter a value greater than or equal to 3' 1/8".`;
+    //         }
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (height > 132.375) {
+    //           msgHeight = `Please enter a value less than or equal to 11' 11 3/8".`;
+    //         } else if (height < 35.5) {
+    //           msgHeight = `Please enter a value greater than or equal to 2' 11 1/2".`;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
 
-    let msgWidth = '';
-    if (width > 0) {
-      if (configuration === 'stacking') {
-        if (panelStyle === 'thermally') {
-          if (calcUsing === 'Rough Opening') {
-            if (width > 351.25) {
-              msgWidth = `Please enter a value less than or equal to 29' 3 1/4".`;
-            } else if (width < 91) {
-              msgWidth = `Please enter a value greater than or equal to 7' 7".`;
-            }
-          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-          } else if (calcUsing === 'Unit Dimensions') {
-            if (width > 350.5) {
-              msgWidth = `Please enter a value less than or equal to 29' 2 1/2".`;
-            } else if (width < 90.25) {
-              msgWidth = `Please enter a value greater than or equal to 7' 6 1/4".`;
-            }
-          }
-        } else {
-          if (calcUsing === 'Rough Opening') {
-            if (width > 489.25) {
-              msgWidth = `Please enter a value less than or equal to 40' 9 1/4".`;
-            } else if (width < 90.25) {
-              msgWidth = `Please enter a value greater than or equal to 7' 6 1/4".`;
-            }
-          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-          } else if (calcUsing === 'Unit Dimensions') {
-            if (width > 488.5) {
-              msgWidth = `Please enter a value less than or equal to 40' 8 1/2".`;
-            } else if (width < 89.875) {
-              msgWidth = `Please enter a value greater than or equal to 7' 5 7/8".`;
-            }
-          }
-        }
-      } else if (configuration === 'pocketing') {
-        if (panelStyle === 'thermally') {
-          if (calcUsing === 'Rough Opening') {
-            if (width > 421.375) {
-              msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`;
-            } else if (width < 112.875) {
-              msgWidth = `Please enter a value greater than or equal to 9' 4 7/8"`;
-            }
-          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-            if (width > 421.375) {
-              msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`;
-            } else if (width < 112.875) {
-              msgWidth = `Please enter a value greater than or equal to 9' 4 7/8".`;
-            }
-          } else if (calcUsing === 'Unit Dimensions') {
-            if (width > 420.625) {
-              msgWidth = `Please enter a value less than or equal to 35' 5/8".`;
-            } else if (width < 112.875) {
-              msgWidth = `Please enter a value greater than or equal to  9' 4 7/8".`;
-            }
-          }
-        } else {
-          if (calcUsing === 'Rough Opening') {
-            if (width > 536.75) {
-              msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`;
-            } else if (width < 112.625) {
-              msgWidth = `Please enter a value greater than or equal to 9' 4 5/8".`;
-            }
-          } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
-            if (width > 536.75) {
-              msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`;
-            } else if (width < 112.625) {
-              msgWidth = `Please enter a value greater than or equal to 9' 4 5/8".`;
-            }
-          } else if (calcUsing === 'Unit Dimensions') {
-            if (width > 536) {
-              msgWidth = `Please enter a value less than or equal to  to 44' 8".`;
-            } else if (width < 111.875) {
-              msgWidth = `Please enter a value greater than or equal to 9' 3 7/8".`;
-            }
-          }
-        }
-      }
-    }
+    // let msgWidth = '';
+    // if (width > 0) {
+    //   if (configuration === 'stacking') {
+    //     if (panelStyle === 'thermally') {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (width > 351.25) {
+    //           msgWidth = `Please enter a value less than or equal to 29' 3 1/4".`;
+    //         } else if (width < 91) {
+    //           msgWidth = `Please enter a value greater than or equal to 7' 7".`;
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (width > 350.5) {
+    //           msgWidth = `Please enter a value less than or equal to 29' 2 1/2".`;
+    //         } else if (width < 90.25) {
+    //           msgWidth = `Please enter a value greater than or equal to 7' 6 1/4".`;
+    //         }
+    //       }
+    //     } else {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (width > 489.25) {
+    //           msgWidth = `Please enter a value less than or equal to 40' 9 1/4".`;
+    //         } else if (width < 90.25) {
+    //           msgWidth = `Please enter a value greater than or equal to 7' 6 1/4".`;
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (width > 488.5) {
+    //           msgWidth = `Please enter a value less than or equal to 40' 8 1/2".`;
+    //         } else if (width < 89.875) {
+    //           msgWidth = `Please enter a value greater than or equal to 7' 5 7/8".`;
+    //         }
+    //       }
+    //     }
+    //   } else if (configuration === 'pocketing') {
+    //     if (panelStyle === 'thermally') {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (width > 421.375) {
+    //           msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`;
+    //         } else if (width < 112.875) {
+    //           msgWidth = `Please enter a value greater than or equal to 9' 4 7/8"`;
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //         if (width > 421.375) {
+    //           msgWidth = `Please enter a value less than or equal to 35' 1 3/8".`;
+    //         } else if (width < 112.875) {
+    //           msgWidth = `Please enter a value greater than or equal to 9' 4 7/8".`;
+    //         }
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (width > 420.625) {
+    //           msgWidth = `Please enter a value less than or equal to 35' 5/8".`;
+    //         } else if (width < 112.875) {
+    //           msgWidth = `Please enter a value greater than or equal to  9' 4 7/8".`;
+    //         }
+    //       }
+    //     } else {
+    //       if (calcUsing === 'Rough Opening') {
+    //         if (width > 536.75) {
+    //           msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`;
+    //         } else if (width < 112.625) {
+    //           msgWidth = `Please enter a value greater than or equal to 9' 4 5/8".`;
+    //         }
+    //       } else if (calcUsing === 'Rough Opening Without Pocket (Daylight Width)') {
+    //         if (width > 536.75) {
+    //           msgWidth = `Please enter a value less than or equal to  to 44' 8 3/4".`;
+    //         } else if (width < 112.625) {
+    //           msgWidth = `Please enter a value greater than or equal to 9' 4 5/8".`;
+    //         }
+    //       } else if (calcUsing === 'Unit Dimensions') {
+    //         if (width > 536) {
+    //           msgWidth = `Please enter a value less than or equal to  to 44' 8".`;
+    //         } else if (width < 111.875) {
+    //           msgWidth = `Please enter a value greater than or equal to 9' 3 7/8".`;
+    //         }
+    //       }
+    //     }
+    //   }
+    // }
 
-    if (msgWidth !== '' || msgHeight !== '') {
-      setMsgWidth(msgWidth);
-      setMsgHeight(msgHeight);
-      setIsShowResults(false);
-    }
+    // if (msgWidth !== '' || msgHeight !== '') {
+    //   setMsgWidth(msgWidth);
+    //   setMsgHeight(msgHeight);
+    //   setIsShowResults(false);
+    // }
 
     // Update Interlocks
     let interlocks_temp;
@@ -1508,58 +1342,110 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     //////////////////////////////
     ///// Min/Max Height
     //////////////////////////////
-    // let minHeight_temp = getMinHeight(panelStyle, sillOptions);
-    // let maxHeight_temp = panelStyle === 'thermally' ? 119.375 : 143.375;
+    if (height > 0) {
+      let minHeight_temp = getMinHeight(panelStyle, sillOptions);
+      let maxHeight_temp = panelStyle === 'thermally' ? 119.375 : 143.375;
 
-    // switch (calcUsing) {
-    //     case 'Rough Opening':
-    //     case 'Rough Opening Without Pocket (Daylight Width)':
-    //       minHeight_temp = calculateRoughOpeningHeightFromUnitHeight(minHeight_temp);
-    //       maxHeight_temp = calculateRoughOpeningHeightFromUnitHeight(maxHeight_temp);
-    //       break;
-    //     case 'Unit Dimensions':
-    //         // min/max are defined in unit dimensions
-    //       break;
-    // }
+      switch (calcUsing) {
+        case 'Rough Opening':
+        case 'Rough Opening Without Pocket (Daylight Width)':
+          minHeight_temp = calculateRoughOpeningHeightFromUnitHeight(minHeight_temp);
+          maxHeight_temp = calculateRoughOpeningHeightFromUnitHeight(maxHeight_temp);
+          break;
+        case 'Unit Dimensions':
+          // min/max are defined in unit dimensions
+          break;
+      }
 
-    // const minFormattedHeight = convertToFeetInchesAndFraction(minHeight_temp, AWNumberUtil.roundingDirections.up);
-    // const maxFormattedHeight = convertToFeetInchesAndFraction(maxHeight_temp, AWNumberUtil.roundingDirections.down);
+      const minFormattedHeight = convertToFeetInchesAndFraction(
+        minHeight_temp,
+        AWNumberUtil.roundingDirections.up
+      );
+      const maxFormattedHeight = convertToFeetInchesAndFraction(
+        maxHeight_temp,
+        AWNumberUtil.roundingDirections.down
+      );
 
-    // setHeightStates({
-    //   ...heightStates,
-    //   ruleMax: roundNumber(maxHeight_temp),
-    //   ruleMin: roundNumber(minHeight_temp),
-    //   msgMax: 'Please enter a value less than or equal to ' + minFormattedHeight + '.',
-    //   msgMin: 'Please enter a value greater than or equal to ' + maxFormattedHeight + '.'
-    // })
+      if (height < minHeight_temp) {
+        msgHeightTemp = 'Please enter a value greater than or equal to ' + minFormattedHeight + '.';
+      }
+      if (height > maxHeight_temp) {
+        msgHeightTemp = 'Please enter a value less than or equal to ' + maxFormattedHeight + '.';
+      }
+
+      // setHeightStates({
+      //   ...heightStates,
+      //   ruleMax: roundNumber(maxHeight_temp),
+      //   ruleMin: roundNumber(minHeight_temp),
+      //   msgMax: 'Please enter a value less than or equal to ' + minFormattedHeight + '.',
+      //   msgMin: 'Please enter a value greater than or equal to ' + maxFormattedHeight + '.'
+      // })
+    } else {
+      msgHeightTemp = '';
+    }
 
     // Update the validator message on the page
 
     //////////////////////////////
     ///// Min/Max Width
     //////////////////////////////
-    // let minWidth_temp = calculateMinWidth(stackingDirection, configuration, numberPanels, calcUsing, '');
+    if (width > 0) {
+      let minWidth_temp = calculateMinWidth(
+        stackingDirection,
+        configuration,
+        numberPanels,
+        calcUsing,
+        ''
+      );
 
-    // // Get the Max Width from the array
-    // const maxWidthRow = widthMaxes.filter((element: any) =>
-    //   element.configuration === configuration && element.panelStyle === panelStyle && element.stackingDirection === stackingDirection
-    // );
+      // Get the Max Width from the array
+      const maxWidthRow = widthMaxes.filter(
+        (element: any) =>
+          element.configuration === configuration &&
+          element.panelStyle === panelStyle &&
+          element.stackingDirection === stackingDirection
+      );
 
-    // let maxWidth_temp = maxWidthRow[0].maxUnitWidth;
+      let maxWidth_temp = maxWidthRow[0].maxUnitWidth;
 
-    // switch (calcUsing) {
-    //     case 'Rough Opening':
-    //     case 'Rough Opening Without Pocket (Daylight Width)':
-    //       minWidth_temp = calculateRoughOpeningWidthFromUnitWidth(minWidth_temp);
-    //       maxWidth_temp = calculateRoughOpeningWidthFromUnitWidth(maxWidth_temp);
-    //         break;
-    //     case 'Unit Dimensions':
-    //         // min/max are defined in unit dimensions
-    //         break;
-    // }
+      switch (calcUsing) {
+        case 'Rough Opening':
+        case 'Rough Opening Without Pocket (Daylight Width)':
+          minWidth_temp = calculateRoughOpeningWidthFromUnitWidth(minWidth_temp);
+          maxWidth_temp = calculateRoughOpeningWidthFromUnitWidth(maxWidth_temp);
+          break;
+        case 'Unit Dimensions':
+          // min/max are defined in unit dimensions
+          break;
+      }
 
-    // const minFormattedWidth = convertToFeetInchesAndFraction(minWidth_temp, AWNumberUtil.roundingDirections.up);
-    // const maxFormattedWidth = convertToFeetInchesAndFraction(maxWidth_temp, AWNumberUtil.roundingDirections.down);
+      const minFormattedWidth = convertToFeetInchesAndFraction(
+        minWidth_temp,
+        AWNumberUtil.roundingDirections.up
+      );
+      const maxFormattedWidth = convertToFeetInchesAndFraction(
+        maxWidth_temp,
+        AWNumberUtil.roundingDirections.down
+      );
+
+      const minMessage = 'Please enter a value greater than or equal to ' + minFormattedWidth + '.';
+      const maxMessage = 'Please enter a value less than or equal to ' + maxFormattedWidth + '.';
+      console.log(minMessage, maxMessage);
+      console.log(width, minWidth_temp, maxWidth_temp);
+      if (width < minWidth_temp) {
+        msgWidthTemp = minMessage;
+      } else if (width > maxWidth_temp) {
+        msgWidthTemp = maxMessage;
+      }
+    } else {
+      msgWidthTemp = '';
+    }
+
+    if (msgWidthTemp !== '' || msgHeightTemp !== '') {
+      setMsgWidth(msgWidthTemp);
+      setMsgHeight(msgHeightTemp);
+      setIsShowResults(false);
+    }
 
     // setWidthStates({
     //   ...widthStates,
@@ -1749,9 +1635,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </select>
               </div>
             </div>
+            {errors.width && errors.width.type === 'required' && (
+              <div className="text-body text-error">This field is required</div>
+            )}
             {msgWidth && <div className="text-body text-error">{msgWidth}</div>}
             <label className={themeData.classes.labelClass} htmlFor="width">
-              <span className={themeData.classes.helpText}>For help, refer to our</span>
               <button
                 className={themeData.classes.modalLinkButton}
                 type="button"
@@ -1852,6 +1740,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </select>
               </div>
             </div>
+            {errors.height && errors.height.type === 'required' && (
+              <div className="text-body text-error">This field is required</div>
+            )}
             {msgHeight && <div className="text-body text-error">{msgHeight}</div>}
           </div>
           <div className={themeData.classes.columnSpan1}>
@@ -2073,7 +1964,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Configuration</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {formData?.selectedConfigurationOption || '-'}
+                            {selectedConfigurationOption?.title || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
@@ -2085,7 +1976,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Panel Style</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {formData?.selectedPanelStyle || '-'}
+                            {selectedPanelStyle?.text || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
