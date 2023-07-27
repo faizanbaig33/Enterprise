@@ -98,7 +98,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [msgWidth, setMsgWidth] = useState('');
   const [msgHeight, setMsgHeight] = useState('');
 
-  const [formState, setFormState] = useState({
+  const [formStates, setFormState] = useState({
     calcUsing: '',
     width: '',
     widthInches: '',
@@ -225,6 +225,44 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     resetField('heightFraction');
     resetField('thicknessFinishedFloorInches');
     resetField('thicknessFinishedFloorFraction');
+
+    setFormState({
+      calcUsing: '',
+      width: '',
+      widthInches: '',
+      widthFraction: '',
+      height: '',
+      heightInches: '',
+      heightFraction: '',
+      stackingDirection: '',
+      sillOption: '',
+      panelNumber: '',
+      panelStackingLocation: '',
+      thicknessFinishedFloorInches: '',
+      thicknessFinishedFloorFraction: '',
+    });
+
+    setWidthStates({
+      feet: 0,
+      inches: 0,
+      fraction: 0,
+      msg: '',
+      ruleMin: '',
+      ruleMax: '',
+      dimension: 0,
+    });
+    setHeightStates({
+      feet: 0,
+      inches: 0,
+      fraction: 0,
+      msg: '',
+      ruleMin: '',
+      ruleMax: '',
+      dimension: 0,
+    });
+
+    setMsgWidth('');
+    setMsgHeight('');
 
     props.onStepChange(0);
     setIsShowResults(false);
@@ -806,7 +844,15 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   });
 
   const onSubmit = (data: CalcForm) => {
-    if (msgWidth !== '' || msgHeight !== '') {
+    if (widthStates.feet === 0) {
+      setMsgWidth('This field is requied');
+    }
+
+    if (heightStates.feet === 0) {
+      setMsgHeight('This field is requied');
+    }
+
+    if (msgWidth !== '' || msgHeight !== '' || widthStates.feet === 0 || heightStates.feet === 0) {
       setIsShowResults(false);
       return;
     }
@@ -1130,7 +1176,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     let msgHeightTemp = '';
 
     if (e?.target?.name !== 'width' && e?.target?.name !== 'height') {
-      setFormState({ ...formState, [e.target.name]: e.target.value });
+      setFormState({ ...formStates, [e.target.name]: e.target.value });
     }
 
     const height =
@@ -1411,7 +1457,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                       : themeData.classes.errorValid
                   }`}
                   {...register('width', {
-                    required: 'This field is required.',
+                    // required: 'This field is required.',
                     pattern: {
                       value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
                       message: 'Width is not valid.',
@@ -1516,7 +1562,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                       : themeData.classes.errorValid
                   }`}
                   {...register('height', {
-                    required: 'This field is required.',
+                    // required: 'This field is required.',
                     pattern: {
                       value: /^([0-9]*[1-9][0-9]*(\.[0-9]+)?|[0]*\.[0-9]*[1-9][0-9]*)$/,
                       message: 'Height is not valid.',
@@ -1672,7 +1718,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               )}
             </div>
           )}
-          {formState.sillOption === 'Tile Track' && (
+          {formStates.sillOption === 'Tile Track' && (
             <div className={themeData.classes.columnSpan1}>
               <label className={themeData.classes.labelClass} htmlFor="thicknessFinishedFloor">
                 Thickness Of Finished Floor (In Inches)*
@@ -1826,7 +1872,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                             {getValues('panelNumber') || '-'}
                           </td>
                         </tr>
-                        {formState.sillOption !== 'Tile Track' && (
+                        {formStates.sillOption !== 'Tile Track' && (
                           <tr className={themeData.classes.tableRow}>
                             <td className={themeData.classes.tdColumn}>Sill Options</td>
                             <td className={themeData.classes.tdColumnCenter}>
@@ -1842,7 +1888,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <div className="hidden print:block">
                 <CalculatorResult
                   data={{
-                    formState,
+                    formStates,
                     configuration,
                     roughOpeningWidth,
                     roughOpeningHeightSubfloor,
@@ -1863,7 +1909,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             <div className={themeData.classes.columnSpan1}>
               <CalculatorResult
                 data={{
-                  formState,
+                  formStates,
                   configuration,
                   roughOpeningWidth,
                   roughOpeningHeightSubfloor,

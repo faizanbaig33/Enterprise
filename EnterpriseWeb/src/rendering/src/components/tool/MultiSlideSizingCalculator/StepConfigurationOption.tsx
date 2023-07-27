@@ -58,7 +58,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
             >
               <label
                 htmlFor={`step-one-radio-${idx}`}
-                className="text-md text-gray-900 dark:text-gray-300 ml-2 flex w-full cursor-pointer flex-row items-start text-center font-bold uppercase md:flex-col"
+                className="text-md text-gray-900 dark:text-gray-300 ml-2 flex w-full cursor-pointer flex-col items-start text-center font-bold uppercase"
               >
                 <ImageWrapper
                   image={item.image}

@@ -53,7 +53,7 @@ const CalculatorResult = (props: any) => {
                   <div dangerouslySetInnerHTML={{ __html: roughOpeningHeightSubfloor }} />
                 </td>
               </tr>
-              {formState.sillOption === 'Tile Track' && (
+              {formState?.sillOption === 'Tile Track' && (
                 <tr className={themeData.classes.tableRow}>
                   <th className={themeData.classes.tdColumn}>
                     Rough Opening{' '}
@@ -123,7 +123,7 @@ const CalculatorResult = (props: any) => {
                 </td>
                 <td className={themeData.classes.tdColumn}>{'-'}</td>
               </tr>
-              {formState.sillOption !== 'Tile Track' && (
+              {formState?.sillOption !== 'Tile Track' && (
                 <tr className={themeData.classes.tableRow}>
                   <td className={themeData.classes.tdColumn}>Sill Depth</td>
                   <td className={themeData.classes.tdColumn}>
