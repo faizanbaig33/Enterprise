@@ -75,7 +75,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [isLightboxVisible, setIsLightboxVisible] = useState(false);
 
   // Submit and update shared variables
-  // const [interlocks, setInterlocks] = useState('');
   const [widthStates, setWidthStates] = useState({
     feet: 0,
     inches: 0,
@@ -120,9 +119,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [backStileOffset, setBackStileOffset] = useState(0);
   const [pocketOffset, setPocketOffset] = useState(0);
   const [biPartPairOffset, setBiPartPairOffset] = useState(0);
-  // const [pocketCount, setPocketCount] = useState(0);
-  // const [minPanelNumber, setMinPanelNumber] = useState(0);
-  // const [maxPanelNumber, setMaxPanelNumber] = useState(0);
   const [numberPanels, setNumberPanels] = useState([1, 2, 3, 4, 5, 6]);
 
   const [jambDepth, setJambDepth] = useState<string>('');
@@ -133,7 +129,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [roughOpeningHeightSubfloor, setRoughOpeningHeightSubfloor] = useState<string>('');
   const [roughOpeningHeightRecess, setRoughOpeningHeightRecess] = useState<string>('');
   const [roughOpeningWidth, setRoughOpeningWidth] = useState<string>('');
-  // const [roughOpeningHeight, setRoughOpeningHeight] = useState<string>('');
   const [roughOpeningPocketWidth, setRoughOpeningPocketWidth] = useState<string>('');
   const [sillDepth, setSillDepth] = useState<string>('');
   const [unitHeight, setUnitHeight] = useState<string>('');
@@ -182,7 +177,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setPanelWidth('-');
     setPocketDepth('-');
     setPocketWidth('-');
-    // setRoughOpeningHeight('-');
     setRoughOpeningWidth('-');
     setRoughOpeningHeightSubfloor('-');
     setRoughOpeningHeightRecess('-');
@@ -203,7 +197,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setPanelWidth('-');
     setPocketDepth('-');
     setPocketWidth('-');
-    // setRoughOpeningHeight('-');
     setRoughOpeningWidth('-');
     setRoughOpeningHeightSubfloor('-');
     setRoughOpeningHeightRecess('-');
@@ -279,9 +272,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const calculateMinWidth = (
     stackingDirection: any,
     configuration: any,
-    numberPanels: any,
-    calcUsing: any,
-    pocketWidth: any
+    numberPanels: any
+    // calcUsing: any,
+    // pocketWidth: any
   ) => {
     let minRailLength = 0;
     // Minimum width resulting in a minimum panel rail length of 20.154” (this is the corresponding rail length from the 48” x 36” 2 panel limiting size)
@@ -885,7 +878,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
     // Update Interlocks
     const interlocks_temp = funcSetInterlocks(unitHeight_temp);
-    // setInterlocks(interlocks_temp);
 
     // Set variables used in calculations
     const jambWidth_temp = calculateJambWidth(panelStyle, stackingDirection, configuration);
@@ -917,7 +909,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       calculateBackStileEmbedment(panelStyle, stackingDirection, configuration)
     );
     setBackStileOffset(calculateBackStileOffset(panelStyle, stackingDirection, configuration));
-    // setPocketCount(calculatePocketCount(configuration, stackingDirection));
 
     switch (calcUsing) {
       case 'Rough Opening':
@@ -1026,7 +1017,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         roughOpeningWidth_temp = calculateRoughOpeningWidthFromUnitWidth(unitWidth_temp);
         const roughOpeningHeight_temp: any =
           calculateRoughOpeningHeightFromUnitHeight(unitHeight_temp);
-        // setRoughOpeningHeight(roughOpeningHeight_temp);
 
         // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
         if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {
@@ -1208,7 +1198,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       // unit_dimensions
       interlocks_temp = funcSetInterlocks(height);
     }
-    // setInterlocks(interlocks_temp);
 
     // Set variables used in calculations
     setJambWidth(calculateJambWidth(panelStyle, stackingDirection, configuration));
@@ -1275,9 +1264,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       let minWidth_temp = calculateMinWidth(
         stackingDirection,
         configuration,
-        numberPanels,
-        calcUsing,
-        ''
+        numberPanels
+        // calcUsing,
+        // ''
       );
 
       // Get the Max Width from the array
@@ -1327,14 +1316,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       setMsgHeight(msgHeightTemp);
       setIsShowResults(false);
     }
-
-    // setWidthStates({
-    //   ...widthStates,
-    //   ruleMax: roundNumber(maxWidth_temp),
-    //   ruleMin: roundNumber(minWidth_temp),
-    //   msgMax: 'Please enter a value less than or equal to ' + maxFormattedWidth + '.',
-    //   msgMin: 'Please enter a value greater than or equal to ' + minFormattedWidth + '.'
-    // })
 
     ////////////////////////////////////////
     ///// Update number of panels dropdown
@@ -1516,9 +1497,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </select>
               </div>
             </div>
-            {/* {errors.width && errors.width.type === 'required' && (
-              <div className="text-body text-error">This field is required</div>
-            )} */}
             {msgWidth && <div className="text-body text-error">{msgWidth}</div>}
             <label className={themeData.classes.labelClass} htmlFor="width">
               <button
@@ -1621,9 +1599,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 </select>
               </div>
             </div>
-            {/* {errors.height && errors.height.type === 'required' && (
-              <div className="text-body text-error">This field is required</div>
-            )} */}
             {msgHeight && <div className="text-body text-error">{msgHeight}</div>}
           </div>
           <div className={themeData.classes.columnSpan1}>
