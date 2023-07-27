@@ -33,7 +33,7 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         resetButton:
           'flex items-center justify-end whitespace-nowrap font-sans text-text-link font-heavy text-theme-text hover:underline hover:decoration-secondary hover:underline-offset-8 disabled:border-gray disabled:text-gray md:ml-0 md:w-fit md:px-0',
         resultsOutputWrapper:
-          'col-span-12 grid grid-cols-1 gap-x-6 gap-y-2 md:grid-cols-2 ml:gap-x-[116px]',
+          'col-span-12 grid grid-cols-1 gap-x-6 gap-y-2 mmd:grid-cols-2 ml:gap-x-[116px]',
         submitWrapper:
           'relative my-s mb-s flex justify-between md:justify-start w-full md:col-span-2 md:my-xs md:flex-row md:items-center md:space-x-4',
         submitButton:
@@ -44,7 +44,7 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
           'border-b border-neutral-700 bg-neutral-800 text-neutral-50 dark:border-neutral-600 dark:bg-neutral-700',
         tableRow: 'border-b dark:border-neutral-500',
         tdColumn: 'whitespace-nowrap px-4 py-2 font-demi',
-        tdColumnCenter: 'whitespace-nowrap px-4 py-2 text-center font-demi',
+        tdColumnCenter: 'whitespace-normal px-4 py-2 text-center font-demi',
         thLeft: 'py-4 pl-4 text-left text-lg font-heavy',
         thCenter: 'py-4 text-center text-lg font-heavy',
         thRight: 'py-4 pr-4 text-center text-lg font-heavy',

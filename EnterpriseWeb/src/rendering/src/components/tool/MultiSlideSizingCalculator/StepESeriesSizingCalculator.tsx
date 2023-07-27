@@ -1902,7 +1902,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               />
             </div>
           </div>
-          <div className="mt-5 flex flex-col items-center justify-between border border-black p-4 md:flex-row">
+          <div className="mt-5 hidden flex-col items-center justify-between border border-black p-4 md:flex md:flex-row">
             <div className="mb-4 text-[20px] font-bold md:mb-0">Preparing for installation?</div>
             <LinkWrapper
               target="_blank"
