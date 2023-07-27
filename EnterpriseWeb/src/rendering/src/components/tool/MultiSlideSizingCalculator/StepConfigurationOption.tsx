@@ -58,14 +58,14 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
             >
               <label
                 htmlFor={`step-one-radio-${idx}`}
-                className="text-md text-gray-900 dark:text-gray-300 ml-2 flex w-full cursor-pointer flex-col items-start text-center font-bold uppercase"
+                className="text-md text-gray-900 dark:text-gray-300 flex w-full cursor-pointer flex-col items-center text-center font-bold uppercase"
               >
                 <ImageWrapper
                   image={item.image}
                   additionalMobileClasses="w-20 h-20 mr-2"
                   additionalDesktopClasses="mt-4 w-full"
                 />
-                <div className="flex flex-col items-start justify-center md:items-center">
+                <div className="flex flex-col items-center justify-center">
                   <input
                     id={`step-one-radio-${idx}`}
                     type="radio"
