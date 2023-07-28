@@ -1358,7 +1358,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         i = stackingDirection == '2-Way' ? (i += 2) : (i += 1);
       }
 
-      setNumberPanels(numberPanelData);
+      // setNumberPanels(numberPanelData);
     }
   };
 
