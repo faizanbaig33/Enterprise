@@ -1,19 +1,19 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import { FiCheck } from 'react-icons/fi';
 import classNames from 'classnames';
 
 const Stepper = ({ isComplete, onStepChange, activeStep, sliderRef }: any): JSX.Element => {
-  const maxSteps = 2;
+  // const maxSteps = 2;
 
-  const [isCalculated, setIsCalculated] = useState(false);
+  // const [isCalculated, setIsCalculated] = useState(false);
 
-  const handleStepChange = (step: number) => {
-    if (step <= maxSteps) {
-      sliderRef?.current?.slickGoTo(step);
-      onStepChange(step);
-      setIsCalculated(false);
-    }
-  };
+  // const handleStepChange = (step: number) => {
+  //   if (step <= maxSteps) {
+  //     sliderRef?.current?.slickGoTo(step);
+  //     onStepChange(step);
+  //     setIsCalculated(false);
+  //   }
+  // };
 
   const activeButtonStyle =
     'm-0 flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-full border-2 border-[#F26924] bg-white p-0';
@@ -34,7 +34,7 @@ const Stepper = ({ isComplete, onStepChange, activeStep, sliderRef }: any): JSX.
             </div>
             <button
               type="button"
-              onClick={() => handleStepChange(0)}
+              // onClick={() => handleStepChange(0)}
               className={classNames(
                 activeStep === 0 ? activeButtonStyle : '',
                 activeStep > 0 ? completedButtonStyle : ''
@@ -65,7 +65,7 @@ const Stepper = ({ isComplete, onStepChange, activeStep, sliderRef }: any): JSX.
             </div>
             <button
               type="button"
-              onClick={() => handleStepChange(1)}
+              // onClick={() => handleStepChange(1)}
               className={classNames(
                 activeStep === 1 ? activeButtonStyle : '',
                 activeStep < 1 ? inactiveButtonStyle : '',
@@ -97,7 +97,7 @@ const Stepper = ({ isComplete, onStepChange, activeStep, sliderRef }: any): JSX.
             </div>
             <button
               type="button"
-              onClick={() => handleStepChange(2)}
+              // onClick={() => handleStepChange(2)}
               className={classNames(
                 activeStep === 2 ? activeButtonStyle : '',
                 isComplete ? completedButtonStyle : '',

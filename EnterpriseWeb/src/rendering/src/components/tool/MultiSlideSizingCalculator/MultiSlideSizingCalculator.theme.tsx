@@ -43,7 +43,7 @@ export const MultiSlideSizingCalculatorTheme = (): ThemeFile => {
         tableHead:
           'border-b border-neutral-700 bg-neutral-800 text-neutral-50 dark:border-neutral-600 dark:bg-neutral-700',
         tableRow: 'border-b dark:border-neutral-500',
-        tdColumn: 'whitespace-nowrap px-4 py-2 font-demi',
+        tdColumn: 'whitespace-normal px-4 py-2 font-demi',
         tdColumnCenter: 'whitespace-normal px-4 py-2 text-center font-demi',
         thLeft: 'py-4 pl-4 text-left text-lg font-heavy',
         thCenter: 'py-4 text-center text-lg font-heavy',

@@ -114,6 +114,11 @@ const CalculatorResult = (props: any): JSX.Element => {
                   <div dangerouslySetInnerHTML={{ __html: panelHeight }} />
                 </td>
               </tr>
+              <tr className={themeData.classes.tableRow}>
+                <td className={themeData.classes.tdColumn}></td>
+                <td className={themeData.classes.tdColumn}></td>
+                <td className={themeData.classes.tdColumn}></td>
+              </tr>
               {configuration === 'pocketing' && (
                 <tr className={themeData.classes.tableRow}>
                   <td className={themeData.classes.tdColumn}>Rough Pocket Width</td>

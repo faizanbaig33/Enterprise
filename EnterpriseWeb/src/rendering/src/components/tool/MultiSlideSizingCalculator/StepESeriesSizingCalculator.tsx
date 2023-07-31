@@ -133,6 +133,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [sillDepth, setSillDepth] = useState<string>('');
   const [unitHeight, setUnitHeight] = useState<string>('');
   const [unitWidth, setUnitWidth] = useState<string>('');
+  const [thicknessFinishedFloor, setThicknessFinishedFloor] = useState('');
 
   const [isShowResults, setIsShowResults] = useState<boolean>(false);
 
@@ -859,7 +860,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     const numberPanels = parseInt(jsonObj.panelNumber);
     const sillOptions = jsonObj.sillOption;
     const stackingDirection = jsonObj.stackingDirection;
-    const thicknessFinishedFloor =
+    const thicknessFinishedFloor_temp =
       parseFloat(jsonObj.thicknessFinishedFloorInches) +
       parseFloat(jsonObj.thicknessFinishedFloorFraction);
 
@@ -916,10 +917,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
         // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
         if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {
-          roughOpeningHeightRecess_temp = height + 1.5 - thicknessFinishedFloor;
+          roughOpeningHeightRecess_temp = height + 1.5 - thicknessFinishedFloor_temp;
           roughOpeningHeightSubfloor_temp = height;
         } else if (sillOptions === 'Tile Track') {
-          roughOpeningHeightRecess_temp = height + 1.0 - thicknessFinishedFloor;
+          roughOpeningHeightRecess_temp = height + 1.0 - thicknessFinishedFloor_temp;
           roughOpeningHeightSubfloor_temp = height;
         } else if (sillOptions === 'Low Profile') {
           roughOpeningHeightRecess_temp = 'N/A';
@@ -933,10 +934,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       case 'Rough Opening Without Pocket (Daylight Width)':
         // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
         if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {
-          roughOpeningHeightRecess_temp = height + 1.5 - thicknessFinishedFloor;
+          roughOpeningHeightRecess_temp = height + 1.5 - thicknessFinishedFloor_temp;
           roughOpeningHeightSubfloor_temp = height;
         } else if (sillOptions === 'Tile Track') {
-          roughOpeningHeightRecess_temp = height + 1.0 - thicknessFinishedFloor;
+          roughOpeningHeightRecess_temp = height + 1.0 - thicknessFinishedFloor_temp;
           roughOpeningHeightSubfloor_temp = height;
         } else if (sillOptions === 'Low Profile') {
           roughOpeningHeightRecess_temp = 'N/A';
@@ -1020,10 +1021,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
         // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
         if (sillOptions === 'Standard On-Floor Drainage' || sillOptions === 'None') {
-          roughOpeningHeightRecess_temp = roughOpeningHeight_temp + 1.5 - thicknessFinishedFloor;
+          roughOpeningHeightRecess_temp =
+            roughOpeningHeight_temp + 1.5 - thicknessFinishedFloor_temp;
           roughOpeningHeightSubfloor_temp = roughOpeningHeight_temp;
         } else if (sillOptions === 'Tile Track') {
-          roughOpeningHeightRecess_temp = roughOpeningHeight_temp + 1.0 - thicknessFinishedFloor;
+          roughOpeningHeightRecess_temp =
+            roughOpeningHeight_temp + 1.0 - thicknessFinishedFloor_temp;
           roughOpeningHeightSubfloor_temp = roughOpeningHeight_temp;
         } else if (sillOptions === 'Low Profile') {
           roughOpeningHeightRecess_temp = 'N/A';
@@ -1102,6 +1105,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       setSillDepth(formatNumber(sillDepth_temp));
       setUnitHeight(formatNumber(unitHeight_temp));
       setUnitWidth(formatNumber(unitWidth_temp));
+      setThicknessFinishedFloor(formatNumber(thicknessFinishedFloor_temp));
     }
 
     setIsShowResults(true);
@@ -1325,11 +1329,15 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     const pocketCount = calculatePocketCount(configuration, stackingDirection);
     // setPocketCount(pocketCount);
     if (msgWidth === '') {
-      const minPanelValue = pocketCount > 0 ? 1 : 2;
-      minPanelNumber_temp = stackingDirection === '2-Way' ? minPanelValue * 2 : minPanelValue;
+      const minPanelValue = Number(pocketCount) > 0 ? 1 : 2;
+      minPanelNumber_temp = Number(
+        stackingDirection === '2-Way' ? minPanelValue * 2 : minPanelValue
+      );
 
       const maxPanelValue = stackingDirection === '2-Way' ? 2 : 1;
-      maxPanelNumber_temp = panelStyle === 'thermally' ? maxPanelValue * 5 : maxPanelValue * 7;
+      maxPanelNumber_temp = Number(
+        panelStyle === 'thermally' ? maxPanelValue * 5 : maxPanelValue * 7
+      );
 
       let i = minPanelNumber_temp;
       const numberPanelData: any = [];
@@ -1355,10 +1363,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           numberPanelData.push(i + 1);
         }
 
-        i = stackingDirection == '2-Way' ? (i += 2) : (i += 1);
+        i = stackingDirection === '2-Way' ? (i += 2) : (i += 1);
       }
 
-      // setNumberPanels(numberPanelData);
+      setNumberPanels(numberPanelData);
     }
   };
 
@@ -1698,7 +1706,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <label className={themeData.classes.labelClass} htmlFor="thicknessFinishedFloor">
                 Thickness Of Finished Floor (In Inches)*
               </label>
-              <div className="grid grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 gap-4 ml:grid-cols-4">
                 <select
                   className={themeData.classes.selectColumnSpan1}
                   {...register('thicknessFinishedFloorInches')}
@@ -1847,11 +1855,19 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                             {getValues('panelNumber') || '-'}
                           </td>
                         </tr>
-                        {formStates.sillOption !== 'Tile Track' && (
+                        {formStates.sillOption !== 'None' && (
                           <tr className={themeData.classes.tableRow}>
                             <td className={themeData.classes.tdColumn}>Sill Options</td>
                             <td className={themeData.classes.tdColumnCenter}>
                               {getValues('sillOption') || '-'}
+                            </td>
+                          </tr>
+                        )}
+                        {formStates.sillOption === 'Tile Track' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <td className={themeData.classes.tdColumn}>Thickness Finished Floor</td>
+                            <td className={themeData.classes.tdColumnCenter}>
+                              <div dangerouslySetInnerHTML={{ __html: thicknessFinishedFloor }} />
                             </td>
                           </tr>
                         )}

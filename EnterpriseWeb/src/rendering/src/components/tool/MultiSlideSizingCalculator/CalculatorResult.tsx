@@ -1,11 +1,12 @@
 import { useTheme } from 'lib/context/ThemeContext';
 import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
+import classNames from 'classnames';
 
 const CalculatorResult = (props: any) => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
 
   const {
-    formState,
+    formStates,
     configuration,
     roughOpeningWidth,
     roughOpeningHeightSubfloor,
@@ -43,8 +44,7 @@ const CalculatorResult = (props: any) => {
             <tbody>
               <tr className={themeData.classes.tableRow}>
                 <td className={themeData.classes.tdColumn}>
-                  Rough Opening{' '}
-                  <span className="hidden lg:block">(from top of finished floor)</span>
+                  Rough Opening <div>(from top of finished floor)</div>
                 </td>
                 <td className={themeData.classes.tdColumn}>
                   <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />
@@ -53,14 +53,11 @@ const CalculatorResult = (props: any) => {
                   <div dangerouslySetInnerHTML={{ __html: roughOpeningHeightSubfloor }} />
                 </td>
               </tr>
-              {formState?.sillOption === 'Tile Track' && (
+              {formStates?.sillOption === 'Tile Track' && (
                 <tr className={themeData.classes.tableRow}>
-                  <th className={themeData.classes.tdColumn}>
-                    Rough Opening{' '}
-                    <span className="hidden lg:block">
-                      (including recess in floor with flush sill application)
-                    </span>
-                  </th>
+                  <td className={themeData.classes.tdColumn}>
+                    Rough Opening <div>(including recess in floor with flush sill application)</div>
+                  </td>
                   <td className={themeData.classes.tdColumn}>
                     <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />
                   </td>
@@ -72,7 +69,7 @@ const CalculatorResult = (props: any) => {
               {configuration === 'pocketing' && (
                 <tr className={themeData.classes.tableRow}>
                   <td className={themeData.classes.tdColumn}>
-                    Rough Opening <span className="hidden lg:block">(not including pocket)</span>
+                    Rough Opening <div>(not including pocket)</div>
                   </td>
                   <td className={themeData.classes.tdColumn}>
                     <div dangerouslySetInnerHTML={{ __html: roughOpeningPocketWidth }} />
@@ -98,6 +95,7 @@ const CalculatorResult = (props: any) => {
                   <div dangerouslySetInnerHTML={{ __html: panelHeight }} />
                 </td>
               </tr>
+              <tr className={classNames(themeData.classes.tableRow, 'h-[55px]')}></tr>
               {configuration === 'pocketing' && (
                 <tr className={themeData.classes.tableRow}>
                   <td className={themeData.classes.tdColumn}>Pocket Width</td>
@@ -123,7 +121,7 @@ const CalculatorResult = (props: any) => {
                 </td>
                 <td className={themeData.classes.tdColumn}>{'-'}</td>
               </tr>
-              {formState?.sillOption !== 'Tile Track' && (
+              {formStates?.sillOption !== 'Tile Track' && (
                 <tr className={themeData.classes.tableRow}>
                   <td className={themeData.classes.tdColumn}>Sill Depth</td>
                   <td className={themeData.classes.tdColumn}>

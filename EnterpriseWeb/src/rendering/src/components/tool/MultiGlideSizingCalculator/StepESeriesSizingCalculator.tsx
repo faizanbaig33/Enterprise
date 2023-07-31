@@ -75,7 +75,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [msgWidth, setMsgWidth] = useState('');
   const [msgHeight, setMsgHeight] = useState('');
 
-  const [formState, setFormState] = useState({
+  const [formStates, setFormState] = useState({
     calculateUsing: 'rough_opening',
     width: '',
     widthInches: '0',
@@ -244,7 +244,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       sillOption: sillOptions,
       stackingDirection,
       thicknessFinishedFloor,
-    } = formState;
+    } = formStates;
     const { dimension: width }: any = widthStates;
     const { dimension: height }: any = heightStates;
 
@@ -1219,7 +1219,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     let msgHeight = '';
 
     if (e?.target?.name !== 'width' && e?.target?.name !== 'height') {
-      setFormState({ ...formState, [e.target.name]: e.target.value });
+      setFormState({ ...formStates, [e.target.name]: e.target.value });
     }
 
     const calculateUsing =
@@ -1950,7 +1950,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               )}
             </div>
           )}
-          {formState.sillOption === 'flush' && (
+          {formStates.sillOption === 'flush' && (
             <div className={themeData.classes.columnSpan1}>
               <label className={themeData.classes.labelClass} htmlFor="thicknessFinishedFloor">
                 Thickness Of Finished Floor (In Inches)*
@@ -2016,7 +2016,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <div className="text-body text-error">{errors.insectScreen.message}</div>
             )}
           </div>
-          {formState.insectScreen === 'retractable' && (
+          {formStates.insectScreen === 'retractable' && (
             <div className={themeData.classes.columnSpan1}>
               <label className={themeData.classes.labelClass} htmlFor="screenConfiguration">
                 Screen Configuration*
@@ -2169,7 +2169,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                             {OPTIONS.insectScreens[getValues('sillRamp')] || '-'}
                           </td>
                         </tr>
-                        {formState.insectScreen === 'retractable' && (
+                        {formStates.insectScreen === 'retractable' && (
                           <tr className={themeData.classes.tableRow}>
                             <td className={themeData.classes.tdColumn}>Screen Configuration</td>
                             <td className={themeData.classes.tdColumnCenter}>
@@ -2178,11 +2178,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                             </td>
                           </tr>
                         )}
-                        {formState.sillOption === 'flush' && (
+                        {formStates.sillOption === 'flush' && (
                           <tr className={themeData.classes.tableRow}>
                             <td className={themeData.classes.tdColumn}>Thickness Finished Floor</td>
                             <td className={themeData.classes.tdColumnCenter}>
-                              {formState.thicknessFinishedFloor || '-'}
+                              {formStates.thicknessFinishedFloor || '-'}
                             </td>
                           </tr>
                         )}
@@ -2194,7 +2194,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               <div className="hidden print:block">
                 <CalculatorResult
                   data={{
-                    formState,
+                    formStates,
                     configuration,
                     clearOpeningWidth,
                     clearOpeningHeight,
@@ -2222,7 +2222,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             <div className={themeData.classes.columnSpan1}>
               <CalculatorResult
                 data={{
-                  formState,
+                  formStates,
                   configuration,
                   clearOpeningWidth,
                   clearOpeningHeight,
