@@ -2,7 +2,7 @@
 import { useTheme } from 'lib/context/ThemeContext';
 
 import { useForm } from 'react-hook-form';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useMemo, useEffect } from 'react';
 import { FiArrowLeft } from 'react-icons/fi';
 import { IoMdDownload } from 'react-icons/io';
 import ReactToPrint from 'react-to-print';
@@ -49,8 +49,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   const isDesktop = screenType !== 'sm' ? true : false;
 
-  const panelStyle = formData?.selectedPanelStyle;
-  const configuration = formData?.selectedConfigurationOption;
+  const selectedPanelStyle = useMemo(() => formData?.selectedPanelStyle, [formData]);
+  const panelStyle = selectedPanelStyle?.name;
+  const selectedConfigurationOption = useMemo(
+    () => formData?.selectedConfigurationOption,
+    [formData]
+  );
+  const configuration = selectedConfigurationOption?.value;
 
   //Modal settings
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -116,6 +121,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [sillDepth, setSillDepth] = useState<string>('');
   const [unitHeight, setUnitHeight] = useState<string>('');
   const [unitWidth, setUnitWidth] = useState<string>('');
+  const [thicknessFinishedFloor, setThicknessFinishedFloor] = useState('');
 
   const [isShowResults, setIsShowResults] = useState<boolean>(false);
 
@@ -147,6 +153,16 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     },
   });
 
+  useEffect(() => {
+    if (errors.width && errors.width.type === 'required') {
+      setMsgWidth('This field is required');
+    }
+
+    if (errors.height && errors.height.type === 'required') {
+      setMsgHeight('This field is required');
+    }
+  }, [errors]);
+
   const clearCalculations = () => {
     setJambDepth('-');
     setPanelHeight('-');
@@ -165,14 +181,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const openModal = (index: number) => {
     setIsLightboxVisible(true);
     setCurrentImageIndex(index);
-  };
-
-  const printResults = () => {
-    const printContents = (document.getElementById('resultsOutput') as HTMLElement).innerHTML;
-    const originalContents = document.body.innerHTML;
-    document.body.innerHTML = printContents;
-    window.print();
-    document.body.innerHTML = originalContents;
   };
 
   const resetForm = () => {
@@ -205,6 +213,27 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     resetField('heightFraction');
     resetField('insectScreen');
     resetField('screenConfiguration');
+
+    setWidthStates({
+      feet: 0,
+      inches: 0,
+      fraction: 0,
+      msg: '',
+      dimension: 0,
+    });
+    setHeightStates({
+      feet: 0,
+      inches: 0,
+      fraction: 0,
+      msg: '',
+      dimension: 0,
+    });
+
+    setNumberPanelList([1, 2, 3, 4, 5, 6]);
+    setMsgWidth('');
+    setMsgHeight('');
+    props.onStepChange(0);
+
     setIsShowResults(false);
   };
 
@@ -267,13 +296,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     if (configuration === 'pocketing') {
       switch (calculateUsing) {
         case 'rough_opening':
-          roughOpeningWidth = parseFloat(width);
+          roughOpeningWidth = Number(width);
 
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
           if (sillOptions === 'flush') {
-            roughOpeningHeight = parseFloat(height) + 1.5 - parseFloat(thicknessFinishedFloor);
-            roughOpeningHeightRecess = parseFloat(roughOpeningHeight);
-            roughOpeningHeightSubfloor = parseFloat(height);
+            roughOpeningHeight = Number(height) + 1.5 - Number(thicknessFinishedFloor);
+            roughOpeningHeightRecess = Number(roughOpeningHeight);
+            roughOpeningHeightSubfloor = Number(height);
           } else {
             roughOpeningHeight = height;
             roughOpeningHeightRecess = 'N/A';
@@ -281,10 +310,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           }
 
           roughOpeningPocketWidth = pocketing_calculateRoughOpeningPocketWidthFromRoughOpeningWidth(
-            parseFloat(roughOpeningWidth),
+            Number(roughOpeningWidth),
             stackingDirection,
-            parseInt(numberPanels),
-            parseFloat(panelOverlap)
+            Number(numberPanels),
+            Number(panelOverlap)
           );
 
           unitWidth = calculateUnitWidthFromRoughOpeningWidth(roughOpeningWidth);
@@ -294,46 +323,55 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             roughOpeningPocketWidth,
             configuration,
             stackingDirection,
-            parseInt(numberPanels),
+            Number(numberPanels),
             panelOverlap,
             panelStyle
           );
-          clearOpeningHeight = calculateClearOpeningHeightFromUnitHeight(unitHeight, sillOptions);
+          clearOpeningHeight = calculateClearOpeningHeightFromUnitHeight(
+            Number(unitHeight),
+            sillOptions
+          );
 
           break;
         case 'rough_opening_pocket':
-          roughOpeningPocketWidth = parseFloat(width);
+          roughOpeningPocketWidth = Number(width);
 
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
           if (sillOptions === 'flush') {
-            roughOpeningHeight = parseFloat(height) + 1.5 - parseFloat(thicknessFinishedFloor);
+            roughOpeningHeight = Number(height) + 1.5 - Number(thicknessFinishedFloor);
             roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = parseFloat(height);
+            roughOpeningHeightSubfloor = Number(height);
           } else {
-            roughOpeningHeight = parseFloat(height);
+            roughOpeningHeight = Number(height);
             roughOpeningHeightRecess = 'N/A';
-            roughOpeningHeightSubfloor = parseFloat(height);
+            roughOpeningHeightSubfloor = Number(height);
           }
 
           roughOpeningWidth = pocketing_calculateRoughOpeningWidthFromRoughOpeningPocketWidth(
             roughOpeningPocketWidth,
             stackingDirection,
-            numberPanels,
+            Number(numberPanels),
             panelOverlap
           );
 
-          unitWidth = calculateUnitWidthFromRoughOpeningWidth(roughOpeningWidth);
-          unitHeight = calculateUnitHeightFromRoughOpeningHeight(roughOpeningHeight, sillOptions);
+          unitWidth = calculateUnitWidthFromRoughOpeningWidth(Number(roughOpeningWidth));
+          unitHeight = calculateUnitHeightFromRoughOpeningHeight(
+            Number(roughOpeningHeight),
+            sillOptions
+          );
 
           clearOpeningWidth = calculateClearOpeningWidthFromInputWidth(
             roughOpeningPocketWidth,
             configuration,
             stackingDirection,
-            numberPanels,
+            Number(numberPanels),
             panelOverlap,
             panelStyle
           );
-          clearOpeningHeight = calculateClearOpeningHeightFromUnitHeight(unitHeight, sillOptions);
+          clearOpeningHeight = calculateClearOpeningHeightFromUnitHeight(
+            Number(unitHeight),
+            sillOptions
+          );
 
           break;
         case 'clear_opening':
@@ -361,11 +399,12 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
           // Rough Opening Height
           if (sillOptions === 'flush') {
-            roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = roughOpeningHeight - 1.5 + thicknessFinishedFloor;
+            roughOpeningHeightRecess = Number(roughOpeningHeight);
+            roughOpeningHeightSubfloor =
+              Number(roughOpeningHeight) - 1.5 + Number(thicknessFinishedFloor);
           } else {
             roughOpeningHeightRecess = 'N/A';
-            roughOpeningHeightSubfloor = roughOpeningHeight;
+            roughOpeningHeightSubfloor = Number(roughOpeningHeight);
           }
 
           break;
@@ -379,7 +418,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           // Rough Opening Height
           if (sillOptions === 'flush') {
             roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = roughOpeningHeight - 1.5 + thicknessFinishedFloor;
+            roughOpeningHeightSubfloor =
+              Number(roughOpeningHeight) - 1.5 + Number(thicknessFinishedFloor);
           } else {
             roughOpeningHeightRecess = 'N/A';
             roughOpeningHeightSubfloor = roughOpeningHeight;
@@ -388,7 +428,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           roughOpeningPocketWidth = pocketing_calculateRoughOpeningPocketWidthFromRoughOpeningWidth(
             roughOpeningWidth,
             stackingDirection,
-            numberPanels,
+            Number(numberPanels),
             panelOverlap
           );
 
@@ -396,11 +436,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             roughOpeningPocketWidth,
             configuration,
             stackingDirection,
-            numberPanels,
+            Number(numberPanels),
             panelOverlap,
             panelStyle
           );
-          clearOpeningHeight = calculateClearOpeningHeightFromUnitHeight(unitHeight, sillOptions);
+          clearOpeningHeight = calculateClearOpeningHeightFromUnitHeight(
+            Number(unitHeight),
+            sillOptions
+          );
 
           break;
       }
@@ -410,17 +453,17 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
       switch (calculateUsing) {
         case 'rough_opening':
-          roughOpeningWidth = parseFloat(width);
+          roughOpeningWidth = Number(width);
 
           // Rough Opening Height input is from top of subfloor, so calculate real rough opening height and rough opening including recess
           if (sillOptions === 'flush') {
-            roughOpeningHeight = parseFloat(height) + 1.5 - parseFloat(thicknessFinishedFloor);
+            roughOpeningHeight = Number(height) + 1.5 - Number(thicknessFinishedFloor);
             roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = parseFloat(height);
+            roughOpeningHeightSubfloor = Number(height);
           } else {
-            roughOpeningHeight = parseFloat(height);
+            roughOpeningHeight = Number(height);
             roughOpeningHeightRecess = 'N/A';
-            roughOpeningHeightSubfloor = parseFloat(height);
+            roughOpeningHeightSubfloor = Number(height);
           }
 
           unitWidth = calculateUnitWidthFromRoughOpeningWidth(roughOpeningWidth);
@@ -430,11 +473,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             unitWidth,
             configuration,
             stackingDirection,
-            numberPanels,
+            Number(numberPanels),
             panelOverlap,
             panelStyle
           );
-          clearOpeningHeight = calculateClearOpeningHeightFromUnitHeight(unitHeight, sillOptions);
+          clearOpeningHeight = calculateClearOpeningHeightFromUnitHeight(
+            Number(unitHeight),
+            sillOptions
+          );
 
           break;
         case 'clear_opening':
@@ -445,11 +491,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             clearOpeningWidth,
             configuration,
             stackingDirection,
-            numberPanels,
+            Number(numberPanels),
             panelOverlap,
             panelStyle
           );
-          unitHeight = calculateUnitHeightFromClearOpeningHeight(clearOpeningHeight, sillOptions);
+          unitHeight = calculateUnitHeightFromClearOpeningHeight(
+            Number(clearOpeningHeight),
+            sillOptions
+          );
 
           roughOpeningWidth = calculateRoughOpeningWidthFromUnitWidth(unitWidth);
           roughOpeningHeight = calculateRoughOpeningHeightFromUnitHeight(unitHeight, sillOptions);
@@ -457,7 +506,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           // Rough Opening Height
           if (sillOptions === 'flush') {
             roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = roughOpeningHeight - 1.5 + thicknessFinishedFloor;
+            roughOpeningHeightSubfloor =
+              Number(roughOpeningHeight) - 1.5 + Number(thicknessFinishedFloor);
           } else {
             roughOpeningHeightRecess = 'N/A';
             roughOpeningHeightSubfloor = roughOpeningHeight;
@@ -474,7 +524,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           // Rough Opening Height
           if (sillOptions === 'flush') {
             roughOpeningHeightRecess = roughOpeningHeight;
-            roughOpeningHeightSubfloor = roughOpeningHeight - 1.5 + thicknessFinishedFloor;
+            roughOpeningHeightSubfloor =
+              Number(roughOpeningHeight) - 1.5 + Number(thicknessFinishedFloor);
           } else {
             roughOpeningHeightRecess = 'N/A';
             roughOpeningHeightSubfloor = roughOpeningHeight;
@@ -518,10 +569,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     sillOptions: string
   ) => {
     if (sillOptions === 'flush') {
-      return roughOpeningHeight - 0.75;
+      return Number(roughOpeningHeight) - 0.75;
     } else {
       // onfloor_drainage
-      return roughOpeningHeight - 0.5;
+      return Number(roughOpeningHeight) - 0.5;
     }
   };
 
@@ -533,10 +584,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   // Unit Height => Rough Opening Height
   const calculateRoughOpeningHeightFromUnitHeight = (unitHeight: number, sillOptions: string) => {
     if (sillOptions === 'flush') {
-      return unitHeight + 0.75;
+      return Number(unitHeight) + 0.75;
     } else {
       // onfloor_drainage
-      return unitHeight + 0.5;
+      return Number(unitHeight) + 0.5;
     }
   };
 
@@ -904,7 +955,15 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   };
 
   const onSubmit = (data: CalcForm) => {
-    if (msgWidth !== '' || msgHeight !== '') {
+    if (widthStates.feet === 0) {
+      setMsgWidth('This field is requied');
+    }
+
+    if (heightStates.feet === 0) {
+      setMsgHeight('This field is requied');
+    }
+
+    if (msgWidth !== '' || msgHeight !== '' || widthStates.feet === 0 || heightStates.feet === 0) {
       setIsShowResults(false);
       return;
     }
@@ -916,115 +975,103 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     // const width = widthStates.dimension;
     // const height = heightStates.dimension;
     const insectScreens = jsonObj.insectScreen;
-    const numberPanels = parseInt(jsonObj.panelNumber);
-    // const panelStackingLocation = jsonObj.panelStackingLocation;
-    // const screenConfiguration = jsonObj.screenConfiguration;
+    const numberPanels = Number(jsonObj.panelNumber);
     const sillOptions = jsonObj.sillOption;
     const sillRamps = jsonObj.sillRamp;
     const stackingDirection = jsonObj.stackingDirection;
-    // const thicknessFinishedFloor =
-    //   parseFloat(jsonObj.thicknessFinishedFloorInches) +
-    //   parseFloat(jsonObj.thicknessFinishedFloorFraction);
+    const thicknessFinishedFloor_temp =
+      parseFloat(jsonObj.thicknessFinishedFloorInches) +
+      parseFloat(jsonObj.thicknessFinishedFloorFraction);
 
     // AWDataLayer.raiseModuleEvent('multiglide-sizing-calculator-module', 'calculate');
 
-    // let clearOpeningWidth: any;
-    // let clearOpeningHeight: any;
-    let jambDepth: any = 0;
-    let panelHeight: any;
-    let panelWidth: any;
-    let pocketDepth;
-    let pocketWidth: any;
-    // let roughOpeningHeight: any;
-    // let roughOpeningHeightSubfloor: any;
-    // let roughOpeningHeightRecess: any;
-    let roughPocketWidth: any;
-    // let roughOpeningPocketWidth: any;
-    // let roughOpeningWidth: any;
-    let screenRoughOpeningWidth: any;
-    let screenRoughOpeningHeight: any;
-    // let screenUnitSizeWidth: any;
-    let screenUnitSizeHeight: any;
-    let sillDepth: any;
-    // let unitWidth: any;
-    // let unitHeight: any;
+    let jambDepth_temp: any = 0;
+    let panelHeight_temp: any;
+    let panelWidth_temp: any;
+    let pocketDepth_temp;
+    let pocketWidth_temp: any;
+    let roughPocketWidth_temp: any;
+    let screenRoughOpeningWidth_temp: any;
+    let screenRoughOpeningHeight_temp: any;
+    let screenUnitSizeHeight_temp: any;
+    let sillDepth_temp: any;
 
     // Panel Overlap
     const panelOverlap = calculatePanelOverlap(panelStyle);
 
     const unitDimensions = calculateUnitDimensions();
 
-    const unitWidth = unitDimensions.unitWidth;
-    const unitHeight = unitDimensions.unitHeight;
-    const roughOpeningWidth = unitDimensions.roughOpeningWidth;
-    const roughOpeningHeight = unitDimensions.roughOpeningHeight;
-    const roughOpeningHeightRecess = unitDimensions.roughOpeningHeightRecess;
-    const roughOpeningHeightSubfloor = unitDimensions.roughOpeningHeightSubfloor;
-    const roughOpeningPocketWidth = unitDimensions.roughOpeningPocketWidth;
-    const clearOpeningWidth = unitDimensions.clearOpeningWidth;
-    const clearOpeningHeight: any = unitDimensions.clearOpeningHeight;
+    const unitWidth_temp = unitDimensions.unitWidth;
+    const unitHeight_temp = unitDimensions.unitHeight;
+    const roughOpeningWidth_temp = unitDimensions.roughOpeningWidth;
+    // const roughOpeningHeight = unitDimensions.roughOpeningHeight;
+    const roughOpeningHeightRecess_temp = unitDimensions.roughOpeningHeightRecess;
+    const roughOpeningHeightSubfloor_temp = unitDimensions.roughOpeningHeightSubfloor;
+    const roughOpeningPocketWidth_temp = unitDimensions.roughOpeningPocketWidth;
+    const clearOpeningWidth_temp = unitDimensions.clearOpeningWidth;
+    const clearOpeningHeight_temp: any = unitDimensions.clearOpeningHeight;
 
     // Calculate Jamb Depth
     if (stackingDirection === 'one_direction') {
       if (insectScreens === 'none') {
-        jambDepth = numberPanels * 2.5 + 0.389;
+        jambDepth_temp = numberPanels * 2.5 + 0.389;
       } else if (insectScreens === 'single') {
-        jambDepth = (numberPanels + 1) * 2.5 + 0.389;
+        jambDepth_temp = (numberPanels + 1) * 2.5 + 0.389;
       } else if (insectScreens === 'multi') {
         if (configuration === 'pocketing') {
-          jambDepth = numberPanels * 2 * 2.5 + 0.389;
+          jambDepth_temp = numberPanels * 2 * 2.5 + 0.389;
         } else {
-          jambDepth = (numberPanels * 2 - 1) * 2.5 + 0.389;
+          jambDepth_temp = (numberPanels * 2 - 1) * 2.5 + 0.389;
         }
       } else if (insectScreens === 'retractable') {
-        jambDepth = numberPanels * 2.5 + 0.389 + 3.5;
+        jambDepth_temp = numberPanels * 2.5 + 0.389 + 3.5;
       }
     } else {
       // two_direction
       if (insectScreens === 'none') {
-        jambDepth = (numberPanels / 2) * 2.5 + 0.389;
+        jambDepth_temp = (numberPanels / 2) * 2.5 + 0.389;
       } else if (insectScreens === 'single') {
         if (configuration === 'pocketing') {
-          jambDepth = (numberPanels / 2 + 1) * 2.5 + 0.389;
+          jambDepth_temp = (numberPanels / 2 + 1) * 2.5 + 0.389;
         } else {
-          jambDepth = '-'; // No calulation provided
+          jambDepth_temp = '-'; // No calulation provided
         }
       } else if (insectScreens === 'multi') {
         if (configuration === 'pocketing') {
-          jambDepth = numberPanels * 2.5 + 0.389;
+          jambDepth_temp = numberPanels * 2.5 + 0.389;
         } else {
-          jambDepth = (numberPanels - 1) * 2.5 + 0.389;
+          jambDepth_temp = (numberPanels - 1) * 2.5 + 0.389;
         }
       } else if (insectScreens === 'retractable') {
-        jambDepth = (numberPanels / 2) * 2.5 + 0.389 + 3.5;
+        jambDepth_temp = (numberPanels / 2) * 2.5 + 0.389 + 3.5;
       }
     }
 
     // Calculate Sill Depth
     if (sillOptions === 'flush') {
-      sillDepth = 'N/A';
+      sillDepth_temp = 'N/A';
     } else {
       //onfloor_drainage
       switch (sillRamps) {
         case 'none':
-          sillDepth = jambDepth + 0.75;
+          sillDepth_temp = jambDepth_temp + 0.75;
           break;
         case 'interior':
-          sillDepth = jambDepth + 1.4;
+          sillDepth_temp = jambDepth_temp + 1.4;
           break;
         case 'exterior':
-          sillDepth = jambDepth + 2.053;
+          sillDepth_temp = jambDepth_temp + 2.053;
           break;
         case 'both':
-          sillDepth = jambDepth + 3.453;
+          sillDepth_temp = jambDepth_temp + 3.453;
           break;
       }
     }
 
     // Panel Dimensions
     if (configuration === 'pocketing') {
-      panelWidth = calculatePanelWidth(
-        parseFloat(roughOpeningPocketWidth),
+      panelWidth_temp = calculatePanelWidth(
+        parseFloat(roughOpeningPocketWidth_temp),
         configuration,
         stackingDirection,
         numberPanels,
@@ -1032,8 +1079,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       );
     } else {
       // Stacking
-      panelWidth = calculatePanelWidth(
-        parseFloat(unitWidth),
+      panelWidth_temp = calculatePanelWidth(
+        parseFloat(unitWidth_temp),
         configuration,
         stackingDirection,
         numberPanels,
@@ -1041,25 +1088,25 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       );
     }
     if (sillOptions === 'flush') {
-      panelHeight = AWNumberUtil.truncate(parseFloat(unitHeight) - 3.644, 3);
+      panelHeight_temp = AWNumberUtil.truncate(parseFloat(unitHeight_temp) - 3.644, 3);
     } else {
       // onfloor_drainage
-      panelHeight = AWNumberUtil.truncate(parseFloat(unitHeight) - 3.144, 3);
+      panelHeight_temp = AWNumberUtil.truncate(parseFloat(unitHeight_temp) - 3.144, 3);
     }
 
     // Rough Pocket Width
     if (configuration === 'pocketing') {
-      roughPocketWidth = panelWidth + 4.125;
+      roughPocketWidth_temp = Number(panelWidth_temp) + 4.125;
     } else {
       // Stacking
-      roughPocketWidth = 'N/A';
+      roughPocketWidth_temp = 'N/A';
     }
 
     // Pocket Width
     if (configuration === 'pocketing') {
-      pocketWidth = panelWidth + 5.5;
+      pocketWidth_temp = Number(panelWidth_temp) + 5.5;
     } else {
-      pocketWidth = 'N/A';
+      pocketWidth_temp = 'N/A';
     }
 
     // Pocket Depth
@@ -1067,95 +1114,96 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       if (stackingDirection === 'one_direction') {
         if (insectScreens === 'none') {
           if (numberPanels === 1) {
-            pocketDepth = (numberPanels + 1) * 2.5 + 1.938;
+            pocketDepth_temp = (numberPanels + 1) * 2.5 + 1.938;
           } else {
             // numberPanels > 1
-            pocketDepth = numberPanels * 2.5 + 1.938;
+            pocketDepth_temp = numberPanels * 2.5 + 1.938;
           }
         } else if (insectScreens === 'single') {
-          pocketDepth = (numberPanels + 1) * 2.5 + 1.938;
+          pocketDepth_temp = (numberPanels + 1) * 2.5 + 1.938;
         } else if (insectScreens === 'multi') {
-          pocketDepth = numberPanels * 2 * 2.5 + 1.938;
+          pocketDepth_temp = numberPanels * 2 * 2.5 + 1.938;
         }
       } else {
         // two_direction
         if (insectScreens === 'none') {
           if (numberPanels === 2) {
-            pocketDepth = numberPanels * 2.5 + 1.938;
+            pocketDepth_temp = numberPanels * 2.5 + 1.938;
           } else {
             // numberPanels > 2
-            pocketDepth = (numberPanels / 2) * 2.5 + 1.938;
+            pocketDepth_temp = (numberPanels / 2) * 2.5 + 1.938;
           }
         } else if (insectScreens === 'single') {
-          pocketDepth = (numberPanels / 2 + 1) * 2.5 + 1.938;
+          pocketDepth_temp = (numberPanels / 2 + 1) * 2.5 + 1.938;
         } else if (insectScreens === 'multi') {
-          pocketDepth = numberPanels * 2.5 + 1.938;
+          pocketDepth_temp = numberPanels * 2.5 + 1.938;
         }
       }
     } else {
       // stacking
-      pocketDepth = 'N/A';
+      pocketDepth_temp = 'N/A';
     }
 
     // Screen Unit Width
-    const screenUnitSizeWidth = calculateInsectScreenWidth(
+    const screenUnitSizeWidth_temp = calculateInsectScreenWidth(
       configuration,
       stackingDirection,
-      parseFloat(unitWidth),
-      parseFloat(roughOpeningPocketWidth)
+      parseFloat(unitWidth_temp),
+      parseFloat(roughOpeningPocketWidth_temp)
     );
 
     // Screen Unit Height
     if (insectScreens === 'retractable') {
       if (sillOptions === 'onfloor_drainage_raised_threshold') {
-        screenUnitSizeHeight = unitHeight + 0.81;
+        screenUnitSizeHeight_temp = Number(unitHeight_temp) + 0.81;
       } else if (sillOptions === 'onfloor_drainage') {
         if (sillRamps === 'interior' || sillRamps === 'both') {
-          screenUnitSizeHeight = unitHeight + 0.81;
+          screenUnitSizeHeight_temp = Number(unitHeight_temp) + 0.81;
         } else if (sillRamps === 'none' || sillRamps === 'exterior') {
-          screenUnitSizeHeight = unitHeight + 0.81 + 0.973;
+          screenUnitSizeHeight_temp = Number(unitHeight_temp) + 0.81 + 0.973;
         }
       } else {
         // Flush
         if (sillRamps === 'none') {
-          screenUnitSizeHeight = unitHeight + 0.81 + 0.473;
+          screenUnitSizeHeight_temp = unitHeight_temp + 0.81 + 0.473;
         }
       }
     }
 
     // Screen Rough Opening Width
     if (insectScreens === 'retractable') {
-      screenRoughOpeningWidth = screenUnitSizeWidth + 0.5 + 0.5;
+      screenRoughOpeningWidth_temp = screenUnitSizeWidth_temp + 0.5 + 0.5;
     }
 
     // Screen Rough Opening Height
     if (insectScreens === 'retractable') {
-      screenRoughOpeningHeight = screenUnitSizeHeight + 0.5;
+      screenRoughOpeningHeight_temp = screenUnitSizeHeight_temp + 0.5;
     }
 
     // Results
-    setClearOpeningHeight(formatNumber(clearOpeningHeight));
-    setClearOpeningWidth(formatNumber(clearOpeningWidth));
-    setJambDepth(formatNumber(jambDepth));
-    setPanelHeight(formatNumber(panelHeight));
-    setPanelWidth(formatNumber(panelWidth));
-    setPocketDepth(formatNumber(pocketDepth));
-    setPocketWidth(formatNumber(pocketWidth));
-    setRoughOpeningHeightSubfloor(formatNumber(roughOpeningHeightSubfloor));
-    setRoughOpeningHeightRecess(formatNumber(roughOpeningHeightRecess));
-    setRoughPocketWidth(formatNumber(roughPocketWidth));
-    setRoughOpeningPocketWidth(formatNumber(roughOpeningPocketWidth));
-    setRoughOpeningWidth(formatNumber(roughOpeningWidth));
+    setClearOpeningHeight(formatNumber(clearOpeningHeight_temp));
+    setClearOpeningWidth(formatNumber(clearOpeningWidth_temp));
+    setJambDepth(formatNumber(jambDepth_temp));
+    setPanelHeight(formatNumber(panelHeight_temp));
+    setPanelWidth(formatNumber(panelWidth_temp));
+    setPocketDepth(formatNumber(pocketDepth_temp));
+    setPocketWidth(formatNumber(pocketWidth_temp));
+    setRoughOpeningHeightSubfloor(formatNumber(roughOpeningHeightSubfloor_temp));
+    setRoughOpeningHeightRecess(formatNumber(roughOpeningHeightRecess_temp));
+    setRoughPocketWidth(formatNumber(roughPocketWidth_temp));
+    setRoughOpeningPocketWidth(formatNumber(roughOpeningPocketWidth_temp));
+    setRoughOpeningWidth(formatNumber(roughOpeningWidth_temp));
 
-    setScreenRoughOpeningWidth(formatNumber(screenRoughOpeningWidth));
-    setScreenRoughOpeningHeight(formatNumber(screenRoughOpeningHeight));
+    setScreenRoughOpeningWidth(formatNumber(screenRoughOpeningWidth_temp));
+    setScreenRoughOpeningHeight(formatNumber(screenRoughOpeningHeight_temp));
 
-    setScreenUnitSizeWidth(formatNumber(screenUnitSizeWidth));
-    setScreenUnitSizeHeight(formatNumber(screenUnitSizeHeight));
+    setScreenUnitSizeWidth(formatNumber(screenUnitSizeWidth_temp));
+    setScreenUnitSizeHeight(formatNumber(screenUnitSizeHeight_temp));
 
-    setSillDepth(formatNumber(sillDepth));
-    setUnitHeight(formatNumber(unitHeight));
-    setUnitWidth(formatNumber(unitWidth));
+    setSillDepth(formatNumber(sillDepth_temp));
+    setUnitHeight(formatNumber(unitHeight_temp));
+    setUnitWidth(formatNumber(unitWidth_temp));
+    setThicknessFinishedFloor(formatNumber(thicknessFinishedFloor_temp));
 
     setIsShowResults(true);
 
@@ -1497,19 +1545,22 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       }
     }
 
-    // Convert to an object so we can populate the dropdown
-    const numberPanelOptions = numberPanelRows.reduce(function (result, element) {
+    // Convert to an array so we can populate the dropdown
+    const numberPanelOptions = numberPanelRows.map((row: any) => {
       if (
-        element.stackingDirection === stackingDirection &&
-        element.configuration === configuration &&
-        element.panelStyle === panelStyle
+        row.stackingDirection === stackingDirection &&
+        row.configuration === configuration &&
+        row.panelStyle === panelStyle
       ) {
-        result[element.numberOfPanels] = element.numberOfPanels;
+        return row.numberOfPanels;
       }
-      return result;
-    }, {});
+    });
 
-    // setNumberPanelList(numberPanelOptions);
+    setNumberPanelList(numberPanelOptions);
+    setFormState({
+      ...formStates,
+      panelNumber: numberPanelOptions[0],
+    });
   };
 
   const minMaxes = MIN_MAX_WIDTHS.map((o: any) => {
@@ -1747,7 +1798,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             </div>
             {msgWidth && <div className="text-body text-error">{msgWidth}</div>}
             <label className={themeData.classes.labelClass} htmlFor="width">
-              <span className={themeData.classes.helpText}>For help, refer to our</span>
               <button
                 className={themeData.classes.modalLinkButton}
                 type="button"
@@ -2124,7 +2174,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Configuration</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {formData?.selectedConfigurationOption || '-'}
+                            {selectedConfigurationOption?.title || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
@@ -2136,13 +2186,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Panel Style</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {OPTIONS.panelStyles[formData?.selectedPanelStyle] || '-'}
+                            {selectedPanelStyle?.text || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Panel Stacking Location</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {getValues('panelStackingLocation' || '-')}
+                            {OPTIONS.panelStackingLocation[getValues('panelStackingLocation')] ||
+                              '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
@@ -2166,7 +2217,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}>Insect Screens</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {OPTIONS.insectScreens[getValues('sillRamp')] || '-'}
+                            {OPTIONS.insectScreens[getValues('insectScreen')] || '-'}
                           </td>
                         </tr>
                         {formStates.insectScreen === 'retractable' && (
@@ -2182,7 +2233,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                           <tr className={themeData.classes.tableRow}>
                             <td className={themeData.classes.tdColumn}>Thickness Finished Floor</td>
                             <td className={themeData.classes.tdColumnCenter}>
-                              {formStates.thicknessFinishedFloor || '-'}
+                              <div dangerouslySetInnerHTML={{ __html: thicknessFinishedFloor }} />
                             </td>
                           </tr>
                         )}

@@ -1,11 +1,12 @@
 import { useTheme } from 'lib/context/ThemeContext';
 import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
+import classNames from 'classnames';
 
 const CalculatorResult = (props: any): JSX.Element => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
 
   const {
-    formState,
+    formStates,
     configuration,
     clearOpeningWidth,
     clearOpeningHeight,
@@ -59,8 +60,7 @@ const CalculatorResult = (props: any): JSX.Element => {
               </tr>
               <tr className={themeData.classes.tableRow}>
                 <td className={themeData.classes.tdColumn}>
-                  Rough Opening{' '}
-                  <span className="hidden lg:block">(from top of finished floor)</span>
+                  Rough Opening <div>(from top of finished floor)</div>
                 </td>
                 <td className={themeData.classes.tdColumn}>
                   <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />
@@ -69,13 +69,10 @@ const CalculatorResult = (props: any): JSX.Element => {
                   <div dangerouslySetInnerHTML={{ __html: roughOpeningHeightSubfloor }} />
                 </td>
               </tr>
-              {formState.sillOption === 'flush' && (
+              {formStates?.sillOption === 'flush' && (
                 <tr className={themeData.classes.tableRow}>
                   <th className={themeData.classes.tdColumn}>
-                    Rough Opening{' '}
-                    <span className="hidden lg:block">
-                      (including recess in floor with flush sill application)
-                    </span>
+                    Rough Opening <div>(including recess in floor with flush sill application)</div>
                   </th>
                   <td className={themeData.classes.tdColumn}>
                     <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />
@@ -88,7 +85,7 @@ const CalculatorResult = (props: any): JSX.Element => {
               {configuration === 'pocketing' && (
                 <tr className={themeData.classes.tableRow}>
                   <td className={themeData.classes.tdColumn}>
-                    Rough Opening (not including pocket)
+                    Rough Opening <div>(not including pocket)</div>
                   </td>
                   <td className={themeData.classes.tdColumn}>
                     <div dangerouslySetInnerHTML={{ __html: roughOpeningPocketWidth }} />
@@ -114,11 +111,7 @@ const CalculatorResult = (props: any): JSX.Element => {
                   <div dangerouslySetInnerHTML={{ __html: panelHeight }} />
                 </td>
               </tr>
-              <tr className={themeData.classes.tableRow}>
-                <td className={themeData.classes.tdColumn}></td>
-                <td className={themeData.classes.tdColumn}></td>
-                <td className={themeData.classes.tdColumn}></td>
-              </tr>
+              <tr className={classNames(themeData.classes.tableRow, 'h-[55px]')}></tr>
               {configuration === 'pocketing' && (
                 <tr className={themeData.classes.tableRow}>
                   <td className={themeData.classes.tdColumn}>Rough Pocket Width</td>
@@ -153,7 +146,8 @@ const CalculatorResult = (props: any): JSX.Element => {
                 </td>
                 <td className={themeData.classes.tdColumn}>{'-'}</td>
               </tr>
-              {formState.sillOption !== 'flush' && (
+              {(formStates?.sillOption === 'onfloor_drainage' ||
+                formStates?.sillOption === 'onfloor_drainage_raised_threshold') && (
                 <tr className={themeData.classes.tableRow}>
                   <td className={themeData.classes.tdColumn}>Sill Depth</td>
                   <td className={themeData.classes.tdColumn}>
@@ -162,7 +156,7 @@ const CalculatorResult = (props: any): JSX.Element => {
                   <td className={themeData.classes.tdColumn}>{'-'}</td>
                 </tr>
               )}
-              {formState.insectScreen === 'retractable' && (
+              {formStates?.insectScreen === 'retractable' && (
                 <>
                   <tr className={themeData.classes.tableRow}>
                     <td className={themeData.classes.tdColumn}>Screen Rough Opening</td>

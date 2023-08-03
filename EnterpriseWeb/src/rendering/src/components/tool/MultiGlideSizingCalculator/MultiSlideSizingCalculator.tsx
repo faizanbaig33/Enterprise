@@ -1,7 +1,5 @@
-// import { Stepper, Step } from 'react-form-stepper';
-// import StepWizard from 'react-step-wizard';
 import { useState, useRef } from 'react';
-import { FiCheck, FiMail } from 'react-icons/fi';
+import { FiMail } from 'react-icons/fi';
 import Slider from 'react-slick';
 
 // Global
@@ -137,6 +135,7 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
               formData={formData}
               activeStep={activeStep}
               fields={props.fields}
+              onStepChange={handleStepChange}
               previousStep={() => handleStepChange(activeStep - 1)}
               completeCallback={handleComplete}
             />
