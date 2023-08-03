@@ -1117,10 +1117,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   const onDimensionFieldChange = (e: any, type: any) => {
     if (type === 'width') {
+      setMsgWidth('');
       const feet = e.target.name === 'width' ? e.target.value : getValues('width').trim();
       const inches = e.target.name === 'widthInches' ? e.target.value : getValues('widthInches');
       const fraction =
         e.target.name === 'widthFraction' ? e.target.value : getValues('widthFraction');
+
+      if (!feet) setMsgWidth('This field is required');
 
       if (parseFloat(feet) > 0 || parseFloat(inches) !== 0 || parseFloat(fraction) !== 0) {
         const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
@@ -1139,10 +1142,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         updateForm(e, states);
       }
     } else if (type === 'height') {
+      setMsgHeight('');
       const feet = e.target.name === 'height' ? e.target.value : getValues('height').trim();
       const inches = e.target.name === 'heightInches' ? e.target.value : getValues('heightInches');
       const fraction =
         e.target.name === 'heightFraction' ? e.target.value : getValues('heightFraction');
+
+      if (!feet) setMsgHeight('This field is required');
 
       if (parseFloat(feet) || inches !== '0' || fraction !== '0') {
         const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
@@ -1165,8 +1171,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   const updateForm = (e?: any, dimensionStates?: any) => {
     setIsShowResults(false);
-    setMsgWidth('');
-    setMsgHeight('');
 
     let msgWidthTemp = '';
     let msgHeightTemp = '';
@@ -1258,7 +1262,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         msgHeightTemp = 'Please enter a value less than or equal to ' + maxFormattedHeight + '.';
       }
     } else {
-      msgHeightTemp = '';
+      msgHeightTemp = 'This field is required';
     }
 
     // Update the validator message on the page
