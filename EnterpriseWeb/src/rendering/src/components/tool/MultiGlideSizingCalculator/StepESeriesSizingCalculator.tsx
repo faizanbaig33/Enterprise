@@ -217,6 +217,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     resetField('heightFraction');
     resetField('insectScreen');
     resetField('screenConfiguration');
+    resetField('thicknessFinishedFloorFraction');
+    resetField('thicknessFinishedFloorFraction');
 
     setWidthStates({
       feet: 0,
@@ -230,6 +232,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       inches: 0,
       fraction: 0,
       msg: '',
+      dimension: 0,
+    });
+    setThicknessFinishedFloorStates({
+      inches: 0,
+      fraction: 0,
       dimension: 0,
     });
 
@@ -1706,7 +1713,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 <>
                   <option value="rough_opening">Rough Opening</option>
                   <option value="clear_opening">Clear Opening</option>
-                  <option value="Unit Dimensions">Unit Dimensions</option>
+                  <option value="unit_dimensions">Unit Dimensions</option>
                 </>
               )}
               {configuration === 'pocketing' && (
@@ -1714,7 +1721,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   <option value="rough_opening">Rough Opening</option>
                   <option value="rough_opening_pocket">Rough Opening Without Pocket</option>
                   <option value="clear_opening">Clear Opening</option>
-                  <option value="Unit Dimensions">unit_dimensions</option>
+                  <option value="unit_dimensions">Unit Dimensions</option>
                 </>
               )}
             </select>

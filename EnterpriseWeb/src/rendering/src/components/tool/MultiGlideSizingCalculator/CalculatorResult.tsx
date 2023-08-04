@@ -71,9 +71,9 @@ const CalculatorResult = (props: any): JSX.Element => {
               </tr>
               {formStates?.sillOption === 'flush' && (
                 <tr className={themeData.classes.tableRow}>
-                  <th className={themeData.classes.tdColumn}>
+                  <td className={themeData.classes.tdColumn}>
                     Rough Opening <div>(including recess in floor with flush sill application)</div>
-                  </th>
+                  </td>
                   <td className={themeData.classes.tdColumn}>
                     <div dangerouslySetInnerHTML={{ __html: roughOpeningWidth }} />
                   </td>
