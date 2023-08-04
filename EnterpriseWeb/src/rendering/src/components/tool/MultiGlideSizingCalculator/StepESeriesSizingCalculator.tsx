@@ -1290,7 +1290,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       }
     }
   };
-  console.log(formStates);
 
   const updateForm = (e?: any, dimensionStates?: any) => {
     setIsShowResults(false);
@@ -1558,20 +1557,24 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       }
     }
 
-    // Convert to an array so we can populate the dropdown
-    let numberPanelOptions = numberPanelRows.map((row: any) => {
-      if (
-        row.stackingDirection === stackingDirection &&
-        row.configuration === configuration &&
-        row.panelStyle === panelStyle
-      ) {
-        return row.numberOfPanels;
+    if (e?.target?.name !== 'panelNumber') {
+      // Convert to an array so we can populate the dropdown
+      let numberPanelOptions = numberPanelRows.map((row: any) => {
+        if (
+          row.stackingDirection === stackingDirection &&
+          row.configuration === configuration &&
+          row.panelStyle === panelStyle
+        ) {
+          return row.numberOfPanels;
+        }
+      });
+      numberPanelOptions = numberPanelOptions.length > 0 ? numberPanelOptions : [1, 2, 3, 4, 5, 6];
+      setNumberPanelList(numberPanelOptions);
+      if (!numberPanelOptions.find((option) => Number(option) === Number(selectedPanelNumber))) {
+        setSelectedPanelNumber(numberPanelOptions[0]);
+        setValue('panelNumber', numberPanelOptions[0]);
       }
-    });
-    numberPanelOptions = numberPanelOptions.length > 0 ? numberPanelOptions : [1, 2, 3, 4, 5, 6];
-    setNumberPanelList(numberPanelOptions);
-    setSelectedPanelNumber(numberPanelOptions[0]);
-    setValue('panelNumber', numberPanelOptions[0]);
+    }
   };
 
   const minMaxes = MIN_MAX_WIDTHS.map((o: any) => {
