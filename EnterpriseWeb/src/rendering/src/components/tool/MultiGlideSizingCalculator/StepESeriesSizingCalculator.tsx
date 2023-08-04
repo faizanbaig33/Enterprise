@@ -31,9 +31,9 @@ type CalcForm = {
   stackingDirection: string;
   sillOption: string;
   sillRamp: string;
+  panelNumber: string;
   insectScreen: string;
   screenConfiguration: string;
-  panelNumber: string;
   panelStackingLocation: string;
   thicknessFinishedFloorInches: string;
   thicknessFinishedFloorFraction: string;
@@ -76,6 +76,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     msg: '',
     dimension: 0,
   });
+  const [thicknessFinishedFloorStates, setThicknessFinishedFloorStates] = useState({
+    inches: 0,
+    fraction: 0,
+    dimension: 0,
+  });
 
   const [msgWidth, setMsgWidth] = useState('');
   const [msgHeight, setMsgHeight] = useState('');
@@ -93,13 +98,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     sillRamp: 'none',
     insectScreen: 'none',
     screenConfiguration: 'single',
-    panelNumber: '4',
     panelStackingLocation: 'interior',
     thicknessFinishedFloor: '',
-    thicknessFinishedFloorInches: '0',
-    thicknessFinishedFloorFraction: '0',
   });
 
+  const [selectedPanelNumber, setSelectedPanelNumber] = useState(1);
   const [clearOpeningHeight, setClearOpeningHeight] = useState<string>('');
   const [clearOpeningWidth, setClearOpeningWidth] = useState<string>('');
   const [numberPanelList, setNumberPanelList] = useState([1, 2, 3, 4, 5, 6]);
@@ -130,6 +133,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     handleSubmit,
     resetField,
     getValues,
+    setValue,
     formState: { errors },
   } = useForm<CalcForm>({
     mode: 'onChange',
@@ -267,13 +271,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   };
 
   const calculateUnitDimensions = () => {
-    const {
-      calculateUsing,
-      panelNumber: numberPanels,
-      sillOption: sillOptions,
-      stackingDirection,
-      thicknessFinishedFloor,
-    } = formStates;
+    const { calculateUsing, sillOption: sillOptions, stackingDirection } = formStates;
+    const thicknessFinishedFloor = thicknessFinishedFloorStates.dimension;
+    const numberPanels = selectedPanelNumber;
+
     const { dimension: width }: any = widthStates;
     const { dimension: height }: any = heightStates;
 
@@ -1212,10 +1213,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   const onDimensionFieldChange = (e: any, type: any) => {
     if (type === 'width') {
+      setMsgWidth('');
       const feet = e.target.name === 'width' ? e.target.value : getValues('width').trim();
       const inches = e.target.name === 'widthInches' ? e.target.value : getValues('widthInches');
       const fraction =
         e.target.name === 'widthFraction' ? e.target.value : getValues('widthFraction');
+
+      if (!feet) setMsgWidth('This field is required');
 
       if (parseFloat(feet) > 0 || parseFloat(inches) !== 0 || parseFloat(fraction) !== 0) {
         const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
@@ -1234,10 +1238,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         updateForm(e, states);
       }
     } else if (type === 'height') {
+      setMsgHeight('');
+
       const feet = e.target.name === 'height' ? e.target.value : getValues('height').trim();
       const inches = e.target.name === 'heightInches' ? e.target.value : getValues('heightInches');
       const fraction =
         e.target.name === 'heightFraction' ? e.target.value : getValues('heightFraction');
+
+      if (!feet) setMsgHeight('This field is required');
 
       if (parseFloat(feet) || inches !== '0' || fraction !== '0') {
         const length = parseFloat(feet) * 12 + parseFloat(inches) + parseFloat(fraction);
@@ -1255,8 +1263,34 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
         updateForm(e, states);
       }
+    } else if (type === 'thickness') {
+      const inches =
+        e.target.name === 'thicknessFinishedFloorInches'
+          ? e.target.value
+          : getValues('thicknessFinishedFloorInches');
+      const fraction =
+        e.target.name === 'thicknessFinishedFloorFraction'
+          ? e.target.value
+          : getValues('thicknessFinishedFloorFraction');
+
+      if (inches !== '0' || fraction !== '0') {
+        const length = parseFloat(inches) + parseFloat(fraction);
+        const states = {
+          inches: parseFloat(inches),
+          fraction: parseFloat(fraction),
+          dimension: length,
+        };
+
+        setThicknessFinishedFloorStates({
+          ...thicknessFinishedFloorStates,
+          ...states,
+        });
+
+        updateForm(e, states);
+      }
     }
   };
+  console.log(formStates);
 
   const updateForm = (e?: any, dimensionStates?: any) => {
     setIsShowResults(false);
@@ -1265,8 +1299,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
     let msgWidth = '';
     let msgHeight = '';
-
-    if (e?.target?.name !== 'width' && e?.target?.name !== 'height') {
+    if (e?.target?.name === 'panelNumber') {
+      setSelectedPanelNumber(e.target.value);
+    } else if (e?.target?.name !== 'width' && e?.target?.name !== 'height') {
       setFormState({ ...formStates, [e.target.name]: e.target.value });
     }
 
@@ -1331,13 +1366,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       if (height > maxHeight) {
         msgHeight = maxMessage;
       }
-
-      // setHeightStates({
-      //   ...heightStates,
-      //   ruleMax: roundNumber(minHeight),
-      //   ruleMin: roundNumber(maxHeight),
-      //   msg: msgHeight,
-      // });
     } else {
       msgHeight = '';
     }
@@ -1461,23 +1489,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         } else if (width > maxWidth) {
           msgWidth = maxMessage;
         }
-
-        // setWidthStates({
-        //   ...widthStates,
-        //   ruleMax: roundNumber(minWidth),
-        //   ruleMin: roundNumber(maxWidth),
-        //   msgMin: minMessage,
-        //   msgMax: maxMessage,
-        // });
       } else {
         msgWidth = '';
-        // setWidthStates({
-        //   ...widthStates,
-        //   ruleMax: roundNumber(minWidth),
-        //   ruleMin: roundNumber(maxWidth),
-        //   msgMin: '',
-        //   msgMax: '',
-        // });
       }
     } else {
       msgWidth = '';
@@ -1546,7 +1559,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     }
 
     // Convert to an array so we can populate the dropdown
-    const numberPanelOptions = numberPanelRows.map((row: any) => {
+    let numberPanelOptions = numberPanelRows.map((row: any) => {
       if (
         row.stackingDirection === stackingDirection &&
         row.configuration === configuration &&
@@ -1555,12 +1568,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
         return row.numberOfPanels;
       }
     });
-
+    numberPanelOptions = numberPanelOptions.length > 0 ? numberPanelOptions : [1, 2, 3, 4, 5, 6];
     setNumberPanelList(numberPanelOptions);
-    setFormState({
-      ...formStates,
-      panelNumber: numberPanelOptions[0],
-    });
+    setSelectedPanelNumber(numberPanelOptions[0]);
+    setValue('panelNumber', numberPanelOptions[0]);
   };
 
   const minMaxes = MIN_MAX_WIDTHS.map((o: any) => {
@@ -2011,8 +2022,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   {...register('thicknessFinishedFloorInches')}
                   name="thicknessFinishedFloorInches"
                   defaultValue="0"
-                  onChange={updateForm}
-                  // onChange={(e) => onDimensionFieldChange(e, 'height')}
+                  onChange={(e) => onDimensionFieldChange(e, 'thickness')}
                 >
                   <option value="0">0</option>
                   <option value="1">1</option>
@@ -2032,7 +2042,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                   {...register('thicknessFinishedFloorFraction')}
                   name="thicknessFinishedFloorFraction"
                   defaultValue="0"
-                  onChange={updateForm}
+                  onChange={(e) => onDimensionFieldChange(e, 'thickness')}
                 >
                   <option value="0">0</option>
                   <option value="0.125">1 / 8</option>
@@ -2058,9 +2068,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               onChange={updateForm}
             >
               <option value="none">None</option>
-              <option value="multi">Multi-panel</option>
+              {formStates.panelStackingLocation === 'interior' && (
+                <option value="multi">Multi-panel</option>
+              )}
               <option value="retractable">Retractable</option>
-              <option value="single">Single</option>
+              {formStates.panelStackingLocation === 'exterior' && (
+                <option value="single">Single</option>
+              )}
             </select>
             {errors.insectScreen && (
               <div className="text-body text-error">{errors.insectScreen.message}</div>
@@ -2199,7 +2213,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}># Of Pannels</td>
                           <td className={themeData.classes.tdColumnCenter}>
-                            {getValues('panelNumber') || '-'}
+                            {selectedPanelNumber || '-'}
                           </td>
                         </tr>
                         <tr className={themeData.classes.tableRow}>
