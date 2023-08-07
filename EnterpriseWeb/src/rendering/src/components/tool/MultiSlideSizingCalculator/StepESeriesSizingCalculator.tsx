@@ -142,6 +142,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     handleSubmit,
     resetField,
     getValues,
+    setValue,
     formState: { errors },
   } = useForm<CalcForm>({
     mode: 'onChange',
@@ -1334,7 +1335,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     let maxPanelNumber_temp;
     const pocketCount = calculatePocketCount(configuration, stackingDirection);
     // setPocketCount(pocketCount);
-    if (msgWidth === '') {
+
+    if (msgWidthTemp === '') {
       const minPanelValue = Number(pocketCount) > 0 ? 1 : 2;
       minPanelNumber_temp = Number(
         stackingDirection === '2-Way' ? minPanelValue * 2 : minPanelValue
@@ -1373,6 +1375,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       }
 
       setNumberPanels(numberPanelData);
+      // setValue('panelNumber', numberPanelData[0]);
     }
   };
 
@@ -1699,8 +1702,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 defaultValue="Interior"
                 onChange={updateForm}
               >
-                <option value="Interior">Interior</option>
-                <option value="Exterior">Exterior</option>
+                {formStates.stackingDirection === 'Double Active' ? (
+                  <option value="Exterior">Exterior</option>
+                ) : (
+                  <option value="Interior">Interior</option>
+                )}
               </select>
               {errors.panelStackingLocation && (
                 <div className="text-body text-error">{errors.panelStackingLocation.message}</div>
@@ -1792,7 +1798,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             <div className="mb-s font-sans text-sm-m font-heavy text-theme-text last:mb-0 lg:text-m">
               <h1>Results:</h1>
             </div>
-            <div className="mb-s hidden items-end pr-2 md:relative md:block">
+            <div className="mb-s hidden items-end pr-2 md:relative ml:block">
               <ReactToPrint
                 trigger={() => {
                   return (
@@ -1849,12 +1855,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                             {selectedPanelStyle?.text || '-'}
                           </td>
                         </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Panel Stacking Location</td>
-                          <td className={themeData.classes.tdColumnCenter}>
-                            {getValues('panelStackingLocation' || '-')}
-                          </td>
-                        </tr>
+                        {configuration === 'stacking' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <td className={themeData.classes.tdColumn}>Panel Stacking Location</td>
+                            <td className={themeData.classes.tdColumnCenter}>
+                              {getValues('panelStackingLocation' || '-')}
+                            </td>
+                          </tr>
+                        )}
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}># Of Pannels</td>
                           <td className={themeData.classes.tdColumnCenter}>
