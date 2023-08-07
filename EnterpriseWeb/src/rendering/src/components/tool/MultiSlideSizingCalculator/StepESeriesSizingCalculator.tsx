@@ -136,13 +136,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [thicknessFinishedFloor, setThicknessFinishedFloor] = useState('');
 
   const [isShowResults, setIsShowResults] = useState<boolean>(false);
+  const [showErrorPanelNumber, setShowErrorPanelNumber] = useState(false);
 
   const {
     register,
     handleSubmit,
     resetField,
     getValues,
-    setValue,
     formState: { errors },
   } = useForm<CalcForm>({
     mode: 'onChange',
@@ -763,8 +763,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const maxPanelAreaExceeded = (maxPanelWidth: any, panelHeight: any, panelStyle: any) => {
     const panelPerformanceMax = panelStyle === 'thermally' ? 50 : 60;
     return !(
-      (parseFloat(maxPanelWidth) * parseFloat(panelHeight)) / 144 <= panelPerformanceMax &&
-      parseFloat(maxPanelWidth) <= 72
+      (Number(maxPanelWidth) * Number(panelHeight)) / 144 <= panelPerformanceMax &&
+      Number(maxPanelWidth) <= 72
     );
   };
 
@@ -1094,7 +1094,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     );
 
     if (maxPanelAreaExceeded(maxPanelWidth, panelHeight_temp, panelStyle)) {
+      setShowErrorPanelNumber(true);
     } else {
+      setShowErrorPanelNumber(false);
+
       // Results
       setJambDepth(formatNumber(jambDepth_temp));
       setPanelHeight(formatNumber(panelHeight_temp));
@@ -1109,11 +1112,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       setUnitHeight(formatNumber(unitHeight_temp));
       setUnitWidth(formatNumber(unitWidth_temp));
       setThicknessFinishedFloor(formatNumber(thicknessFinishedFloor_temp));
+
+      setIsShowResults(true);
+      props.completeCallback();
     }
-
-    setIsShowResults(true);
-
-    props.completeCallback();
   };
 
   const onDimensionFieldChange = (e: any, type: any) => {
@@ -1687,6 +1689,11 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             </select>
             {errors.panelNumber && (
               <div className="text-body text-error">{errors.panelNumber.message}</div>
+            )}
+            {showErrorPanelNumber && (
+              <div className="text-bold text-[14px] uppercase text-error">
+                The options you selected exceed the maximum panel area allowed.
+              </div>
             )}
           </div>
           <div></div>
