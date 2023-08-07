@@ -1328,6 +1328,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       setMsgWidth(msgWidthTemp);
       setMsgHeight(msgHeightTemp);
       setIsShowResults(false);
+    } else {
+      setMsgWidth('');
+      setMsgHeight('');
     }
 
     ////////////////////////////////////////
