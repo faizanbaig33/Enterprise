@@ -27,11 +27,11 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
     () => props.fields.backgroundColor.fields.Value.value,
     [props.fields.backgroundColor]
   );
-  const textColor = useMemo(() => {
-    if (backgroundColor.toLowerCase() === 'orange') return 'white';
-    else if (backgroundColor.toLowerCase() === 'white') return 'black';
-    else if (backgroundColor.toLowerCase() === 'gray') return 'white';
-    else return 'white';
+  const textColorClass = useMemo(() => {
+    if (backgroundColor.toLowerCase() === 'orange') return 'text-white';
+    else if (backgroundColor.toLowerCase() === 'white') return 'text-black';
+    else if (backgroundColor.toLowerCase() === 'gray') return 'text-white';
+    else return 'text-white';
   }, [backgroundColor]);
 
   const [isShow, setIsShow] = useState(false);
@@ -67,7 +67,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
       ref={mastheadRef}
     >
       <div className={themeData.classes.headWrapper}>
-        <div className={classNames(themeData.classes.headLogoWrapper, `text-${textColor}`)}>
+        <div className={classNames(themeData.classes.headLogoWrapper, textColorClass)}>
           <div onClick={() => setIsShow(!isShow)} className={themeData.classes.menuIcon}>
             {!isShow ? <IoIosArrowDropdown size={36} /> : <IoIosArrowDropup size={36} />}
           </div>
@@ -98,7 +98,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
               {props.fields.children.map((link: any) => (
                 <Link href={link.fields.cta1Link.value.href} key={link.id} passHref>
                   <a>
-                    <span className={classNames(themeData.classes.linkTitle, `text-${textColor}`)}>
+                    <span className={classNames(themeData.classes.linkTitle, textColorClass)}>
                       {link.fields.cta1Link.value.text}
                     </span>
                   </a>
@@ -107,7 +107,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
             </div>
             <div className="hidden md:block">
               <Link href={props.fields.rightSideLink.value.href} passHref>
-                <a className={`flex items-center text-${textColor}`}>
+                <a className={`flex items-center ${textColorClass}`}>
                   <span className="text-bold mr-1 text-sm">As seen in</span>
                   <FiArrowRight size={16} />
                 </a>
