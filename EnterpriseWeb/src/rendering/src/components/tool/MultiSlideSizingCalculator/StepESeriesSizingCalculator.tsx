@@ -325,11 +325,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   };
 
   const calculateRailLength = (
-    stackingDirection: any,
-    configuration: any,
+    stackingDirection: string,
+    configuration: string,
     unitWidth: any,
-    numberPanels: any
+    numberPanels: any,
+    pocketOffset_temp: any
   ) => {
+    const pocketOffsetTemp = pocketOffset_temp || pocketOffset;
     let railLength = 0;
 
     if (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') {
@@ -349,7 +351,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           (unitWidth -
             jambWidth +
             lockStileEmbedment -
-            pocketOffset -
+            pocketOffsetTemp -
             lockStileOffset -
             interlockPairOffset * numberPanels) /
           (numberPanels + 1);
@@ -376,7 +378,10 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       } else {
         // pocketing
         railLength =
-          (unitWidth - biPartPairOffset - interlockPairOffset * numberPanels - 2 * pocketOffset) /
+          (unitWidth -
+            biPartPairOffset -
+            interlockPairOffset * numberPanels -
+            2 * pocketOffsetTemp) /
           (numberPanels + 2);
       }
     }
@@ -533,49 +538,49 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     interlocks: any,
     panelStyle: any
   ) => {
-    let pocketOffset = 0;
+    let pocketOffsetTemp = 0;
 
     if (configuration === 'pocketing') {
       if (interlocks === 'standard') {
-        pocketOffset = interlockStileOffset + 2.192;
+        pocketOffsetTemp = interlockStileOffset + 2.192;
       } else {
         // interlocks === heavy_duty
         if (
           (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') &&
           numberPanels <= 2
         ) {
-          pocketOffset = interlockStileOffset + 2.192;
+          pocketOffsetTemp = interlockStileOffset + 2.192;
         } else if (stackingDirection === '2-Way' && numberPanels <= 4) {
-          pocketOffset = interlockStileOffset + 2.192;
+          pocketOffsetTemp = interlockStileOffset + 2.192;
         } else if (
           panelStyle === 'nonThermally' &&
           (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') &&
           numberPanels > 2
         ) {
-          pocketOffset = interlockStileOffset + 2.192 + (numberPanels - 1) * 0.786;
+          pocketOffsetTemp = interlockStileOffset + 2.192 + (numberPanels - 1) * 0.786;
         } else if (
           panelStyle === 'nonThermally' &&
           stackingDirection === '2-Way' &&
           numberPanels > 4
         ) {
-          pocketOffset = interlockStileOffset + 2.192 + (numberPanels / 2 - 1) * 0.786;
+          pocketOffsetTemp = interlockStileOffset + 2.192 + (numberPanels / 2 - 1) * 0.786;
         } else if (
           panelStyle === 'thermally' &&
           (stackingDirection === '1-Way Left' || stackingDirection === '1-Way Right') &&
           numberPanels > 2
         ) {
-          pocketOffset = interlockStileOffset + 2.192 + (numberPanels - 2) * 0.786;
+          pocketOffsetTemp = interlockStileOffset + 2.192 + (numberPanels - 2) * 0.786;
         } else if (
           panelStyle === 'thermally' &&
           stackingDirection === '2-Way' &&
           numberPanels > 4
         ) {
-          pocketOffset = interlockStileOffset + 2.192 + (numberPanels / 2 - 2) * 0.786;
+          pocketOffsetTemp = interlockStileOffset + 2.192 + (numberPanels / 2 - 2) * 0.786;
         }
       }
     }
 
-    return pocketOffset;
+    return pocketOffsetTemp;
   };
 
   const calculateBiPartPairOffset = (stackingDirection: any) => {
@@ -898,16 +903,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
     setJambWidth(calculateJambWidth(panelStyle, stackingDirection, configuration));
     setLockStileEmbedment(calculateLockStileEmbedment(stackingDirection));
-    setPocketOffset(
-      calculatePocketOffset(
-        interlockStileOffset,
-        stackingDirection,
-        configuration,
-        numberPanels,
-        interlocks_temp,
-        panelStyle
-      )
-    );
+    setPocketOffset(pocketOffset_temp);
     setBiPartPairOffset(calculateBiPartPairOffset(stackingDirection));
     setBackStileEmbedment(
       calculateBackStileEmbedment(panelStyle, stackingDirection, configuration)
@@ -962,17 +958,19 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           lockStileOffset,
           interlockStileOffset
         );
-        const daylightPocketWidth = calculateDaylightPocketWidth(
-          daylightRailLength,
-          interlockStileOffset,
-          pocketOffset_temp
-        );
-        const intermediatePanelWidth = calculateIntermediatePanelWidth(
-          stackingDirection,
-          configuration,
-          numberPanels,
-          daylightRailLength
-        );
+        const daylightPocketWidth =
+          calculateDaylightPocketWidth(
+            daylightRailLength,
+            interlockStileOffset,
+            pocketOffset_temp
+          ) || 0;
+        const intermediatePanelWidth =
+          calculateIntermediatePanelWidth(
+            stackingDirection,
+            configuration,
+            numberPanels,
+            daylightRailLength
+          ) || 0;
 
         switch (stackingDirection) {
           case '1-Way Left':
@@ -1051,7 +1049,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
             interlockPairOffset,
             biPartPairOffset_temp
           )
-        : calculateRailLength(stackingDirection, configuration, unitWidth_temp, numberPanels);
+        : calculateRailLength(
+            stackingDirection,
+            configuration,
+            unitWidth_temp,
+            numberPanels,
+            pocketOffset_temp
+          );
 
     // Use max panel width value
     panelWidth_temp = calculateMaxPanelWidth(
@@ -1219,16 +1223,16 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       calculateBackStileEmbedment(panelStyle, stackingDirection, configuration)
     );
     setBackStileOffset(calculateBackStileOffset(panelStyle, stackingDirection, configuration));
-    setPocketOffset(
-      calculatePocketOffset(
-        interlockStileOffset,
-        stackingDirection,
-        configuration,
-        numberPanels,
-        interlocks_temp,
-        panelStyle
-      )
+
+    const pocketOffsetTemp = calculatePocketOffset(
+      interlockStileOffset,
+      stackingDirection,
+      configuration,
+      numberPanels,
+      interlocks_temp,
+      panelStyle
     );
+    setPocketOffset(pocketOffsetTemp);
     setBiPartPairOffset(calculateBiPartPairOffset(stackingDirection));
 
     //////////////////////////////
