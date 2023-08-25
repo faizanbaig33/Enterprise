@@ -286,7 +286,13 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
     while (minRailLength < 20.153) {
       minWidth += 0.125;
-      minRailLength = calculateRailLength(stackingDirection, configuration, minWidth, numberPanels);
+      minRailLength = calculateRailLength(
+        stackingDirection,
+        configuration,
+        minWidth,
+        numberPanels,
+        null
+      );
     }
 
     //rough_opening_pocket
@@ -1358,14 +1364,14 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
       let i = minPanelNumber_temp;
       const numberPanelData: any = [];
-      let railLength = calculateRailLength(stackingDirection, configuration, width, i);
+      let railLength = calculateRailLength(stackingDirection, configuration, width, i, null);
       let maxPanelWidth = calculateMaxPanelWidth(railLength, stackingDirection, configuration, i);
 
       // Only show number of panels with a maxPanelWidth <= than 72
       while (maxPanelWidth > 72) {
         i = stackingDirection === '2-Way' ? (i += 2) : (i += 1);
 
-        railLength = calculateRailLength(stackingDirection, configuration, width, i);
+        railLength = calculateRailLength(stackingDirection, configuration, width, i, null);
         maxPanelWidth = calculateMaxPanelWidth(railLength, stackingDirection, configuration, i);
       }
 
