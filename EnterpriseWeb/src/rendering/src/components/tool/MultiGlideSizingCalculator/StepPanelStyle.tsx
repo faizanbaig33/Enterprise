@@ -53,16 +53,17 @@ export const StepPanelStyle = (props: any): JSX.Element => {
           {OPTIONS.map((item, idx) => (
             <div
               className={clsx({
-                'my-5 mb-4 flex items-center rounded-[5px] border border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold md:max-w-[280px]':
+                'my-5 mb-4 flex items-center rounded-[5px] bg-[#F8F6F4] p-5 font-semibold md:max-w-[280px]':
                   true,
-                'border-[#b9b9b9] bg-[#f7f7f7]': selectedOption === item.name,
-                'border-[#e3e3e3]': selectedOption !== item.name,
+                'border-6 border-[#F26924]': selectedOption === item.name,
+                'border border-[#C4BFB6] hover:border-2 hover:border-black':
+                  selectedOption !== item.name,
               })}
               key={idx}
             >
               <label
                 htmlFor={`step-two-radio-${idx}`}
-                className="text-md text-gray-900 dark:text-gray-300 ml-2 flex w-full cursor-pointer flex-row items-start text-center font-bold uppercase md:h-full md:flex-col md:justify-between"
+                className="text-md text-gray-900 dark:text-gray-300 ml-2 flex h-full w-full cursor-pointer flex-row items-start text-center font-bold uppercase md:h-full md:flex-col md:justify-between"
               >
                 <ImageWrapper
                   image={item.image}
@@ -79,7 +80,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
                     checked={selectedOption === item.name}
                     onChange={handleChangeRadioInput}
                   />
-                  <span className="ml-2.5 md:ml-0">{item.text}</span>
+                  <span className="text-bold ml-2.5 text-[18px] md:ml-0">{item.text}</span>
                 </div>
               </label>
             </div>

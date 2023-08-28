@@ -50,15 +50,16 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
           {OPTIONS.map((item, idx) => (
             <div
               className={clsx({
-                'my-5 mb-4 flex items-center rounded-[5px] border p-5': true,
-                'border-[#b9b9b9] bg-[#f7f7f7]': selectedOption === item.value,
-                'border-[#e3e3e3] bg-[#F8F6F4]': selectedOption !== item.value,
+                'my-5 mb-4 flex items-center rounded-[5px] bg-[#F8F6F4] p-5': true,
+                'border-6 border-[#F26924]': selectedOption === item.value,
+                'border border-[#C4BFB6] hover:border-2 hover:border-black':
+                  selectedOption !== item.value,
               })}
               key={idx}
             >
               <label
                 htmlFor={`step-one-radio-${idx}`}
-                className="text-md text-gray-900 dark:text-gray-300 flex w-full cursor-pointer flex-col items-center text-center font-bold uppercase"
+                className="text-md dark:text-gray-300 flex h-full w-full cursor-pointer flex-col items-center justify-between text-center font-bold uppercase text-black"
               >
                 <ImageWrapper
                   image={item.image}
@@ -75,8 +76,8 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
                     checked={selectedOption === item.value}
                     onChange={handleChangeRadioInput}
                   />
-                  <div>{item.title}</div>
-                  <div className="mt-2 text-[10px] text-gray">Viewed from Exterior</div>
+                  <div className="text-bold text-[18px]">{item.title}</div>
+                  <div className="mt-2 text-[14px] text-[#686869]">Viewed from Exterior</div>
                 </div>
               </label>
             </div>

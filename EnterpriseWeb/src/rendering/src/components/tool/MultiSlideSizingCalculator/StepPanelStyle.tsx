@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
+import clsx from 'clsx';
 
 export const StepPanelStyle = (props: any): JSX.Element => {
   const { fields, activeStep } = props;
@@ -40,7 +41,13 @@ export const StepPanelStyle = (props: any): JSX.Element => {
         <div className="mt-5 flex flex-col md:flex-row md:space-x-5">
           {OPTIONS.map((item, idx) => (
             <div
-              className="my-5 mb-4 flex items-center rounded-[5px] border-2 border-[#b9b9b9] bg-[#f7f7f7] p-5 font-semibold"
+              className={clsx({
+                'my-5 mb-4 flex items-center rounded-[5px] border-2 border-[#C4BFB6] bg-[#F8F6F4] p-5 font-semibold':
+                  true,
+                'border-6 border-[#F26924]': selectedOption === item.name,
+                'border border-[#C4BFB6] hover:border-2 hover:border-black':
+                  selectedOption !== item.name,
+              })}
               key={idx}
             >
               <label

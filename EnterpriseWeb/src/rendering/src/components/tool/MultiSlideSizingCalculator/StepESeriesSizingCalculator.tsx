@@ -1400,19 +1400,19 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
 
   return (
     <div>
-      <div className="font-bold">{fields?.StepThreeTitle?.value}</div>
-      <div className="mt-5 md:hidden">
+      <div className="mb-5 flex justify-center">
         <button
           type="button"
           onClick={resetForm}
           className={classNames(themeData.classes.resetButton)}
         >
-          <span>Reset calculator</span>
+          <span>Start over</span>
           <span className="ml-xxs">
             <SvgIcon icon="reset" />
           </span>
         </button>
       </div>
+      <div className="font-bold">{fields?.StepThreeTitle?.value}</div>
       <form onSubmit={handleSubmit(onSubmit)} className="col-span-12 mt-5">
         <div className={themeData.classes.formWrapper}>
           <div className={themeData.classes.columnSpan2}>
@@ -1781,7 +1781,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           )}
           {/* Submit section */}
           <div className={themeData.classes.submitWrapper}>
-            {((isDesktop && isShowResults) || !isDesktop) && (
+            {!isShowResults && (
               <button
                 type="button"
                 className={themeData.classes.prevButton}
@@ -1799,16 +1799,6 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 {fields?.CalculateButtonText?.value}
               </button>
             )}
-            <button
-              type="button"
-              onClick={resetForm}
-              className={classNames(themeData.classes.resetButton, 'ml-xs hidden md:flex')}
-            >
-              <span>Reset calculator</span>
-              <span className="ml-xxs">
-                <SvgIcon icon="reset" />
-              </span>
-            </button>
           </div>
         </div>
       </form>
