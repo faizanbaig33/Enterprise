@@ -16,7 +16,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
     },
   ];
 
-  const [selectedOption, setSelectedOption] = useState(OPTIONS[0].name);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [error, setError] = useState<any>(null);
 
   const handleChangeRadioInput = (e: any) => {
@@ -59,7 +59,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
                   type="radio"
                   value={item.name}
                   name={item.name}
-                  className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 h-6 w-6 text-[#b9b9b9] focus:ring-2 focus:ring-[#b9b9b9] dark:focus:ring-[#b9b9b9]"
+                  className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 h-6 w-6 text-[#F26924] focus:ring-2 focus:ring-primary dark:focus:ring-[#b9b9b9]"
                   checked={selectedOption === item.name}
                   onChange={handleChangeRadioInput}
                 />

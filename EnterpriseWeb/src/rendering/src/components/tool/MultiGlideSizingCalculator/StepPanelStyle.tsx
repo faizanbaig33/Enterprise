@@ -27,7 +27,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
     },
   ];
 
-  const [selectedOption, setSelectedOption] = useState(OPTIONS[0].name);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [error, setError] = useState<any>(null);
 
   const handleChangeRadioInput = (e: any) => {

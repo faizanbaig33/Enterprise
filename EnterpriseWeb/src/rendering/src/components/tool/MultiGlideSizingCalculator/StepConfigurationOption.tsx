@@ -19,7 +19,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
     },
   ];
 
-  const [selectedOption, setSelectedOption] = useState(OPTIONS[0].value);
+  const [selectedOption, setSelectedOption] = useState(null);
   const [error, setError] = useState<any>(null);
 
   const handleChangeRadioInput = (e: any) => {
