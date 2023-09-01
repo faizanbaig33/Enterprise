@@ -114,7 +114,9 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
         </div>
         {isShow && (
           <div className={themeData.classes.anchorWrapper}>
-            <SocialIcons icons={props.fields.socialIcons} />
+            <div className="hidden md:block">
+              <SocialIcons icons={props.fields.socialIcons} />
+            </div>
             <div className={themeData.classes.anchors}>
               {props.fields.children.map((link: any) => (
                 <Link href={link.fields.cta1Link.value.href} key={link.id} passHref>
@@ -126,13 +128,16 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
                 </Link>
               ))}
             </div>
-            <div className="hidden md:block">
+            <div className="mt-2 md:mt-0">
               <Link href={props.fields.rightSideLink.value.href} passHref>
                 <a className={`flex items-center ${textColorClass}`}>
                   <span className="text-bold mr-1 text-sm">As seen in</span>
                   <FiArrowRight size={16} />
                 </a>
               </Link>
+            </div>
+            <div className="block md:hidden">
+              <SocialIcons icons={props.fields.socialIcons} />
             </div>
           </div>
         )}
