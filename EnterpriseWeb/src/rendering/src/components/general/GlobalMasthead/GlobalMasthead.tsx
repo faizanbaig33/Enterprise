@@ -22,7 +22,8 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
 
   const isDesktop = screenType !== 'sm' ? true : false;
 
-  const LogoImage = isDesktop ? props.fields.desktopLogo : props.fields.mobileLogo;
+  const DesktopLogoImage = props.fields.desktopLogo;
+  const MobileLogoImage = props.fields.mobileLogo || props.fields.desktopLogo;
   const backgroundColor = useMemo(
     () => props.fields.backgroundColor.fields.Value.value,
     [props.fields.backgroundColor]
@@ -74,18 +75,38 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
           <div className={themeData.classes.headLogo}>
             <Link href={props.fields.linkLogo.value.href} passHref>
               <a>
-                {LogoImage.value?.src ? (
-                  <div className={`h-[30px] w-[300px] object-cover`}>
-                    <ImageWrapper
-                      image={props.fields.desktopLogo}
-                      mobileImage={props.fields.mobileLogo}
-                      additionalDesktopClasses="h-full w-full cursor-pointer"
-                    />
-                  </div>
+                {isDesktop ? (
+                  <>
+                    {DesktopLogoImage ? (
+                      <div className={`h-[30px] w-[300px] object-cover`}>
+                        <ImageWrapper
+                          image={DesktopLogoImage}
+                          mobileImage={MobileLogoImage}
+                          additionalDesktopClasses="h-full w-full cursor-pointer"
+                        />
+                      </div>
+                    ) : (
+                      <span className={themeData.classes.headline}>
+                        {props.fields.headlineText.value}
+                      </span>
+                    )}
+                  </>
                 ) : (
-                  <span className={themeData.classes.headline}>
-                    {props.fields.headlineText.value}
-                  </span>
+                  <>
+                    {MobileLogoImage ? (
+                      <div className={`h-[30px] w-[300px] object-cover`}>
+                        <ImageWrapper
+                          image={DesktopLogoImage}
+                          mobileImage={MobileLogoImage}
+                          additionalDesktopClasses="h-full w-full cursor-pointer"
+                        />
+                      </div>
+                    ) : (
+                      <span className={themeData.classes.headline}>
+                        {props.fields.headlineText.value}
+                      </span>
+                    )}
+                  </>
                 )}
               </a>
             </Link>
