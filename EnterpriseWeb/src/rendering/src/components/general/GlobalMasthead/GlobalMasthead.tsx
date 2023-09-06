@@ -10,20 +10,22 @@ import Link from 'next/link';
 import ImageWrapper from 'src/helpers/Media/ImageWrapper';
 import { FiArrowRight } from 'react-icons/fi';
 import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
-import { useCurrentScreenType } from 'lib/utils/get-screen-type';
+import { useCurrentScreenType, getBreakpoint } from 'lib/utils/get-screen-type';
 import clsx from 'clsx';
 import SocialIcons from './SocialIcons';
 
 export type GlobalMastheadProps = Feature.EnterpriseWeb.Components.General.GlobalMasthead;
 const GlobalMasthead = (props: GlobalMastheadProps) => {
   const { themeData } = useTheme(GlobalMastheadTheme);
-  const { screenType } = useCurrentScreenType();
+  const { currentScreenWidth } = useCurrentScreenType();
   const mastheadRef: any = useRef(null);
 
-  const isDesktop = screenType !== 'sm' ? true : false;
+  const isDesktop = currentScreenWidth >= getBreakpoint('ml') ? true : false;
 
   const DesktopLogoImage = props.fields.desktopLogo;
-  const MobileLogoImage = props.fields.mobileLogo || props.fields.desktopLogo;
+  const MobileLogoImage = props.fields.mobileLogo?.value?.src
+    ? props.fields.mobileLogo
+    : props.fields.desktopLogo;
   const backgroundColor = useMemo(
     () => props.fields.backgroundColor.fields.Value.value,
     [props.fields.backgroundColor]
@@ -114,7 +116,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
         </div>
         {isShow && (
           <div className={themeData.classes.anchorWrapper}>
-            <div className="hidden md:block">
+            <div className="hidden ml:block">
               <SocialIcons icons={props.fields.socialIcons} />
             </div>
             <div className={themeData.classes.anchors}>
@@ -128,7 +130,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
                 </Link>
               ))}
             </div>
-            <div className="mt-2 md:mt-0">
+            <div className="mt-2 ml:mt-0">
               <Link href={props.fields.rightSideLink.value.href} passHref>
                 <a className={`flex items-center ${textColorClass}`}>
                   <span className="text-bold mr-1 text-sm">As seen in</span>
@@ -136,7 +138,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
                 </a>
               </Link>
             </div>
-            <div className="block md:hidden">
+            <div className="block ml:hidden">
               <SocialIcons icons={props.fields.socialIcons} />
             </div>
           </div>
