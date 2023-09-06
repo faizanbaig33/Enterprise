@@ -26,6 +26,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
   const MobileLogoImage = props.fields.mobileLogo?.value?.src
     ? props.fields.mobileLogo
     : props.fields.desktopLogo;
+
   const backgroundColor = useMemo(
     () => props.fields.backgroundColor.fields.Value.value,
     [props.fields.backgroundColor]
@@ -98,7 +99,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
                     {MobileLogoImage?.value?.src ? (
                       <div className={`h-[30px] w-[300px] object-cover`}>
                         <ImageWrapper
-                          image={DesktopLogoImage}
+                          image={MobileLogoImage}
                           mobileImage={MobileLogoImage}
                           additionalDesktopClasses="h-full w-full cursor-pointer"
                         />
