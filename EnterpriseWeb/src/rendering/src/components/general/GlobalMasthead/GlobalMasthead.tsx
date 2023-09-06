@@ -77,7 +77,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
               <a>
                 {isDesktop ? (
                   <>
-                    {DesktopLogoImage ? (
+                    {DesktopLogoImage?.value?.src ? (
                       <div className={`h-[30px] w-[300px] object-cover`}>
                         <ImageWrapper
                           image={DesktopLogoImage}
@@ -93,7 +93,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
                   </>
                 ) : (
                   <>
-                    {MobileLogoImage ? (
+                    {MobileLogoImage?.value?.src ? (
                       <div className={`h-[30px] w-[300px] object-cover`}>
                         <ImageWrapper
                           image={DesktopLogoImage}
