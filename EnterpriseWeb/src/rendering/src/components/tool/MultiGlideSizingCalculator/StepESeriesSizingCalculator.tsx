@@ -16,7 +16,6 @@ import { useExperienceEditor } from 'lib/utils';
 import { OPTIONS, MIN_MAX_WIDTHS } from './constant';
 import * as AWNumberUtil from 'src/lib/utils/aw-number-utils';
 import clsx from 'clsx';
-import { useCurrentScreenType } from 'lib/utils/get-screen-type';
 import classNames from 'classnames';
 import { LinkWrapper } from 'src/helpers/LinkWrapper';
 
@@ -43,11 +42,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
   const { fields, formData } = props;
   const isEE = useExperienceEditor();
-  const { screenType } = useCurrentScreenType();
 
   const table1Ref = useRef<HTMLDivElement>(null);
-
-  const isDesktop = screenType !== 'sm' ? true : false;
 
   const selectedPanelStyle = useMemo(() => formData?.selectedPanelStyle, [formData]);
   const panelStyle = selectedPanelStyle?.name;
@@ -56,6 +52,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     [formData]
   );
   const configuration = selectedConfigurationOption?.value;
+
+  const singleScreenMaxWidth = 181.5;
+  const doubleScreenMaxWidth = 354.813;
 
   //Modal settings
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -105,7 +104,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [selectedPanelNumber, setSelectedPanelNumber] = useState(1);
   const [clearOpeningHeight, setClearOpeningHeight] = useState<string>('');
   const [clearOpeningWidth, setClearOpeningWidth] = useState<string>('');
-  const [numberPanelList, setNumberPanelList] = useState([1, 2, 3, 4, 5, 6]);
+  const [numberPanelList, setNumberPanelList] = useState([2, 3, 4, 5, 6]);
   const [jambDepth, setJambDepth] = useState<string>('');
   const [panelHeight, setPanelHeight] = useState<string>('');
   const [panelWidth, setPanelWidth] = useState<string>('');
@@ -126,6 +125,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
   const [unitWidth, setUnitWidth] = useState<string>('');
   const [thicknessFinishedFloor, setThicknessFinishedFloor] = useState('');
 
+  const [screenConfigurationOption, setScreenConfigurationOption] = useState('both');
   const [isShowResults, setIsShowResults] = useState<boolean>(false);
 
   const {
@@ -240,7 +240,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
       dimension: 0,
     });
 
-    setNumberPanelList([1, 2, 3, 4, 5, 6]);
+    setNumberPanelList([2, 3, 4, 5, 6]);
     setMsgWidth('');
     setMsgHeight('');
     props.onStepChange(0);
@@ -255,8 +255,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     roughOpeningPocketWidth: any
   ) => {
     let screenUnitSizeWidth = 0;
-    const unitWidthNum = parseFloat(unitWidth);
-    const roughOpeningPocketWidthNum = parseInt(roughOpeningPocketWidth);
+    const unitWidthNum = Number(unitWidth);
+    const roughOpeningPocketWidthNum = Number(roughOpeningPocketWidth);
 
     // Screen Unit Width
     if (configuration === 'stacking') {
@@ -1522,7 +1522,7 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     });
 
     // If we have a valid width, then filter further using the width
-    if (widthValid) {
+    if (widthValid && width) {
       const lookupWidth = Number(width);
 
       // Convert to array dimensions
@@ -1575,12 +1575,31 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
           return row.numberOfPanels;
         }
       });
-      numberPanelOptions = numberPanelOptions.length > 0 ? numberPanelOptions : [1, 2, 3, 4, 5, 6];
+      numberPanelOptions = numberPanelOptions.length > 0 ? numberPanelOptions : [2, 3, 4, 5, 6];
       setNumberPanelList(numberPanelOptions);
       if (!numberPanelOptions.find((option) => Number(option) === Number(selectedPanelNumber))) {
         setSelectedPanelNumber(numberPanelOptions[0]);
         setValue('panelNumber', numberPanelOptions[0]);
       }
+    }
+
+    const unitDimensions = calculateUnitDimensions();
+    const insectScreenWidth = calculateInsectScreenWidth(
+      configuration,
+      stackingDirection,
+      Number(unitDimensions.unitWidth),
+      Number(unitDimensions.roughOpeningPocketWidth)
+    );
+
+    if (insectScreenWidth > singleScreenMaxWidth) {
+      setScreenConfigurationOption('doubleOnly');
+      setValue('screenConfiguration', 'double');
+    } else {
+      setScreenConfigurationOption('both');
+      setValue('screenConfiguration', 'single');
+    }
+
+    if (insectScreenWidth > doubleScreenMaxWidth) {
     }
   };
 
@@ -2026,7 +2045,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 onChange={updateForm}
               >
                 <option value="interior">Interior</option>
-                <option value="exterior">Exterior</option>
+                {formStates.stackingDirection !== 'two_direction' && (
+                  <option value="exterior">Exterior</option>
+                )}
               </select>
               {errors.panelStackingLocation && (
                 <div className="text-body text-error">{errors.panelStackingLocation.message}</div>
@@ -2114,7 +2135,9 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                 defaultValue="single"
                 onChange={updateForm}
               >
-                <option value="single">Single Screen</option>
+                {screenConfigurationOption === 'both' && (
+                  <option value="single">Single Screen</option>
+                )}
                 <option value="double">Double Screen</option>
               </select>
               {errors.screenConfiguration && (
@@ -2215,13 +2238,15 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
                             {selectedPanelStyle?.text || '-'}
                           </td>
                         </tr>
-                        <tr className={themeData.classes.tableRow}>
-                          <td className={themeData.classes.tdColumn}>Panel Stacking Location</td>
-                          <td className={themeData.classes.tdColumnCenter}>
-                            {OPTIONS.panelStackingLocation[getValues('panelStackingLocation')] ||
-                              '-'}
-                          </td>
-                        </tr>
+                        {configuration === 'stacking' && (
+                          <tr className={themeData.classes.tableRow}>
+                            <td className={themeData.classes.tdColumn}>Panel Stacking Location</td>
+                            <td className={themeData.classes.tdColumnCenter}>
+                              {OPTIONS.panelStackingLocation[getValues('panelStackingLocation')] ||
+                                '-'}
+                            </td>
+                          </tr>
+                        )}
                         <tr className={themeData.classes.tableRow}>
                           <td className={themeData.classes.tdColumn}># Of Pannels</td>
                           <td className={themeData.classes.tdColumnCenter}>

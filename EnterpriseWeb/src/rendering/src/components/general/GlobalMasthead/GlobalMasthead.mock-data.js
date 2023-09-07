@@ -5,7 +5,12 @@ const defaultData = {
   },
   fields: {
     "desktopLogo": {
-
+      "value": {
+          "src": "https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/options-and-accessories/art-glass/e-series-art-glass/alanton.jpg?modified=20171214192215&h=238&w=150&la=en&hash=9273C7E301CAFF73A19803F9D312F232",
+          "alt": "Casement-Window-900x900",
+          "width": "204",
+          "height": "51"
+      }
   },
   "mobileLogo": {
       "value": {
