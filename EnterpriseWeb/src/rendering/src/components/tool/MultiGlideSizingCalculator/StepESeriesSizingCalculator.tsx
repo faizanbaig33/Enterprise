@@ -2111,12 +2111,22 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               onChange={updateForm}
             >
               <option value="none">None</option>
-              {formStates.panelStackingLocation === 'interior' && (
-                <option value="multi">Multi-panel</option>
-              )}
-              <option value="retractable">Retractable</option>
-              {formStates.panelStackingLocation === 'exterior' && (
-                <option value="single">Single</option>
+              {configuration === 'stacking' ? (
+                <>
+                  {formStates.panelStackingLocation === 'interior' && (
+                    <option value="multi">Multi-panel</option>
+                  )}
+                  <option value="retractable">Retractable</option>
+                  {formStates.panelStackingLocation === 'exterior' && (
+                    <option value="single">Single</option>
+                  )}
+                </>
+              ) : (
+                <>
+                  <option value="multi">Multi-panel</option>
+                  <option value="retractable">Retractable</option>
+                  <option value="single">Single</option>
+                </>
               )}
             </select>
             {errors.insectScreen && (
