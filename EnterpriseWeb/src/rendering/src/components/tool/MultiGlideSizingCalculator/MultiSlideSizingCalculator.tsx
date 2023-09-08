@@ -116,7 +116,7 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
             />
           </div>
         </div>
-        <div className="mt-5">
+        <div className="multiglid-slider-wrapper mt-5">
           <Slider ref={slider} {...sliderSettings} swipeToSlide={false}>
             <StepConfigurationOption
               fields={props.fields}

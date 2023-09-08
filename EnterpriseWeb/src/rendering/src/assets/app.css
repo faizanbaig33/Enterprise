@@ -139,4 +139,13 @@
   header a:visited:focus {
     text-decoration: underline;
   }
+
+  .multiglid-slider-wrapper .slick-initialized .slick-slide > div {
+    height: auto !important;
+    display: inline-flex !important;
+  }
+
+  .multiglid-slider-wrapper .slick-initialized .slick-slide {
+    justify-content: flex-start !important;
+  }
 }
