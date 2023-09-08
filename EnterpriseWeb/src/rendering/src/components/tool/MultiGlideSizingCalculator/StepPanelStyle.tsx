@@ -80,7 +80,7 @@ export const StepPanelStyle = (props: any): JSX.Element => {
                     type="radio"
                     value={item.name}
                     name={item.name}
-                    className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 h-6 w-6 text-[#b9b9b9] focus:ring-2 focus:ring-[#b9b9b9] dark:focus:ring-[#b9b9b9] md:hidden"
+                    className="bg-gray-100 border-gray-300 dark:ring-offset-gray-800 dark:bg-gray-700 dark:border-gray-600 h-6 w-6 text-[#F26924] focus:ring-2 focus:ring-[#F26924] dark:focus:ring-[#b9b9b9] md:hidden"
                     checked={selectedOption === item.name}
                     onChange={handleChangeRadioInput}
                   />

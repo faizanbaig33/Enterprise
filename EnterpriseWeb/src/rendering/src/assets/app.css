@@ -142,7 +142,6 @@
 
   .multiglid-slider-wrapper .slick-initialized .slick-slide > div {
     height: auto !important;
-    display: inline-flex !important;
   }
 
   .multiglid-slider-wrapper .slick-initialized .slick-slide {
