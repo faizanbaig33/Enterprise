@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import clsx from 'clsx';
 import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
 import ImageWrapper from 'src/helpers/Media/ImageWrapper';
@@ -21,6 +21,10 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [error, setError] = useState<any>(null);
+
+  useMemo(() => {
+    if (props.isResetForm) setSelectedOption(null);
+  }, [props.isResetForm]);
 
   const handleChangeRadioInput = (e: any) => {
     setSelectedOption(e.target.value);

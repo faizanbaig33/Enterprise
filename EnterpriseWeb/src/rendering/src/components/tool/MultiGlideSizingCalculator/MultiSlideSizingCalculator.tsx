@@ -34,6 +34,7 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
     slidesToScroll: 1,
   };
 
+  const [isResetForm, setIsResetForm] = useState(false);
   const [formData, setData] = useState({});
   const [activeStep, setActiveStep] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
@@ -41,10 +42,16 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
   const assignFormData = (val: any) => {
     // console.log("parent receive user callback");
     console.log(val);
+    setIsResetForm(false);
     setData((data) => ({
       ...data,
       ...val,
     }));
+  };
+
+  const resetFormData = () => {
+    setData({});
+    setIsResetForm(true);
   };
 
   const handleStepChange = (step: number) => {
@@ -121,6 +128,7 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
             <StepConfigurationOption
               fields={props.fields}
               activeStep={activeStep}
+              isResetForm={isResetForm}
               onStepChange={handleStepChange}
               userCallback={assignFormData}
             />
@@ -128,6 +136,7 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
               data={formData}
               fields={props.fields}
               activeStep={activeStep}
+              isResetForm={isResetForm}
               onStepChange={handleStepChange}
               userCallback={assignFormData}
             />
@@ -136,6 +145,8 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
               activeStep={activeStep}
               fields={props.fields}
               onStepChange={handleStepChange}
+              userCallback={assignFormData}
+              onResetForm={resetFormData}
               previousStep={() => handleStepChange(activeStep - 1)}
               completeCallback={handleComplete}
             />

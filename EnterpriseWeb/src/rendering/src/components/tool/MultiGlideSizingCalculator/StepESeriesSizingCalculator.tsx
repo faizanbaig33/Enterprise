@@ -243,6 +243,8 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
     setNumberPanelList([2, 3, 4, 5, 6]);
     setMsgWidth('');
     setMsgHeight('');
+
+    props.onResetForm();
     props.onStepChange(0);
 
     setIsShowResults(false);

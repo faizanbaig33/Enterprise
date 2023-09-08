@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 // import { useTheme } from 'lib/context/ThemeContext';
 // import { MultiSlideSizingCalculatorTheme } from './MultiSlideSizingCalculator.theme';
 import { MultiSlideSizingCalculatorActionButtons } from './ActionButtons';
@@ -29,6 +29,10 @@ export const StepPanelStyle = (props: any): JSX.Element => {
 
   const [selectedOption, setSelectedOption] = useState(null);
   const [error, setError] = useState<any>(null);
+
+  useMemo(() => {
+    if (props.isResetForm) setSelectedOption(null);
+  }, [props.isResetForm]);
 
   const handleChangeRadioInput = (e: any) => {
     setSelectedOption(e.target.value);
