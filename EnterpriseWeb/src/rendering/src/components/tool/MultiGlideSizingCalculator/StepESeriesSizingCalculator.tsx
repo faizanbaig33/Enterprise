@@ -2023,10 +2023,16 @@ export const StepESeriesSizingCalculator = (props: any): JSX.Element => {
               defaultValue="none"
               onChange={updateForm}
             >
-              <option value="none">None</option>
-              <option value="interior">Interior</option>
-              <option value="exterior">Exterior</option>
-              <option value="both">Both</option>
+              {isOnFloorDrainage(formStates.sillOption) ? (
+                <>
+                  <option value="none">None</option>
+                  <option value="interior">Interior</option>
+                  <option value="exterior">Exterior</option>
+                  <option value="both">Both</option>
+                </>
+              ) : (
+                <option value="none">None</option>
+              )}
             </select>
             {errors.sillRamp && (
               <div className="text-body text-error">{errors.sillRamp.message}</div>

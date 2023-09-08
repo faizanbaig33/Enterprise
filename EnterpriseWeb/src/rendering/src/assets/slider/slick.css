@@ -73,7 +73,7 @@
 }
 
 .slick-slide > div {
-  height: 100%;
+  height: auto;
   width: 100%;
 }
 
@@ -94,7 +94,7 @@
   flex-direction: column;
   height: auto;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
 .slick-loading .slick-slide {
   visibility: hidden;
