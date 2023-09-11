@@ -25,6 +25,7 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
   const { themeData } = useTheme(MultiSlideSizingCalculatorTheme());
 
   const slider = useRef<Slider>(null);
+  const eleRef = useRef<any>(null);
 
   const sliderSettings = {
     dots: false,
@@ -55,6 +56,8 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
   };
 
   const handleStepChange = (step: number) => {
+    eleRef.current?.scrollIntoView({ behavior: 'smooth' });
+
     if (step <= MAX_STEPS) {
       slider?.current?.slickGoTo(step);
       setActiveStep(step);
@@ -105,7 +108,7 @@ const MultiGlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
             </div>
           </div>
         </div>
-        <div className={themeData.classes.formStep}>
+        <div className={themeData.classes.formStep} ref={eleRef}>
           <div className="hidden md:block">
             <Stepper
               isComplete={isComplete}

@@ -70,7 +70,7 @@ export const StepConfigurationOption = (props: any): JSX.Element => {
                   additionalMobileClasses="w-20 h-20 mr-2"
                   additionalDesktopClasses="mt-4 w-full"
                 />
-                <div className="flex flex-col items-start justify-center md:items-center">
+                <div className="flex flex-col items-center justify-center">
                   <input
                     id={`step-one-radio-${idx}`}
                     type="radio"
