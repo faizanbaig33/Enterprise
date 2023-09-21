@@ -24,6 +24,7 @@ export type ButtonProps = {
   classes: string;
   modalId?: string | undefined;
   modalLinkText?: Field<string>;
+  onClick?: any;
 };
 
 const Button = (props: ButtonProps) => {

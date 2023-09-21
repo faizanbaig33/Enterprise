@@ -147,4 +147,23 @@
   .multiglid-slider-wrapper .slick-initialized .slick-slide {
     justify-content: flex-start !important;
   }
+
+  .model-viewer {
+    cursor: grab;
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    user-select: none;
+    width: 100%;
+    min-height: 250px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@layer components {
+  .model-viewer {
+    @apply h-[100%] w-[100%];
+  }
 }

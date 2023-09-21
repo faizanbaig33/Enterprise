@@ -13,6 +13,7 @@ import { IoIosArrowDropdown, IoIosArrowDropup } from 'react-icons/io';
 import { useCurrentScreenType, getBreakpoint } from 'lib/utils/get-screen-type';
 import clsx from 'clsx';
 import SocialIcons from './SocialIcons';
+import { ARButton } from 'src/helpers/ARButton';
 
 export type GlobalMastheadProps = Feature.EnterpriseWeb.Components.General.GlobalMasthead;
 const GlobalMasthead = (props: GlobalMastheadProps) => {
@@ -143,6 +144,12 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
               <SocialIcons icons={props.fields.socialIcons} />
             </div>
           </div>
+        )}
+        {props?.fields?.ArElement?.fields && (
+          <ARButton
+            fields={props?.fields?.ArElement?.fields}
+            classes={{ wrapper: '', cta1Classes: '' }}
+          />
         )}
       </div>
     </div>
