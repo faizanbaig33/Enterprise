@@ -73,7 +73,7 @@ const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
                 quick-look-browsers="safari chrome"
                 camera-orbit="0deg 90deg"
                 poster="https://aw930cdnprdcd.azureedge.net/-/media/andersenwindows/images/windows-and-doors/doors/patio-doors-hinged/400-series-frenchwood-hinged-doors/400_frenchwood_hinged_door-cat.png?modified=20171218194821"
-                className="model-viewer"
+                class="model-viewer"
                 ar-status="not-presenting"
               ></model-viewer>
             </div>
