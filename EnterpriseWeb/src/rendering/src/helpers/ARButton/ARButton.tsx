@@ -4,7 +4,7 @@ import { FaSms } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { Foundation } from 'src/.generated/Foundation.EnterpriseWeb.model';
 import { Button } from '../Button';
-import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
+// import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
 import Modal from '../Modal';
 
 export type ARButtonProps = Foundation.EnterpriseWeb.Core.FieldSets.ARButton & {
@@ -131,13 +131,13 @@ const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
               icon={fields?.cta1Icon}
               data-modal-target={modalTargetId}
               data-modal-toggle={modalTargetId}
-              modalId={
-                (
-                  fields?.cta1Modal as unknown as Feature.EnterpriseWeb.Components.Modal.GenericModal.GenericModal
-                )?.fields?.modalId?.value
-              }
+              // modalId={
+              //   (
+              //     fields?.cta1Modal as unknown as Feature.EnterpriseWeb.Components.Modal.GenericModal.GenericModal
+              //   )?.fields?.modalId?.value
+              // }
               modalLinkText={fields?.cta1ModalLinkText}
-              classes={classes?.cta1Classes}
+              classes={classNames(classes?.cta1Classes, 'cursor-pointer')}
             />
           </div>
         )}

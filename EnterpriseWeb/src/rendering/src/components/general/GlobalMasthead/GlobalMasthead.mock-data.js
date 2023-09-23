@@ -62,10 +62,17 @@ const defaultData = {
               "templateName": "Enum"
           },
           "cta1Link": {
-              "value": {
-                  "href": "",
-                  "linktype": "internal"
-              }
+            value: {
+              // href: '',
+              text: '_CTA AR',
+              anchor: '',
+              linktype: 'internal',
+              class: '',
+              title: '',
+              target: '_blank',
+              querystring: '',
+              id: '{7FB335D2-8E99-458E-9EF9-562A78CCB821}',
+            },
           },
           "cta1Modal": null,
           "cta1ModalLinkText": {
