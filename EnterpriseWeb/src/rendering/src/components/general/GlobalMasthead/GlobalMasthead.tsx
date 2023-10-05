@@ -140,15 +140,15 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
                 </a>
               </Link>
             </div>
+            <ARButton
+              fields={props?.fields?.AR?.fields}
+              classes={{ wrapper: 'mt-3', cta1Classes: '' }}
+            />
             <div className="block ml:hidden">
               <SocialIcons icons={props.fields.socialIcons} />
             </div>
           </div>
         )}
-        <ARButton
-          fields={props?.fields?.AR?.fields}
-          classes={{ wrapper: 'mt-3', cta1Classes: '' }}
-        />
       </div>
     </div>
   );

@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { FaSms } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { Foundation } from 'src/.generated/Foundation.EnterpriseWeb.model';
-import { Button } from '../Button';
 import ModalWrapper from 'src/helpers/ModalWrapper/ModalWrapper';
 // import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
 
@@ -57,10 +56,7 @@ const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
                 ar-modes="webxr"
                 tabindex="0"
                 ar-status="not-presenting"
-                style={{
-                  width: '100%',
-                  height: '100%'
-                }}
+                class="model-viewer"
               ></model-viewer> */}
               <model-viewer
                 id="viewer"
@@ -122,14 +118,15 @@ const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
           'mb-s flex items-start md:flex-row md:items-center md:space-x-4'
         )}
       >
-        <div onClick={() => setShowModal(true)}>
-          <Button
-            field={fields?.cta1Link}
-            variant={fields?.cta1Style}
-            icon={fields?.cta1Icon}
-            classes={classNames(classes?.cta1Classes, 'cursor-pointer')}
-          />
-        </div>
+        <button
+          onClick={() => setShowModal(true)}
+          className={classNames(
+            classes?.cta1Classes,
+            'flex w-fit cursor-pointer items-center whitespace-nowrap rounded-lg border-4 border-theme-btn-border bg-theme-btn-bg px-m py-[9px] font-sans text-button font-heavy text-theme-btn-text disabled:border-gray disabled:text-gray'
+          )}
+        >
+          _CTA AR
+        </button>
       </div>
     </>
   );
