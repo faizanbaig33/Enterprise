@@ -33,6 +33,7 @@ const MultiSlideSizingCalculator = (props: MultiSlideSizingCalculatorProps): JSX
     touchMove: false,
     slidesToShow: 1,
     slidesToScroll: 1,
+    adaptiveHeight: true,
   };
 
   const [isResetForm, setIsResetForm] = useState(false);

@@ -4,8 +4,8 @@ import { FaSms } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { Foundation } from 'src/.generated/Foundation.EnterpriseWeb.model';
 import { Button } from '../Button';
+import ModalWrapper from 'src/helpers/ModalWrapper/ModalWrapper';
 // import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
-import Modal from '../Modal';
 
 export type ARButtonProps = Foundation.EnterpriseWeb.Core.FieldSets.ARButton & {
   classes: {
@@ -15,7 +15,6 @@ export type ARButtonProps = Foundation.EnterpriseWeb.Core.FieldSets.ARButton & {
 };
 
 const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
-  const modalTargetId = 'arModal';
   const [showModal, setShowModal] = useState(false);
   const [message, setMessage] = useState('');
   const [phone, setPhone] = useState('');
@@ -41,8 +40,8 @@ const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
   return (
     <>
       {showModal && (
-        <Modal onClose={() => setShowModal(false)}>
-          <div>
+        <ModalWrapper size="fluid" handleClose={() => setShowModal(false)}>
+          <div className="p-4">
             <div className="min-h-[300px] min-w-[400px]">
               {/* <model-viewer
                 className="model-viewer"
@@ -115,7 +114,7 @@ const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
               </div>
             </div>
           </div>
-        </Modal>
+        </ModalWrapper>
       )}
       <div
         className={classNames(
@@ -123,24 +122,14 @@ const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
           'mb-s flex items-start md:flex-row md:items-center md:space-x-4'
         )}
       >
-        {fields?.cta1Link && (
-          <div onClick={() => setShowModal(true)}>
-            <Button
-              field={fields?.cta1Link}
-              variant={fields?.cta1Style}
-              icon={fields?.cta1Icon}
-              data-modal-target={modalTargetId}
-              data-modal-toggle={modalTargetId}
-              // modalId={
-              //   (
-              //     fields?.cta1Modal as unknown as Feature.EnterpriseWeb.Components.Modal.GenericModal.GenericModal
-              //   )?.fields?.modalId?.value
-              // }
-              modalLinkText={fields?.cta1ModalLinkText}
-              classes={classNames(classes?.cta1Classes, 'cursor-pointer')}
-            />
-          </div>
-        )}
+        <div onClick={() => setShowModal(true)}>
+          <Button
+            field={fields?.cta1Link}
+            variant={fields?.cta1Style}
+            icon={fields?.cta1Icon}
+            classes={classNames(classes?.cta1Classes, 'cursor-pointer')}
+          />
+        </div>
       </div>
     </>
   );

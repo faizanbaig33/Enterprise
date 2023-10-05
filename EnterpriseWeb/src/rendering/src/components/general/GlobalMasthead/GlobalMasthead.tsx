@@ -59,7 +59,7 @@ const GlobalMasthead = (props: GlobalMastheadProps) => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
-console.log(props?.fields?.ArElement?.fields)
+
   return (
     <div
       data-component="general/globalmasthead"
@@ -145,12 +145,10 @@ console.log(props?.fields?.ArElement?.fields)
             </div>
           </div>
         )}
-        {props?.fields?.ArElement?.fields && (
-          <ARButton
-            fields={props?.fields?.ArElement?.fields}
-            classes={{ wrapper: 'mt-3', cta1Classes: '' }}
-          />
-        )}
+        <ARButton
+          fields={props?.fields?.AR?.fields}
+          classes={{ wrapper: 'mt-3', cta1Classes: '' }}
+        />
       </div>
     </div>
   );
