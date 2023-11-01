@@ -4,7 +4,7 @@ import { ThemeFile } from 'lib/context/ThemeContext';
 export const GlobalMastheadTheme: ThemeFile = {
   aw: {
     classes: {
-      headline: 'text-white text-sm-m ml:text-m  font-heavy',
+      headline: 'text-white text-sm-m ml:text-m font-heavy',
       headWrapper: 'w-[1200px] flex flex-col ml:items-center ml:justify-center py-4 px-5',
       headLogoWrapper: 'flex items-center justify-start ml:justify-center',
       headLogo: 'flex items-center',
@@ -20,7 +20,7 @@ export const GlobalMastheadTheme: ThemeFile = {
   },
   rba: {
     classes: {
-      headline: 'text-white text-sm-m ml:text-m  font-heavy',
+      headline: 'text-white text-sm-m ml:text-m font-heavy',
       headWrapper: 'w-[1200px] flex flex-col ml:items-center ml:justify-center py-4 px-5',
       headLogoWrapper: 'flex items-center justify-start ml:justify-center',
       headLogo: 'flex items-center',

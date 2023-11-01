@@ -9,7 +9,7 @@ import {
   FaYoutube,
 } from 'react-icons/fa';
 
-const SocialIcons = ({ icons }: any) => {
+const SocialIcons = ({ icons, iconColor }: any) => {
   const { themeData } = useTheme(GlobalMastheadTheme);
 
   return (
@@ -18,22 +18,22 @@ const SocialIcons = ({ icons }: any) => {
         {icons.map((icon: any) => (
           <a href={icon?.fields?.link?.value?.href} target="_blank" key={icon.id} rel="noreferrer">
             {icon?.fields?.icon?.fields?.Value?.value === 'facebook' && (
-              <FaFacebook size={20} color="white" />
+              <FaFacebook size={20} color={iconColor} />
             )}
             {icon?.fields?.icon?.fields?.Value?.value === 'twitter' && (
-              <FaTwitter size={20} color="white" />
+              <FaTwitter size={20} color={iconColor} />
             )}
             {icon?.fields?.icon?.fields?.Value?.value === 'pinterest' && (
-              <FaPinterest size={20} color="white" />
+              <FaPinterest size={20} color={iconColor} />
             )}
             {icon?.fields?.icon?.fields?.Value?.value === 'instagram' && (
-              <FaInstagram size={20} color="white" />
+              <FaInstagram size={20} color={iconColor} />
             )}
             {icon?.fields?.icon?.fields?.Value?.value === 'linkedin' && (
-              <FaLinkedin size={20} color="white" />
+              <FaLinkedin size={20} color={iconColor} />
             )}
             {icon?.fields?.icon?.fields?.Value?.value === 'youtube' && (
-              <FaYoutube size={20} color="white" />
+              <FaYoutube size={20} color={iconColor} />
             )}
           </a>
         ))}
