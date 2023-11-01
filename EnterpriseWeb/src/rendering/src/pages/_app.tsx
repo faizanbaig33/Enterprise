@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app';
-import Script from 'next/script';
+// import Script from 'next/script';
 import { I18nProvider } from 'next-localization';
 import { useState } from 'react';
 import { SitecorePageProps } from 'lib/page-props';
@@ -28,12 +28,12 @@ function App({ Component, pageProps }: AppProps<SitecorePageProps>): JSX.Element
     <I18nProvider lngDict={dictionary} locale={pageProps.locale}>
       <ThemeContext.Provider value={site?.theme as ThemeName}>
         <ModalIdContextProvider>
-          <Script
+          {/* <Script
             async
             strategy="afterInteractive"
             type="module"
             src="https://unpkg.com/@google/model-viewer@^2.1.1/dist/model-viewer.min.js"
-          />
+          /> */}
           <Component {...rest} />
         </ModalIdContextProvider>
       </ThemeContext.Provider>

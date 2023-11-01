@@ -6,6 +6,7 @@ import { Foundation } from 'src/.generated/Foundation.EnterpriseWeb.model';
 import ModalWrapper from 'src/helpers/ModalWrapper/ModalWrapper';
 import { IconTypes, SvgIcon } from 'src/helpers/SvgIcon';
 import { getEnum } from 'lib/utils';
+import { useModelViewScript } from 'lib/utils/use-model-view-module';
 // import { Feature } from 'src/.generated/Feature.EnterpriseWeb.model';
 
 const EMAIL_SUBJECT = 'Check out this product in Augmented Reality!';
@@ -27,6 +28,7 @@ const ARButton = ({ fields, classes }: ARButtonProps): JSX.Element => {
   const [isClickEmail, setIsClickEmail] = useState(false);
 
   const _icon = getEnum<IconTypes>(fields?.cta1Icon);
+  useModelViewScript();
 
   const sendSMS = (phone: string) => {
     // const pendingClass = 'pending';
