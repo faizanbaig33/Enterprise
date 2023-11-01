@@ -12,7 +12,7 @@ export const GlobalMastheadTheme: ThemeFile = {
       anchorWrapper:
         'mt-4 flex flex-col ml:flex-row items-start ml:items-center justify-between w-full transition ease-in-out delay-150',
       socialIconsWrapper: 'mt-4 ml:mt-0',
-      iconWrapper: 'flex items-center space-x-4',
+      iconWrapper: 'flex items-center space-x-3',
       socialIcon: '',
       anchors: 'ml:space-x-[16px] space-y-[12px] ml:space-y-0 flex flex-col ml:flex-row',
       linkTitle: 'text-[16px] text-bold text-white',
@@ -28,7 +28,7 @@ export const GlobalMastheadTheme: ThemeFile = {
       anchorWrapper:
         'mt-4 flex flex-col ml:flex-row items-start ml:items-center justify-between w-full transition ease-in-out delay-150',
       socialIconsWrapper: 'mt-4 ml:mt-0',
-      iconWrapper: 'flex items-center space-x-4',
+      iconWrapper: 'flex items-center space-x-3',
       socialIcon: '',
       anchors: 'ml:space-x-[16px] space-y-[12px] ml:space-y-0 flex flex-col ml:flex-row',
       linkTitle: 'text-[16px] text-bold text-white',
